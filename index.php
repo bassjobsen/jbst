@@ -1,0 +1,32 @@
+<?php
+/**
+ * The main template file.
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package skematik
+ * @since skematik 1.0
+ */
+get_header();
+?>
+
+	<div id="primary" class="site-content <?php skematik_content_span(); ?>">
+		<div id="content" role="main">
+		<?php if ( have_posts() ) : ?>
+				<?php 
+					if ( is_page() ) {get_template_part( 'content', 'page' );}
+					elseif ( is_single() ) {get_template_part( 'content', 'single' );}
+					elseif ( is_archive() ) {get_template_part( 'content', 'archive' );}
+					elseif ( is_search() ) {get_template_part( 'content', 'search' );}
+					else {get_template_part( 'content', get_post_format() );}
+				 ?>
+		<?php else : ?>
+		<?php get_template_part( 'no-results', 'content' ); ?>
+		<?php endif; ?>
+		</div><!-- #content -->
+	</div><!-- #primary .site-content -->
+<?php get_footer(); ?>

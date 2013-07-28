@@ -1,0 +1,28 @@
+Jamedo's Bootstrap Start Theme
+==============================
+
+Powerful theme framework that can be used as a standalone website builder or as a framework to create child themes for wordpress build on Twitter's Bootstrap 3.
+The original framework is written by [Matt Jones of Rocket Farmer, LLC](http://rocketfarmer.net/) (former Skematik theme framework)
+It also has built in support for theme options, metaboxes, BuddyPress and eCommerce (WooCommerce, JigoShop and WPeCommerce).
+
+Installation
+------------
+
+[Download the latest version as .zip file](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/archive/master.zip). Upload the .zip file to your Wordpress theme directory (wp-content/themes) or use Install theme function in your dashboard.
+Activate the theme in your dashboard ( Appearence > themes ).
+
+Support
+-------
+
+We are always happy to help you. If you have any question regarding this code. [Send us a message](http://www.jamedowebsites.nl/contact/) or contact us on twitter @JamedeoWebsites.
+
+Credits
+-------
+
+* [Matt Jones of Rocket Farmer](http://rocketfarmer.net/)
+* [Bootstrap](http://twitter.github.com/bootstrap/)
+* [jQuery](http://www.jquery.com/)
+
+Example
+-------
+![Screendump theme home](http://bassjobsen.weblogs.fm/wp-content/uploads/2013/07/jamedotheme.png)

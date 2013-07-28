@@ -1,0 +1,100 @@
+*** Skematik Changelog ***
+
+2012.11.12 - version 1.0.6.8
+	*Added support for Theme Unit Test enhancements including:
+	*Comments on pages (content-page.php)
+	*Automatic thumbnails now off by default
+	*Post navigation buttons now on bottom by default
+	*Tables in content are now given the 'table' class
+	*Fixed right sidebar area for BuddyPress pages
+	
+2012.11.08 - version 1.0.6.7
+	*Fixed error for missing alertblock variable (template-shortcodes)
+	*Replaced get_theme_data with wp_get_theme in core.php
+	*Replaced "bloginfo('url')" with "echo home_url()"
+	*Replaced non-printable characters in "content-search"
+	
+2012.11.08 - version 1.0.6.6
+	*Added site container size feature (template-customizer,core.php,new files in library/assets folder)
+	*Added bootstrap styles to a few buddypress classes with query (template-buddypress.php)
+	*Added new styles for buddypress (buddypress.css)
+	*Added native bp.css file. Disable css from template pack now or it will affect buttons.
+	*Fixes for footer layouts…specifically with container-width layout (no double border)
+	*Fixed comments bug where 'btn-primary' was showing up
+	*Adjusted styling for borders in the footer including skematik custom menu
+
+2012.11.05 - version 1.0.6.5
+	*Fixed footer custom styling bug (style.css,custom-style.php)
+
+2012.11.04 - version 1.0.6.4
+	*Removed default colors from theme-customizer
+	*Adjusted styling to wpec.css for single product price & variations
+	*Took out remove wpautop from shortcodes-init.php
+
+2012.11.01 - version 1.0.6.3
+	*Major WP eCommerce update!
+	*Made single image column extend as high as the product description column (template-ecommerce.php)
+	*Added list view/grid view button selector to products page (template-ecommerce.php)
+	*Added mobile styling for above in wpec.css
+	*Removed deregister line for wpsc-thickbox as it was causing an error (template-ecommerce.php)
+	*Made additional images show all images instead of just the default WordPress setting
+	*Removed 'su_custom_formatter' from shortcodes init…need to find a different way to do this.
+	*Removed unused file from 'updates' folder	
+
+2012.10.29 - version 1.0.6.2
+	*Removed empty/broken flexslider code from shortcodes
+	*Added new action to shortcodes loop (available.php)
+	*Removed action from shortcodes-init.php
+	*Styling change for "View Cart" button in woo.css
+	
+2012.10.26 - version 1.0.6.1
+	*Fixed bug in updates (functions.php)
+
+2012.10.26 - version 1.0.6
+	*Switched to WP-Updates for automatic theme updates
+
+2012.10.26 - version 1.0.5
+	*Now serving up automatic updates!
+	*6 New colors for the navbar (blue, teal, green, red, orange and black gradient)
+	*Rewrites of the header.php and footer.php file to simply include an action.
+	*Created new "template-header-functions.php" to house header actions
+	*Created new "template-footer-functions.php" to house footer actions
+	*Created new "template-header-functions.php" to house header actions
+	*Modified template-customizer to make all customizer sections in actions which can be removed
+	*Modified custom-style.php to make customizations only run if a theme_mod has been set and not to write the default theme mod there.
+
+
+2012.10.23 - version 1.0.4
+	*Re-registered Skematik style script as 'skematik-style' instead of 'style' (functions.php)
+	*Removed 'skematik_before_header' action from index.php.
+	*Made login redirect function only active if nav account button is active
+	*Added text to theme options panel explaining above
+
+2012.10.17 - version 1.0.3
+	*Added new option to have footer be just container width
+	*Fixed account nav dropdown button to take theme customizer styling when user is not logged in
+	*Extensive styling fixes for footer and other bootstrap elements to work with the Theme Customizer
+	*Fixed issue with shortcode formatting with a custom filter for content and widgets (shortcodes-init.php)
+	*Fixed erroneous logo link markup
+	*Moved skematik_logo function to core.php
+
+2012.10.16 - version 1.0.2
+	*Added responsive styling to WooCommerce (woo.css)
+	*Added MANY more fonts; we now have the top 100 Google Fonts
+	*fixed thumbnail styling for woocommerce - margin-left (woo.css)
+	*removed jumbotron styling from style.css
+ 
+2012.10.16 - version 1.0.1
+	*Added new float option to icon short code (template-shortcodes.php, available.php)
+	*Made default post image optional as a core feature (core.php, options.php)
+	*Moved post image to below the title on the blog (content.php)
+	*Fixed bug where you had to use at least one footer widget (template-functions.php, template-sidebars.php)
+	*Fixed mobile padding on right (style.css)
+	*Fixed styling for icons (style.css)
+	*We changed our mind on removing the wpautop function. It no longer exists. (shortcodes-init.php)
+	*Removed default featured image (core.php)
+	*Added PressTrends analytics
+	*Made nav-tabs styling (link colors) unique to options page
+
+2012.10.12 - version 1.0
+	*First release to beta testers!
