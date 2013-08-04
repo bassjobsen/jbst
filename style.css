@@ -4,7 +4,7 @@ Theme URI: http://skematiktheme.com
 Author: Matt Jones of Rocket Farmer, LLC
 Author URI: http://rocketfarmer.net
 Description: Skematik is a powerful theme framework that can be used as a standalone website builder or as a framework to create child themes. Designed with a mobile-first mindset, Skematik is built with HTML5, CSS3, and contains the entire Twitter Bootstrap 2.0 library. It also has built in support for theme options, metaboxes, BuddyPress and eCommerce (WooCommerce, JigoShop and WPeCommerce).
-Version: 1.0.6.8
+Version: 1.0.7.5
 License: GNU General Public License
 License URI: license.txt
 Tags:flexible-width,buddypress,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar,custom-background,custom-colors,custom-header,featured-images,editor-style
@@ -123,7 +123,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .navbar-green a.brand:hover,.navbar-orange a.brand:hover,.navbar-red a.brand:hover,.navbar-blue a.brand:hover,.navbar-teal a.brand:hover {color:#000;}
 .navbar-black a.brand:hover,.navbar-black .nav > li > a:hover {color:#ccc;}
 body .navbar-black .dropdown-menu a:hover {background:#888;color:#fff;}
-.navbar .nav li.dropdown.open {background:#336699;}
+/*.navbar .nav li.dropdown.open {background:#336699;}*/
 
 /* Navbar Green */
 body .navbar-green .navbar-inner,.navbar-green .dropdown-menu li > a:hover, .navbar-green .dropdown-menu li > a:focus, .navbar-green .dropdown-submenu:hover > a,.navbar-green .dropdown-menu .active > a, .navbar-green .dropdown-menu .active > a:hover {
@@ -266,8 +266,8 @@ textarea {overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */p
 /* =Blog
 ----------------------------------------------- */
 article {clear:both;}
-.post-thumbnail {float:left;width:20%;margin-right:2%;}
-article .post-thumbnail {margin-top:0px;float:left;}
+.post-thumbnail {float:left;width:auto;margin-right:15px;}
+article .post-thumbnail {margin-top:0px;float:left;margin-bottom:20px;}
 .post-thumbnail a.thumbnail,.single-post-thumbnail a.thumbnail {display:inline-block;}
 .single-post-thumbnail {margin-bottom: 12px;}
 
@@ -329,21 +329,7 @@ input, textarea {max-width: 100%;}
 .masthead {padding-top:46px;margin-bottom:36px;}
 
 /* Adjustments for navbar search */
-
-.navbar-search .search-query {
-    border-radius: 15px 15px 15px 15px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 13px;
-    font-weight: normal;
-    line-height: 1;
-    margin-bottom: 0;
-    padding: 4px 14px;
-}
-
 .navbar-search input {width:180px;}
-
-
-
 @media(max-width:1200px){
 	.navbar-search input {width:180px;}
 }
@@ -396,6 +382,20 @@ form#navloginform a.lost-password {float:right;padding:5px 0px 5px 10px;}
 .logo-outside-nav a.brand {font-size:50px;text-align:center;}
 .dropdown-menu .divider {margin: 5px 1px;}
 
+/* Adjustments for navbar search */
+
+.navbar-search .search-query {
+    border-radius: 15px 15px 15px 15px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1;
+    margin-bottom: 0;
+    padding: 4px 14px;
+}
+
+.navbar-search input {width:180px;}
+
 @media(max-width:1199px){
 .widget input, .widget textarea {width: 205px;}
 }
@@ -434,3 +434,9 @@ ul.item-list li {list-style-type:none;}
 
 /* Theme Unit Test */
 table.statsDay .label, table.statsDay .badge {background-color:inherit;}
+
+/* Compatibility Stuff */
+/* For dropdowns…showed up with Bootstrap 2.2.2 */
+.nav-collapse .dropdown-menu .active > a, .nav-collapse .dropdown-menu .active > a:hover {color:white;}
+
+body [class^="icon-"], body [class*=" icon-"] {width: auto;height: auto;line-height: 1;background-image:none;}

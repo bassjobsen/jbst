@@ -11,12 +11,7 @@
 					<h1 class="page-title">
 						<?php
 						
-							if (taxonomy_exists('wpsc_product_category')){
-								_e( 'Products in the', 'skematik' );
-							
-							}
-						
-							elseif ( is_category() ) {
+							if ( is_category() ) {
 								printf( __( 'Category Archives: %s', 'skematik' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
 							} elseif ( is_tag() ) {

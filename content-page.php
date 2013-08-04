@@ -25,7 +25,9 @@
 			<hr class="bs-docs-separator clear">
 			
 			<?php
+			if(!get_theme_mod('page_comments', 1) == 1) {
 				// If comments are open or we have at least one comment, load up the comment template
 				if ( comments_open() || '0' != get_comments_number() )
 					comments_template( '', true );
+			}
 			?>

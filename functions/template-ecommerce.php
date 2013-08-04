@@ -280,7 +280,7 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 			?>
 			  <div class="btn-group pull-right" id="nav-cart-dropdown">
 			    <a class="btn dropdown-toggle <?php skematik_nav_shop_button_class();?>" href="<?php echo get_option('shopping_cart_url');?>">
-			      <i class="icon-shopping-cart"></i> <span class="cart-contents"><?php if(wpsc_cart_item_count() > 0) {echo wpsc_cart_item_count().' item(s) - '.wpsc_cart_total_widget();} else {echo '$0';}?></span>
+			      <i class="icon-shopping-cart"></i> <span class="cart-contents"><?php if(wpsc_cart_item_count() > 0) {echo wpsc_cart_item_count().' item(s) - '.wpsc_cart_total_widget();} else {echo wpsc_cart_total_widget();}?></span>
 			    </a>
 			  </div>
 			<?php

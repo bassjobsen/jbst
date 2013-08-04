@@ -375,6 +375,11 @@ function skematik_register_shortcodes() {
 	
 	add_shortcode('tooltip', 'skematik_shortcode_tooltip');
 	
+	/*
+	==========================================================
+	Popovers
+	==========================================================
+	*/
 	function skematik_shortcode_popover( $atts, $content = null) {
 		extract( shortcode_atts( array(
 		'text' => '',
@@ -397,7 +402,7 @@ function skematik_register_shortcodes() {
 			$type = '';
 		}
 		
-		$output = '<a target="'.$target.'" class="'.$button.' '.$size.' '.$type.'" rel="popover" href="'.$link.'" data-content="'.$desc.'" data-original-title="'.$title.'">';
+		$output = '<a target="'.$target.'" class="'.$button.' '.$size.' '.$type.'" rel="popover" href="'.$link.'" data-content="'.$desc.'" data-original-title="'.$title.'" data-trigger="hover">';
 		$output .= $text;
 		$output .= '</a>';	
 		return $output;}

@@ -17,12 +17,30 @@ get_header();
 	<div id="primary" class="site-content <?php skematik_content_span(); ?>">
 		<div id="content" role="main">
 		<?php if ( have_posts() ) : ?>
-				<?php 
-					if ( is_page() ) {get_template_part( 'content', 'page' );}
-					elseif ( is_single() ) {get_template_part( 'content', 'single' );}
-					elseif ( is_search() ) {get_template_part( 'content', 'search' );}
-					else {get_template_part( 'content', get_post_format() );}
-				 ?>
+
+
+
+			<?php do_action( 'skematik_before_content_page' );?>
+
+			<?php while ( have_posts() ) : the_post(); /* Start the Loop */?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<div class="page-header">
+    					<h1 class="entry-title"><?php the_title(); ?></h1>
+				    </div>
+					<div class="entry-content">
+						<?php the_content(); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'skematik' ), 'after' => '</div>' ) ); ?>
+					</div><!-- /.entry-content -->
+
+					<?php edit_post_link( __( 'Edit', 'skematik' ), '<span class="edit-link">', '</span>' ); ?>
+
+				</article><!-- /#post-<?php the_ID(); ?> -->
+			<?php endwhile; // end of the loop. ?>
+			
+			<hr class="bs-docs-separator clear">
+
+
+
 		<?php else : ?>
 		<?php get_template_part( 'no-results', 'content' ); ?>
 		<?php endif; ?>

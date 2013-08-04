@@ -64,6 +64,9 @@ function skematik_theme_setup() {
 	/* Enable support for Theme Menus */
 	add_theme_support( 'menus' );
 
+	/* Identify support for WooCommerce */
+	add_theme_support('woocommerce');
+
 }
 endif; // skematik_setup
 

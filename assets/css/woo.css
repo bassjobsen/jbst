@@ -39,6 +39,8 @@ div.product div.images div.thumbnails a, #content div.product div.images div.thu
 body.woocommerce-page form.checkout br {display:none;}
 th.product-price,th.product-quantity,th.product-subtotal,td.product-price,td.product-quantity,td.product-subtotal {text-align:center;}
 .woocommerce_message .btn {float: right;}
+.minus {top: 15px;}
+ul.products {list-style: none;}
 
 /*-----RESPONSIVE STYLING-----*/
 @media(max-width:839px){

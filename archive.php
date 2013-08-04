@@ -17,12 +17,7 @@ get_header();
 	<div id="primary" class="site-content <?php skematik_content_span(); ?>">
 		<div id="content" role="main">
 		<?php if ( have_posts() ) : ?>
-				<?php 
-					if ( is_page() ) {get_template_part( 'content', 'page' );}
-					elseif ( is_single() ) {get_template_part( 'content', 'single' );}
-					elseif ( is_search() ) {get_template_part( 'content', 'search' );}
-					else {get_template_part( 'content', get_post_format() );}
-				 ?>
+				<?php get_template_part( 'content', 'archive' );?>
 		<?php else : ?>
 		<?php get_template_part( 'no-results', 'content' ); ?>
 		<?php endif; ?>

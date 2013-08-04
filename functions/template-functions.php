@@ -37,7 +37,7 @@ function skematik_content_span() {
 	if ($skematik_layout == 'left-sidebar') {$contentspan = 'col-lg-9';}
 	elseif ($skematik_layout == 'right-sidebar') {$contentspan = 'col-lg-9';}
 	elseif ($skematik_layout == 'three-column') {$contentspan = 'col-lg-6';}
-	elseif ($skematik_layout == 'full-width') {$contentspan = 'col-lg-12';} // do we need this??
+	elseif ($skematik_layout == 'full-width') {$contentspan = 'col-lg-12';}
 	else {$contentspan = 'col-lg-9';}
 	echo $contentspan;
 }

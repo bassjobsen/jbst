@@ -133,7 +133,7 @@ FOOTER CREDITS
 function skematik_custom_credits() {
 	if(get_theme_mod('footer_credits') <> "") {echo get_theme_mod('footer_credits');}
 	else {?>
-		<?php printf( __( '&copy;', 'skematik' )); ?> <?php echo date('Y');?> <?php echo bloginfo('name');?><span class="sep"> | </span><a target="_blank" href="<?php esc_attr_e( 'http://skematiktheme.com', 'skematik' ); ?>" title="<?php esc_attr_e( 'Powered by the Skematik theme framework', 'skematik' ); ?>" rel="generator"><?php printf( __( 'Powered by the Skematik theme framework', 'skematik' ), 'skematik' ); ?></a>
+		<?php printf( __( '&copy;', 'skematik' )); ?> <?php echo date('Y');?> <?php echo bloginfo('name');?><span class="sep"> | </span><a target="_blank" href="<?php esc_attr_e( 'https://github.com/bassjobsen/jamedo-bootstrap-start-theme', 'skematik' ); ?>" title="<?php esc_attr_e( 'Powered by Jamedo\'s Bootstrap Start Theme', 'skematik' ); ?>" rel="generator"><?php printf( __( 'Powered by Jamedo\'s Bootstrap Start Theme', 'skematik' ), 'skematik' ); ?></a>
 	<?php }
 }
 

@@ -1,5 +1,37 @@
 *** Skematik Changelog ***
 
+2013.04.18 - version 1.0.7.5
+	*WooCommerce 2.0 compatibility
+	*Removed duplicate html5 call for IE in header-functions.php
+	*Fixed buttons on theme options page
+
+2013.03.01 - version 1.0.7.4
+	*Fixed blog
+	*Added two new files, taxonomy-wpsc_product_category.php and taxonomy-wpsc_product.php
+	*Fixed currency in cart to be more dynamic
+
+2013.02.18 - version 1.0.7.3
+	*Fixed categories for WP eCommerce (replaced default content.php file with code from content-page.php)
+
+2013.01.29 - version 1.0.7.2
+	*Long-awaited fix for archives…this fixes the "Product in the" text when having WP eCommerce activated and also fixes the category pages for WP eCommerce to take on the store styling (modified index.php and added new archive.php file)
+	*Fixed icons: width and height set to 'auto' and no background image (style.css)
+	*Added 20px margin to the bottom of post thumbnails in blog view
+	
+2013.01.24 - version 1.0.7.1
+	*Fixed conflict with bootstrap glyphicons
+	*Fixed popover tooltip
+
+2013.01.22 - version 1.0.7
+	*Added Bootstrap 2.2.2 css styles
+	*Added Bootstrap 2.2.2 js files
+	*Added new Theme Customizer option to globally turn off comments on pages (content-page.php,template-customizer.php)
+	*Added "no-results.php" template for 404 pages
+	*Removed "px" from inline image widths (core.php)
+	*Fixed post thumbnails in Firefox from overlapping (styles.css)
+	*Fixed current page items styling for mobile in navigation
+	*Fixed "Login Redirect to Homepage" feature so that it won't work if you don't have the account login feature activated. (template-header-functions.php)
+
 2012.11.12 - version 1.0.6.8
 	*Added support for Theme Unit Test enhancements including:
 	*Comments on pages (content-page.php)

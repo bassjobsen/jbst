@@ -701,6 +701,35 @@ function skematik_blog_customizer_options($wp_customize) {
 
 /*
 ==================================================================
+DISCUSSION SETTINGS
+==================================================================
+*/
+add_action('skematik_add_to_customizer','skematik_discussion_customizer_options');
+function skematik_discussion_customizer_options($wp_customize) {
+	global $wp_customize;
+	$wp_customize->add_section( 'discussion_settings', array(
+		'title'          => 'Discussion Settings',
+		'priority'       => 155,
+		'description'    => __( 'Customize the look of your buttons.' , 'skematik'),
+
+	) );
+	
+	/* Page Comments */
+	$wp_customize->add_setting( 'page_comments', array(
+	'default'        => 1,
+	) );
+		
+	$wp_customize->add_control( 'page_comments', array(
+		'label'   => 'Globally remove comments from pages?',
+		'section' => 'discussion_settings',
+		'type'    => 'checkbox',
+		'priority'        => 40,
+	) );
+	
+}// END BLOG SETTINGS
+
+/*
+==================================================================
 FOOTER
 ==================================================================
 */
@@ -710,7 +739,7 @@ function skematik_footer_customizer_options($wp_customize) {
 	/* Add footer section and color styles to customizer */
 	$wp_customize->add_section( 'footer_settings', array(
 		'title'          => 'Footer',
-		'priority'       => 150,
+		'priority'       => 165,
 	) );
 	
 	/* Footer Width */
@@ -855,7 +884,7 @@ function skematik_wpec_customizer_options($wp_customize) {
 	/* Add footer section and color styles to customizer */
 	$wp_customize->add_section( 'wpec_settings', array(
 		'title'          => 'WP e-Commerce',
-		'priority'       => 160,
+		'priority'       => 175,
 	) );
 
 	/* Shop Layout */

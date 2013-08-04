@@ -198,7 +198,7 @@ CUSTOM TYPOGRAPHY
 */
 add_action( 'skematik_add_to_custom_style', 'skematik_typography', 5);
 function skematik_typography() {
-	echo 'a.navbar-brand {font-family:"'.str_replace("+", " ", get_theme_mod('logo_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
+	echo 'a.brand {font-family:"'.str_replace("+", " ", get_theme_mod('logo_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
 	echo 'body {font-family:"'.str_replace("+", " ", get_theme_mod('body_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
 	echo 'h1,h2,h3 {font-family:"'.str_replace("+", " ", get_theme_mod('heading_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
 	echo '.navbar-inner {font-family:"'.str_replace("+", " ", get_theme_mod('navbar_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
@@ -219,6 +219,7 @@ function skematik_logo() {
 	<a class="navbar-brand" href="<?php echo home_url();?>"><?php bloginfo('name');?></a>
 	<?php }
 }
+
 
 
 
@@ -318,7 +319,7 @@ if(get_theme_mod( 'navbar_account', 1 ) == 1) {
 	function skematik_redirect_after_login() {
 	wp_redirect( home_url() ); exit;
 	}
-	if (of_get_option('login_redirect_switch', 0) == 1) {
+	if (of_get_option('login_redirect_switch', 0) == 1 && get_theme_mod( 'navbar_account', 1 ) == 1) {
 		add_action('login_redirect','skematik_redirect_after_login');
 	}
 }	
@@ -370,7 +371,7 @@ function skematik_main_nav() {
     wp_nav_menu( 
     	array( 
     		'menu' => 'main_nav', /* menu name */
-    		'menu_class' => 'nav navbar-nav',
+    		'menu_class' => 'nav',
     		'theme_location' => 'main_nav', /* where in the theme it's assigned */
     		'container' => 'false', /* container class */
     		'fallback_cb' => 'skematik_main_nav_fallback', /* menu fallback */
@@ -382,7 +383,7 @@ do_action( 'skematik_after_main_nav' );
 }
 
 function skematik_main_nav_fallback() {?>
-<ul id="menu-main-navigation" class="nav navbar-nav">
+<ul id="menu-main-navigation" class="nav">
   <?php
   $pages = get_pages(); 
   foreach ( $pages as $page ) {
@@ -971,7 +972,7 @@ function skematik_image($width,$height) {
 		$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
 		?>
 				<a href="<?php echo $large_image_url[0];?>" title="<?php the_title();?>" class="thumbnail" rel="lightbox">
-					<img src="<?php echo $image['url']; ?>" width="<?php echo $w; ?>px" />
+					<img src="<?php echo $image['url']; ?>" width="<?php echo $w; ?>" />
 				</a>
 		<?php
 	} 
@@ -987,7 +988,7 @@ function skematik_image($width,$height) {
 					$large_image_url = wp_get_attachment_image_src($attachment->ID, 'large');
 				 }?>
 				 	<a href="<?php echo $large_image_url[0];?>" rel="lightbox" title="<?php the_title();?>" class="thumbnail" rel="<?php the_title(); ?>">
-						<img src="<?php echo $image['url']; ?>" width="<?php echo $w; ?>px" />
+						<img src="<?php echo $image['url']; ?>" width="<?php echo $w; ?>" />
 					</a>
 		
 			<?php } /*else {?>
@@ -1017,7 +1018,7 @@ function skematik_image_only($width,$height) {
 		else {$image = skematik_resize( $thumb,'' , $w, $h, true);}
 		$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
 		?>
-					<img src="<?php echo $image['url']; ?>" width="<?php echo $w; ?>px" />
+					<img src="<?php echo $image['url']; ?>" width="<?php echo $w; ?>" />
 		<?php
 	} 
 	
@@ -1031,7 +1032,7 @@ function skematik_image_only($width,$height) {
 			        else {$image = skematik_resize( $attachment->ID, '', $w, $h, true );}
 					$large_image_url = wp_get_attachment_image_src($attachment->ID, 'large');
 				 }?>
-						<img src="<?php echo $image['url']; ?>" width="<?php echo $w; ?>px" />
+						<img src="<?php echo $image['url']; ?>" width="<?php echo $w; ?>" />
 		
 			<?php } /*else {?>
 			<a href="<?php echo the_permalink(); ?>" class="thumbnail" rel="<?php the_title(); ?>">
