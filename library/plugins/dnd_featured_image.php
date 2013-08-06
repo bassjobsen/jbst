@@ -47,7 +47,7 @@ http://wordpress.stackexchange.com/questions/33173/plupload-intergration-in-a-me
 	function dgd_addNewMetaBox(){
 		$selected = array('post', 'page', 'product');
 		foreach ($selected as $post_type){
-			add_meta_box('drag_to_upload', __('Featured Image', 'skematik'), 'dgd_upload_meta_box', $post_type, 'side', 'default');
+			add_meta_box('drag_to_upload', __('Featured Image', 'jamedo-bootstrap-start-theme'), 'dgd_upload_meta_box', $post_type, 'side', 'default');
 		}
 	}
 	
@@ -77,7 +77,7 @@ http://wordpress.stackexchange.com/questions/33173/plupload-intergration-in-a-me
 				<div id="plupload-upload-ui" class="hide-if-no-js">
 					<div id="drag-drop-area">
 						<div class="drag-drop-inside">
-							<p class="drag-drop-info"><?php _e('Drop files here', 'skematik'); ?></p>
+							<p class="drag-drop-info"><?php _e('Drop files here', 'jamedo-bootstrap-start-theme'); ?></p>
 							<p><?php _ex('or', 'Uploader: Drop files here - or - Select Files'); ?></p>
 							<p class="drag-drop-buttons"><input id="plupload-browse-button" type="button" value="<?php esc_attr_e('Select Files'); ?>" class="button" /></p>
 						</div>
@@ -99,7 +99,7 @@ http://wordpress.stackexchange.com/questions/33173/plupload-intergration-in-a-me
 				'url'                 => admin_url('admin-ajax.php'),
 				'flash_swf_url'       => includes_url('js/plupload/plupload.flash.swf'),
 				'silverlight_xap_url' => includes_url('js/plupload/plupload.silverlight.xap'),
-				'filters'             => array(array('title' => __('Allowed Files', 'skematik'), 'extensions' => implode(',', array('jpg', 'jpeg', 'png', 'gif', 'bmp')))),
+				'filters'             => array(array('title' => __('Allowed Files', 'jamedo-bootstrap-start-theme'), 'extensions' => implode(',', array('jpg', 'jpeg', 'png', 'gif', 'bmp')))),
 				'multipart'           => true,
 				'urlstream_upload'    => true,
 
@@ -277,7 +277,7 @@ http://wordpress.stackexchange.com/questions/33173/plupload-intergration-in-a-me
 	function dragFeatureAdminPanel($info){ ?>
 		<div class="wrap">
 			<div id="icon-themes" class="icon32"></div>
-			<h2><?php _e('Plugin options for drag to feature', 'skematik'); ?></h2>
+			<h2><?php _e('Plugin options for drag to feature', 'jamedo-bootstrap-start-theme'); ?></h2>
 			
 			<?php
 			
@@ -312,7 +312,7 @@ http://wordpress.stackexchange.com/questions/33173/plupload-intergration-in-a-me
 				
 				<!-- Meta box -->
 				<div id="manage-plugin-options" class="postbox">
-					<h3 class="hndle"><span><?php _e('Available options:', 'skematik'); ?></span></h3>
+					<h3 class="hndle"><span><?php _e('Available options:', 'jamedo-bootstrap-start-theme'); ?></span></h3>
 					<div class="inside" style="padding: 20px 30px;">
 						<form action="" method="post">
 							<strong>Which post types do you want the meta box to display at?</strong><br />

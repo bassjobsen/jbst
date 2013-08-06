@@ -181,8 +181,8 @@ Generator Popup Box
 							?>
 						</select>
 						<div id="su-generator-tools">
-							<a href="<?php _e( 'http://skematiktheme.com', 'skematik' ); ?>" target="_blank" title="<?php _e( 'Tutorial', 'shortcodes-ultimate' ); ?>"><?php _e( 'Tutorial', 'shortcodes-ultimate' ); ?></a> /
-							<a href="<?php _e( 'http://skematiktheme.com', 'skematik' ); ?>" target="_blank" title="<?php _e( 'Support', 'shortcodes-ultimate' ); ?>"><?php _e( 'Support', 'shortcodes-ultimate' ); ?></a>
+							<a href="<?php _e( 'http://skematiktheme.com', 'jamedo-bootstrap-start-theme' ); ?>" target="_blank" title="<?php _e( 'Tutorial', 'shortcodes-ultimate' ); ?>"><?php _e( 'Tutorial', 'shortcodes-ultimate' ); ?></a> /
+							<a href="<?php _e( 'http://skematiktheme.com', 'jamedo-bootstrap-start-theme' ); ?>" target="_blank" title="<?php _e( 'Support', 'shortcodes-ultimate' ); ?>"><?php _e( 'Support', 'shortcodes-ultimate' ); ?></a>
 						</div>
 					</div>
 					<div id="su-generator-settings"></div>

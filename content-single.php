@@ -19,13 +19,13 @@
 					<div class="entry-content">
 						<?php skematik_single_thumbnail(800);?>
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'skematik' ), 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'jamedo-bootstrap-start-theme' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
 				
 					<footer class="entry-meta">
 						<?php
 							/* translators: used between list items, there is a space after the comma */
-							$category_list = get_the_category_list( __( ', ', 'skematik' ) );
+							$category_list = get_the_category_list( __( ', ', 'jamedo-bootstrap-start-theme' ) );
 				
 							/* translators: used between list items, there is a space after the comma */
 							$tag_list = get_the_tag_list( '', ', ' );
@@ -33,17 +33,17 @@
 							if ( ! skematik_categorized_blog() ) {
 								// This blog only has 1 category so we just need to worry about tags in the meta text
 								if ( '' != $tag_list ) {
-									$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'skematik' );
+									$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'jamedo-bootstrap-start-theme' );
 								} else {
-									$meta_text = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'skematik' );
+									$meta_text = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'jamedo-bootstrap-start-theme' );
 								}
 				
 							} else {
 								// But this blog has loads of categories so we should probably display them here
 								if ( '' != $tag_list ) {
-									$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'skematik' );
+									$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'jamedo-bootstrap-start-theme' );
 								} else {
-									$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'skematik' );
+									$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'jamedo-bootstrap-start-theme' );
 								}
 				
 							} // end check for categories on this blog
@@ -57,7 +57,7 @@
 							);
 						?>
 				
-						<?php edit_post_link( __( 'Edit', 'skematik' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php edit_post_link( __( 'Edit', 'jamedo-bootstrap-start-theme' ), '<span class="edit-link">', '</span>' ); ?>
 					</footer><!-- .entry-meta -->
 				</article><!-- #post-<?php the_ID(); ?> -->
 			<?php endwhile; ?>

@@ -55,7 +55,7 @@ function skematik_doc_title() {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'skematik' ), max( $paged, $page ) );
+		echo ' | ' . sprintf( __( 'Page %s', 'jamedo-bootstrap-start-theme' ), max( $paged, $page ) );
 	?>
 </title>
 <?php

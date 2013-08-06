@@ -152,10 +152,10 @@ add_action( 'admin_init', 'skematik_check_for_update');
 	function skematik_check_for_update() {
 	require_once( get_template_directory() . '/library/updates/theme-update-checker.php' );
 	$example_update_checker = new ThemeUpdateChecker(
-		'skematik',                                            //Theme folder name, AKA "slug". 
+		'jamedo-bootstrap-start-theme',                                            //Theme folder name, AKA "slug". 
 		'http://skematiktheme.com/services/updates/skematik/info.json' //URL of the metadata file.
 	);
 }*/
 
-require_once(get_template_directory() .'/library/updates/wp-updates-theme.php');
-new WPUpdatesThemeUpdater( 'http://wp-updates.com/api/1/theme', 75, basename(get_template_directory()) );
+//require_once(get_template_directory() .'/library/updates/wp-updates-theme.php');
+//new WPUpdatesThemeUpdater( 'http://wp-updates.com/api/1/theme', 75, basename(get_template_directory()) );

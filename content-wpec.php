@@ -13,7 +13,7 @@ global $wp_query;
 					<?php skematik_page_title();?>
 					<div class="entry-content">
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'skematik' ), 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'jamedo-bootstrap-start-theme' ), 'after' => '</div>' ) ); ?>
 					</div><!-- /.entry-content -->
 				</article><!-- /#post-<?php the_ID(); ?> -->
 			<?php endwhile; // end of the loop. ?>

@@ -76,10 +76,10 @@ if($ftr_widgets > 0) {
 		echo '<div class="col-lg-'.$span.'">';
 			if ( ! dynamic_sidebar( 'footer-widget-one' ) ) :
 				echo '<h4>';
-				_e( 'Footer One Widget', 'skematik' );
+				_e( 'Footer One Widget', 'jamedo-bootstrap-start-theme' );
 				echo '</h4>';
 				echo '<p>';
-				_e( 'You have activated a Footer Widget! You can deactivate this in the Theme Customizer or put content in it under "Appearance > Widgets".', 'skematik' );
+				_e( 'You have activated a Footer Widget! You can deactivate this in the Theme Customizer or put content in it under "Appearance > Widgets".', 'jamedo-bootstrap-start-theme' );
 				echo '</p>';
 			endif;
 		echo '</div>';
@@ -87,10 +87,10 @@ if($ftr_widgets > 0) {
 			echo '<div class="col-lg-'.$span.'">';
 				if ( ! dynamic_sidebar( 'footer-widget-two' ) ) :
 					echo '<h4>';
-					_e( 'Footer Two Widget', 'skematik' );
+					_e( 'Footer Two Widget', 'jamedo-bootstrap-start-theme' );
 					echo '</h4>';
 					echo '<p>';
-					_e( 'You have activated a second Footer Widget! You can deactivate this in the Theme Customizer or put content in it under "Appearance > Widgets".', 'skematik' );
+					_e( 'You have activated a second Footer Widget! You can deactivate this in the Theme Customizer or put content in it under "Appearance > Widgets".', 'jamedo-bootstrap-start-theme' );
 					echo '</p>';
 				endif;
 			echo '</div>';
@@ -99,10 +99,10 @@ if($ftr_widgets > 0) {
 			echo '<div class="col-lg-'.$span.'">';
 				if ( ! dynamic_sidebar( 'footer-widget-three' ) ) :
 					echo '<h4>';
-					_e( 'Footer Three Widget', 'skematik' );
+					_e( 'Footer Three Widget', 'jamedo-bootstrap-start-theme' );
 					echo '</h4>';
 					echo '<p>';
-					_e( 'You have activated a third Footer Widget! You can deactivate this in the Theme Customizer or put content in it under "Appearance > Widgets".', 'skematik' );
+					_e( 'You have activated a third Footer Widget! You can deactivate this in the Theme Customizer or put content in it under "Appearance > Widgets".', 'jamedo-bootstrap-start-theme' );
 					echo '</p>';
 				endif;
 			echo '</div>';
@@ -111,10 +111,10 @@ if($ftr_widgets > 0) {
 			echo '<div class="col-lg-'.$span.'">';
 				if ( ! dynamic_sidebar( 'footer-widget-four' ) ) :
 					echo '<h4>';
-					_e( 'Footer Four Widget', 'skematik' );
+					_e( 'Footer Four Widget', 'jamedo-bootstrap-start-theme' );
 					echo '</h4>';
 					echo '<p>';
-					_e( 'You have activated a fourth Footer Widget! You can deactivate this in the Theme Customizer or put content in it under "Appearance > Widgets".', 'skematik' );
+					_e( 'You have activated a fourth Footer Widget! You can deactivate this in the Theme Customizer or put content in it under "Appearance > Widgets".', 'jamedo-bootstrap-start-theme' );
 					echo '</p>';
 				endif;
 			echo '</div>';
@@ -133,7 +133,7 @@ FOOTER CREDITS
 function skematik_custom_credits() {
 	if(get_theme_mod('footer_credits') <> "") {echo get_theme_mod('footer_credits');}
 	else {?>
-		<?php printf( __( '&copy;', 'skematik' )); ?> <?php echo date('Y');?> <?php echo bloginfo('name');?><span class="sep"> | </span><a target="_blank" href="<?php esc_attr_e( 'https://github.com/bassjobsen/jamedo-bootstrap-start-theme', 'skematik' ); ?>" title="<?php esc_attr_e( 'Powered by Jamedo\'s Bootstrap Start Theme', 'skematik' ); ?>" rel="generator"><?php printf( __( 'Powered by Jamedo\'s Bootstrap Start Theme', 'skematik' ), 'skematik' ); ?></a>
+		<?php printf( __( '&copy;', 'jamedo-bootstrap-start-theme' )); ?> <?php echo date('Y');?> <?php echo bloginfo('name');?><span class="sep"> | </span><a target="_blank" href="<?php esc_attr_e( 'https://github.com/bassjobsen/jamedo-bootstrap-start-theme', 'jamedo-bootstrap-start-theme' ); ?>" title="<?php esc_attr_e( 'Powered by Jamedo\'s Bootstrap Start Theme', 'jamedo-bootstrap-start-theme' ); ?>" rel="generator"><?php printf( __( 'Powered by Jamedo\'s Bootstrap Start Theme', 'jamedo-bootstrap-start-theme' ), 'jamedo-bootstrap-start-theme' ); ?></a>
 	<?php }
 }
 

@@ -14,10 +14,10 @@
 					<?php skematik_page_title();?>
 					<div class="entry-content">
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'skematik' ), 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'jamedo-bootstrap-start-theme' ), 'after' => '</div>' ) ); ?>
 					</div><!-- /.entry-content -->
 
-					<?php edit_post_link( __( 'Edit', 'skematik' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_post_link( __( 'Edit', 'jamedo-bootstrap-start-theme' ), '<span class="edit-link">', '</span>' ); ?>
 
 				</article><!-- /#post-<?php the_ID(); ?> -->
 			<?php endwhile; // end of the loop. ?>

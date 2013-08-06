@@ -43,7 +43,7 @@ function skematik_bp_account_profile_link() {
 	echo '<li><a href="';
 	echo home_url().'/wp-admin/profile.php';
 	echo '">';
-	echo _e( 'My Profile', 'skematik' );
+	echo _e( 'My Profile', 'jamedo-bootstrap-start-theme' );
 	echo '</a></li>';
 }
 add_action( 'skematik_nav_profile_dropdown', 'skematik_bp_account_profile_link', 10);

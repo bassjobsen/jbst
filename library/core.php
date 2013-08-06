@@ -19,7 +19,7 @@ function skematik_core_setup() {
 	require_once locate_template('/library/shortcodes/shortcodes-init.php');
 
 	/* Make theme available for translation. Translations can be filed in the /languages/ directory. You can load a theme text domain in the theme's functions file. */
-	load_textdomain( 'skematik', get_template_directory() . '/languages' );
+	load_textdomain( 'jamedo-bootstrap-start-theme', get_template_directory() . '/languages' );
 }
 endif; // skematik_setup
 
@@ -44,19 +44,19 @@ function skematik_options_add_before() {
 		"type" => "heading" );
 
 	$options[] = array(
-		'desc' => __('<h1>Welcome to Skematik.</h1><p class="about-description">Congratulations! You\'ve just activated one of the most advanced theme frameworks on the planet! The Skematik Framework allows you to create robust sites without touching any code through the use of our Layout Engine, Shortcodes and Theme Customizer. For developers, this framework gives you all the tools you need to create amazing sites for your clients with built in support for theme options, metaboxes, and compatibility with BuddyPress and the leading eCommerce platforms (WP e-Commerce, WooCommerce and JigoShop).</p>
+		'desc' => __('<h1>Welcome to Jamedo\'s Bootstrap Start Theme</h1><p class="about-description">Congratulations! You\'ve just activated one of the most advanced theme frameworks on the planet! The Jamedo\'s Bootstrap Framework allows you to create robust sites without touching any code through the use of our Layout Engine, Shortcodes and Theme Customizer. For developers, this framework gives you all the tools you need to create amazing sites for your clients with built in support for theme options, metaboxes, and compatibility with BuddyPress and the leading eCommerce platforms (WP e-Commerce, WooCommerce and JigoShop).</p>
 		<div class="of-divider"></div>
-		<div class="of-col-half"><h4>Get First-Class Support</h4><p>We take support very seriously and stand by our product. However, some people will still want to take advantage of the opportunity to get professional directly from the folks who make the product. If that\'s you, we have a great option to purchase our <strong><a href="http://skematiktheme.com/shop/skematik" target="_blank">Lifetime Support & Documentation</a></strong> package.</p></div>
-		<div class="of-col-half last"><h4>Get Child Themes &amp; Extensions</h4><p>We\'re currently working on some great new child themes and extensions that build on top of the Skematik Framework. In fact you can see our library of <strong><a href="http://skematiktheme.com/product-category/child-themes/" target="_blank">Child Themes right here</a></strong> as well as our <strong><a href="http://skematiktheme.com/product-category/extensions/" target="_blank">Extensions right here</a></strong>. Stay tuned to <strong><a href="http://skematiktheme.com/blog/" target="_blank">the blog</a></strong> for more exciting announcements coming VERY soon!.</p></div>
+		<!--div class="of-col-half"><h4>Get First-Class Support</h4><p>We take support very seriously and stand by our product. However, some people will still want to take advantage of the opportunity to get professional directly from the folks who make the product. If that\'s you, we have a great option to purchase our <strong><a href="http://skematiktheme.com/shop/skematik" target="_blank">Lifetime Support & Documentation</a></strong> package.</p></div>
+		<div class="of-col-half last"><h4>Get Child Themes &amp; Extensions</h4><p>We\'re currently working on some great new child themes and extensions that build on top of the Skematik Framework. In fact you can see our library of <strong><a href="http://skematiktheme.com/product-category/child-themes/" target="_blank">Child Themes right here</a></strong> as well as our <strong><a href="http://skematiktheme.com/product-category/extensions/" target="_blank">Extensions right here</a></strong>. Stay tuned to <strong><a href="http://skematiktheme.com/blog/" target="_blank">the blog</a></strong> for more exciting announcements coming VERY soon!.</p></div-->
 		<div class="of-clear"></div>
 		<div class="of-divider"></div>
-		<div class="of-col-third"><h4>Getting Started</h4><p>While Skematik handles most things behind the scenes and activates some default settings, there are just a couple of things you\'ll want to do right away. First, click on the "Setup" tab above to view which Core Features are turned on by default and deactivate any that you don\'t want. Then make sure you save your options at the bottom of the screen once. That should be all you need to get going!.</p></div>
-		<div class="of-col-third"><h4>Theme Customizer</h4><p>Skematik makes extensive use of the <strong><a href="'.admin_url().'customize.php">Theme Customizer</a></strong> to help you design a unique look for your site. Using this tool, you can upload a logo, change colors, modify buttons, adjust image sizes and even activate widgets all in real-time! Wanna try it out? You\'ll probably at least want to save one of your custom menus to the navigation, so <strong><a href="'.admin_url().'customize.php">click here to see it in action.</a></strong></p></div>
-		<div class="of-col-third last"><h4>Shortcodes</h4><p>Skematik comes bundled with an extensive library of shortcodes for adding unique content elements like columns, buttons, tabs and carousels. Best of all, you don\'t have to remember any of them as we have included a special shortcode generator just above the editor. <strong>Plus...Skematik\'s shortcodes work in widgets too!</strong>.</p></div>
+		<div class="of-col-third"><h4>Getting Started</h4><p>While Jamedo\'s Bootstrap Start Theme  handles most things behind the scenes and activates some default settings, there are just a couple of things you\'ll want to do right away. First, click on the "Setup" tab above to view which Core Features are turned on by default and deactivate any that you don\'t want. Then make sure you save your options at the bottom of the screen once. That should be all you need to get going!.</p></div>
+		<div class="of-col-third"><h4>Theme Customizer</h4><p>Jamedo\'s Bootstrap Start Theme  makes extensive use of the <strong><a href="'.admin_url().'customize.php">Theme Customizer</a></strong> to help you design a unique look for your site. Using this tool, you can upload a logo, change colors, modify buttons, adjust image sizes and even activate widgets all in real-time! Wanna try it out? You\'ll probably at least want to save one of your custom menus to the navigation, so <strong><a href="'.admin_url().'customize.php">click here to see it in action.</a></strong></p></div>
+		<div class="of-col-third last"><h4>Shortcodes</h4><p>Jamedo\'s Bootstrap Start Theme  comes bundled with an extensive library of shortcodes for adding unique content elements like columns, buttons, tabs and carousels. Best of all, you don\'t have to remember any of them as we have included a special shortcode generator just above the editor. <strong>Plus...Jamedo\'s Bootstrap Start Theme \'s shortcodes work in widgets too!</strong>.</p></div>
 				<div class="of-clear"></div>
 				<div class="of-col-third"><h4>Layout Engine</h4><p>Rather than resorting to page templates, we\'ve created a layout engine that lets you choose between four different base layouts for use on both pages and posts. In addition, you can even use the layout tab in this Theme Options panel to designate default layouts for different cases like blog archives, search pages and even product layouts (if you\'re using eCommerce).</p></div>
-		<div class="of-col-third"><h4>eCommerce Options</h4><p>Need some selling capabilities? Perhaps raising funds for a cause, selling tickets for an event, or even running a full-blown eCommerce site? Skematik is the perfect solution for you as it has full support for the three leading eCommerce platforms on WordPress: <strong><a href="http://wordpress.org/extend/plugins/wp-e-commerce/" target="_blank">WP e-Commerce</a></strong>, <strong><a href="http://wordpress.org/extend/plugins/woocommerce/" target="_blank">WooCommerce</a></strong> and <strong><a href="http://wordpress.org/extend/plugins/jigoshop/" target="_blank">JigoShop</a></strong>. Activate any one of these plugins for the backend of your store and Skematik will handle the frontend like a champ!.</p></div>
-		<div class="of-col-third last"><h4>BuddyPress Compatibility</h4><p>Need some robust social features without the hassle? Setting up BuddyPress with Skematik is pretty easy. Simply install and activate both <strong><a href="http://wordpress.org/extend/plugins/buddypress/" target="_blank">BuddyPress</a></strong> and the <strong><a href="http://wordpress.org/extend/plugins/bp-template-pack/" target="_blank">BuddyPress Template Pack</a></strong>. Then, run the Template Pack to move over your BuddyPress files. That\'s it! Skematik includes some unique BuddyPress functions as well as special content wrappers to make sure that all BuddyPress content fits neatly inside.</p></div>
+		<div class="of-col-third"><h4>eCommerce Options</h4><p>Need some selling capabilities? Perhaps raising funds for a cause, selling tickets for an event, or even running a full-blown eCommerce site? Jamedo\'s Bootstrap Start Theme  is the perfect solution for you as it has full support for the three leading eCommerce platforms on WordPress: <strong><a href="http://wordpress.org/extend/plugins/wp-e-commerce/" target="_blank">WP e-Commerce</a></strong>, <strong><a href="http://wordpress.org/extend/plugins/woocommerce/" target="_blank">WooCommerce</a></strong> and <strong><a href="http://wordpress.org/extend/plugins/jigoshop/" target="_blank">JigoShop</a></strong>. Activate any one of these plugins for the backend of your store and Jamedo\'s Bootstrap Start Theme  will handle the frontend like a champ!.</p></div>
+		<div class="of-col-third last"><h4>BuddyPress Compatibility</h4><p>Need some robust social features without the hassle? Setting up BuddyPress with Jamedo\'s Bootstrap Start Theme  is pretty easy. Simply install and activate both <strong><a href="http://wordpress.org/extend/plugins/buddypress/" target="_blank">BuddyPress</a></strong> and the <strong><a href="http://wordpress.org/extend/plugins/bp-template-pack/" target="_blank">BuddyPress Template Pack</a></strong>. Then, run the Template Pack to move over your BuddyPress files. That\'s it! Jamedo\'s Bootstrap Start Theme  includes some unique BuddyPress functions as well as special content wrappers to make sure that all BuddyPress content fits neatly inside.</p></div>
 		<div class="of-clear"></div>'),
 		'type' => 'info' );
  
@@ -265,7 +265,7 @@ function skematik_account_profile_link() {
 	echo '<li><a href="';
 	echo home_url().'/wp-admin/profile.php';
 	echo '">';
-	echo _e( 'My Profile', 'skematik' );
+	echo _e( 'My Profile', 'jamedo-bootstrap-start-theme' );
 	echo '</a></li>';
 }
 add_action( 'skematik_nav_profile_dropdown', 'skematik_account_profile_link', 10);
@@ -276,7 +276,7 @@ function skematik_account_signout_link() {
 	echo '<li class="divider"></li><li><a href="';
 	echo wp_logout_url(home_url());
 	echo '">';
-	echo _e( 'Sign Out', 'skematik' );
+	echo _e( 'Sign Out', 'jamedo-bootstrap-start-theme' );
 	echo '</a></li>';
 }
 add_action( 'skematik_nav_profile_dropdown', 'skematik_account_signout_link', 20);
@@ -290,17 +290,17 @@ function skematik_nav_login_form() {
 ?>
 	      <li>
 	        <form name="loginform" id="navloginform" action="<?php echo home_url(); ?>/wp-login.php" method="post">
-					<label><?php _e( 'Username', 'skematik' ); ?><br />
+					<label><?php _e( 'Username', 'jamedo-bootstrap-start-theme' ); ?><br />
 					<input type="text" name="log" id="user_login" class="input" value="" size="20" tabindex="10" /></label>
 
-					<label><?php _e( 'Password', 'skematik' ); ?><br />
+					<label><?php _e( 'Password', 'jamedo-bootstrap-start-theme' ); ?><br />
 					<input type="password" name="pwd" id="user_pass" class="input" value="" size="20" tabindex="20" /></label>
-				<label><input name="rememberme" type="checkbox" id="rememberme" value="forever" tabindex="90" /> <?php _e( 'Remember Me', 'skematik' ); ?></label> 
+				<label><input name="rememberme" type="checkbox" id="rememberme" value="forever" tabindex="90" /> <?php _e( 'Remember Me', 'jamedo-bootstrap-start-theme' ); ?></label> 
 					<input type="submit" name="wp-submit" id="wp-submit" class="btn <?php skematik_button_class();?>" value="Log In" tabindex="100" />
 					<input type="hidden" name="redirect_to" value="<?php echo home_url(); ?>/wp-admin/" />
 			
 					<input type="hidden" name="testcookie" value="1" />
-					 <a href="<?php echo home_url(); ?>/wp-login.php?action=lostpassword" class="lost-password" title="Password Lost and Found"><?php _e( 'Lost Password?', 'skematik' ); ?></a>
+					 <a href="<?php echo home_url(); ?>/wp-login.php?action=lostpassword" class="lost-password" title="Password Lost and Found"><?php _e( 'Lost Password?', 'jamedo-bootstrap-start-theme' ); ?></a>
 			</form>	      
 	      	
 	      </li>
@@ -350,7 +350,7 @@ NAVIGATION SEARCH
 */
 function skematik_nav_search() {?>
 		<form class="navbar-form pull-right navbar-search"  role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-		<input class="form-control col-lg-8 search-query" name="s" id="s" type="text" autocomplete="off" placeholder="<?php _e( 'Search', 'skematik' ); ?>">
+		<input class="form-control col-lg-8 search-query" name="s" id="s" type="text" autocomplete="off" placeholder="<?php _e( 'Search', 'jamedo-bootstrap-start-theme' ); ?>">
 		</form>
 <?php
 }
@@ -511,19 +511,19 @@ function bones_comments($comment, $args, $depth) {
 					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
 				</div>
 				<div class="span10 comment-text">
-					<?php printf(__('<h4>%s</h4>','skematik'), get_comment_author_link()) ?>
+					<?php printf(__('<h4>%s</h4>','jamedo-bootstrap-start-theme'), get_comment_author_link()) ?>
 					
                     
                     <?php if ($comment->comment_approved == '0') : ?>
        					<div class="alert-message success">
-          				<p><?php _e('Your comment is awaiting moderation.','skematik') ?></p>
+          				<p><?php _e('Your comment is awaiting moderation.','jamedo-bootstrap-start-theme') ?></p>
           				</div>
 					<?php endif; ?>
                     
                     <?php comment_text() ?>
                     
                     <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
-                    <?php edit_comment_link(__('Edit','skematik'),'<span class="edit-comment btn btn-mini '.get_theme_mod( 'default_button_style', 'btn-primary' ).'"><i class="icon-white icon-pencil"></i>','</span>') ?>
+                    <?php edit_comment_link(__('Edit','jamedo-bootstrap-start-theme'),'<span class="edit-comment btn btn-mini '.get_theme_mod( 'default_button_style', 'btn-primary' ).'"><i class="icon-white icon-pencil"></i>','</span>') ?>
 					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
                 </div>
 			</div>
@@ -673,22 +673,22 @@ function skematik_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="assistive-text"><?php _e( 'Post navigation', 'skematik' ); ?></h1>
+		<h1 class="assistive-text"><?php _e( 'Post navigation', 'jamedo-bootstrap-start-theme' ); ?></h1>
 <ul class="pager">
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'skematik' ) . '</span> Previous' ); ?>
-		<?php next_post_link( '<li class="next">%link</li>', 'Next <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'skematik' ) . '</span>' ); ?>
+		<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'jamedo-bootstrap-start-theme' ) . '</span> Previous' ); ?>
+		<?php next_post_link( '<li class="next">%link</li>', 'Next <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'jamedo-bootstrap-start-theme' ) . '</span>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 		<?php if ( get_next_posts_link() ) : ?>
-		<li class="previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'skematik' ) ); ?></li>
+		<li class="previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'jamedo-bootstrap-start-theme' ) ); ?></li>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-		<li class="next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'skematik' ) ); ?></li>
+		<li class="next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'jamedo-bootstrap-start-theme' ) ); ?></li>
 		<?php endif; ?>
 
 	<?php endif; ?>
@@ -772,7 +772,7 @@ function skematik_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'skematik' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'skematik' ), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', 'jamedo-bootstrap-start-theme' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'jamedo-bootstrap-start-theme' ), ' ' ); ?></p>
 	<?php
 			break;
 		default :
@@ -782,10 +782,10 @@ function skematik_comment( $comment, $args, $depth ) {
 			<footer>
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 40 ); ?>
-					<?php printf( __( '%s <span class="says">says:</span>', 'skematik' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( __( '%s <span class="says">says:</span>', 'jamedo-bootstrap-start-theme' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author .vcard -->
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em><?php _e( 'Your comment is awaiting moderation.', 'skematik' ); ?></em>
+					<em><?php _e( 'Your comment is awaiting moderation.', 'jamedo-bootstrap-start-theme' ); ?></em>
 					<br />
 				<?php endif; ?>
 
@@ -793,9 +793,9 @@ function skematik_comment( $comment, $args, $depth ) {
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
 					<?php
 						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'skematik' ), get_comment_date(), get_comment_time() ); ?>
+						printf( __( '%1$s at %2$s', 'jamedo-bootstrap-start-theme' ), get_comment_date(), get_comment_time() ); ?>
 					</time></a>
-					<?php edit_comment_link( __( '(Edit)', 'skematik' ), ' ' );
+					<?php edit_comment_link( __( '(Edit)', 'jamedo-bootstrap-start-theme' ), ' ' );
 					?>
 				</div><!-- .comment-meta .commentmetadata -->
 			</footer>
@@ -825,13 +825,13 @@ if ( ! function_exists( 'skematik_posted_on' ) ) :
  * @since skematik 1.0
  */
 function skematik_posted_on() {
-	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'skematik' ),
+	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'jamedo-bootstrap-start-theme' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'skematik' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'jamedo-bootstrap-start-theme' ), get_the_author() ) ),
 		esc_html( get_the_author() )
 	);
 }

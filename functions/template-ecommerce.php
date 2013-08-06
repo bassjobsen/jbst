@@ -84,21 +84,21 @@ $skematikecommerce = true;
 		$id = get_option('woocommerce_myaccount_page_id');
 		echo get_permalink( $id );
 		echo '">';
-		echo _e( 'My Account', 'skematik' );
+		echo _e( 'My Account', 'jamedo-bootstrap-start-theme' );
 		echo '</a></li>';
 		
 		echo '<li><a href="';
 		$passid = get_option('woocommerce_change_password_page_id');
 		echo get_permalink( $passid );
 		echo '">';
-		echo _e( 'Change Password', 'skematik' );
+		echo _e( 'Change Password', 'jamedo-bootstrap-start-theme' );
 		echo '</a></li>';
 
 		echo '<li><a href="';
 		$editid = get_option('woocommerce_edit_address_page_id');
 		echo get_permalink( $editid );
 		echo '">';
-		echo _e( 'Edit Address', 'skematik' );
+		echo _e( 'Edit Address', 'jamedo-bootstrap-start-theme' );
 		echo '</a></li>';
 	}
 	add_action( 'skematik_nav_profile_dropdown', 'skematik_woo_account_profile_link', 10);
@@ -212,21 +212,21 @@ $skematikecommerce = true;
 		$id = get_option('jigoshop_myaccount_page_id');
 		echo get_permalink( $id );
 		echo '">';
-		echo _e( 'My Account', 'skematik' );
+		echo _e( 'My Account', 'jamedo-bootstrap-start-theme' );
 		echo '</a></li>';
 		
 		echo '<li><a href="';
 		$passid = get_option('jigoshop_change_password_page_id');
 		echo get_permalink( $passid );
 		echo '">';
-		echo _e( 'Change Password', 'skematik' );
+		echo _e( 'Change Password', 'jamedo-bootstrap-start-theme' );
 		echo '</a></li>';
 
 		echo '<li><a href="';
 		$editid = get_option('jigoshop_edit_address_page_id');
 		echo get_permalink( $editid );
 		echo '">';
-		echo _e( 'Edit Address', 'skematik' );
+		echo _e( 'Edit Address', 'jamedo-bootstrap-start-theme' );
 		echo '</a></li>';
 	}
 	add_action( 'skematik_nav_profile_dropdown', 'skematik_jigo_account_profile_link', 10);
@@ -370,10 +370,10 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 		?>
 		<ul id="myTab" class="nav nav-tabs">
               <?php if ($attachments) :?>
-              <li class="active"><a href="#addimages" data-toggle="tab"><?php _e( 'Additional Images', 'skematik' );?></a></li>
+              <li class="active"><a href="#addimages" data-toggle="tab"><?php _e( 'Additional Images', 'jamedo-bootstrap-start-theme' );?></a></li>
               <?php endif;?>
               <?php if ( wpsc_the_product_additional_description() ) : ?>
-              	<li class="<?php if (!$attachments) {echo 'active';}?>"><a href="#proddesc" data-toggle="tab"><?php _e( 'Additional Description', 'skematik' );?></a></li>
+              	<li class="<?php if (!$attachments) {echo 'active';}?>"><a href="#proddesc" data-toggle="tab"><?php _e( 'Additional Description', 'jamedo-bootstrap-start-theme' );?></a></li>
               <?php endif;?>
               <?php do_action( 'skematik_wpec_prod_add_tabs' );?>
         </ul>
@@ -385,7 +385,7 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 			$tabs = 1;
 			echo '<div class="tab-pane fade active in" id="addimages">';
 			echo '<div class="skematik-wpec-product-add-images"><h3>';
-			//_e( 'Additional Images', 'skematik' );
+			//_e( 'Additional Images', 'jamedo-bootstrap-start-theme' );
 			echo '</h3>';
 			$thumbwidth = 125;
 			$thumbheight = 125;
@@ -438,7 +438,7 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 		echo '<li><a href="';
 		echo get_option('user_account_url');
 		echo '">';
-		echo _e( 'My Account', 'skematik' );
+		echo _e( 'My Account', 'jamedo-bootstrap-start-theme' );
 		echo '</a></li>';
 	}
 	add_action( 'skematik_nav_profile_dropdown', 'skematik_wpec_account_profile_link', 11);

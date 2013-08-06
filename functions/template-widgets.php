@@ -62,11 +62,11 @@ class Skematik_Menu_Widget extends WP_Widget {
 		}
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'skematik') ?></label>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'jamedo-bootstrap-start-theme') ?></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('nav_menu'); ?>"><?php _e('Select Menu:', 'skematik'); ?></label>
+			<label for="<?php echo $this->get_field_id('nav_menu'); ?>"><?php _e('Select Menu:', 'jamedo-bootstrap-start-theme'); ?></label>
 			<select id="<?php echo $this->get_field_id('nav_menu'); ?>" name="<?php echo $this->get_field_name('nav_menu'); ?>">
 		<?php
 			foreach ( $menus as $menu ) {
@@ -78,7 +78,7 @@ class Skematik_Menu_Widget extends WP_Widget {
 		</p>
 		
 		<p>
-		<label for="<?php echo $this->get_field_id('show_info'); ?>"><?php _e('Select Style:', 'skematik'); ?></label>
+		<label for="<?php echo $this->get_field_id('show_info'); ?>"><?php _e('Select Style:', 'jamedo-bootstrap-start-theme'); ?></label>
 		<select id="<?php echo $this->get_field_id( 'show_info' ); ?>" name="<?php echo $this->get_field_name( 'show_info' ); ?>">
 		<option <?php if ($instance['show_info'] == 'nav-tabs') {echo 'selected="selected" ';}?>value="nav-tabs">Tabs</option>
 		<option <?php if ($instance['show_info'] == 'nav-pills') {echo 'selected="selected" ';}?>value="nav-pills">Pills</option>

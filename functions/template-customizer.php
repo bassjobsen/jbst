@@ -114,7 +114,7 @@ function skematik_logo_customizer_options($wp_customize) {
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo_image', array(
-		'label'    => __( 'Logo Image', 'skematik'),
+		'label'    => __( 'Logo Image', 'jamedo-bootstrap-start-theme'),
 		'section'  => 'site_logo_settings',
 		'settings' => 'logo_image',
 	) ) );
@@ -327,7 +327,7 @@ function skematik_background_customizer_options($wp_customize) {
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'site_background_image', array(
-		'label'    => __( 'Background Image' , 'skematik'),
+		'label'    => __( 'Background Image' , 'jamedo-bootstrap-start-theme'),
 		'section'  => 'site_background_settings',
 		'settings' => 'site_background_image',
 	) ) );
@@ -398,7 +398,7 @@ function skematik_typography_customizer_options($wp_customize) {
 	$wp_customize->add_section( 'text_settings', array(
 		'title'          => 'Typography',
 		'priority'       => 135,
-		'description'    => __( 'Some basic font choices for your theme.' , 'skematik'),
+		'description'    => __( 'Some basic font choices for your theme.' , 'jamedo-bootstrap-start-theme'),
 
 	) );
 
@@ -466,7 +466,7 @@ function skematik_colors_customizer_options($wp_customize) {
 	$wp_customize->add_section( 'color_settings', array(
 		'title'          => 'Color Scheme',
 		'priority'       => 140,
-		'description'    => __( 'Your theme supports a static front page.', 'skematik' ),
+		'description'    => __( 'Your theme supports a static front page.', 'jamedo-bootstrap-start-theme' ),
 	) );
 	
 	/* Headings Color */
@@ -565,7 +565,7 @@ function skematik_buttons_customizer_options($wp_customize) {
 	$wp_customize->add_section( 'button_settings', array(
 		'title'          => 'Buttons',
 		'priority'       => 140,
-		'description'    => __( 'Customize the look of your buttons.' , 'skematik'),
+		'description'    => __( 'Customize the look of your buttons.' , 'jamedo-bootstrap-start-theme'),
 	) );	
 	
 	/* Default Button */
@@ -600,7 +600,7 @@ function skematik_blog_customizer_options($wp_customize) {
 	$wp_customize->add_section( 'blog_settings', array(
 		'title'          => 'Blog Settings',
 		'priority'       => 145,
-		'description'    => __( 'Customize the look of your buttons.' , 'skematik'),
+		'description'    => __( 'Customize the look of your buttons.' , 'jamedo-bootstrap-start-theme'),
 
 	) );
 
@@ -710,7 +710,7 @@ function skematik_discussion_customizer_options($wp_customize) {
 	$wp_customize->add_section( 'discussion_settings', array(
 		'title'          => 'Discussion Settings',
 		'priority'       => 155,
-		'description'    => __( 'Customize the look of your buttons.' , 'skematik'),
+		'description'    => __( 'Customize the look of your buttons.' , 'jamedo-bootstrap-start-theme'),
 
 	) );
 	
@@ -782,7 +782,7 @@ function skematik_footer_customizer_options($wp_customize) {
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'footer_background_image', array(
-		'label'    => __( 'Footer Background Image (full width only)' , 'skematik'),
+		'label'    => __( 'Footer Background Image (full width only)' , 'jamedo-bootstrap-start-theme'),
 		'section'  => 'footer_settings',
 		'settings' => 'footer_background_image',
 		'priority'       => 10,
