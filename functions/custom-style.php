@@ -111,8 +111,9 @@ if($ftr_link_color){echo 'footer.site-footer a, footer.site-footer a:hover {colo
 if($ftr_widget_border_color){echo 'footer .widget li, footer .shoppingcart table td, footer .shoppingcart table th,.site-footer .widget .nav-tabs.nav-stacked > li > a {border-color:' .$ftr_widget_border_color.';}.site-footer .widget .nav-tabs.nav-stacked > li > a:hover {background:' .$ftr_widget_border_color.';}';}
 
 if(get_theme_mod( 'footer_width', 'full-width' ) == 'cont-width') {
-	echo 'footer.site-footer {padding:15px 0;}';
-	if($border_color){echo 'html, footer.site-footer {background:none;border-top:1px solid ' .$border_color.';}';}
+	//echo 'footer.site-footer {padding:15px 0;}';
+	//see: https://github.com/bassjobsen/jamedo-bootstrap-start-theme/issues/6
+        if($border_color){echo 'html, footer.site-footer {background:none;border-top:1px solid ' .$border_color.';}';}
 	if($border_color){echo '.site-info {border-color:' .$border_color.';}';}
 	if($border_color){echo 'footer .widget li, footer .shoppingcart table td, footer .shoppingcart table th {border-color:' .$border_color.';}';}	
 }

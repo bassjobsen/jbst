@@ -15,7 +15,7 @@ Migration
 ---------
 
 1. download from: https://github.com/bassjobsen/jamedo-bootstrap-start-theme/archive/master.zip
-2. copy the content of this .zip to the folder skematik in the wp-content/themes folder (the zip file creates the folder “jamedo-bootstrap-start-theme” you have to rename this to “skematik” )
+2. unzip this file in the wp-content/themes folder (this will create a folder with the name “jamedo-bootstrap-start-theme”)
 3. (search and) replace all “span*” classes in your theme files with “col-lg-*”, see also: [http://stackoverflow.com/a/17890898/1596547](http://stackoverflow.com/a/17890898/1596547). Or try [Twitter's Bootstrap Migrator](http://bootstrapmigrator.w3masters.nl/)
 4. fix all other points (general issues should be send by email to bass@w3masters.nl or send as a pull request )
 
