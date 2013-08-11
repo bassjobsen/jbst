@@ -121,28 +121,28 @@ function skematik_main_navbar() {
 	} ?>
 
 	<div class="navbar <?php echo get_theme_mod( 'navbar_style', 'navbar-fixed-top' );?> <?php echo get_theme_mod( 'navbar_color', 'navbar-default' );?>" id="skematik-top-nav">
-      <div class="navbar-inner">
+
         <div class="container">
 		<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
 		  <span class="icon-bar"></span>
 		  <span class="icon-bar"></span>
 		  <span class="icon-bar"></span>
 		</button>
           
           <?php if(get_theme_mod('logo_image_position', 'in-nav') == 'in-nav') {skematik_logo();} ?>
-          <div class="right-buttons">          
+          <div class="navbar-text pull-right">          
 		  <?php if(get_theme_mod( 'navbar_account', 1 ) == 1) {skematik_account_dropdown();} ?>
 
 		  <?php if(get_theme_mod( 'navbar_cart', 1 ) == 1) {skematik_cart_dropdown();} ?>
 		  <?php if(get_theme_mod( 'navbar_search', 1 ) == 1) {skematik_nav_search();} ?>
 		  </div>
 		  
-          <div class="nav-collapse collapse navbar-responsive-collapse">
+          <div class="nav-collapse collapse">
 		  <?php skematik_main_nav(); // Adjust using Menus in Wordpress Admin ?>
           </div>
         </div>
-      </div>
+
     </div>
 	<?php
 } // END skematik_main_navbar

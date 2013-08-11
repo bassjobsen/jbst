@@ -19,9 +19,9 @@ body.admin-bar {padding-top:78px;}
 body.admin-bar .navbar-fixed-top {top:28px;}
 a {cursor:pointer;}
 body > .navbar {line-height:1.4;}
-.navbar a.brand{padding:5px 20px;}
-.navbar.inverse a.brand {color:#ffffff;}
-.navbar a.brand:hover{color:#999;}
+.navbar a.navbar-brand{padding:5px 20px;}
+.navbar.inverse a.navbar-brand {color:#ffffff;}
+.navbar a.navbar-brand:hover{color:#999;}
 i {line-height:0.9;}
 .btn-large i {width:16px;}
 p {margin:0 0 20px;}
@@ -88,7 +88,7 @@ embed, iframe, object {max-width: 100%;}
 
 /* =Navigation
 ----------------------------------------------- */
-.navbar-static-cont-width .navbar-inner {padding-left:10px;padding-right:10px;min-height:40px;}
+.navbar-static-cont-width .navbar > .container {padding-left:10px;padding-right:10px;min-height:40px;}
 .navbar-static-cont-width {margin:0 auto;padding:10px;}
 @media (min-width: 1200px) {
 	.navbar-static-cont-width {width:1170px;}
@@ -102,7 +102,7 @@ embed, iframe, object {max-width: 100%;}
 @media (max-width: 767px) {
 	.navbar-static-cont-width {width:auto;}
 }
-body .navbar-silver .navbar-inner {
+body .navbar-silver .navbar > .container {
 background: #fcfcfc; /* Old browsers */
 background: -moz-linear-gradient(top,  #fcfcfc 0%, #cecece 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfcfc), color-stop(100%,#cecece)); /* Chrome,Safari4+ */
@@ -113,20 +113,20 @@ background: linear-gradient(to bottom,  #fcfcfc 0%,#cecece 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#cecece',GradientType=0 ); /* IE6-9 */
 }
 /* Colored Navbar Defaults */
-.navbar-green .brand,.navbar-green .nav > li > a,
-.navbar-orange .brand,.navbar-orange .nav > li > a,
-.navbar-red .brand,.navbar-red .nav > li > a,
-.navbar-blue .brand,.navbar-blue .nav > li > a,
-.navbar-teal .brand,.navbar-teal .nav > li > a,
-.navbar-black .brand,.navbar-black .nav > li > a
+.navbar-green .navbar-brand,.navbar-green .nav > li > a,
+.navbar-orange .navbar-brand,.navbar-orange .nav > li > a,
+.navbar-red .navbar-brand,.navbar-red .nav > li > a,
+.navbar-blue .navbar-brand,.navbar-blue .nav > li > a,
+.navbar-teal .navbar-brand,.navbar-teal .nav > li > a,
+.navbar-black .navbar-brand,.navbar-black .nav > li > a
 {color: #fff;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);}
-.navbar-green a.brand:hover,.navbar-orange a.brand:hover,.navbar-red a.brand:hover,.navbar-blue a.brand:hover,.navbar-teal a.brand:hover {color:#000;}
-.navbar-black a.brand:hover,.navbar-black .nav > li > a:hover {color:#ccc;}
+.navbar-green a.navbar-brand:hover,.navbar-orange a.navbar-brand:hover,.navbar-red a.navbar-brand:hover,.navbar-blue a.navbar-brand:hover,.navbar-teal a.navbar-brand:hover {color:#000;}
+.navbar-black a.navbar-brand:hover,.navbar-black .nav > li > a:hover {color:#ccc;}
 body .navbar-black .dropdown-menu a:hover {background:#888;color:#fff;}
 /*.navbar .nav li.dropdown.open {background:#336699;}*/
 
 /* Navbar Green */
-body .navbar-green .navbar-inner,.navbar-green .dropdown-menu li > a:hover, .navbar-green .dropdown-menu li > a:focus, .navbar-green .dropdown-submenu:hover > a,.navbar-green .dropdown-menu .active > a, .navbar-green .dropdown-menu .active > a:hover {
+body .navbar-green .navbar > .container,.navbar-green .dropdown-menu li > a:hover, .navbar-green .dropdown-menu li > a:focus, .navbar-green .dropdown-submenu:hover > a,.navbar-green .dropdown-menu .active > a, .navbar-green .dropdown-menu .active > a:hover {
 background-color: #5BB75B;
 background-image: -moz-linear-gradient(top, #62C462, #51A351);
 background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62C462), to(#51A351));
@@ -142,7 +142,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 .navbar.navbar-green .nav > .active > a, .navbar.navbar-green .nav > .active > a:hover, .navbar.navbar-green .nav > .active > a:focus,.navbar.navbar-green .nav li.dropdown.open > .dropdown-toggle, .navbar.navbar-green .nav li.dropdown.active > .dropdown-toggle, .navbar.navbar-green .nav li.dropdown.open.active > .dropdown-toggle {color: #fff;background-color: #51A351;}
 
 /* Navbar Orange */
-body .navbar-orange .navbar-inner,.navbar-orange .dropdown-menu li > a:hover, .navbar-orange .dropdown-menu li > a:focus, .navbar-orange .dropdown-submenu:hover > a,.navbar-orange .dropdown-menu .active > a, .navbar-orange .dropdown-menu .active > a:hover {
+body .navbar-orange .navbar > .container,.navbar-orange .dropdown-menu li > a:hover, .navbar-orange .dropdown-menu li > a:focus, .navbar-orange .dropdown-submenu:hover > a,.navbar-orange .dropdown-menu .active > a, .navbar-orange .dropdown-menu .active > a:hover {
 background-color: #FAA732;
 background-image: -moz-linear-gradient(top, #FBB450, #F89406);
 background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FBB450), to(#F89406));
@@ -158,7 +158,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 .navbar.navbar-orange .nav > .active > a, .navbar.navbar-orange .nav > .active > a:hover, .navbar.navbar-orange .nav > .active > a:focus,.navbar.navbar-orange .nav li.dropdown.open > .dropdown-toggle, .navbar.navbar-orange .nav li.dropdown.active > .dropdown-toggle, .navbar.navbar-orange .nav li.dropdown.open.active > .dropdown-toggle {color: #fff;background-color: #F89406;}
 
 /* Navbar Red */
-body .navbar-red .navbar-inner,.navbar-red .dropdown-menu li > a:hover, .navbar-red .dropdown-menu li > a:focus, .navbar-red .dropdown-submenu:hover > a,.navbar-red .dropdown-menu .active > a, .navbar-red .dropdown-menu .active > a:hover {
+body .navbar-red .navbar > .container,.navbar-red .dropdown-menu li > a:hover, .navbar-red .dropdown-menu li > a:focus, .navbar-red .dropdown-submenu:hover > a,.navbar-red .dropdown-menu .active > a, .navbar-red .dropdown-menu .active > a:hover {
 background-color: #DA4F49;
 background-image: -moz-linear-gradient(top, #EE5F5B, #BD362F);
 background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#EE5F5B), to(#BD362F));
@@ -174,7 +174,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 .navbar.navbar-red .nav > .active > a, .navbar.navbar-red .nav > .active > a:hover, .navbar.navbar-red .nav > .active > a:focus,.navbar.navbar-red .nav li.dropdown.open > .dropdown-toggle, .navbar.navbar-red .nav li.dropdown.active > .dropdown-toggle, .navbar.navbar-red .nav li.dropdown.open.active > .dropdown-toggle {color: #fff;background-color: #BD362F;}
 
 /* Navbar Blue */
-body .navbar-blue .navbar-inner,.navbar-blue .dropdown-menu li > a:hover, .navbar-blue .dropdown-menu li > a:focus, .navbar-blue .dropdown-submenu:hover > a,.navbar-blue .dropdown-menu .active > a, .navbar-blue .dropdown-menu .active > a:hover {
+body .navbar-blue .navbar > .container,.navbar-blue .dropdown-menu li > a:hover, .navbar-blue .dropdown-menu li > a:focus, .navbar-blue .dropdown-submenu:hover > a,.navbar-blue .dropdown-menu .active > a, .navbar-blue .dropdown-menu .active > a:hover {
 background-color: #006DCC;
 background-image: -moz-linear-gradient(top, #08C, #04C);
 background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#08C), to(#04C));
@@ -190,7 +190,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 .navbar.navbar-blue .nav > .active > a, .navbar.navbar-blue .nav > .active > a:hover, .navbar.navbar-blue .nav > .active > a:focus,.navbar.navbar-blue .nav li.dropdown.open > .dropdown-toggle, .navbar.navbar-blue .nav li.dropdown.active > .dropdown-toggle, .navbar.navbar-blue .nav li.dropdown.open.active > .dropdown-toggle {color: #fff;background-color: #04C;}
 
 /* Navbar Teal */
-body .navbar-teal .navbar-inner,.navbar-teal .dropdown-menu li > a:hover, .navbar-teal .dropdown-menu li > a:focus, .navbar-teal .dropdown-submenu:hover > a,.navbar-teal .dropdown-menu .active > a, .navbar-teal .dropdown-menu .active > a:hover {
+body .navbar-teal .navbar > .container,.navbar-teal .dropdown-menu li > a:hover, .navbar-teal .dropdown-menu li > a:focus, .navbar-teal .dropdown-submenu:hover > a,.navbar-teal .dropdown-menu .active > a, .navbar-teal .dropdown-menu .active > a:hover {
 background-color: #49AFCD;
 background-image: -moz-linear-gradient(top, #5BC0DE, #2F96B4);
 background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5BC0DE), to(#2F96B4));
@@ -206,7 +206,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 .navbar.navbar-teal .nav > .active > a, .navbar.navbar-teal .nav > .active > a:hover, .navbar.navbar-teal .nav > .active > a:focus,.navbar.navbar-teal .nav li.dropdown.open > .dropdown-toggle, .navbar.navbar-teal .nav li.dropdown.active > .dropdown-toggle, .navbar.navbar-teal .nav li.dropdown.open.active > .dropdown-toggle {color: #fff;background-color: #2F96B4;}
 
 /* Navbar Black */
-body .navbar-black .navbar-inner,.navbar-black .dropdown-menu .active > a, .navbar-black .dropdown-menu .active > a:hover {
+body .navbar-black .navbar > .container,.navbar-black .dropdown-menu .active > a, .navbar-black .dropdown-menu .active > a:hover {
 background-color: #363636;
 background-image: -moz-linear-gradient(top, #444, #222);
 background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444), to(#222));
@@ -367,7 +367,7 @@ form#navloginform a.lost-password {float:right;padding:5px 0px 5px 10px;}
 #nav-cart-dropdown i, #nav-profile-dropdown i {font-size: 16px;margin-top: 3px;float: left;margin-right: 7px;margin-left: -2px;}
 
 /* navbar active state */
-.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {margin-top: 0px;padding-top: 11px;padding-bottom: 9px;}
+/*.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {margin-top: 0px;padding-top: 11px;padding-bottom: 9px;}*/
 
 /* NavSearch fix from WooCommerce stuff */
 /*#s {height:21px;}*/
@@ -377,9 +377,9 @@ form#navloginform a.lost-password {float:right;padding:5px 0px 5px 10px;}
 	.logo-outside-nav #logo-link-container {float: none;margin-bottom: 0;text-align: center;}
 #logo-link-container img {max-height:80px;}
 	.logo-outside-nav #logo-link-container img {max-height:200px;}
-.navbar-inner {min-height:41px;}
+.navbar > .container {min-height:41px;}
 .logo-outside-nav {display:block;margin:0 auto 5px;text-align: center;}
-.logo-outside-nav a.brand {font-size:50px;text-align:center;}
+.logo-outside-nav a.navbar-brand {font-size:50px;text-align:center;}
 .dropdown-menu .divider {margin: 5px 1px;}
 
 /* Adjustments for navbar search */
@@ -403,21 +403,21 @@ form#navloginform a.lost-password {float:right;padding:5px 0px 5px 10px;}
 /* Responsive defaults */
 @media(max-width:979px){
 	body, body.admin-bar{padding-top:0px;}
-	.navbar a.brand{padding:5px;}
+	.navbar a.navbar-brand{padding:5px;}
 	body.admin-bar #page-masthead {margin-top:-19px;}
-	.navbar a.brand {padding-left:10px;}
+	.navbar a.navbar-brand {padding-left:10px;}
 	.widget input, .widget textarea {width: 152px;}
-	.navbar .brand {margin-left: -10px;}
+	.navbar .navbar-brand {margin-left: -10px;}
 }
 @media(max-width:639px){
-	.brand {width:100%;text-align:center;padding:10px;display:block;}
+	.navbar-brand {width:100%;text-align:center;padding:10px;display:block;}
 	#searchform {width: 100%;text-align: center;margin-bottom: -32px;}
-	.right-buttons {margin: 0 auto;text-align: center;display: block;clear: both;width:100%;}
+	/*.right-buttons {margin: 0 auto;text-align: center;display: block;clear: both;width:100%;}
 	.right-buttons .pull-right .dropdown-menu {left:0;}
 	.right-buttons .pull-right {float:none;}
-	.right-buttons .btn-group {display:inline-block;}
+	.right-buttons .btn-group {display:inline-block;}*/
 	#nav-cart-dropdown,#nav-profile-dropdown {float: none;}
-	.brand,.right-buttons {position:relative;top:-35px;z-index:1;}
+	.navbar-brand,.pull-right {position:relative;top:-35px;z-index:1;}
 	.btn-navbar {z-index:2;position:relative;}
 	html,body {max-width:100%;overflow-x:hidden;}
 

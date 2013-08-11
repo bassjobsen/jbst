@@ -369,7 +369,7 @@ function skematik_main_nav() {
     wp_nav_menu( 
     	array( 
     		'menu' => 'main_nav', /* menu name */
-    		'menu_class' => 'nav',
+    		'menu_class' => 'nav navbar-nav',
     		'theme_location' => 'main_nav', /* where in the theme it's assigned */
     		'container' => 'false', /* container class */
     		'fallback_cb' => 'skematik_main_nav_fallback', /* menu fallback */
@@ -381,7 +381,7 @@ do_action( 'skematik_after_main_nav' );
 }
 
 function skematik_main_nav_fallback() {?>
-<ul id="menu-main-navigation" class="nav">
+<ul id="menu-main-navigation" class="nav navbar-nav">
   <?php
   $pages = get_pages(); 
   foreach ( $pages as $page ) {
