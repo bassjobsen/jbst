@@ -64,6 +64,41 @@ TO REGISTER YOUR OWN, SIMPLY COPY ANY OF THE SECTIONS BELOW INTO
 YOUR OWN THEME OR PLUGIN AND EDIT FOR YOUR NEEDS. 
 ==================================================================
 */
+
+/*
+==================================================================
+Grid
+==================================================================
+*/
+add_action('skematik_add_to_customizer','skematik_grid_customizer_options');
+function skematik_grid_customizer_options($wp_customize) {
+	global $wp_customize;
+
+	$wp_customize->add_section( 'grid_settings', array(
+		'title'          => 'Default grid',
+		'priority'       => 119,
+	) );
+
+	/* Navbar Width */
+	$wp_customize->add_setting( 'default_grid', array(
+	'default'        => 'small',
+	) );
+		
+	$wp_customize->add_control( 'default_grid', array(
+		'label'   => 'Default Grid:',
+		'section' => 'grid_settings',
+		'type'    => 'radio',
+		'priority'        => 10,
+		'choices'    => array(
+			'large' => 'Medium-Large',
+			'small' => 'Small',
+			'tiny' => 'Tiny',
+			),
+	) );
+}
+
+
+
 /*
 ==================================================================
 Navbar

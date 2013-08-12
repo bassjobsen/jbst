@@ -34,11 +34,11 @@ function skematik_content_span() {
 	skematik_layout();
 	global $skematik_layout;
 	global $post;
-	if ($skematik_layout == 'left-sidebar') {$contentspan = 'col-lg-9';}
-	elseif ($skematik_layout == 'right-sidebar') {$contentspan = 'col-lg-9';}
-	elseif ($skematik_layout == 'three-column') {$contentspan = 'col-lg-6';}
-	elseif ($skematik_layout == 'full-width') {$contentspan = 'col-lg-12';}
-	else {$contentspan = 'col-lg-9';}
+	if ($skematik_layout == 'left-sidebar') {$contentspan = JBST_GRIDPREFIX . '9';}
+	elseif ($skematik_layout == 'right-sidebar') {$contentspan = JBST_GRIDPREFIX . '9';}
+	elseif ($skematik_layout == 'three-column') {$contentspan = JBST_GRIDPREFIX . '6';}
+	elseif ($skematik_layout == 'full-width') {$contentspan = JBST_GRIDPREFIX . '12';}
+	else {$contentspan = JBST_GRIDPREFIX . '9';}
 	echo $contentspan;
 }
 
@@ -48,7 +48,7 @@ function skematik_left_sidebar() {
 	global $skematik_layout;
 	global $post;
 	if(($skematik_layout == 'left-sidebar') || ($skematik_layout == 'three-column')) {
-			echo '<div id="left-sidebar" class="widget-area col-lg-3 sidebar" role="complementary">';
+			echo '<div id="left-sidebar" class="widget-area ' .JBST_GRIDPREFIX. '3 sidebar" role="complementary">';
 			do_action( 'skematik_before_left_sidebar' );
 			
 			if ( ! dynamic_sidebar( 'left-content-sidebar' ) ) :
@@ -64,7 +64,7 @@ function skematik_right_sidebar() {
 	global $skematik_layout;
 	global $post;
 	if(($skematik_layout == 'right-sidebar') || ($skematik_layout == 'three-column')) {
-			echo '<div id="right-sidebar" class="widget-area col-lg-3 sidebar" role="complementary">';
+			echo '<div id="right-sidebar" class="widget-area ' .JBST_GRIDPREFIX. '3 sidebar" role="complementary">';
 			do_action( 'skematik_before_right_sidebar' );
 			
 			if ( ! dynamic_sidebar( 'right-content-sidebar' ) ) :

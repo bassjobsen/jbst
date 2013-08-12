@@ -23,49 +23,4 @@ function skematik_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
-	/*$ftr_widgets = get_theme_mod( 'footer_widgets_number', 4 );
-
-	if($ftr_widgets > 0) {
-		register_sidebar( array(
-			'name' => __( 'Footer Widget One', 'jamedo-bootstrap-start-theme' ),
-			'id' => 'footer-widget-one',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => "</aside>",
-			'before_title' => '<h4 class="widget-title">',
-			'after_title' => '</h4>',
-		) );
-	}
-	
-	if($ftr_widgets > 1) {
-		register_sidebar( array(
-			'name' => __( 'Footer Widget Two', 'jamedo-bootstrap-start-theme' ),
-			'id' => 'footer-widget-two',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => "</aside>",
-			'before_title' => '<h4 class="widget-title">',
-			'after_title' => '</h4>',
-		) );
-	}
-	
-	if($ftr_widgets > 2) {
-		register_sidebar( array(
-			'name' => __( 'Footer Widget Three', 'jamedo-bootstrap-start-theme' ),
-			'id' => 'footer-widget-three',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => "</aside>",
-			'before_title' => '<h4 class="widget-title">',
-			'after_title' => '</h4>',
-		) );
-	}
-	
-	if($ftr_widgets > 3) {
-		register_sidebar( array(
-			'name' => __( 'Footer Widget Four', 'jamedo-bootstrap-start-theme' ),
-			'id' => 'footer-widget-four',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => "</aside>",
-			'before_title' => '<h4 class="widget-title">',
-			'after_title' => '</h4>',
-		) );
-	}*/
 }

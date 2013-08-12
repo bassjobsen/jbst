@@ -6,7 +6,7 @@
  * @since crblueprint 1.0
  */
 ?>
-		<div id="secondary" class="widget-area col-lg-3" role="complementary">
+		<div id="secondary" class="widget-area <?php echo JBST_GRIDPREFIX;?>3" role="complementary">
 			<?php do_action( 'skematik_before_sidebar' ); ?>
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 

@@ -32,6 +32,21 @@ if ( !function_exists( 'optionsframework_init' ) ) {
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/library/options/' );
 	require_once dirname( __FILE__ ) . '/options/options-framework.php';
 }
+/*
+==========================================================
+SET THE DEFAULT GRID
+==========================================================
+*/
+
+$default_grid = get_theme_mod( 'default_grid', 'small');
+
+switch($default_grid)
+{
+	case 'tiny' : define('JBST_GRIDPREFIX','col-'); break;
+	case 'large' : define('JBST_GRIDPREFIX','col-lg-'); break;
+	default : define('JBST_GRIDPREFIX','col-sm-'); break; //small
+}	
+
 
 /*
 ==========================================================
@@ -91,11 +106,6 @@ function skematik_bootstrap_responsive_css() {
 	$container = get_theme_mod( 'container_width', 1200);
 	if($container == 980) {wp_register_style( 'skematik-maxwidth', get_template_directory_uri() . '/library/assets/css/max980.css', array(), '20130812', 'all' );}
 	wp_enqueue_style( 'skematik-maxwidth' );
-	/*$container = get_theme_mod( 'container_width', 1200);
-	if($container == 980) {wp_register_style( 'skematik-responsive', get_template_directory_uri() . '/library/assets/css/bootstrap-responsive.980.min.css', array(), '20121106', 'all' );}
-	elseif($container == 768) {wp_register_style( 'skematik-responsive', get_template_directory_uri() . '/library/assets/css/bootstrap-responsive.768.min.css', array(), '20121106', 'all' );}
-	else {wp_register_style( 'skematik-responsive', get_template_directory_uri() . '/library/assets/css/bootstrap-responsive.min.css', array(), '20120822', 'all' );}
-    wp_enqueue_style( 'skematik-responsive' );*/
 }
 
 function skematik_fontawesome_css() {
@@ -508,10 +518,10 @@ function bones_comments($comment, $args, $depth) {
 	<li <?php comment_class(); ?>>
 		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
 			<div class="comment-author vcard row-fluid clearfix">
-				<div class="avatar span2">
+				<div class="avatar <?php echo JBST_GRIDPREFIX;?>2">
 					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
 				</div>
-				<div class="span10 comment-text">
+				<div class="<?php echo JBST_GRIDPREFIX;?>  comment-text">
 					<?php printf(__('<h4>%s</h4>','jamedo-bootstrap-start-theme'), get_comment_author_link()) ?>
 					
                     

@@ -50,7 +50,7 @@ function skematik_footer_area() {?>
 		<div class="container">
 		<?php skematik_footer_widgets();?>
 			<div class="row">
-				<div class="site-info span12">
+				<div class="site-info <?php echo JBST_GRIDPREFIX;?>12">
 					<?php do_action( 'skematik_credits' ); ?>
 				</div><!-- .site-info -->
 			</div>
@@ -73,7 +73,7 @@ if($ftr_widgets > 2) {$span = 4;}
 if($ftr_widgets > 3) {$span = 3;}
 if($ftr_widgets > 0) {
 	echo '<div class="row">';
-		echo '<div class="col-lg-'.$span.'">';
+		echo '<div class="'. JBST_GRIDPREFIX . $span.'">';
 			if ( ! dynamic_sidebar( 'footer-widget-one' ) ) :
 				echo '<h4>';
 				_e( 'Footer One Widget', 'jamedo-bootstrap-start-theme' );
@@ -84,7 +84,7 @@ if($ftr_widgets > 0) {
 			endif;
 		echo '</div>';
 		if($ftr_widgets > 1) {
-			echo '<div class="col-lg-'.$span.'">';
+			echo '<div class="'. JBST_GRIDPREFIX . $span.'">';
 				if ( ! dynamic_sidebar( 'footer-widget-two' ) ) :
 					echo '<h4>';
 					_e( 'Footer Two Widget', 'jamedo-bootstrap-start-theme' );
@@ -96,7 +96,7 @@ if($ftr_widgets > 0) {
 			echo '</div>';
 		}
 		if($ftr_widgets > 2) {
-			echo '<div class="col-lg-'.$span.'">';
+			echo '<div class="'. JBST_GRIDPREFIX . $span.'">';
 				if ( ! dynamic_sidebar( 'footer-widget-three' ) ) :
 					echo '<h4>';
 					_e( 'Footer Three Widget', 'jamedo-bootstrap-start-theme' );
@@ -108,7 +108,7 @@ if($ftr_widgets > 0) {
 			echo '</div>';
 		}
 		if($ftr_widgets > 3) {
-			echo '<div class="col-lg-'.$span.'">';
+			echo '<div class="'. JBST_GRIDPREFIX . $span.'">';
 				if ( ! dynamic_sidebar( 'footer-widget-four' ) ) :
 					echo '<h4>';
 					_e( 'Footer Four Widget', 'jamedo-bootstrap-start-theme' );
