@@ -88,6 +88,9 @@ function skematik_bootstrap_css() {
 }
 
 function skematik_bootstrap_responsive_css() {
+	$container = get_theme_mod( 'container_width', 1200);
+	if($container == 980) {wp_register_style( 'skematik-maxwidth', get_template_directory_uri() . '/library/assets/css/max980.css', array(), '20130812', 'all' );}
+	wp_enqueue_style( 'skematik-maxwidth' );
 	/*$container = get_theme_mod( 'container_width', 1200);
 	if($container == 980) {wp_register_style( 'skematik-responsive', get_template_directory_uri() . '/library/assets/css/bootstrap-responsive.980.min.css', array(), '20121106', 'all' );}
 	elseif($container == 768) {wp_register_style( 'skematik-responsive', get_template_directory_uri() . '/library/assets/css/bootstrap-responsive.768.min.css', array(), '20121106', 'all' );}
