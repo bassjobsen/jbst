@@ -27,16 +27,18 @@ Migration
 
 Grid
 ----
-The most important changes in Twitter Bootstrap 3 will be the more mobile-first approaching and the grid. From now Twitter’s Bootstrap defines three grids: Tiny grid for Phones (&lt;768px), Small grid for Tablets (&gt=;768px) and the Medium-large grid for Destkops (&gt;=992px). The row class prefixes for these grid are “.col-”, “.col-sm-” and “.col-lg-”. The Medium-large grid will stack below 992 pixels screen width. So does the Small grid below 768 pixels and the tiny grid never stacks. (updated for Twitter's Bootstrap3 RC1). Also read: [Twitter Bootstrap 3 breakpoints and grid](http://bassjobsen.weblogs.fm/twitter-bootstrap-3-breakpoints-and-grid/)
+The most important changes in Twitter Bootstrap 3 will be the more mobile-first approaching and the grid. From now Twitter’s Bootstrap defines three grids: Extra small (xs) grid for Phones (&lt;768px), Small/Medium grid for Tablets (&gt=;768px), the Medium grid for Laptops (&gt;=992px) and the Large grid for Desktops. The row class prefixes for these grid are “.col-xs”, “.col-sm-”,“.col-md-“ and “.col-lg-”. The Large grid will stacks below 1200px pixels screen width. So does the Medium grid below 992px pixels and the small below 768px. The extra small grid never stacks. (updated for Twitter's Bootstrap3 RC1). Also read: [Twitter Bootstrap 3 breakpoints and grid](http://bassjobsen.weblogs.fm/twitter-bootstrap-3-breakpoints-and-grid/)
 
-JBST use the Small grid by default. You can change this in the customizer. (Tiny, Small or Large). The large grid will stack below the 992px and be horizontal for desktop (and large tablets) while the Tiny grid never stacks.
+<strike>JBST use the Small grid by default. You can change this in the customizer. (Tiny, Small or Large). The large grid will stack below the 992px and be horizontal for desktop (and large tablets) while the Tiny grid never stacks.</strike>
 
 More about the grid and examples on: [http://getbootstrap.com/css/#grid](http://getbootstrap.com/css/#grid)
 
-NOTE: Twitter's Bootstrap 3 RC2 intoduced a new grid class (`col-xs-*`). The class is used for mobile phone but only set (or not) the default behavior. `col-xs-*` will always stack (and never become horizontal).
+NOTE: Twitter's Bootstrap 3 RC2 intoduced a new grid class (`col-xs-*`). The class is used for mobile phones and `col-xs-*` will never stack).
 
 Without Responsive features
 ---------------------------
+Before reading futher, first read: [http://getbootstrap.com/getting-started/#disable-responsive](http://getbootstrap.com/getting-started/#disable-responsive)
+
 The Tiny grid will never stack so use this if you don't want to use responsive features of Twitter's Bootstrap. There is no option to choose between repsonsive and non-responsive at the moment. Beside the Tiny grid setting you will need to add some custom css and an extra class to your templates, see: [Bootstrap 3 - Turn off responsive completely](http://stackoverflow.com/questions/18146476/bootstrap-3-turn-off-responsive-completely/18185520).
 
 Keep in mind this setting don't set the @grid-float-breakpoint. This (Less) setting will be used for the collapsing point of the navbar. The setting is also used for modals, forms and carousels. To (re)set the @grid-float-breakpoint you will have to compile your own copy of the Bootstrap CSS and use this (replace libary/assets/css/bootstrap.min.css). After the final release of TB3 we will add a non-responsive option for this to the customizer too.
