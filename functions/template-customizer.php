@@ -182,6 +182,31 @@ function skematik_logo_customizer_options($wp_customize) {
 	'priority'        => 25,
 	'choices'    => $fontchoices,
 	) );
+	
+	/* Logo Link  Color */
+	$wp_customize->add_setting( 'logo_link_color', array(
+		'default'        => '',
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'logo_link_color', array(
+		'label'   => 'Navbar Item  Color (hyperlink text)',
+		'section' => 'site_logo_settings',
+		'settings'   => 'logo_link_color',
+		'priority'        => 26
+	) ) );
+	
+	/* Logo Link hover Color */
+	$wp_customize->add_setting( 'logo_linkhover_color', array(
+		'default'        => '',
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'logo_linkhover_color', array(
+		'label'   => 'Navbar Item Hover Color (hyperlink text)',
+		'section' => 'site_logo_settings',
+		'settings'   => 'logo_linkhover_color',
+		'priority'        => 27
+	) ) );
+	
 }
 /*
 ==================================================================
@@ -201,7 +226,7 @@ function skematik_navbar_customizer_options($wp_customize) {
 
 	/* Navbar Width */
 	$wp_customize->add_setting( 'navbar_style', array(
-	'default'        => 'navbar-fixed-top',
+	''        => 'Default',
 	) );
 		
 	$wp_customize->add_control( 'navbar_style', array(
@@ -210,14 +235,94 @@ function skematik_navbar_customizer_options($wp_customize) {
 		'type'    => 'select',
 		'priority'        => 10,
 		'choices'    => array(
-			'navbar-fixed-top' => 'Fixed, Full-Width',
-			'navbar-static-top' => 'Static, Full-Width',
-			'navbar-static-cont-width' => 'Static, Container-Width',
+			''=> 'Default',
+			'navbar-static-top' => 'Static top navbar',
+			'navbar-fixed-top' => 'Fixed to top',
+			'navbar-fixed-bottom' => 'Fixed to bottom',
+			
+			
+			//'navbar-static-cont-width' => 'Static, Container-Width',
 			),
 	) );
+	
+	/* Navbar Background Color */
+	$wp_customize->add_setting( 'navbar_background_color', array(
+		'default'        => '',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_background_color', array(
+		'label'   => 'Navbar Background Color',
+		'section' => 'navbar_settings',
+		'settings'   => 'navbar_background_color',
+		'priority'        => 20
+	) ) );
+	
+	/* Navbar Border Color */
+	$wp_customize->add_setting( 'navbar_border_color', array(
+		'default'        => '',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_border_color', array(
+		'label'   => 'Navbar Border Color',
+		'section' => 'navbar_settings',
+		'settings'   => 'navbar_border_color',
+		'priority'        => 21
+	) ) );
+	
+	/* Navbar Link Color */
+	$wp_customize->add_setting( 'navbar_link_color', array(
+		'default'        => '',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_link_color', array(
+		'label'   => 'Navbar Item Color (hyperlink text)',
+		'section' => 'navbar_settings',
+		'settings'   => 'navbar_link_color',
+		'priority'        => 22
+	) ) );
+	
+	/* Navbar Link hover Color */
+	$wp_customize->add_setting( 'navbar_linkhover_color', array(
+		'default'        => '',
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_linkhover_color', array(
+		'label'   => 'Navbar Item Hover Color (hyperlink text)',
+		'section' => 'navbar_settings',
+		'settings'   => 'navbar_linkhover_color',
+		'priority'        => 23
+	) ) );
+	
+	/* Navbar Active item Color */
+	$wp_customize->add_setting( 'navbar_activelink_color', array(
+		'default'        => '',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_activelink_color', array(
+		'label'   => 'Navbar Active Item',
+		'section' => 'navbar_settings',
+		'settings'   => 'navbar_activelink_color',
+		'priority'        => 24
+	) ) );
+	
+		/* Navbar Active item Background Color */
+	$wp_customize->add_setting( 'navbar_activebackground_color', array(
+		'default'        => '',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_activebackground_color', array(
+		'label'   => 'Navbar Active Background Color',
+		'section' => 'navbar_settings',
+		'settings'   => 'navbar_activebackground_color',
+		'priority'        => 25
+	) ) );
+	
+	
+	
+	
 
 	/* Navbar Color */
-	$wp_customize->add_setting( 'navbar_color', array(
+/*	$wp_customize->add_setting( 'navbar_color', array(
 	'default'        => 'default',
 	) );
 		
@@ -237,10 +342,10 @@ function skematik_navbar_customizer_options($wp_customize) {
 			'navbar-red' => 'Red Gradient',
 			'navbar-teal' => 'Teal Gradient',
 			),
-	) );
+	) );*/
 
 	/* Navbar Font Family */
-	$wp_customize->add_setting( 'navbar_font_family', array(
+/*	$wp_customize->add_setting( 'navbar_font_family', array(
 		'default'        => 'Helvetica Neue',
 	) );
 	
@@ -250,7 +355,7 @@ function skematik_navbar_customizer_options($wp_customize) {
 		'type'    => 'select',
 		'choices'    => $fontchoices,
 		'priority'       => 30,
-	) );
+	) );*/
 
 	/* Navbar Search */
 	$wp_customize->add_setting( 'navbar_search', array(

@@ -245,27 +245,30 @@ function skematik_account_dropdown() {
 	get_currentuserinfo();
 	if (is_user_logged_in()) {
 	?>
-	  <div class="btn-group pull-right" id="nav-profile-dropdown">
-	    <a class="btn dropdown-toggle <?php skematik_nav_account_button_class();?>" data-toggle="dropdown" href="#">
-	      <i class="icon-user"></i> <?php echo $current_user->display_name; ?>
-	      <span class="caret"></span>
-	    </a>
-	    <ul class="dropdown-menu">
-	      <?php do_action( 'skematik_nav_profile_dropdown');?>
-	    </ul>
-	  </div>
+	
+				<div class="btn-group" id="nav-profile-dropdown">
+				  <button type="button" class="btn <?php skematik_nav_account_button_class();?> navbar-btn navbar-right dropdown-toggle" data-toggle="dropdown">
+					<i class="icon-user"></i> <?php echo $current_user->display_name; ?>
+		     		<span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu">
+						<?php do_action( 'skematik_nav_profile_dropdown');?>
+				  </ul>
+				</div>	
 	<?php
 	} else {
 	?>
-	  <div class="btn-group pull-right" id="nav-profile-dropdown">
-	    <a class="btn dropdown-toggle <?php skematik_nav_account_button_class();?>" data-toggle="dropdown" href="#">
-	      <i class="icon-user"></i> 
-	      <span class="caret"></span>
-	    </a>
-	    <ul class="dropdown-menu">
-	    <?php do_action( 'skematik_nav_login_dropdown');?>
-	    </ul>
-	  </div>
+			<div class="btn-group" id="nav-profile-dropdown">
+				  <button type="button" class="btn <?php skematik_nav_account_button_class();?> navbar-btn navbar-right dropdown-toggle" data-toggle="dropdown">
+					<i class="icon-user"></i> 
+					<span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu">
+						<?php do_action( 'skematik_nav_login_dropdown');?>
+				  </ul>
+			</div>
+	
+
 	<?php
 	}
 }
@@ -360,9 +363,15 @@ NAVIGATION SEARCH
 ==========================================================
 */
 function skematik_nav_search() {?>
-		<form class="navbar-form pull-right navbar-search"  role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-		<input class="form-control col-lg-8 search-query" name="s" id="s" type="text" autocomplete="off" placeholder="<?php _e( 'Search', 'jamedo-bootstrap-start-theme' ); ?>">
-		</form>
+		
+		
+	<form class="navbar-form navbar-left" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+	  <div class="form-group">
+        <input type="text" class="form-control" name="s" id="s" type="text" autocomplete="off" placeholder="<?php _e( 'Search', 'jamedo-bootstrap-start-theme' ); ?>">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
 <?php
 }
 
@@ -461,7 +470,7 @@ class description_walker extends Walker_Nav_Menu
 			
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 			
-			$class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+			//$class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
 			$class_names = ' class="'. esc_attr( $class_names ) . ' ' . $active . '"';
            
            	$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';

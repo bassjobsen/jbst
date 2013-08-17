@@ -17,17 +17,24 @@ $skematikecommerce = true;
 	get_currentuserinfo();
 	global $woocommerce;
 			?>
-		  <div class="btn-group pull-right" id="nav-cart-dropdown">
-		    <a class="btn dropdown-toggle <?php skematik_nav_shop_button_class();?>" data-toggle="dropdown" href="#">
-		      <i class="icon-shopping-cart"></i> <span class="cart-contents"><?php echo sprintf(_n('%d item &ndash; ', '%d items &ndash; ', $woocommerce->cart->get_cart_contents_count(), 'woothemes'), $woocommerce->cart->get_cart_contents_count()) . $woocommerce->cart->get_cart_total();?></span>
-		      <span class="caret"></span>
-		    </a>
-		    <ul class="dropdown-menu">
-		      <li><a href="<?php echo $woocommerce->cart->get_cart_url();?>">View Cart</a></li>
-		      <li class="divider"></li>
-		      <li><a href="<?php echo $woocommerce->cart->get_checkout_url(); ?>">Checkout</a></li>
-		    </ul>
-		  </div>
+			
+				<div class="btn-group" id="nav-cart-dropdown">
+				  <button type="button" class="btn <?php skematik_nav_shop_button_class();?> navbar-btn navbar-right dropdown-toggle" data-toggle="dropdown">
+					<i class="icon-shopping-cart"></i> <span class="cart-contents"><?php echo sprintf(_n('%d item &ndash; ', '%d items &ndash; ', $woocommerce->cart->get_cart_contents_count(), 'woothemes'), $woocommerce->cart->get_cart_contents_count()) . $woocommerce->cart->get_cart_total();?></span>
+		     		<span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu">
+					  <li><a href="<?php echo $woocommerce->cart->get_cart_url();?>">View Cart</a></li>
+					  <li class="divider"></li>
+					  <li><a href="<?php echo $woocommerce->cart->get_checkout_url(); ?>">Checkout</a></li>
+				  </ul>
+				</div>	
+			
+			
+			
+			
+			
+
 			<?php
 	}
 

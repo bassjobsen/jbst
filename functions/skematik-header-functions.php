@@ -119,50 +119,121 @@ function skematik_main_navbar() {
 	echo skematik_logo();
 	echo '</div>';	
 	} ?>
-
-	<div class="navbar <?php echo get_theme_mod( 'navbar_style', 'navbar-fixed-top' );?> <?php echo get_theme_mod( 'navbar_color', 'navbar-default' );?>" id="skematik-top-nav">
-
-        <div class="container">
+    <?php if(get_theme_mod( 'navbar_style' ) == '') {?><div class="container"><?php } ?>
+	<nav role="navigation" class="navbar <?php echo get_theme_mod( 'navbar_style', '' );?> <?php //echo get_theme_mod( 'navbar_color', 'navbar-default' );?>" id="skematik-top-nav">
+      <?php if(get_theme_mod( 'navbar_style' ) != '') {?><div class="container"><?php } ?>
+       <div class="navbar-header">
 		<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 		  <span class="icon-bar"></span>
 		  <span class="icon-bar"></span>
 		  <span class="icon-bar"></span>
 		</button>
-          
-          <?php if(get_theme_mod('logo_image_position', 'in-nav') == 'in-nav') {skematik_logo();} ?>
-          <div class="navbar-text pull-right">          
-		  <?php if(get_theme_mod( 'navbar_account', 1 ) == 1) {skematik_account_dropdown();} ?>
-
-		  <?php if(get_theme_mod( 'navbar_cart', 1 ) == 1) {skematik_cart_dropdown();} ?>
-		  <?php if(get_theme_mod( 'navbar_search', 1 ) == 1) {skematik_nav_search();} ?>
-		  </div>
+			<? if(get_theme_mod('logo_image_position', 'in-nav') == 'in-nav') {skematik_logo();} ?>
+       </div>
+         
 		  
-          <div class="nav-collapse collapse">
+         <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
 		  <?php skematik_main_nav(); // Adjust using Menus in Wordpress Admin ?>
+		  <?php if(get_theme_mod( 'navbar_search', 1 ) == 1) {skematik_nav_search();} ?> 
+		  <?php if(get_theme_mod( 'navbar_cart', 1 ) == 1) {skematik_cart_dropdown();} ?>
+		  <?php if(get_theme_mod( 'navbar_account', 1 ) == 1) {skematik_account_dropdown();} ?>
           </div>
-        </div>
-
-    </div>
+        
+       <?php if(get_theme_mod( 'navbar_style' ) == '') {?></div><?php } ?>
+    </nav>
+    <?php if(get_theme_mod( 'navbar_style' ) == '') {?></div><?php } ?>
 	<?php
 } // END skematik_main_navbar
 
 function skematik_nav_styles() {
-	if(get_theme_mod( 'navbar_style', 'navbar-fixed-top' ) == 'navbar-static-top') {
+	if(get_theme_mod( 'navbar_style' ) == '') { //default
 	echo '
-	body {padding-top:0px;}
-	body.admin-bar {padding-top:0px;}
-	#skematik-top-nav {margin-top:-1px;}
+	body { padding: 30px; }
+    .navbar { margin-bottom: 30px; }
+    }
 	';
 	}
-	if(get_theme_mod( 'navbar_style', 'navbar-fixed-top' ) == 'navbar-static-cont-width') {
+	if(get_theme_mod( 'navbar_style') == 'navbar-static-top') {
 	echo '
-	body {padding-top:15px;}
-	body.admin-bar {padding-top:15px;}
-	#main {margin-top:10px;margin-bottom:10px;}
-	.hero-unit.masthead {margin-bottom: 25px;}
+	.navbar-static-top {  margin-bottom: 19px; }
 	';
 	}
+	if(get_theme_mod( 'navbar_style') == 'navbar-fixed-top') {
+	echo '
+	body {  padding-top: 70px; }
+	';
+	}
+	if(get_theme_mod( 'navbar_style') == 'navbar-fixed-bottom') {
+	echo '
+	body {  padding-padding-bottom: 70px; }
+	';
+	}
+	
+	$navbar_background_color = get_theme_mod( 'navbar_background_color');
+	if(!empty($navbar_background_color))
+	{
+		echo '.navbar {background-color: '.$navbar_background_color.';}';
+    }	
+    
+    $navbar_border_color = get_theme_mod( 'navbar_border_color');
+	if(!empty($navbar_border_color))
+	{
+		echo '.navbar {border-color: '.$navbar_border_color.';}';
+    }
+    
+    $navbar_link_color = get_theme_mod( 'navbar_link_color');
+	if(!empty($navbar_link_color))
+	{
+		echo '.navbar .navbar-nav > li > a {
+    color: '.$navbar_link_color.';
+}';
+    }
+    
+    $navbar_linkhover_color = get_theme_mod( 'navbar_linkhover_color');
+	if(!empty($navbar_linkhover_color))
+	{
+		echo '.navbar .navbar-nav > li > a:hover {
+    color: '.$navbar_linkhover_color.';
+}';
+    }	
+    
+    $navbar_activelink_color = get_theme_mod( 'navbar_activelink_color');
+	if(!empty($navbar_activelink_color))
+	{
+		echo '.navbar .navbar-nav > .active > a, .nav .navbar-nav > .active > a:hover {
+    color: '.$navbar_activelink_color.';
+}';
+    }	
+    
+    $navbar_activebackground_color = get_theme_mod( 'navbar_activebackground_color');
+	if(!empty($navbar_activebackground_color))
+	{
+		echo '.navbar .navbar-nav > .active > a, .nav .navbar-nav > .active > a:hover {
+    background-color: '.$navbar_activebackground_color.';
+}';
+    }
+    
+    /* LOGO */
+
+    $logo_link_color = get_theme_mod( 'logo_link_color');
+	if(!empty($logo_link_color))
+	{
+		echo '.navbar-brand {
+    color: '.$logo_link_color.';
+}';
+    }
+    
+    $logo_linkhover_color = get_theme_mod( 'logo_linkhover_color');
+	if(!empty($logo_linkhover_color))
+	{
+		echo '.navbar-brand:hover {
+    color: '.$logo_linkhover_color.';
+}';
+    }
+    
+    
 }
 add_action('skematik_add_to_custom_style','skematik_nav_styles');
 
