@@ -5,6 +5,10 @@ Powerful theme framework that can be used as a standalone website builder or as 
 The original framework is written by [Matt Jones of Rocket Farmer, LLC](http://rocketfarmer.net/) (former Skematik theme framework)
 It also has built in support for theme options, metaboxes, BuddyPress and eCommerce (WooCommerce, JigoShop and WPeCommerce).
 
+* [Twitter's Bootstrap 3](http://getboostrap.com/) ready
+* E-Commerce ( we recommend WooCommerce )
+* Buddy Press
+
 Installation
 ------------
 
@@ -27,19 +31,32 @@ The most important changes in Twitter Bootstrap 3 will be the more mobile-first 
 
 JBST use the Small grid by default. You can change this in the customizer. (Tiny, Small or Large). The large grid will stack below the 992px and be horizontal for desktop (and large tablets) while the Tiny grid never stacks.
 
-Keep in mind this setting don't set the @grid-float-breakpoint. This (Less) setting will be used for the collapsing point of the navbar. The setting is also used for modals, forms and carousels. To (re)set the @grid-float-breakpoint you will have to compile your own copy of the Bootstrap CSS and use this (replace libary/assets/css/bootstrap.min.css). After the final release of TB3 we will add a option for this to the customizer too.
+More about the grid and examples on: [http://getbootstrap.com/css/#grid](http://getbootstrap.com/css/#grid)
+
+NOTE: Twitter's Bootstrap 3 RC2 intoduced a new grid class (`col-xs-*`). The class is used for mobile phone but only set (or not) the default behavior. `col-xs-*` will always stack (and never become horizontal).
 
 Without Responsive features
 ---------------------------
 The Tiny grid will never stack so use this if you don't want to use responsive features of Twitter's Bootstrap. There is no option to choose between repsonsive and non-responsive at the moment. Beside the Tiny grid setting you will need to add some custom css and an extra class to your templates, see: [Bootstrap 3 - Turn off responsive completely](http://stackoverflow.com/questions/18146476/bootstrap-3-turn-off-responsive-completely/18185520).
 
+Keep in mind this setting don't set the @grid-float-breakpoint. This (Less) setting will be used for the collapsing point of the navbar. The setting is also used for modals, forms and carousels. To (re)set the @grid-float-breakpoint you will have to compile your own copy of the Bootstrap CSS and use this (replace libary/assets/css/bootstrap.min.css). After the final release of TB3 we will add a non-responsive option for this to the customizer too.
+
 To remove all responsive features consider to replace the Bootstrap CSS (replace libary/assets/css/bootstrap.min.css) with the one from
 https://github.com/bassjobsen/non-responsive-tb3. Also read: [Compile Twitter’s Bootstrap 3 without responsive features](http://bassjobsen.weblogs.fm/compile-twitters-bootstrap-3-without-responsive-features/).
+
+
+Recommended Plugins
+-------------------
+
+* [Wordpress SEO Plugin](http://yoast.com/wordpress/seo/)
+* [WooCommerce](http://www.woothemes.com/woocommerce/), with [WooCommerce Twitter's Bootstrap Plugin](https://github.com/bassjobsen/woocommerce-twitterbootstrap)
 
 Support
 -------
 
-We are always happy to help you. If you have any question regarding this code. [Send us a message](http://www.jamedowebsites.nl/contact/) or contact us on twitter @JamedeoWebsites.
+We are always happy to help you. If you have any question regarding 
+this code. [Send us a message](http://www.jamedowebsites.nl/contact/)
+or contact us on twitter [@JamedeoWebsites](http://twitter.com/JamedoWebsites)
 
 Credits
 -------

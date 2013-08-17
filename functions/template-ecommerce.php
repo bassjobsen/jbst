@@ -37,6 +37,10 @@ $skematikecommerce = true;
 
 			<?php
 	}
+	
+	// apply the response grid
+    add_filter('woocommerce_before_main_content', 'woocommerce_before_main_content_grid');
+    
 
 
 	// Handle cart in header fragment for ajax add to cart
