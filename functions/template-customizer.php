@@ -81,7 +81,7 @@ function skematik_grid_customizer_options($wp_customize) {
 
 	/* Navbar Width */
 	$wp_customize->add_setting( 'default_grid', array(
-	'default'        => 'small',
+	'default'        => 'sm',
 	) );
 		
 	$wp_customize->add_control( 'default_grid', array(
@@ -90,9 +90,10 @@ function skematik_grid_customizer_options($wp_customize) {
 		'type'    => 'radio',
 		'priority'        => 10,
 		'choices'    => array(
-			'large' => 'Medium-Large',
-			'small' => 'Small',
-			'tiny' => 'Tiny',
+			'lg' => 'Large',
+			'md' => 'Medium',
+			'sm' => 'Small',
+			'xs'   => 'Extra Small (never collapse, so non-responsive)' 
 			),
 	) );
 }

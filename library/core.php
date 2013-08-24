@@ -38,15 +38,7 @@ SET THE DEFAULT GRID
 ==========================================================
 */
 
-$default_grid = get_theme_mod( 'default_grid', 'small');
-
-switch($default_grid)
-{
-	case 'tiny' : define('JBST_GRIDPREFIX','col-'); break;
-	case 'large' : define('JBST_GRIDPREFIX','col-lg-'); break;
-	default : define('JBST_GRIDPREFIX','col-sm-'); break; //small
-}	
-
+define('JBST_GRIDPREFIX','col-'.get_theme_mod( 'default_grid', 'md'));
 
 /*
 ==========================================================
@@ -97,7 +89,6 @@ Stylesheets
 */
 
 function skematik_bootstrap_css() {
-	//$container = get_theme_mod( 'container_width', 1200);
 	wp_register_style( 'skematik-bootstrap', get_template_directory_uri() . '/library/assets/css/bootstrap.min.css', array(), '20130727', 'all' );
     wp_enqueue_style( 'skematik-bootstrap' );
 }

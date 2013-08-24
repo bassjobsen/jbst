@@ -10,3 +10,18 @@ License URI: license.txt
 Tags:flexible-width,buddypress,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar,custom-background,custom-colors,custom-header,featured-images,editor-style
 */
 body.admin-bar .navbar-fixed-top {top:28px;}
+
+body {padding-top:50px;background:none;background-color:#fff;}
+
+/* =Footer
+----------------------------------------------- */
+footer.site-footer {background:#ddd;border-top:1px solid #ccc;padding:15px;}
+.site-info {text-align: center;border-top: 1px solid #CCC;padding-top: 20px;margin-top:10px;margin-bottom:5px;}
+footer {border-top: 1px solid #e5e5e5;padding: 15px;}
+#content footer {padding:15px 0;margin-top:15px;}
+#content footer.entry-meta.no-border {border-top:0;margin-top:0;padding:10px 0 40px;}
+footer .widget li {padding: 10px 0;border-bottom: 1px solid #ddd;}
+footer .widget .nav li {padding:0;border-bottom:0;}
+footer .shoppingcart table td, footer .shoppingcart table th {border-bottom: 1px solid #ddd;}
+footer.site-footer a.btn, footer.site-footer a.btn:hover {color:#fff;}footer.site-footer a.btn-default, footer.site-footer a.btn-default:hover {color:#333;}
+
