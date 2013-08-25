@@ -48,6 +48,12 @@ https://github.com/bassjobsen/non-responsive-tb3. Also read: [Compile Twitter’
 
 For a non responsive website set the default grid in the customizer to "Extra Small" and set the Max container width.
 
+Internationalizing And Localizing 
+---------------------------------
+
+The default language for the theme is English (US). Translation into Dutch has been started [Help us Translate](https://poeditor.com/join/project?hash=9e7060d127eef15b8f922b0672380177) 
+Localization workflow is managed on http://poeditor.com/
+
 Recommended Plugins
 -------------------
 

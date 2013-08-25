@@ -18,8 +18,15 @@ function skematik_core_setup() {
 	require( get_template_directory() . '/library/shortcodes/lib/template-shortcodes.php' );
 	require_once locate_template('/library/shortcodes/shortcodes-init.php');
 
+/*
+==========================================================
+Internationalizing And Localizing 
+==========================================================
+*/
+
 	/* Make theme available for translation. Translations can be filed in the /languages/ directory. You can load a theme text domain in the theme's functions file. */
-	load_textdomain( 'jamedo-bootstrap-start-theme', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'jamedo-bootstrap-start-theme', get_template_directory() . '/languages' );
+
 }
 endif; // skematik_setup
 
@@ -38,7 +45,7 @@ SET THE DEFAULT GRID
 ==========================================================
 */
 
-define('JBST_GRIDPREFIX','col-'.get_theme_mod( 'default_grid', 'md'));
+define('JBST_GRIDPREFIX','col-'.get_theme_mod( 'default_grid', 'md').'-');
 
 /*
 ==========================================================
@@ -50,21 +57,65 @@ function skematik_options_add_before() {
 	$options[] = array( "name" => "Welcome",
 		"type" => "heading" );
 
-	$options[] = array(
-		'desc' => __('<h1>Welcome to Jamedo\'s Bootstrap Start Theme</h1><p class="about-description">Congratulations! You\'ve just activated one of the most advanced theme frameworks on the planet! The Jamedo\'s Bootstrap Framework allows you to create robust sites without touching any code through the use of our Layout Engine, Shortcodes and Theme Customizer. For developers, this framework gives you all the tools you need to create amazing sites for your clients with built in support for theme options, metaboxes, and compatibility with BuddyPress and the leading eCommerce platforms (WP e-Commerce, WooCommerce and JigoShop).</p>
+
+		$welcometext = '';
+		$welcometext .= '<h1>'.__('Welcome to','jamedo-bootstrap-start-theme').' '.__('Jamedo\'s Bootstrap Start Theme','jamedo-bootstrap-start-theme').'</h1><p class="about-description">'.__('Congratulations','jamedo-bootstrap-start-theme').'! '.__('You\'ve just activated one of the most advanced theme frameworks on the planet! The Jamedo\'s Bootstrap Framework allows you to create robust sites without touching any code through the use of our Layout Engine, Shortcodes and Theme Customizer. For developers, this framework gives you all the tools you need to create amazing sites for your clients with built in support for theme options, metaboxes, and compatibility with BuddyPress and the leading eCommerce platforms (WP e-Commerce, WooCommerce and JigoShop).','jamedo-bootstrap-start-theme').'</p>
 		<div class="of-divider"></div>
 	    <div class="of-clear"></div>
 		<div class="of-divider"></div>
-		<div class="of-col-third"><h4>Getting Started</h4><p>While Jamedo\'s Bootstrap Start Theme  handles most things behind the scenes and activates some default settings, there are just a couple of things you\'ll want to do right away. First, click on the "Setup" tab above to view which Core Features are turned on by default and deactivate any that you don\'t want. Then make sure you save your options at the bottom of the screen once. That should be all you need to get going!.</p></div>
-		<div class="of-col-third"><h4>Theme Customizer</h4><p>Jamedo\'s Bootstrap Start Theme  makes extensive use of the <strong><a href="'.admin_url().'customize.php">Theme Customizer</a></strong> to help you design a unique look for your site. Using this tool, you can upload a logo, change colors, modify buttons, adjust image sizes and even activate widgets all in real-time! Wanna try it out? You\'ll probably at least want to save one of your custom menus to the navigation, so <strong><a href="'.admin_url().'customize.php">click here to see it in action.</a></strong></p></div>
-		<div class="of-col-third last"><h4>Shortcodes</h4><p>Jamedo\'s Bootstrap Start Theme  comes bundled with an extensive library of shortcodes for adding unique content elements like columns, buttons, tabs and carousels. Best of all, you don\'t have to remember any of them as we have included a special shortcode generator just above the editor. <strong>Plus...Jamedo\'s Bootstrap Start Theme \'s shortcodes work in widgets too!</strong>.</p></div>
-				<div class="of-clear"></div>
-				<div class="of-col-third"><h4>Layout Engine</h4><p>Rather than resorting to page templates, we\'ve created a layout engine that lets you choose between four different base layouts for use on both pages and posts. In addition, you can even use the layout tab in this Theme Options panel to designate default layouts for different cases like blog archives, search pages and even product layouts (if you\'re using eCommerce).</p></div>
-		<div class="of-col-third"><h4>eCommerce Options</h4><p>Need some selling capabilities? Perhaps raising funds for a cause, selling tickets for an event, or even running a full-blown eCommerce site? Jamedo\'s Bootstrap Start Theme  is the perfect solution for you as it has full support for the three leading eCommerce platforms on WordPress: <strong><a href="http://wordpress.org/extend/plugins/wp-e-commerce/" target="_blank">WP e-Commerce</a></strong>, <strong><a href="http://wordpress.org/extend/plugins/woocommerce/" target="_blank">WooCommerce</a></strong> and <strong><a href="http://wordpress.org/extend/plugins/jigoshop/" target="_blank">JigoShop</a></strong>. Activate any one of these plugins for the backend of your store and Jamedo\'s Bootstrap Start Theme  will handle the frontend like a champ!.</p></div>
-		<div class="of-col-third last"><h4>BuddyPress Compatibility</h4><p>Need some robust social features without the hassle? Setting up BuddyPress with Jamedo\'s Bootstrap Start Theme  is pretty easy. Simply install and activate both <strong><a href="http://wordpress.org/extend/plugins/buddypress/" target="_blank">BuddyPress</a></strong> and the <strong><a href="http://wordpress.org/extend/plugins/bp-template-pack/" target="_blank">BuddyPress Template Pack</a></strong>. Then, run the Template Pack to move over your BuddyPress files. That\'s it! Jamedo\'s Bootstrap Start Theme  includes some unique BuddyPress functions as well as special content wrappers to make sure that all BuddyPress content fits neatly inside.</p></div>
-		<div class="of-clear"></div>'),
+		<div class="of-col-third"><h4>'.__('Getting Started','jamedo-bootstrap-start-theme').'</h4><p>'.__('While Jamedo\'s Bootstrap Start Theme  handles most things behind the scenes and activates some default settings, there are just a couple of things you\'ll want to do right away. First, click on the "Setup" tab above to view which Core Features are turned on by default and deactivate any that you don\'t want. Then make sure you save your options at the bottom of the screen once. That should be all you need to get going!','jamedo-bootstrap-start-theme').'</p></div>
+		<div class="of-col-third"><h4>'.__('Theme Customizer','jamedo-bootstrap-start-theme').'</h4>';
+		$welcometext .= '<p>';
+		$welcometext .= __('Jamedo\'s Bootstrap Start Theme','jamedo-bootstrap-start-theme');
+		$welcometext .= ' ';
+		
+		
+		
+		$welcometext .= sprintf(__('makes extensive use of the %1$s to help you design a unique look for your site. Using this tool, you can upload a logo, change colors, modify buttons, adjust image sizes and even activate widgets all in real-time!','jamedo-bootstrap-start-theme'), sprintf('<strong><a href="%1$scustomize.php">%2$s</a></strong>',admin_url(),__('Theme Customizer','jamedo-bootstrap-start-theme')) );
+		$welcometext .= ' ';
+		$welcometext .=__('Wanna try it out?','jamedo-bootstrap-start-theme');
+		
+		 $welcometext .= sprintf(__('You\'ll probably at least want to save one of your custom menus to the navigation, so %1$s','jamedo-bootstrap-start-theme'),sprintf('<strong><a href="%1$scustomize.php">%2$s</a></strong>)',admin_url(),__('click here to see it in action','jamedo-bootstrap-start-theme')));
+		 
+		$welcometext .='</p></div>';
+		
+		$welcometext .='<div class="of-col-third last"><h4>'.__('Shortcodes','jamedo-bootstrap-start-theme').'</h4>';
+		
+		$welcometext .= '<p>';
+		$welcometext .= __('Jamedo\'s Bootstrap Start Theme','jamedo-bootstrap-start-theme');
+		$welcometext .= ' ';  
+		
+		$welcometext .=__('comes bundled with an extensive library of shortcodes for adding unique content elements like columns, buttons, tabs and carousels. Best of all, you don\'t have to remember any of them as we have included a special shortcode generator just above the editor.','jamedo-bootstrap-start-theme');
+		
+		 $welcometext .= sprintf(' <strong>%1$s... %2$s\'s %3$s</strong>.</p></div>',__('Plus','jamedo-bootstrap-start-theme'),__('Jamedo\'s Bootstrap Start Theme','jamedo-bootstrap-start-theme'),__('shortcodes work in widgets too!','jamedo-bootstrap-start-theme'));
+				
+				$welcometext .= '<div class="of-clear"></div>';
+				
+				$welcometext .= sprintf('<div class="of-col-third"><h4>%1$s</h4><p>%2$s</p></div>',
+				__('Layout Engine','jamedo-bootstrap-start-theme'),
+				__('Rather than resorting to page templates, we\'ve created a layout engine that lets you choose between four different base layouts for use on both pages and posts. In addition, you can even use the layout tab in this Theme Options panel to designate default layouts for different cases like blog archives, search pages and even product layouts (if you\'re using eCommerce).','jamedo-bootstrap-start-theme')
+				);
+				
+				$welcometext .= sprintf('<div class="of-col-third"><h4>%1$s</h4><p>%2$s',
+				__('eCommerce Options','jamedo-bootstrap-start-theme'),
+				sprintf(__('Need some selling capabilities? Perhaps raising funds for a cause, selling tickets for an event, or even running a full-blown eCommerce site? %1$s is the perfect solution for you as it has full support for the three leading eCommerce platforms on WordPress: %2$s, %3$s and %4$s.','jamedo-bootstrap-start-theme'),__('Jamedo\'s Bootstrap Start Theme','jamedo-bootstrap-start-theme'),'<strong><a href="http://wordpress.org/extend/plugins/wp-e-commerce/">WP e-Commerce</a></strong>','<strong><a href="http://wordpress.org/extend/plugins/woocommerce/">WooCommerce</a></strong>','<strong><a href="http://wordpress.org/extend/plugins/jigoshop/">JigoShop</a></strong>')
+				);
+				$welcometext .= ' ';
+				
+				$welcometext .= sprintf('Activate any one of these plugins for the backend of your store and %1$s will handle the frontend like a champ!',__('Jamedo\'s Bootstrap Start Theme','jamedo-bootstrap-start-theme'));
+				
+				$welcometext .= '</p></div>';
+			   
+				
+				$welcometext .= sprintf('<div class="of-col-third last"><h4>%1$s</h4><p>%2$s</p></div>',
+				__('BuddyPress','jamedo-bootstrap-start-theme'),
+				sprintf(__('Need some robust social features without the hassle? Setting up BuddyPress with %1$s is pretty easy. Simply install and activate both %2$s and the %3$s. Then, run the Template Pack to move over your BuddyPress files. That\'s it! %1$s includes some unique BuddyPress functions as well as special content wrappers to make sure that all BuddyPress content fits neatly inside.','jamedo-bootstrap-start-theme'),__('Jamedo\'s Bootstrap Start Theme','jamedo-bootstrap-start-theme'),'<strong><a href="http://wordpress.org/extend/plugins/buddypress/">BuddyPress</a></strong>','<strong><a href="http://wordpress.org/extend/plugins/bp-template-pack/">BuddyPress Template Pack</a></strong>')
+				); 
+				$welcometext .= '<div class="of-clear"></div>';
+				
+		$options[] = array(
+		'desc' => $welcometext,
 		'type' => 'info' );
- 
     // Return new options
     return $options;
 }
