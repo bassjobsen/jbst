@@ -67,58 +67,35 @@ FOOTER WIDGETS
 */
 function skematik_footer_widgets() {
 $ftr_widgets = get_theme_mod( 'footer_widgets_number', 4 );
-$span = 12;
-if($ftr_widgets > 1) {$span = 6;}
-if($ftr_widgets > 2) {$span = 4;}
-if($ftr_widgets > 3) {$span = 3;}
-if($ftr_widgets > 0) {
+
+if($ftr_widgets > 0) 
+{
+	$span = 12 / $ftr_widgets;	
+	
+	
+	$footer_widgets_array = array(
+        __('One','jamedo-bootstrap-start-theme'),
+        __('Two','jamedo-bootstrap-start-theme'),
+        __('Three','jamedo-bootstrap-start-theme'),
+        __('Four','jamedo-bootstrap-start-theme')
+    );
+	
 	echo '<div class="row">';
+		
+	for ( $i=0; $i < $ftr_widgets; $i++ ) 
+	{
 		echo '<div class="'. JBST_GRIDPREFIX . $span.'">';
-			if ( ! dynamic_sidebar( 'footer-widget-one' ) ) :
+			if ( ! dynamic_sidebar( 'footer-widget-'.($i+1) ) ) :
 				echo '<h4>';
-				_e( 'Footer One Widget', 'jamedo-bootstrap-start-theme' );
+				echo __( 'Footer Widget', 'jamedo-bootstrap-start-theme' ).' '.$footer_widgets_array[$i];
 				echo '</h4>';
 				echo '<p>';
 				_e( 'You have activated a Footer Widget! You can deactivate this in the Theme Customizer or put content in it under "Appearance > Widgets".', 'jamedo-bootstrap-start-theme' );
 				echo '</p>';
 			endif;
 		echo '</div>';
-		if($ftr_widgets > 1) {
-			echo '<div class="'. JBST_GRIDPREFIX . $span.'">';
-				if ( ! dynamic_sidebar( 'footer-widget-two' ) ) :
-					echo '<h4>';
-					_e( 'Footer Two Widget', 'jamedo-bootstrap-start-theme' );
-					echo '</h4>';
-					echo '<p>';
-					_e( 'You have activated a second Footer Widget! You can deactivate this in the Theme Customizer or put content in it under "Appearance > Widgets".', 'jamedo-bootstrap-start-theme' );
-					echo '</p>';
-				endif;
-			echo '</div>';
-		}
-		if($ftr_widgets > 2) {
-			echo '<div class="'. JBST_GRIDPREFIX . $span.'">';
-				if ( ! dynamic_sidebar( 'footer-widget-three' ) ) :
-					echo '<h4>';
-					_e( 'Footer Three Widget', 'jamedo-bootstrap-start-theme' );
-					echo '</h4>';
-					echo '<p>';
-					_e( 'You have activated a third Footer Widget! You can deactivate this in the Theme Customizer or put content in it under "Appearance > Widgets".', 'jamedo-bootstrap-start-theme' );
-					echo '</p>';
-				endif;
-			echo '</div>';
-		}
-		if($ftr_widgets > 3) {
-			echo '<div class="'. JBST_GRIDPREFIX . $span.'">';
-				if ( ! dynamic_sidebar( 'footer-widget-four' ) ) :
-					echo '<h4>';
-					_e( 'Footer Four Widget', 'jamedo-bootstrap-start-theme' );
-					echo '</h4>';
-					echo '<p>';
-					_e( 'You have activated a fourth Footer Widget! You can deactivate this in the Theme Customizer or put content in it under "Appearance > Widgets".', 'jamedo-bootstrap-start-theme' );
-					echo '</p>';
-				endif;
-			echo '</div>';
-		}
+	}	
+		
 	echo '</div>';
 }
 }

@@ -26,6 +26,8 @@ Internationalizing And Localizing
 
 	/* Make theme available for translation. Translations can be filed in the /languages/ directory. You can load a theme text domain in the theme's functions file. */
 	load_theme_textdomain( 'jamedo-bootstrap-start-theme', get_template_directory() . '/languages' );
+	
+	
 
 }
 endif; // skematik_setup
