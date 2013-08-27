@@ -59,7 +59,7 @@ Recommended Plugins
 
 * [Wordpress SEO Plugin](http://yoast.com/wordpress/seo/)
 * [WooCommerce](http://www.woothemes.com/woocommerce/), with [WooCommerce Twitter's Bootstrap Plugin](https://github.com/bassjobsen/woocommerce-twitterbootstrap)
-
+* [Stimulate correct headings PLugin](https://github.com/bassjobsen/stimulate-correct-headings) for accessibility and seo
 Support
 -------
 
