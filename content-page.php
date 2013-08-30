@@ -6,8 +6,7 @@
  * @since skematik 1.0
  */
 ?>
-
-			<?php do_action( 'skematik_before_content_page' );?>
+			
 
 			<?php while ( have_posts() ) : the_post(); /* Start the Loop */?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

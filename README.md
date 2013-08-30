@@ -54,12 +54,20 @@ Internationalizing and Localizing
 The default language for the theme is English (US). Translation into Dutch has been started [Help us Translate](https://poeditor.com/join/project?hash=9e7060d127eef15b8f922b0672380177) 
 Localization workflow is managed on http://poeditor.com/
 
+Child themes
+------------
+Use JBST to create child themes for wordpress build on Twitter's Bootstrap 3.
+We provide you a [Boilerplate JBST Child Theme](https://github.com/bassjobsen/Boilerplate-JBST-Child-Theme) and an example of a Webshop based on [Twitter Bootstrap Webshop Template with vertical menu](https://github.com/bassjobsen/twitter-bootstrap-webshop-template). 
+Download this [Demo Webshop E-commerce Template](https://github.com/bassjobsen/jbst-e-commerce-child-theme).
+
+
 Recommended Plugins
 -------------------
 
 * [Wordpress SEO Plugin](http://yoast.com/wordpress/seo/)
 * [WooCommerce](http://www.woothemes.com/woocommerce/), with [WooCommerce Twitter's Bootstrap Plugin](https://github.com/bassjobsen/woocommerce-twitterbootstrap)
 * [Stimulate correct headings PLugin](https://github.com/bassjobsen/stimulate-correct-headings) for accessibility and seo
+
 Support
 -------
 

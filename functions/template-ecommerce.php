@@ -60,27 +60,27 @@ $skematikecommerce = true;
 
 	
 	// Define the WooCommerce content wrappers
-	function skematik_open_woocommerce_content_wrappers() {?>
-			<div id="primary" class="site-content <?php skematik_content_span(); ?>">
-				<div id="content" role="main">
-	<?php
+	function skematik_open_woocommerce_content_wrappers() {
+			jbst_open_content_wrappers();
+	
 	}
 	
-	function skematik_close_woocommerce_content_wrappers() {?>
-				</div><!-- #content -->
-			</div><!-- #primary .site-content -->
-	<?php
+	function skematik_close_woocommerce_content_wrappers() {
+			jbst_close_content_wrappers();
+
 	}
 	
 	function skematik_prepare_woocommerce_wrappers()
 	{
+	   
 	    remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 	    remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 	
 	    add_action( 'woocommerce_before_main_content', 'skematik_open_woocommerce_content_wrappers', 10 );
 	    add_action( 'woocommerce_after_main_content', 'skematik_close_woocommerce_content_wrappers', 10 );
 	}
-	add_action( 'wp_head', 'skematik_prepare_woocommerce_wrappers' );
+	
+	add_action( 'wp_head', 'skematik_prepare_woocommerce_wrappers',50);
 	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 	
 	// Redefine woocommerce_output_related_products()

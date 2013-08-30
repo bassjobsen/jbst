@@ -112,15 +112,16 @@ Skematik Main Nav
 ==========================================================
 */
 // 
+
 add_action( 'skematik_header', 'skematik_main_navbar', 50 );
-function skematik_main_navbar() {
+function skematik_main_navbar() { 
 	if(get_theme_mod('logo_image_position', 'in-nav') == 'outside-nav') {
 	echo '<div class="logo-outside-nav">';
 	echo skematik_logo();
 	echo '</div>';	
 	} ?>
     <?php if(get_theme_mod( 'navbar_style' ) == '') {?><div class="container"><?php } ?>
-	<nav role="navigation" class="navbar <?php echo get_theme_mod( 'navbar_style', '' );?> <?php //echo get_theme_mod( 'navbar_color', 'navbar-default' );?>" id="skematik-top-nav">
+	<nav role="navigation" class="navbar navbar-default <?php echo get_theme_mod( 'navbar_style', '' );?> <?php //echo get_theme_mod( 'navbar_color', 'navbar-default' );?>" id="skematik-top-nav">
       <?php if(get_theme_mod( 'navbar_style' ) != '') {?><div class="container"><?php } ?>
        <div class="navbar-header">
 		<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
@@ -136,9 +137,11 @@ function skematik_main_navbar() {
          <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse navbar-ex1-collapse">
 		  <?php skematik_main_nav(); // Adjust using Menus in Wordpress Admin ?>
+		  <div class="navbar-right">
 		  <?php if(get_theme_mod( 'navbar_search', 1 ) == 1) {skematik_nav_search();} ?> 
 		  <?php if(get_theme_mod( 'navbar_cart', 1 ) == 1) {skematik_cart_dropdown();} ?>
 		  <?php if(get_theme_mod( 'navbar_account', 1 ) == 1) {skematik_account_dropdown();} ?>
+          </div>
           </div>
         
        <?php if(get_theme_mod( 'navbar_style' ) == '') {?></div><?php } ?>

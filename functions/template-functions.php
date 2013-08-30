@@ -29,6 +29,20 @@ function skematik_layout(){
 
 }
 
+// Define the WooCommerce content wrappers
+function jbst_open_content_wrappers() {?>
+			<div id="primary" class="site-content <?php skematik_content_span(); ?>">
+				<div id="content" role="main">
+	<?php
+}
+	
+function jbst_close_content_wrappers() {?>
+				</div><!-- #content -->
+			</div><!-- #primary .site-content -->
+	<?php
+}
+
+
 // Content Span
 function skematik_content_span() {
 	skematik_layout();

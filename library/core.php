@@ -142,8 +142,8 @@ Stylesheets
 */
 
 function skematik_bootstrap_css() {
-	wp_register_style( 'skematik-bootstrap', get_template_directory_uri() . '/library/assets/css/bootstrap.min.css', array(), '20130727', 'all' );
-    wp_enqueue_style( 'skematik-bootstrap' );
+	wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/assets/css/bootstrap.min.css', array(), '20130727', 'all' );
+    wp_enqueue_style( 'bootstrap' );
 }
 
 function skematik_bootstrap_responsive_css() {
@@ -430,12 +430,12 @@ register_nav_menus(                      // wp3+ menus
 	)
 );
 
-function skematik_main_nav() {
+function skematik_main_nav($menu_class='') {
 	// display the wp3 menu if available
     wp_nav_menu( 
     	array( 
     		'menu' => 'main_nav', /* menu name */
-    		'menu_class' => 'nav navbar-nav',
+    		'menu_class' => empty($menu_class)?'nav navbar-nav':$menu_class,// nav navbar-nav
     		'theme_location' => 'main_nav', /* where in the theme it's assigned */
     		'container' => 'false', /* container class */
     		'fallback_cb' => 'skematik_main_nav_fallback', /* menu fallback */

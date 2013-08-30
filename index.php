@@ -12,10 +12,10 @@
  * @since skematik 1.0
  */
 get_header();
+do_action( 'jbst_before_content_page' );
 ?>
 
-	<div id="primary" class="site-content <?php skematik_content_span(); ?>">
-		<div id="content" role="main">
+
 		<?php if ( have_posts() ) : ?>
 				<?php 
 					if ( is_page() ) {get_template_part( 'content', 'page' );}
@@ -26,6 +26,8 @@ get_header();
 		<?php else : ?>
 		<?php get_template_part( 'no-results', 'content' ); ?>
 		<?php endif; ?>
-		</div><!-- #content -->
-	</div><!-- #primary .site-content -->
-<?php get_footer(); ?>
+
+<?php 
+do_action( 'jbst_after_content_page' );
+get_footer(); 
+?>
