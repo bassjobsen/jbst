@@ -104,7 +104,22 @@ function skematik_body_open() {
 <?php
 }
 
+/*
+==========================================================
+Logo out side navar
+==========================================================
+*/
+//       
 
+
+function jbst_logooustside()
+{
+	$extraclasses = apply_filters('jbst_logooustside_classes',array());
+	$string  = '<div class="logo-outside-nav container'.(($extraclasses)?' '.implode('',$extraclasses):'').'">';
+	$string .=  skematik_logo();
+	$string .=  '</div>';	
+	return $string;
+}
 
 /*
 ==========================================================
@@ -113,14 +128,19 @@ Skematik Main Nav
 */
 // 
 
+
 add_action( 'skematik_header', 'skematik_main_navbar', 50 );
 function skematik_main_navbar() { 
-	if(get_theme_mod('logo_image_position', 'in-nav') == 'outside-nav') {
-	echo '<div class="logo-outside-nav">';
-	echo skematik_logo();
-	echo '</div>';	
-	} ?>
-    <?php if(get_theme_mod( 'navbar_style' ) == '') {?><div class="container"><?php } ?>
+	
+	$fixed = preg_match('/fixed/',get_theme_mod( 'navbar_style' ));
+	
+	if(	get_theme_mod('logo_image_position', 'in-nav') == 'outside-nav' && !$fixed ) 
+	{
+	echo apply_filters('jbst_logooustside',jbst_logooustside());
+	}  
+	
+	if(get_theme_mod( 'navbar_style' ) == '') {?><div class="container"><?php } ?>
+	
 	<nav role="navigation" class="navbar navbar-default <?php echo get_theme_mod( 'navbar_style', '' );?> <?php //echo get_theme_mod( 'navbar_color', 'navbar-default' );?>" id="skematik-top-nav">
       <?php if(get_theme_mod( 'navbar_style' ) != '') {?><div class="container"><?php } ?>
        <div class="navbar-header">
@@ -144,10 +164,17 @@ function skematik_main_navbar() {
           </div>
           </div>
         
-       <?php if(get_theme_mod( 'navbar_style' ) == '') {?></div><?php } ?>
+       <?php if(get_theme_mod( 'navbar_style' ) != '') {?></div><?php } ?>
     </nav>
     <?php if(get_theme_mod( 'navbar_style' ) == '') {?></div><?php } ?>
 	<?php
+	
+	if(	get_theme_mod('logo_image_position', 'in-nav') == 'outside-nav' && 	$fixed)
+	{
+		echo apply_filters('jbst_logooustside',jbst_logooustside());
+	}  
+	
+	
 } // END skematik_main_navbar
 
 function skematik_nav_styles() {
@@ -155,7 +182,6 @@ function skematik_nav_styles() {
 	echo '
 	body { padding: 30px; }
     .navbar { margin-bottom: 30px; }
-    }
 	';
 	}
 	if(get_theme_mod( 'navbar_style') == 'navbar-static-top') {
@@ -178,7 +204,7 @@ function skematik_nav_styles() {
 	if(!empty($navbar_background_color))
 	{
 		echo '.navbar {background-color: '.$navbar_background_color.';}';
-    }	
+	}	
     
     $navbar_border_color = get_theme_mod( 'navbar_border_color');
 	if(!empty($navbar_border_color))

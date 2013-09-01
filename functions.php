@@ -154,6 +154,7 @@ add_action( 'jbst_after_content_page','jbst_close_content_wrappers',10);
 }
 
 add_action( 'wp_head', 'jbst_prepare_wrappers',10);
+
 /*
 ==========================================================
 Internationalizing And Localizing 

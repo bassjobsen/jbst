@@ -268,11 +268,11 @@ CUSTOM LOGO
 
 function skematik_logo() { 
 	$custom_logo = get_theme_mod( 'logo_image', '');
-	if ($custom_logo) {
-	echo "<a id='logo-link-container' href='".home_url()."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."'><img class='site-logo' src='$custom_logo' alt='".esc_attr( get_bloginfo( 'name', 'display' ) )."' /></a>"; 
-	} else { ?>
-	<a class="navbar-brand" href="<?php echo home_url();?>"><?php bloginfo('name');?></a>
-	<?php }
+	if ($custom_logo) 
+	{
+	return "<a id='logo-link-container' href='".home_url()."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."'><img class='site-logo' src='$custom_logo' alt='".esc_attr( get_bloginfo( 'name', 'display' ) )."' /></a>"; 
+	} 
+	return '<a class="navbar-brand" href="'. home_url() . '">' . bloginfo('name') . '</a>';
 }
 
 

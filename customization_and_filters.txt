@@ -1,0 +1,9 @@
+/* center logo outside navbar */
+.logo-outside-nav
+{
+	text-align: center;
+}	
+
+filters:
+/* add an extra css class to the logo container |*/
+add_filter('jbst_logooustside_classes',function($classes){ return array('text-center'); });
