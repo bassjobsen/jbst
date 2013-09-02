@@ -737,7 +737,7 @@ function skematik_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="assistive-text"><?php _e( 'Post navigation', 'jamedo-bootstrap-start-theme' ); ?></h1>
+		<h3 class="sr-only"><?php _e( 'Post navigation', 'jamedo-bootstrap-start-theme' ); ?></h3>
 <ul class="pager">
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
