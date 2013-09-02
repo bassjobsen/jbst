@@ -8,13 +8,6 @@ settings in your options table.
 ==================================================================
 */
 
-/* Add a Customize page under 'Appearance' in Admin */
-add_action ('admin_menu', 'themedemo_admin');
-function themedemo_admin() {
-	// add the Customize link to the admin menu
-	add_theme_page( 'Customize', 'Customize', 'edit_theme_options', 'customize.php' );
-}
-
 add_action('customize_register', 'skematik_customizer');
 function skematik_customizer($wp_customize) {
 global $wp_customize;
@@ -1018,6 +1011,8 @@ function skematik_footer_customizer_options($wp_customize) {
 WP E-COMMERCE
 ==================================================================
 */
+if ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) 
+{			
 add_action('skematik_add_to_customizer','skematik_wpec_customizer_options');
 function skematik_wpec_customizer_options($wp_customize) {
 	global $wp_customize;
@@ -1062,7 +1057,7 @@ function skematik_wpec_customizer_options($wp_customize) {
 			),
 	) );
 }// END WP e-Commerce SETTINGS	
-
+}
 /*
 ==================================================================
 DEMO

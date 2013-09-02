@@ -157,6 +157,36 @@ add_action( 'wp_head', 'jbst_prepare_wrappers',10);
 
 /*
 ==========================================================
+SAVE CUTOMIZER CSS TO FILE
+==========================================================
+*/
+//http://stackoverflow.com/questions/14802251/hook-into-the-wordpress-theme-customizer-save-action
+/*add_action( 'customize_save_after', 'save_css',10);
+function save_css($c)
+{
+		
+		$values = json_decode( wp_unslash( $_POST['customized'] ), true );
+		
+		if($values['default_grid']=='xs')
+		{
+			$fp = fopen(get_template_directory().'/css/custom.css', 'w+');
+			fwrite($fp, '.xs{width:100%;}'."\n");
+			fclose($fp);
+		}
+		
+		exit;
+}
+
+function my_admin_notice() {
+    ?>
+    <div class="updated">
+        <p><?php _e( 'Updated!', 'my-text-domain' ); ?></p>
+    </div>
+    <?php
+}*/
+
+/*
+==========================================================
 Internationalizing And Localizing 
 ==========================================================
 */
