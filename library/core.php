@@ -572,7 +572,7 @@ function bones_comments($comment, $args, $depth) {
 		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
 			<div class="comment-author vcard row-fluid clearfix">
 				<div class="avatar <?php echo JBST_GRIDPREFIX;?>2">
-					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
+					<?php echo get_avatar($comment,$size='75',$default='' ); ?>
 				</div>
 				<div class="<?php echo JBST_GRIDPREFIX;?>  comment-text">
 					<?php printf(__('<h4>%s</h4>','jamedo-bootstrap-start-theme'), get_comment_author_link()) ?>

@@ -112,7 +112,7 @@
 			<div class="control-group">
 			  <label for="author"><?php _e("Name","skematik"); ?> <?php if ($req) echo "(required)"; ?></label>
 			  <div class="input-prepend">
-			  	<span class="add-on"><i class="icon-user"></i></span>
+			  	<span class="add-on"><i class="glyphicon glyphicon-user"></i></span>
 			  	<input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e("Your Name","skematik"); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
 			  </div>
 		  	</div>
@@ -122,7 +122,7 @@
 			<div class="control-group">
 			  <label for="email"><?php _e("Mail","skematik"); ?> <?php if ($req) echo "(required)"; ?></label>
 			  <div class="input-prepend">
-			  	<span class="add-on"><i class="icon-envelope"></i></span>
+			  	<span class="add-on"><i class="glyphicon glyphicon-envelope"></i></span>
 			  	<input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e("Your Email","skematik"); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
 			  	<span class="help-inline">(<?php _e("will not be published","skematik"); ?>)</span>
 			  </div>
@@ -133,7 +133,7 @@
 			<div class="control-group">
 			  <label for="url"><?php _e("Website","skematik"); ?></label>
 			  <div class="input-prepend">
-			  <span class="add-on"><i class="icon-home"></i></span>
+			  <span class="add-on"><i class="glyphicon glyphicon-home"></i></span>
 			  	<input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e("Your Website","skematik"); ?>" tabindex="3" />
 			  </div>
 		  	</div>
