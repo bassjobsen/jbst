@@ -20,7 +20,7 @@ $skematikecommerce = true;
 			
 				<div class="btn-group" id="nav-cart-dropdown">
 				  <button type="button" class="btn <?php skematik_nav_shop_button_class();?> navbar-btn navbar-right dropdown-toggle" data-toggle="dropdown">
-					<i class="icon-shopping-cart"></i> <span class="cart-contents"><?php echo sprintf(_n('%d item &ndash; ', '%d items &ndash; ', $woocommerce->cart->get_cart_contents_count(), 'woothemes'), $woocommerce->cart->get_cart_contents_count()) . $woocommerce->cart->get_cart_total();?></span>
+					<i class="glyphicon glyphicon-shopping-cart"></i> <span class="cart-contents"><?php echo sprintf(_n('%d item &ndash; ', '%d items &ndash; ', $woocommerce->cart->get_cart_contents_count(), 'woothemes'), $woocommerce->cart->get_cart_contents_count()) . $woocommerce->cart->get_cart_total();?></span>
 		     		<span class="caret"></span>
 				  </button>
 				  <ul class="dropdown-menu">
@@ -152,7 +152,7 @@ $skematikecommerce = true;
 			?>
 			  <div class="btn-group pull-right" id="nav-cart-dropdown">
 			    <a class="btn dropdown-toggle <?php skematik_nav_shop_button_class();?>" data-toggle="dropdown" href="#">
-			      <i class="icon-shopping-cart"></i> <span class="cart-contents"><?php echo sprintf(_n('%d item &ndash; ', '%d items &ndash; ', jigoshop_cart::$cart_contents_count, 'jigoshop'), jigoshop_cart::$cart_contents_count) .jigoshop_cart::get_cart_total();?></span>
+			      <i class="glyphicon glyphicon-shopping-cart"></i> <span class="cart-contents"><?php echo sprintf(_n('%d item &ndash; ', '%d items &ndash; ', jigoshop_cart::$cart_contents_count, 'jigoshop'), jigoshop_cart::$cart_contents_count) .jigoshop_cart::get_cart_total();?></span>
 			      <span class="caret"></span>
 			    </a>
 			    <ul class="dropdown-menu">
@@ -291,7 +291,7 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 			?>
 			  <div class="btn-group pull-right" id="nav-cart-dropdown">
 			    <a class="btn dropdown-toggle <?php skematik_nav_shop_button_class();?>" href="<?php echo get_option('shopping_cart_url');?>">
-			      <i class="icon-shopping-cart"></i> <span class="cart-contents"><?php if(wpsc_cart_item_count() > 0) {echo wpsc_cart_item_count().' item(s) - '.wpsc_cart_total_widget();} else {echo wpsc_cart_total_widget();}?></span>
+			      <i class="glyphicon glyphicon-shopping-cart"></i> <span class="cart-contents"><?php if(wpsc_cart_item_count() > 0) {echo wpsc_cart_item_count().' item(s) - '.wpsc_cart_total_widget();} else {echo wpsc_cart_total_widget();}?></span>
 			    </a>
 			  </div>
 			<?php
@@ -464,8 +464,8 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 	if (!is_product()){
 		echo '
 		<div id="product-view-switch" class="btn-group pull-right">
-			<a id="product-list-view" class="btn btn-default btn-large active" rel="tooltip" title="List View"><i class="icon icon-list-ul"></i></a>
-			<a id="product-grid-view" class="btn btn-default btn-large" rel="tooltip" title="Grid View" ><i class="icon icon-th"></i></a>
+			<a id="product-list-view" class="btn btn-default btn-large active" rel="tooltip" title="List View"><i class="glyphicon glyphicon-list"></i></a>
+			<a id="product-grid-view" class="btn btn-default btn-large" rel="tooltip" title="Grid View" ><i class="glyphicon glyphicon-th"></i></a>
 		</div>
 		<div class="clear"></div>
 		<script>

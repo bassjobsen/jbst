@@ -152,10 +152,6 @@ function skematik_bootstrap_responsive_css() {
 	wp_enqueue_style( 'skematik-maxwidth' );
 }
 
-function skematik_fontawesome_css() {
-	wp_register_style( 'skematik-fontawesome', get_template_directory_uri() . '/library/assets/css/font-awesome.css', array(), '20120822', 'all' );
-    wp_enqueue_style( 'skematik-fontawesome' );
-}
 
 function skematik_prettify_css() {
 	wp_register_style( 'skematik-prettify', get_template_directory_uri() . '/library/assets/js/google-code-prettify/prettify.css', array(), '20120822', 'all' );
@@ -292,7 +288,7 @@ function skematik_account_dropdown() {
 	
 				<div class="btn-group" id="nav-profile-dropdown">
 				  <button type="button" class="btn <?php skematik_nav_account_button_class();?> navbar-btn navbar-right dropdown-toggle" data-toggle="dropdown">
-					<i class="icon-user"></i> <?php echo $current_user->display_name; ?>
+					<i class="glyphicon glyphicon-user"></i> <?php echo $current_user->display_name; ?>
 		     		<span class="caret"></span>
 				  </button>
 				  <ul class="dropdown-menu">
@@ -304,7 +300,7 @@ function skematik_account_dropdown() {
 	?>
 			<div class="btn-group" id="nav-profile-dropdown">
 				  <button type="button" class="btn <?php skematik_nav_account_button_class();?> navbar-btn navbar-right dropdown-toggle" data-toggle="dropdown">
-					<i class="icon-user"></i> 
+					<i class="glyphicon glyphicon-user"></i> 
 					<span class="caret"></span>
 				  </button>
 				  <ul class="dropdown-menu">
@@ -587,7 +583,7 @@ function bones_comments($comment, $args, $depth) {
                     <?php comment_text() ?>
                     
                     <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
-                    <?php edit_comment_link(__('Edit','jamedo-bootstrap-start-theme'),'<span class="edit-comment btn btn-mini '.get_theme_mod( 'default_button_style', 'btn-primary' ).'"><i class="icon-white icon-pencil"></i>','</span>') ?>
+                    <?php edit_comment_link(__('Edit','jamedo-bootstrap-start-theme'),'<span class="edit-comment btn btn-mini '.get_theme_mod( 'default_button_style', 'btn-primary' ).'"><i class="glyphicon glyphicon-pencil"></i>','</span>') ?>
 					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
                 </div>
 			</div>
@@ -601,9 +597,9 @@ function bones_comments($comment, $args, $depth) {
 	jQuery(document).ready(function($) {
 	  /* Add to cart buttons */
 	  $(".comment-reply-link").addClass("btn btn-success btn-mini");
-	  $('.comment-reply-link').prepend('<i class="icon-share-alt"></i> ');
+	  $('.comment-reply-link').prepend('<i class="glyphicon glyphicon-share-alt"></i> ');
 	  $("#cancel-comment-reply-link").addClass("btn btn-danger btn-mini");
-	  $('#cancel-comment-reply-link').prepend('<i class="icon-remove"></i> ');
+	  $('#cancel-comment-reply-link').prepend('<i class="glyphicon glyphicon-remove"></i> ');
 	});
 	</script>
 	<?php
@@ -907,9 +903,9 @@ global $post;
 $posttype = get_post_type();
 if ($posttype == 'wpsc-product') {$posttype = 'product';}
 $label = 'label-inverse';
-if ($posttype == 'product') {$label = 'label-inverse';$icon = 'icon-tags';$type = 'Product';}
-if ($posttype == 'post') {$label = 'label-inverse';$icon = 'icon-pencil';$type = 'Article';}
-if ($posttype == 'page') {$label = 'label-inverse';$icon = 'icon-file';$type = 'Page';}
+if ($posttype == 'product') {$label = 'label-inverse';$icon = 'glyphicon glyphicon-tags';$type = 'Product';}
+if ($posttype == 'post') {$label = 'label-inverse';$icon = 'glyphicon glyphicon-pencil';$type = 'Article';}
+if ($posttype == 'page') {$label = 'label-inverse';$icon = 'glyphicon glyphicon-file';$type = 'Page';}
 
 echo '<div class="search-label"><a data-title="'.$type.'" rel="tooltip"><i class="icon '.$icon.'"></i></a></div>';
 }

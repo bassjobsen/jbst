@@ -59,7 +59,7 @@ function skematik_register_shortcodes() {
 			$icon = '';
 		}
 		else{
-			$icon = '<i class="icon-'. $icon . ' icon-'. $iconcolor . '"></i> ';
+			$icon = '<i class="glyphicon glyphicon-'. $icon . ' icon-'. $iconcolor . '"></i> ';
 		}
 		
 		$output = '<a href="' . $url . '" target="' . $target . '" class="btn '. $type . ' ' . $size . '">';
@@ -280,7 +280,7 @@ function skematik_register_shortcodes() {
 		if($block == 'true') {$alertblock = 'alert-block';}
 		$output = '<div class="fade in alert '. $type . ' '. $block . '">';
 		if($close == 'true') {
-			$output .= '<a class="close" data-dismiss="alert"><i style="font-size:14px;" class="icon-remove"></i></a>';
+			$output .= '<a class="close" data-dismiss="alert"><i style="font-size:14px;" class="glyphicon glyphicon-remove"></i></a>';
 		}
 		if($heading <> '') {
 			$output .= '<h4 class="alert-heading">'.$heading.'</h4>';
@@ -364,7 +364,7 @@ function skematik_register_shortcodes() {
 			$icon = "";
 		}
 		else{
-			$icon = '<i class="icon-'. $icon . ' icon-'. $iconcolor . '"></i> ';
+			$icon = '<i class="glyphicon glyphicon-'. $icon . ' icon-'. $iconcolor . '"></i> ';
 		}
 	
 		$output = '<a target="'.$target.'" class="'.$button.' '.$size.' '.$type.'" rel="tooltip" href="'.$link.'" title="'.$title.'">';
@@ -593,7 +593,7 @@ function skematik_register_shortcodes() {
 			$float = "float:" . $float.";margin-left:8px";
 		}
 		
-		$output = '<i class="icon-'. $type . '" style="'.$color.' '.$size.' '.$float.'"></i> ';
+		$output = '<i class="glyphicon glyphicon-'. $type . '" style="'.$color.' '.$size.' '.$float.'"></i> ';
 		
 		return $output;
 	}
