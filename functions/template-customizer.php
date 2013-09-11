@@ -69,7 +69,7 @@ function skematik_grid_customizer_options($wp_customize) {
 
 	$wp_customize->add_section( 'grid_settings', array(
 		'title'          => 'Default grid',
-		'priority'       => 119,
+		'priority'       => 118,
 	) );
 
 	/* Navbar Width */
@@ -104,7 +104,7 @@ function skematik_container_customizer_options($wp_customize) {
 
 	$wp_customize->add_section( 'container_settings', array(
 		'title'          => 'Container',
-		'priority'       => 120,
+		'priority'       => 119,
 	) );
 
 	/* Navbar Width */
@@ -123,6 +123,41 @@ function skematik_container_customizer_options($wp_customize) {
 			),
 	) );
 }
+
+/*
+==================================================================
+Grid Float Breakpoint
+==================================================================
+*/
+add_action('skematik_add_to_customizer','jbst_gridfloatbreakpoint_customizer_options');
+function jbst_gridfloatbreakpoint_customizer_options($wp_customize) {
+	global $wp_customize;
+
+	$wp_customize->add_section( 'gridfloatbreakpoint_settings', array(
+		'title'          => 'Grid Float Breakpoint',
+		'priority'       => 120,
+	) );
+
+	/* Navbar Width */
+	$wp_customize->add_setting( 'gridfloatbreakpoint', array(
+	'default'        => '768',
+	) );
+		
+	$wp_customize->add_control( 'gridfloatbreakpoint', array(
+		'label'   => 'Grid Float Breakpoint:',
+		'section' => 'gridfloatbreakpoint_settings',
+		'type'    => 'radio',
+		'priority'        => 10,
+		'choices'    => array(
+			'768' => '768 px',
+			'992' => '992 px',
+			'0' => '0 (always horizontal, never collapse)'
+			),
+	) );
+}
+
+
+
 /*
 ==================================================================
 Logo
