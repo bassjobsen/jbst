@@ -184,7 +184,7 @@ $skematikecommerce = true;
 	
 // Define the Jigosohp content wrappers
 	function skematik_open_jigoshop_content_wrappers() {?>
-			<div id="primary" class="site-content <?php skematik_content_span(); ?>">
+			<div id="primary" class="site-content <?php do_action('jbstmaingridclass'); ?>">
 				<div id="content" role="main">
 	<?php
 	}

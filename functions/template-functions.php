@@ -31,7 +31,7 @@ function skematik_layout(){
 
 // Define the WooCommerce content wrappers
 function jbst_open_content_wrappers() {?>
-			<div id="primary" class="site-content <?php skematik_content_span(); ?>">
+			<div id="primary" class="site-content <?php do_action('jbstmaingridclass'); ?>">
 				<div id="content" role="main">
 	<?php
 }
@@ -42,6 +42,7 @@ function jbst_close_content_wrappers() {?>
 	<?php
 }
 
+add_action('jbstmaingridclass','skematik_content_span',1);
 
 // Content Span
 function skematik_content_span() {

@@ -302,7 +302,7 @@ Skematik BuddyPress Top Content Wrapper
 add_action( 'skematik_before_buddypress', 'skematik_buddypress_top_content_wrapper', 10 );
 function skematik_buddypress_top_content_wrapper() {
 ?>
-	<div id="primary" class="site-content <?php skematik_content_span(); ?>">
+	<div id="primary" class="site-content <?php do_action('jbstmaingridclass'); ?>">
 		<div id="content" role="main">
 <?php
 }

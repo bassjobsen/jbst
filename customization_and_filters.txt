@@ -7,3 +7,11 @@
 filters:
 /* add an extra css class to the logo container |*/
 add_filter('jbst_logooustside_classes',function($classes){ return array('text-center'); });
+
+
+/* hooks */
+jbstmaingridclass; set the grid column class for the main content
+
+sidebars are set with: 
+add_action( 'skematik_header', 'skematik_left_sidebar', 80 );
+add_action( 'skematik_footer', 'skematik_right_sidebar', 9 );
