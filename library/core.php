@@ -277,7 +277,7 @@ function skematik_logo() {
 	{
 	return "<a id='logo-link-container' href='".home_url()."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."'><img class='site-logo' src='$custom_logo' alt='".esc_attr( get_bloginfo( 'name', 'display' ) )."' /></a>"; 
 	} 
-	return '<a class="navbar-brand" href="'. home_url() . '">' . bloginfo('name') . '</a>';
+	return '<a class="navbar-brand" href="'. home_url() . '">' . get_bloginfo('name') . '</a>';
 }
 
 
