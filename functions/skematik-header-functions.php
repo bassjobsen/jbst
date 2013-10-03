@@ -150,7 +150,7 @@ function skematik_main_navbar() {
 		  <span class="icon-bar"></span>
 		  <span class="icon-bar"></span>
 		</button>
-			<? if(get_theme_mod('logo_image_position', 'in-nav') == 'in-nav') {echo kematik_logo();} ?>
+			<?php if(get_theme_mod('logo_image_position', 'in-nav') == 'in-nav') {echo skematik_logo();} ?>
        </div>
          
 		  
