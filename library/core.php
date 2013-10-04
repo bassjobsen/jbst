@@ -143,7 +143,9 @@ Stylesheets
 
 function skematik_bootstrap_css() {
 	wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/assets/css/bootstrap.min.css', array(), '20130727', 'all' );
-    wp_enqueue_style( 'bootstrap' );
+    
+
+wp_enqueue_style( 'bootstrap' );
 }
 
 function skematik_bootstrap_responsive_css() {
@@ -413,14 +415,12 @@ NAVIGATION SEARCH
 */
 function skematik_nav_search() {?>
 		
-		
-	<form class="navbar-form navbar-left" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+	<form class="navbar-form navbar-search" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
 	  <div class="form-group">
         <input type="text" class="form-control" name="s" id="s" type="text" autocomplete="off" placeholder="<?php _e( 'Search', 'jamedo-bootstrap-start-theme' ); ?>">
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
-
 <?php
 }
 
