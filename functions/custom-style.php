@@ -142,22 +142,6 @@ if($container == 980) {
 		.navbar-static-cont-width {width:940px;}
 	}';
 }
-if($container == 768) {
-	echo'	
-	@media (min-width: 1200px) {
-		.navbar-static-cont-width {width:768px;}
-	}
-	@media (max-width: 1199px) {
-		.navbar-static-cont-width {width:768px;}
-	}
-	.navbar-static-cont-width {margin-left:-10px;}
-	.skematik-site-wrap {width:768px;margin:0 auto;}
-	.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {width: 768px;}
-		@media (max-width: 767px) {
-		.skematik-site-wrap,.navbar-static-cont-width,.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container  {width:auto;}
-	}
-	';
-}
 
 do_action('skematik_add_to_custom_style');
 

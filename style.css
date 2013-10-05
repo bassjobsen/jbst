@@ -23,7 +23,7 @@ body {background:none;background-color:#fff;}
 
 @media (min-width: 1200px) {
 
-	.navbar-static-cont-width {width:1170px;}
+	.navbar-static-cont-width {width:1140px;}
 
 }
 
@@ -35,7 +35,7 @@ body {background:none;background-color:#fff;}
 
 @media (min-width: 768px) and (max-width: 979px) {
 
-	.navbar-static-cont-width {width:724px;}
+	.navbar-static-cont-width {width:720px;}
 
 }
 
