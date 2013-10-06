@@ -14,54 +14,6 @@
 get_header();
 do_action( 'jbst_before_content_page' );
 ?>
-<?
-
-$pagenum = isset( $_GET['pagenum'] ) ? absint( $_GET['pagenum'] ) : 1;
-
-$limit = 5; // number of rows in page
-$offset = ( $pagenum - 1 ) * $limit;
-$total = $wpdb->get_var( "SELECT COUNT(`term_id`) FROM `wp_terms`" );
-$num_of_pages = ceil( $total / $limit );
-$result = $wpdb->get_results( "SELECT * FROM `wp_terms` LIMIT $offset, $limit" );
-
-$data_html = '';
-
-foreach( $result as $results ) 
-
-    {
-    $id=$results->term_id;
-    $name= $results->slug;
-    //$gender= $results->gender_cust;
-    //$dob= $results->dob_cust;
-?>
-<?php $html= "<div class=\"divContentBody\">";?>
-<?php $html .= "<span class=\"clsOrderNo\">". $id."</span>";?>
-<?php $html .= "<span class=\"clsName\">". $name."</span>";?>
-<?php //$html .= "<span class=\"clsGender\">".$gender."</span>";?>
-<?php //$html .= "<span class=\"clsDOB\">".  $dob ."</span>";?>
-<?php //$html .= "</div>"?>
-<?php
-$data_html .=$html; 
- }
-echo $data_html;
-
-
-$page_links = paginate_links( array(
-    'base' => add_query_arg( 'pagenum', '%#%' ),
-    'format' => '',
-    'prev_text' => __( '&laquo;', 'aag' ),
-    'next_text' => __( '&raquo;', 'aag' ),
-    'total' => $total,
-    'current' => $pagenum
-) );
-
-if ( $page_links ) {
-    echo '<div class="tablenav"><div class="tablenav-pages" style="margin: 1em 0">' . $page_links . '</div></div>';
-}
-
- ?> 
-
-
 
 		<?php if ( have_posts() ) : ?>
 				<?php 
