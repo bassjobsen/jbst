@@ -90,9 +90,54 @@ function skematik_grid_customizer_options($wp_customize) {
 			),
 	) );
 }
+add_action('skematik_add_to_customizer','skematik_customizer_mainnavigation');
+function skematik_customizer_mainnavigation($wp_customize) {
+global $wp_customize;	
+$wp_customize->add_section( 'nav', array(
+     'title'          => __( 'Navigation' ),
+     'theme_supports' => 'menus',
+     'priority'       => 100,
+     //'description'    => sprintf( _n('Your theme supports %s menu. Select which menu you would like to use.', 'Your theme supports %s menus. Select which menu appears in each location.', $num_locations ), number_format_i18n( $num_locations ) ) . "\n\n" . __('You can edit your menu content on the Menus screen in the Appearance section.'),
+     'description'    => __('Your theme supports menus. Select which menu you would like to use.') . "\n\n" . __('You can edit your menu content on the Menus screen in the Appearance section.')
+) );
 
+	
+	$wp_customize->add_setting( 'menu_depth', array(
+	'default'        => 0,
+	) );
+		
+	$wp_customize->add_control( 'menu_depth', array(
+		'label'   => 'Depth, levels of submenus (default 0 = no submenus)',
+		'section' => 'nav',
+		//'type'    => 'checkbox',
+		'priority'        => 40,
+	) );
+	
+	/* indicator clickable ? */
+	$wp_customize->add_setting( 'parent_clickable', array(
+	'default'        => 0,
+	) );
+		
+	$wp_customize->add_control( 'parent_clickable', array(
+		'label'   => 'Should the parent (indicator) of a submenu be clickable?',
+		'section' => 'nav',
+		'type'    => 'checkbox',
+		'priority'        => 50,
+	) );
+	
+	/* open on click? */
+	$wp_customize->add_setting( 'open_with_click', array(
+	'default'        => 0,
+	) );
+		
+	$wp_customize->add_control( 'open_with_click', array(
+		'label'   => 'Open submenus on click (for mobile usage)',
+		'section' => 'nav',
+		'type'    => 'checkbox',
+		'priority'        => 60,
+	) );
 
-
+}
 /*
 ==================================================================
 Navbar

@@ -160,7 +160,11 @@ function skematik_bootstrap_responsive_css() {
 		else {wp_register_style( 'navbar-gridfloatbreakpoint', get_template_directory_uri() . '/library/assets/css/navbar768.min.css', array(), '20130911', 'all' );}
 		
 		wp_enqueue_style( 'navbar-gridfloatbreakpoint' );
-	//}		
+	//}	
+	
+	$menu_depth = get_theme_mod( 'menu_depth', 0);
+	if($menu_depth>0) {wp_register_style( 'dropdown-submenu', get_template_directory_uri() . '/library/assets/css/dropdown-submenu.css', array(), '20131013', 'all' );}
+	wp_enqueue_style( 'dropdown-submenu' );	
 }
 
 
@@ -197,6 +201,11 @@ function skematik_application_js() {
 function skematik_js() {	
 	wp_register_script('skematik_js', get_template_directory_uri() . '/library/assets/js/skematik.js', array( 'jquery' ), '20120703', true );
 	wp_enqueue_script( 'skematik_js' );
+	if(get_theme_mod('open_with_click',0)==1)
+	{
+		wp_register_script('open_with_click_js', get_template_directory_uri() . '/library/assets/js/open_with_click.js', array( 'jquery' ), '20131310', true );
+	    wp_enqueue_script( 'open_with_click_js' );
+    }	
 }
 
 function skematik_prettify_js() {
@@ -437,17 +446,30 @@ register_nav_menus(                      // wp3+ menus
 
 function skematik_main_nav($menu_class='') {
 	// display the wp3 menu if available
-    wp_nav_menu( 
-    	array( 
-    		'menu' => 'main_nav', /* menu name */
-    		'menu_class' => empty($menu_class)?'nav navbar-nav':$menu_class,// nav navbar-nav
-    		'theme_location' => 'main_nav', /* where in the theme it's assigned */
-    		'container' => 'false', /* container class */
-    		'fallback_cb' => 'skematik_main_nav_fallback', /* menu fallback */
-    		'depth' => '2', /* suppress lower levels for now */
-    		'walker' => new description_walker()
-    	)
+ //   wp_nav_menu( 
+ //   	array( 
+ //   		'menu' => 'main_nav', /* menu name */
+ //   		'menu_class' => empty($menu_class)?'nav navbar-nav':$menu_class,// nav navbar-nav
+ //   		'theme_location' => 'main_nav', /* where in the theme it's assigned */
+ //   		'container' => 'false', /* container class */
+ //   		'fallback_cb' => 'skematik_main_nav_fallback', /* menu fallback */
+ //   		'depth' => '2', /* suppress lower levels for now */
+ //   		'walker' => new description_walker()
+ //   	)
+ //   );
+
+    wp_nav_menu( array(
+        'menu'              => 'main_nav',
+        'theme_location'    => 'main_nav',
+        'depth'             => get_theme_mod( 'menu_depth', 0)+1,
+        'container'         => 'false',
+        'container_class'   => 'collapse navbar-collapse navbar-jbst-collapse',
+        'menu_class'        => 'nav navbar-nav',
+        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+        'walker'            => new wp_bootstrap_navwalker())
     );
+
+
 do_action( 'skematik_after_main_nav' );
 }
 
@@ -468,100 +490,228 @@ function skematik_main_nav_fallback() {?>
 <?php	
 }
 
-// Menu output mods
-/* This was written by the geniuses at 320Press :-) Thanks guys!! */
-class description_walker extends Walker_Nav_Menu
-{
-      function start_el(&$output, $item, $depth, $args)
-      {
-			global $wp_query;
-			global $post;
-			$pageid = 0;
-			if($post){$pageid = $post->ID;}
-			$blogpageid = get_option('page_for_posts');
-			$menuid = get_post_meta( $item->ID, '_menu_item_object_id', true );
-			if ($pageid == $menuid) {$active = 'active';} else {$active = '';}
-			
-			/* WOOCOMMERCE - adds the active class if you're on the actual shop page */
-			if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-				if (is_shop()){ 
-					$shopid = get_option('woocommerce_shop_page_id');
-					if ($shopid == $menuid)  {$active = 'active';}
-				}
-			}
-			
-			/* JIGOSHOP - adds the active class if you're on the actual shop page */
-			if ( in_array( 'jigoshop/jigoshop.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-				if (is_shop()){ 
-					$shopid = get_option('jigoshop_shop_page_id');
-					if ($shopid == $menuid)  {$active = 'active';}
-				}
-			}
-			
-			/* WP E-COMMERCE - adds the active class if you're on the actual shop page */
-			if ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-				if (is_product()){ 
-					$shopid = get_option('cart_location');
-					if ($shopid == $menuid)  {$active = 'active';}
-				}
-			}
-			
-			if (($blogpageid == $menuid) && ( 'post' == get_post_type() )) {$active = 'active';}
-			
-			$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-			
+
+
+/**
+ * Class Name: wp_bootstrap_navwalker
+ * GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
+ * Description: A custom WordPress nav walker class to implement the Bootstrap 3 navigation style in a custom theme using the WordPress built in menu manager.
+ * Version: 2.0.4
+ * Author: Edward McIntyre - @twittem
+ * License: GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ */
+
+class wp_bootstrap_navwalker extends Walker_Nav_Menu {
+
+	/**
+	 * @see Walker::start_lvl()
+	 * @since 3.0.0
+	 *
+	 * @param string $output Passed by reference. Used to append additional content.
+	 * @param int $depth Depth of page. Used for padding.
+	 */
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat( "\t", $depth );
+		$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
+	}
+
+	/**
+	 * @see Walker::start_el()
+	 * @since 3.0.0
+	 *
+	 * @param string $output Passed by reference. Used to append additional content.
+	 * @param object $item Menu item data object.
+	 * @param int $depth Depth of menu item. Used for padding.
+	 * @param int $current_page Menu item ID.
+	 * @param object $args
+	 */
+	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
+		/**
+		 * Dividers, Headers or Disabled
+		 * =============================
+		 * Determine whether the item is a Divider, Header, Disabled or regular
+		 * menu item. To prevent errors we use the strcasecmp() function to so a
+		 * comparison that is not case sensitive. The strcasecmp() function returns
+		 * a 0 if the strings are equal.
+		 */
+		if ( strcasecmp( $item->attr_title, 'divider' ) == 0 && $depth === 1 ) {
+			$output .= $indent . '<li role="presentation" class="divider">';
+		} else if ( strcasecmp( $item->title, 'divider') == 0 && $depth === 1 ) {
+			$output .= $indent . '<li role="presentation" class="divider">';
+		} else if ( strcasecmp( $item->attr_title, 'dropdown-header') == 0 && $depth === 1 ) {
+			$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
+		} else if ( strcasecmp($item->attr_title, 'disabled' ) == 0 ) {
+			$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
+		} else {
+
 			$class_names = $value = '';
-			
-			// If the item has children, add the dropdown class for bootstrap
-			if ( $args->has_children ) {
-				$class_names = "dropdown ";
-			}
-			
+
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-			
-			//$class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-			$class_names = ' class="'. esc_attr( $class_names ) . ' ' . $active . '"';
-           
-           	$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+			$classes[] = 'menu-item-' . $item->ID;
 
-           	$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-           	$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-           	$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-           	$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-           	// if the item has children add these two attributes to the anchor tag
-           	if ( $args->has_children ) {
-				$attributes .= 'class="dropdown-toggle" data-toggle="dropdown"';
+			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+
+			if ( $args->has_children && $depth<(get_theme_mod( 'menu_depth', 0)))
+				//$class_names .= ' dropdown';
+				//add by bass
+			{
+				if($depth === 0) $class_names .= ' dropdown';
+				else $class_names .= ' dropdown-submenu';
+		    }		
+				
+			if ( in_array( 'current-menu-item', $classes ) )
+				$class_names .= ' active';
+
+			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+
+			$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
+			$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+
+			$output .= $indent . '<li' . $id . $value . $class_names .'>';
+
+			$atts = array();
+			$atts['title']  = ! empty( $item->title )	? $item->title	: '';
+			$atts['target'] = ! empty( $item->target )	? $item->target	: '';
+			$atts['rel']    = ! empty( $item->xfn )		? $item->xfn	: '';
+
+			// If item has_children add atts to a.
+			if ( $args->has_children ) {//&& $depth === 0 ) {
+				if(get_theme_mod('parent_clickable',0)==1)
+				{
+					$atts['href'] = ! empty( $item->url ) ? $item->url : '';
+			    }	
+			    else
+			    {
+					$atts['href']   		= '#';
+			    }
+				$atts['data-toggle']	= 'dropdown';
+				$atts['class']			= 'dropdown-toggle';
+			} 
+			//add by bass
+			/*elseif( $args->has_children && $depth >0 )
+			{
+				$atts['href']   		= '#';
+		    }*/	
+			else {
+				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 			}
 
-            $item_output = $args->before;
-            $item_output .= '<a'. $attributes .'>';
-            $item_output .= $args->link_before .apply_filters( 'the_title', $item->title, $item->ID );
-            $item_output .= $args->link_after;
-            // if the item has children add the caret just before closing the anchor tag
-            if ( $args->has_children ) {
-            	$item_output .= '<b class="caret"></b></a>';
-            }
-            else{
-            	$item_output .= '</a>';
-            }
-            $item_output .= $args->after;
+			$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
 
-            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-            }
-            
-        function start_lvl(&$output, $depth) {
-            $indent = str_repeat("\t", $depth);
-            $output .= "\n$indent<ul class=\"dropdown-menu\">\n";
-        }
-            
-      	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output )
-      	    {
-      	        $id_field = $this->db_fields['id'];
-      	        if ( is_object( $args[0] ) ) {
-      	            $args[0]->has_children = ! empty( $children_elements[$element->$id_field] );
-      	        }
-      	        return parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-      	    }          
+			$attributes = '';
+			foreach ( $atts as $attr => $value ) {
+				if ( ! empty( $value ) ) {
+					$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+					$attributes .= ' ' . $attr . '="' . $value . '"';
+				}
+			}
+
+			$item_output = $args->before;
+
+			/*
+			 * Glyphicons
+			 * ===========
+			 * Since the the menu item is NOT a Divider or Header we check the see
+			 * if there is a value in the attr_title property. If the attr_title
+			 * property is NOT null we apply it as the class name for the glyphicon.
+			 */
+			if ( ! empty( $item->attr_title ) )
+				$item_output .= '<a'. $attributes .'><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
+			else
+				$item_output .= '<a'. $attributes .'>';
+
+			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
+			$item_output .= $args->after;
+
+			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+		}
+	}
+
+	/**
+	 * Traverse elements to create list from elements.
+	 *
+	 * Display one element if the element doesn't have any children otherwise,
+	 * display the element and its children. Will only traverse up to the max
+	 * depth and no ignore elements under that depth.
+	 *
+	 * This method shouldn't be called directly, use the walk() method instead.
+	 *
+	 * @see Walker::start_el()
+	 * @since 2.5.0
+	 *
+	 * @param object $element Data object
+	 * @param array $children_elements List of elements to continue traversing.
+	 * @param int $max_depth Max depth to traverse.
+	 * @param int $depth Depth of current element.
+	 * @param array $args
+	 * @param string $output Passed by reference. Used to append additional content.
+	 * @return null Null on failure with no changes to parameters.
+	 */
+	public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
+        if ( ! $element )
+            return;
+
+        $id_field = $this->db_fields['id'];
+
+        // Display this element.
+        if ( is_object( $args[0] ) )
+           $args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
+
+        parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+    }
+
+	/**
+	 * Menu Fallback
+	 * =============
+	 * If this function is assigned to the wp_nav_menu's fallback_cb variable
+	 * and a manu has not been assigned to the theme location in the WordPress
+	 * menu manager the function with display nothing to a non-logged in user,
+	 * and will add a link to the WordPress menu manager if logged in as an admin.
+	 *
+	 * @param array $args passed from the wp_nav_menu function.
+	 *
+	 */
+	public static function fallback( $args ) {
+		if ( current_user_can( 'manage_options' ) ) {
+
+			extract( $args );
+
+			$fb_output = null;
+
+			if ( $container ) {
+				$fb_output = '<' . $container;
+
+				if ( $container_id )
+					$fb_output .= ' id="' . $container_id . '"';
+
+				if ( $container_class )
+					$fb_output .= ' class="' . $container_class . '"';
+
+				$fb_output .= '>';
+			}
+
+			$fb_output .= '<ul';
+
+			if ( $menu_id )
+				$fb_output .= ' id="' . $menu_id . '"';
+
+			if ( $menu_class )
+				$fb_output .= ' class="' . $menu_class . '"';
+
+			$fb_output .= '>';
+			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">Add a menu</a></li>';
+			$fb_output .= '</ul>';
+
+			if ( $container )
+				$fb_output .= '</' . $container . '>';
+
+			echo $fb_output;
+		}
+	}
 }
 
 /*
