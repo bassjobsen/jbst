@@ -18,8 +18,8 @@ $skematikecommerce = true;
 	global $woocommerce;
 			?>
 			
-				<div class="btn-group" id="nav-cart-dropdown">
-				  <button type="button" class="btn <?php skematik_nav_shop_button_class();?> navbar-btn navbar-right dropdown-toggle" data-toggle="dropdown">
+				<div class="btn-group navbar-right" id="nav-cart-dropdown">
+				  <button type="button" class="btn <?php skematik_nav_shop_button_class();?> navbar-btn  dropdown-toggle" data-toggle="dropdown">
 					<i class="glyphicon glyphicon-shopping-cart"></i> <span class="cart-contents"><?php echo sprintf(_n('%d item &ndash; ', '%d items &ndash; ', $woocommerce->cart->get_cart_contents_count(), 'woothemes'), $woocommerce->cart->get_cart_contents_count()) . $woocommerce->cart->get_cart_total();?></span>
 		     		<span class="caret"></span>
 				  </button>

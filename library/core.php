@@ -305,20 +305,19 @@ function skematik_account_dropdown() {
 	get_currentuserinfo();
 	if (is_user_logged_in()) {
 	?>
-	
-				<div class="btn-group" id="nav-profile-dropdown">
-				  <button type="button" class="btn <?php skematik_nav_account_button_class();?> navbar-btn navbar-right dropdown-toggle" data-toggle="dropdown">
+				<div class="btn-group navbar-right" id="nav-profile-dropdown">
+				  <button type="button" class="btn <?php skematik_nav_account_button_class();?> navbar-btn  dropdown-toggle" data-toggle="dropdown">
 					<i class="glyphicon glyphicon-user"></i> <?php echo $current_user->display_name; ?>
 		     		<span class="caret"></span>
 				  </button>
 				  <ul class="dropdown-menu">
 						<?php do_action( 'skematik_nav_profile_dropdown');?>
 				  </ul>
-				</div>	
+				</div>
 	<?php
 	} else {
 	?>
-			<div class="btn-group" id="nav-profile-dropdown">
+			<li><div class="btn-group" id="nav-profile-dropdown">
 				  <button type="button" class="btn <?php skematik_nav_account_button_class();?> navbar-btn navbar-right dropdown-toggle" data-toggle="dropdown">
 					<i class="glyphicon glyphicon-user"></i> 
 					<span class="caret"></span>
@@ -326,7 +325,7 @@ function skematik_account_dropdown() {
 				  <ul class="dropdown-menu">
 						<?php do_action( 'skematik_nav_login_dropdown');?>
 				  </ul>
-			</div>
+			</div></li>
 	
 
 	<?php
@@ -424,7 +423,7 @@ NAVIGATION SEARCH
 */
 function skematik_nav_search() {?>
 		
-	<form class="navbar-form navbar-search" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+	<form class="navbar-form navbar-search navbar-left" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
 	  <div class="form-group">
         <input type="text" class="form-control" name="s" id="s" type="text" autocomplete="off" placeholder="<?php _e( 'Search', 'jamedo-bootstrap-start-theme' ); ?>">
       </div>

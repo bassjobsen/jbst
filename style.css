@@ -45,6 +45,7 @@ body {background:none;background-color:#fff;}
 
 }
 
+.navbar-nav > li > .btn-group {padding-left:10px; padding-right:10px;}
 
 /* =Footer
 ----------------------------------------------- */
