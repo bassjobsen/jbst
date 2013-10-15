@@ -5,7 +5,6 @@
  */
 ?>
 			<?php skematik_content_nav( 'nav-above' ); ?>
-
 			<?php do_action( 'skematik_before_content_404' );?>
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
