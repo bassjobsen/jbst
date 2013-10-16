@@ -8,20 +8,14 @@
   overflow: hidden;
 }
 
-.CodeMirror, .CodeMirror div {
-	margin-right: 15px!important;
-}
 .CodeMirror-scroll {
-	overflow-x:auto;
-	height: 650px;
-	/*
-	 This is needed to prevent an IE[67] bug where the scrolled content
-	 is visible outside of the scrolling box.
-	*/
-	position: relative;
-	outline: none;
+  overflow: auto;
+  height: 300px;
+  /* This is needed to prevent an IE[67] bug where the scrolled content
+     is visible outside of the scrolling box. */
+  position: relative;
+  outline: none;
 }
-
 
 /* Vertical scrollbar */
 .CodeMirror-scrollbar {
@@ -86,6 +80,7 @@
   word-wrap: normal;
   line-height: inherit;
   color: inherit;
+  overflow: visible;
 }
 
 .CodeMirror-wrap pre {
