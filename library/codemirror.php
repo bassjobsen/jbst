@@ -8,10 +8,12 @@
  *
  */
 
+
+
 add_action('admin_init', 'codemirror_register', 999);
 
 function codemirror_register() {
-	
+
 	wp_register_script('codemirror', get_template_directory_uri()."/library/codemirror/lib/codemirror.js");
 	wp_register_style('codemirror', get_template_directory_uri()."/library/codemirror/lib/codemirror.css");
 	
@@ -27,7 +29,14 @@ function codemirror_register() {
 	add_action('admin_head', 'codemirror_control_js');
 }
 
-function codemirror_enqueue_scripts() {
+function codemirror_enqueue_scripts($hook) {
+
+	// Load the codemirror scripts on theme-editor.php only, plugin interference is bad.
+	// http://pippinsplugins.com/loading-scripts-correctly-in-the-wordpress-admin/
+
+	if( $hook != 'theme-editor.php' ) 
+		return;
+
 	wp_enqueue_script('codemirror');
 	wp_enqueue_style('codemirror');
 	
@@ -59,7 +68,7 @@ function codemirror_control_js() {
 			$file = "application/x-httpd-php";
 	}
 ?>
-	<script type="text/javascript">
+	<script>
 		jQuery(document).ready(function() {
 		/* hack to check if the textarea exists */
 		if (jQuery('#newcontent').length) {
