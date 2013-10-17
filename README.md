@@ -68,6 +68,12 @@ Recommended Plugins
 * [WooCommerce](http://www.woothemes.com/woocommerce/), with [WooCommerce Twitter's Bootstrap Plugin](https://github.com/bassjobsen/woocommerce-twitterbootstrap)
 * [Stimulate correct headings PLugin](https://github.com/bassjobsen/stimulate-correct-headings) for accessibility and seo
 
+JBST Expo
+---------
+[JBST Expo](http://expo.jbst.eu/) is a project to showcase the absolute best projects built on JBST.
+
+The JBST Expo is all hosted on GitHub, meaning recommending new sites is as easy as opening a [new issue](https://github.comb/bassjobsen/jbst-expo/issues/new). It also keeps the primary JBST repo focused on code and documentation, and not dozens of extraneous images.
+
 Support
 -------
 
