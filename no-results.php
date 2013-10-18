@@ -9,7 +9,6 @@
  */
 ?>
 <?php do_action( 'skematik_before_content' );?>
-
 <article id="post-0" class="post no-results not-found">
 	<header class="entry-header">
 		<h1 class="entry-title"><?php _e( 'Nothing Found', 'jamedo-bootstrap-start-theme' ); ?></h1>
