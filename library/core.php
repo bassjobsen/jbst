@@ -317,7 +317,7 @@ function skematik_account_dropdown() {
 	<?php
 	} else {
 	?>
-			<li><div class="btn-group navbar-right" id="nav-profile-dropdown">
+			<div class="btn-group navbar-right" id="nav-profile-dropdown">
 				  <button type="button" class="btn <?php skematik_nav_account_button_class();?> navbar-btn dropdown-toggle" data-toggle="dropdown">
 					<i class="glyphicon glyphicon-user"></i> 
 					<span class="caret"></span>
@@ -325,7 +325,7 @@ function skematik_account_dropdown() {
 				  <ul class="dropdown-menu">
 						<?php do_action( 'skematik_nav_login_dropdown');?>
 				  </ul>
-			</div></li>
+			</div>
 	
 
 	<?php
