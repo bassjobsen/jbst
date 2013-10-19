@@ -2,9 +2,7 @@
 /* Add custom BuddyPress styling
 ----------------------------------------------- */
 function skematik_buddypress_css() {    
-	wp_register_style( 'skematik-bp-css', get_template_directory_uri() . '/assets/css/bp.css', array(), '20121008', 'all' );
-    wp_enqueue_style( 'skematik-bp-css' );
-	wp_register_style( 'skematik-buddypress-css', get_template_directory_uri() . '/assets/css/buddypress.css', array(), '20121008', 'all' );
+	wp_register_style( 'skematik-buddypress-css', get_stylesheet_directory_uri() . '/assets/css/buddypress.css', array(), '20121008', 'all' );
     wp_enqueue_style( 'skematik-buddypress-css' );
 }
 add_action( 'wp_enqueue_scripts', 'skematik_buddypress_css', 99 );

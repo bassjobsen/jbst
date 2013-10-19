@@ -1,0 +1,23 @@
+div.item-list-tabs ul li.selected a, div.item-list-tabs ul li.current a {-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}
+div.item-list-tabs {-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;padding:7px;margin: 25px 0px 20px 0px;}
+div.item-list-tabs ul li {margin-top:0;}
+span.activity, div#message p {color:#333;}
+div.item-list-tabs ul li:first-child {margin-left:0;}
+div.item-list-tabs ul {margin:0;}
+div.item-list-tabs#subnav {margin: -15px 0px 15px 0px;}
+div.item-list-tabs#subnav ul li.selected a, div.item-list-tabs#subnav ul li.current a {background:#ccc;}
+ul.button-nav li {list-style:none;}
+ul.button-nav {margin:0;}
+table thead tr {background:none;}
+.profile-fields.table.table-striped {margin-bottom: 20px;}
+#item-body {margin-bottom: 20px;}
+div.item-list-tabs#subnav {background:none;}
+/* New for 1.0.6.6 */
+#whats-new-options, #whats-new-submit {height:50px!important;}
+.item-list-tabs {clear: both!important;}
+ul.item-list {margin:0;}
+div.dir-search {float:none;margin:20px 0 0;}
+.padder div.pagination {margin:0;}
+.padder {padding:20px}
+div#item-header ul li {list-style-type:none;}
+.navbar form #s {height:20px;}

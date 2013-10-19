@@ -1,0 +1,62 @@
+/* This stylesheet is loaded only if you have activated the WooCommerce plugin. It is registered and included in the functions/template-ecommerce.php file. You can remove the action with a simple remove action command. */
+
+/* =WooCommerce Compatability
+----------------------------------------------- */
+/*table.shop_table.cart p {margin-bottom:0px;}
+.woocommerce_message .button, .woocommerce_error .button, .woocommerce_info .button {float: right;margin-top: -.25em;}
+body.woocommerce-page .woocommerce_message, body.woocommerce-page .woocommerce_error, body.woocommerce-page .woocommerce_info {
+padding: .75em 1em .35em 3em;}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"],input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {height:auto;}
+#billing_country_chzn {width: 100%!important;line-height: 2;}
+form.checkout .form-row input[type="text"] {margin-bottom: 0px;top: -20px;position: relative;}
+form.checkout .form-row input[type="text"]#billing_state {top:-8px;}
+form.checkout .form-row input#billing_state {margin-top:5px;}
+#billing_state_field {float:left;}
+.chzn-container {top:-10px;}
+p.terms {margin-top:3px;}
+form .form-row .input-checkbox#terms {margin-left:5px;margin-right:10px;margin-top:1px;}
+table.shop_table th.product-quantity {text-align: center;}
+tr.total td, tr.shipping td, tr.cart-subtotal td, .product-total, td.product-quantity, th.product-quantity {border-left: 1px solid rgba(0, 0, 0, 0.1);}
+tr.cart-subtotal th, tr.cart-subtotal td {border-top: 1px solid rgba(0, 0, 0, 0.1);}
+.quantity input.qty, #content .quantity input.qty {height:25px;}*/
+
+body.woocommerce-page .cart-collaterals .cart_totals table {float: right;margin-top: 10px;}
+.checkout #shiptobilling {margin-top:15px;margin-bottom: -15px;}
+.checkout #shiptobilling label.checkbox {position:relative;top:-1px;padding-left:0px;}
+#payment ul.payment_methods li input {margin: 3px 10px 0 0;float: left;}
+.woocommerce-checkout select, .woocommerce-checkout textarea, .woocommerce-checkout input[type="text"], .woocommerce-checkout input[type="password"], .woocommerce-checkout input[type="datetime"], .woocommerce-checkout input[type="datetime-local"], .woocommerce-checkout input[type="date"], .woocommerce-checkout input[type="month"], .woocommerce-checkout input[type="time"], .woocommerce-checkout input[type="week"], .woocommerce-checkout input[type="number"], .woocommerce-checkout input[type="email"], .woocommerce-checkout input[type="url"], .woocommerce-checkout input[type="search"], .woocommerce-checkout input[type="tel"], .woocommerce-checkout input[type="color"], .woocommerce-checkout .uneditable-input {height:inherit;}
+.woocommerce_tabs ul.tabs {color: #333;}
+.related ul.products li.product, .related ul li.product, .upsells.products ul.products li.product, .upsells.products ul li.product {width:auto;}
+.woocommerce_message {padding-top: 10px;}
+.woocommerce_message a.button {top: -2px;position:relative;}
+form .form-row input.input-text, form .form-row textarea {line-height:inherit!important;}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {height:auto;}
+.chzn-drop {color:#333;}
+td.label {background:none;}
+.product .thumbnails {margin-left:0;}
+table.cart input, #content table.cart input.btn {line-height:inherit;}
+div.product div.images div.thumbnails a, #content div.product div.images div.thumbnails a {margin-bottom: .8em;}
+body.woocommerce-page form.checkout br {display:none;}
+th.product-price,th.product-quantity,th.product-subtotal,td.product-price,td.product-quantity,td.product-subtotal {text-align:center;}
+.woocommerce_message .btn {float: right;}
+.minus {top: 15px;}
+ul.products {list-style: none;}
+
+/*-----RESPONSIVE STYLING-----*/
+@media(max-width:839px){
+	.col2-set .col-1,.col2-set .col-2 {float:none;width:100%;}
+	}
+@media(max-width:779px){	
+div.product div.images, #content div.product div.images,div.product div.summary, #content div.product div.summary  {float:none;width:100%;}
+}
+@media(max-width:639px){
+	ul.products li.product {
+	float: none;
+	margin: 2em;
+	padding: 0;
+	position: relative;
+	width: auto;
+	margin-left: 0;
+	}
+	table.shop_table th,table.shop_table td {padding: 4px 4px;}
+}
