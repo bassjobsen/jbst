@@ -17,7 +17,7 @@ do_action( 'jbst_before_content_page' );
 
 		<?php if ( have_posts() ) : ?>
 				<?php 
-					if ( is_page() ) { get_template_part( 'content', 'page' );}
+					if ( is_page() or is_bbpress() ) { get_template_part( 'content', 'page' );}
 					elseif ( is_single() ) {get_template_part( 'content', 'single' );}
 					elseif ( is_search() ) {get_template_part( 'content', 'search' );}
 					else {get_template_part( 'content', get_post_format() );}
