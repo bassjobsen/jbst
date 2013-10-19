@@ -95,3 +95,51 @@ ol.commentlist li li {margin-left:20px;}
 /*#comment{width: 270px;}*/
 #commentform .btn {text-align:right; margin-top:10px;float:right;}
 #cancel-comment-reply-link {margin-right:5px;}
+
+/* make the admin bar (more) responsive */
+@media (max-width: 767px) 
+{
+#wpadminbar ul
+{
+	width:100%;
+}
+#wpadminbar .ab-top-secondary 
+{
+	float:left;
+}
+#wpadminbar .quicklinks .ab-top-secondary > li
+{
+	float:left;
+}
+
+#wpadminbar .ab-top-secondary .menupop .ab-sub-wrapper 
+{
+    left: 0;
+    margin: 0 1 0 -1px;
+    right: auto;
+}
+
+#wpadminbar .ab-top-secondary .menupop .menupop > .ab-item 
+{
+	display: block;
+	background-image: url(/wp-includes/images/admin-bar-sprite.png?d=20120830);
+	background-position: 95% -20px;
+	background-repeat: no-repeat;
+	padding-right: 2em;
+}
+#wpadminbar .ab-top-secondary .menupop li:hover > .ab-sub-wrapper,
+#wpadminbar .ab-top-secondary .menupop li.hover > .ab-sub-wrapper 
+{
+
+	left: 100%;
+	margin-top: -33px;
+	border-width: 1px;
+	right: none;
+}
+#wpadminbar .ab-top-secondary .menupop li:hover > .ab-sub-wrapper ul,
+#wpadminbar .ab-top-secondary .menupop li.hover > .ab-sub-wrapper ul 
+{
+  background-color: #fff;
+}
+
+}
