@@ -75,9 +75,10 @@ function skematik_head_after() {
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="<?php echo get_template_directory_uri(); ?>/library/assets/js/html5shiv.js"></script>
+      <script src="<?php echo get_template_directory_uri(); ?>/library/assets/js/respond.min.js"></script>
     <![endif]-->
 <?php
 do_action('skematik_head');
