@@ -19,20 +19,12 @@ add_action( 'skematik_add_to_custom_style', 'skematik_buddypress_custom_style', 
 
 /* Use jQuery to add bootstrap classes to stuff
 ----------------------------------------------- */
-function skematik_buddypress_add_classes() {?>
-<script>
-jQuery(document).ready(function($) {
-  /* Add to cart buttons */
-  $("form#settings-form table, table.profile-fields").addClass("table table-striped");  
-  $("input[type='submit']").addClass("btn btn-success");  
-  $("#item-header-avatar img,.activity-avatar img").addClass("thumbnail");
-  $(".bp-primary-action,.bp-secondary-action").addClass("btn btn-mini");
-  $(".item-button.delete-activity").addClass("btn-danger"); 
-});
-</script>
-<?php
+function skematik_buddypress_add_classes() {
+	wp_register_script( 'buddypress_js', get_template_directory_uri() . '/library/assets/js/buddypress.js', array( 'jquery' ), '20120921', true );
+	wp_enqueue_script( 'buddypress_js' );
 }
-add_action('wp_head','skematik_buddypress_add_classes', 30);
+
+add_action('wp_enqueue_scripts','skematik_buddypress_add_classes', 30);
 
 /* Account Profile Button
 ----------------------------------------------- */
