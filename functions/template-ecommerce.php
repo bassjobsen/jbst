@@ -114,18 +114,6 @@ $skematikecommerce = true;
 	}
 	add_action( 'skematik_nav_profile_dropdown', 'skematik_woo_account_profile_link', 10);
 	
-	/* Use jQuery to add bootstrap classes to stuff
-	----------------------------------------------- */
-	function skematik_woo_add_classes() {?>
-	<script>
-	jQuery(document).ready(function($) {
-	  /* Add to cart buttons */
-	  $("#order_review table").addClass("table table-striped").removeClass("shop_table");
-	});
-	</script>
-	<?php
-	}
-	add_action('wp_footer','skematik_woo_add_classes', 30);
 	
 	/* Add custom WOO styling
 	----------------------------------------------- */

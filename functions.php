@@ -93,7 +93,7 @@ if (of_get_option('lightbox_switch', 1) == 1) {
 /* Load Scripts */
 add_action( 'wp_enqueue_scripts', 'skematik_jquery_js' );
 add_action( 'wp_enqueue_scripts', 'skematik_bootstrap_js' );
-add_action( 'wp_enqueue_scripts', 'skematik_application_js' );
+add_action( 'wp_enqueue_scripts', 'skematik_custom_js' );
 add_action( 'wp_enqueue_scripts', 'skematik_prettify_js' );
 if (of_get_option('lightbox_switch', 1) == 1) {
 	add_action( 'wp_enqueue_scripts', 'skematik_lightbox_js' );

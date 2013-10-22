@@ -193,10 +193,12 @@ function skematik_bootstrap_js() {
 	wp_enqueue_script( 'bootstrap' );
 }
 
-function skematik_application_js() {
-	wp_register_script( 'application', get_template_directory_uri() . '/library/assets/js/application.js', array( 'jquery' ), '20120703', true );
-	wp_enqueue_script( 'application' );
+function skematik_custom_js() {	
+	wp_register_script('custom_js', get_stylesheet_directory_uri() . '/assets/js/custom.js', array( 'jquery','bootstrap' ), '20132210', true );
+	wp_enqueue_script( 'custom_js' );
 }
+
+
 
 function skematik_js() {	
 	wp_register_script('skematik_js', get_template_directory_uri() . '/library/assets/js/skematik.js', array( 'jquery' ), '20120703', true );
@@ -763,21 +765,7 @@ function bones_comments($comment, $args, $depth) {
 	<?php
 	}
 
-/*
-==========================================================
-ARTICLE CONTENT CLASSES
-==========================================================
-*/
-add_action('skematik_after','skematik_bootstrap_add_classes');
-function skematik_bootstrap_add_classes() {?>
-<script>
-jQuery(document).ready(function($) {
-  /* Add to cart buttons */
-  $("article table").addClass("table");
-});
-</script>
-<?php
-}
+
 
 /*
 ==========================================================
