@@ -51,7 +51,8 @@ function codemirror_enqueue_scripts($hook) {
 
 function codemirror_control_js() {
 	if (isset($_GET['file'])) {
-		$filename_to_edit = end(explode("/", $_GET['file']));
+		$file_scripts = explode('/', $_GET['file']);
+		$filename_to_edit = end($file_scripts);
 		$file = substr($filename_to_edit, stripos($filename_to_edit, '.')+1);
 		switch ($file) {
 			case "php": $file = "application/x-httpd-php"; break;
@@ -61,7 +62,8 @@ function codemirror_control_js() {
 	}
 	else {
 		$file_script = $_SERVER['SCRIPT_NAME'];
-		$file_script = end(explode('/', $file_script));
+		$file_scripts = explode('/', $file_script);
+		$file_script = end($file_scripts);
 		if (($file_script == 'theme-editor.php') || ($file_script == 'themes.php'))
 			$file = "text/css";
 		else 

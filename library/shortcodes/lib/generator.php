@@ -35,7 +35,7 @@ require_once( $parse_uri[0] . 'wp-load.php' );
 			else {
 
 				// Color picker
-				if ( $attr_info['type'] == 'color' ) {
+				if (!empty($attr_info['type']) && $attr_info['type'] == 'color' ) {
 					$return .= '<span class="su-generator-select-color"><span class="su-generator-select-color-wheel"></span><input type="text" name="' . $attr_name . '" value="' . $attr_info['default'] . '" id="su-generator-attr-' . $attr_name . '" class="su-generator-attr su-generator-select-color-value" /></span>';
 				}
 
