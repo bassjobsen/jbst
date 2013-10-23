@@ -8,6 +8,9 @@ It also has built in support for theme options, metaboxes, BuddyPress and eComme
 * [Twitter's Bootstrap 3](http://getboostrap.com/) ready
 * E-Commerce ( we recommend WooCommerce )
 * Buddy Press
+* BBPress
+
+Demo of default install: http://demo.jbst.eu/ (some quick install notes: https://github.com/bassjobsen/jamedo-bootstrap-start-theme/issues/34)
 
 Installation
 ------------
