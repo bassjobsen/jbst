@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Skemattik 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/jamedo-bootstrap-start-theme\n"
-"POT-Creation-Date: 2013-08-27 19:17:10+00:00\n"
-"PO-Revision-Date: 2013-08-27 21:21+0100\n"
+"POT-Creation-Date: 2013-10-25 21:46:43+00:00\n"
+"PO-Revision-Date: 2013-10-25 23:50+0100\n"
 "Last-Translator: Bass Jobsen <bass@w3masters.nl>\n"
 "Language-Team: Jamedo Websites <info@jamedowebsites.nl>\n"
 "Language: \n"
@@ -62,83 +62,220 @@ msgstr "Powered by Jamedo's Bootstrap Start Theme"
 msgid "Page %s"
 msgstr "Pagina %s"
 
-#: functions/template-buddypress.php:46
-#: library/core.php:326
+#: functions/skematik-header-functions.php:150
+msgid "Toggle navigation"
+msgstr ""
+
+#: functions/template-buddypress.php:36
+#: library/core.php:343
 msgid "My Profile"
 msgstr "Mijn profiel"
 
-#: functions/template-customizer.php:153
+#: functions/template-customizer.php:35
+#: functions/template-customizer.php:44
+msgid "default"
+msgstr ""
+
+#: functions/template-customizer.php:71
+msgid "Default grid"
+msgstr ""
+
+#: functions/template-customizer.php:81
+msgid "Default Grid"
+msgstr ""
+
+#: functions/template-customizer.php:86
+#, fuzzy
+msgid "Large"
+msgstr "Link target"
+
+#: functions/template-customizer.php:87
+msgid "Medium"
+msgstr ""
+
+#: functions/template-customizer.php:88
+msgid "Small"
+msgstr ""
+
+#: functions/template-customizer.php:89
+msgid "Extra Small"
+msgstr ""
+
+#: functions/template-customizer.php:89
+msgid "never collapse, so non-responsive"
+msgstr ""
+
+#: functions/template-customizer.php:97
+msgid "Navigation"
+msgstr ""
+
+#: functions/template-customizer.php:101
+msgid "Your theme supports menus. Select which menu you would like to use."
+msgstr ""
+
+#: functions/template-customizer.php:101
+msgid "You can edit your menu content on the Menus screen in the Appearance section."
+msgstr ""
+
+#: functions/template-customizer.php:110
+msgid "Depth, levels of submenus (default 0 = no submenus)"
+msgstr ""
+
+#: functions/template-customizer.php:122
+msgid "Should the parent (indicator) of a submenu be clickable?"
+msgstr ""
+
+#: functions/template-customizer.php:134
+msgid "Open submenus on click (for mobile usage)"
+msgstr ""
+
+#: functions/template-customizer.php:151
+#, fuzzy
+msgid "Container"
+msgstr "Content"
+
+#: functions/template-customizer.php:161
+msgid "Max Container Width"
+msgstr ""
+
+#: functions/template-customizer.php:182
+#: functions/template-customizer.php:192
+msgid "Grid Float Breakpoint"
+msgstr ""
+
+#: functions/template-customizer.php:199
+msgid "always horizontal, never collapse"
+msgstr ""
+
+#: functions/template-customizer.php:226
 msgid "Logo Image"
 msgstr ""
 
-#: functions/template-customizer.php:471
+#: functions/template-customizer.php:237
+msgid "Logo Image Position"
+msgstr ""
+
+#: functions/template-customizer.php:242
+msgid "In Navigation Bar"
+msgstr ""
+
+#: functions/template-customizer.php:243
+msgid "Outside Navigation Bar"
+msgstr ""
+
+#: functions/template-customizer.php:253
+msgid "Logo Font Family"
+msgstr ""
+
+#: functions/template-customizer.php:266
+msgid "Navbar Item Color"
+msgstr ""
+
+#: functions/template-customizer.php:266
+#: functions/template-customizer.php:278
+#: functions/template-customizer.php:352
+msgid "hyperlink text"
+msgstr ""
+
+#: functions/template-customizer.php:278
+msgid "Navbar Item Hover Color"
+msgstr ""
+
+#: functions/template-customizer.php:297
+#: functions/template-customizer.php:328
+#: functions/template-customizer.php:340
+#: functions/template-customizer.php:352
+msgid "Navbar"
+msgstr ""
+
+#: functions/template-customizer.php:303
+msgid "Default"
+msgstr ""
+
+#: functions/template-customizer.php:307
+#, fuzzy
+msgid "Navbar Style"
+msgstr "Waarschuwings stijl"
+
+#: functions/template-customizer.php:328
+#: functions/template-customizer.php:340
+#, fuzzy
+msgid "Background Color"
+msgstr "Achtergrondkleur"
+
+#: functions/template-customizer.php:352
+#, fuzzy
+msgid "Item Color"
+msgstr "Kleur icon"
+
+#: functions/template-customizer.php:544
 #, fuzzy
 msgid "Background Image"
 msgstr "Achtergrondkleur"
 
-#: functions/template-customizer.php:542
+#: functions/template-customizer.php:615
 msgid "Some basic font choices for your theme."
 msgstr ""
 
-#: functions/template-customizer.php:610
+#: functions/template-customizer.php:683
 msgid "Your theme supports a static front page."
 msgstr ""
 
-#: functions/template-customizer.php:709
-#: functions/template-customizer.php:744
-#: functions/template-customizer.php:854
+#: functions/template-customizer.php:782
+#: functions/template-customizer.php:817
+#: functions/template-customizer.php:927
 msgid "Customize the look of your buttons."
 msgstr ""
 
-#: functions/template-customizer.php:926
+#: functions/template-customizer.php:999
 msgid "Footer Background Image (full width only)"
 msgstr ""
 
 #: functions/template-ecommerce.php:23
-#: functions/template-ecommerce.php:155
+#: functions/template-ecommerce.php:143
 msgid "%d item &ndash; "
 msgid_plural "%d items &ndash; "
 msgstr[0] ""
 msgstr[1] ""
 
 #: functions/template-ecommerce.php:54
-#: functions/template-ecommerce.php:177
+#: functions/template-ecommerce.php:165
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
 #: functions/template-ecommerce.php:98
-#: functions/template-ecommerce.php:226
-#: functions/template-ecommerce.php:452
+#: functions/template-ecommerce.php:214
+#: functions/template-ecommerce.php:440
 msgid "My Account"
 msgstr "Mijn account"
 
 #: functions/template-ecommerce.php:105
-#: functions/template-ecommerce.php:233
+#: functions/template-ecommerce.php:221
 msgid "Change Password"
 msgstr ""
 
 #: functions/template-ecommerce.php:112
-#: functions/template-ecommerce.php:240
+#: functions/template-ecommerce.php:228
 msgid "Edit Address"
 msgstr ""
 
-#: functions/template-ecommerce.php:384
+#: functions/template-ecommerce.php:372
 msgid "Additional Images"
 msgstr ""
 
-#: functions/template-ecommerce.php:387
+#: functions/template-ecommerce.php:375
 msgid "Additional Description"
 msgstr ""
 
 #: content-archive.php:45
-#: functions/template-functions.php:85
+#: functions/template-functions.php:100
 #: sidebar.php:18
 msgid "Archives"
 msgstr ""
 
-#: functions/template-functions.php:92
+#: functions/template-functions.php:107
 #: sidebar.php:25
 msgid "Meta"
 msgstr "Meta"
@@ -262,99 +399,97 @@ msgstr ""
 msgid "Need some robust social features without the hassle? Setting up BuddyPress with %1$s is pretty easy. Simply install and activate both %2$s and the %3$s. Then, run the Template Pack to move over your BuddyPress files. That's it! %1$s includes some unique BuddyPress functions as well as special content wrappers to make sure that all BuddyPress content fits neatly inside."
 msgstr ""
 
-#: library/core.php:337
+#: library/core.php:354
 msgid "Sign Out"
 msgstr ""
 
-#: library/core.php:351
+#: library/core.php:368
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: library/core.php:354
+#: library/core.php:371
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: library/core.php:356
+#: library/core.php:373
 msgid "Remember Me"
 msgstr ""
 
-#: library/core.php:361
+#: library/core.php:378
 msgid "Lost Password?"
 msgstr "Wachtwoord vergeten?"
 
-#: library/core.php:414
+#: library/core.php:430
 #: searchform.php:10
 #: searchform.php:12
 msgid "Search"
 msgstr ""
 
-#: library/core.php:578
+#: library/core.php:734
 msgid "<h4>%s</h4>"
 msgstr ""
 
-#: library/core.php:583
-#: library/core.php:852
+#: library/core.php:739
+#: library/core.php:994
 msgid "Your comment is awaiting moderation."
 msgstr "Uw reactie is in afwachting van goedkeuring"
 
-#: content-page.php:20
+#: content-page.php:19
 #: content-search.php:72
 #: content-single.php:60
 #: content.php:62
 #: image.php:34
 #: image.php:103
-#: library/core.php:590
-#: taxonomy-product_tag.php:35
-#: taxonomy-wpsc_product_category.php:35
+#: library/core.php:746
 msgid "Edit"
 msgstr ""
 
-#: library/core.php:740
+#: library/core.php:882
 msgid "Post navigation"
 msgstr ""
 
-#: library/core.php:745
+#: library/core.php:887
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
 
-#: library/core.php:746
+#: library/core.php:888
 #, fuzzy
 msgctxt "Next post link"
 msgid "&rarr;"
 msgstr "Volgende &rarr;"
 
-#: library/core.php:751
+#: library/core.php:893
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: library/core.php:755
+#: library/core.php:897
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nieuwere berichten <span class=\"meta-nav\">&rarr;</span>"
 
-#: library/core.php:839
+#: library/core.php:981
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: library/core.php:839
-#: library/core.php:862
+#: library/core.php:981
+#: library/core.php:1004
 msgid "(Edit)"
 msgstr "(Bewerken)"
 
-#: library/core.php:849
+#: library/core.php:991
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">zegt:</span>"
 
 #. translators: 1: date, 2: time
-#: library/core.php:860
+#: library/core.php:1002
 msgid "%1$s at %2$s"
 msgstr "%1$s om %2$s"
 
-#: library/core.php:892
+#: library/core.php:1034
 msgid "Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 msgstr ""
 
-#: library/core.php:898
+#: library/core.php:1040
 msgid "View all posts by %s"
 msgstr "Bekijk alle berichten geschreven door %s"
 
@@ -970,20 +1105,20 @@ msgstr "Uw reactie hier..."
 msgid "Submit Comment"
 msgstr "Reactie versturen"
 
-#: content-404.php:15
+#: content-404.php:14
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Oeps! Deze pagina kan niet gevonden worden."
 
-#: content-404.php:19
+#: content-404.php:18
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
-#: content-404.php:26
+#: content-404.php:25
 msgid "Most Used Categories"
 msgstr "Meestgebruikte categorie&eumlt;n"
 
 #. translators: %1$s: smilie
-#: content-404.php:34
+#: content-404.php:33
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "Probeer te zoeken  in de maandelijkse archieven. %1$s"
 
@@ -1016,26 +1151,26 @@ msgid "Products in the"
 msgstr ""
 
 #: content-no-results.php:20
-#: no-results.php:15
+#: no-results.php:14
 msgid "Nothing Found"
 msgstr "Niets gevonden"
 
 #: content-no-results.php:26
-#: no-results.php:21
+#: no-results.php:20
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: content-no-results.php:30
-#: no-results.php:25
+#: no-results.php:24
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
 #: content-no-results.php:35
-#: no-results.php:30
+#: no-results.php:29
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: content-page.php:17
+#: content-page.php:16
 #: content-search.php:39
 #: content-single.php:22
 #: content-wpec.php:16
@@ -1043,8 +1178,6 @@ msgstr ""
 #: image.php:89
 #: pagewpec.php:28
 #: single-wpsc-product.php:32
-#: taxonomy-product_tag.php:32
-#: taxonomy-wpsc_product_category.php:32
 msgid "Pages:"
 msgstr "Pagina's:"
 

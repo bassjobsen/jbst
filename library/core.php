@@ -781,7 +781,7 @@ function skematik_admin_styles() {
            body.appearance_page_options-framework #optionsframework {max-width:100%;}
            #optionsframework.postbox {border:0px;padding:0;}
            #optionsframework-submit {background:0;border-top:1px solid #ccc;padding:15px 0px;}
-           #optionsframework-submit input[type="submit"].button-primary,#optionsframework-submit input[type="submit"].button-secondary {font-size: 14px!important;padding: 8px 15px;-webkit-border-radius: 3px;border-radius: 3px; float:left; margin-right:5px;}
+           #optionsframework-submit input[type="submit"].button-primary,#optionsframework-submit input[type="submit"].button-secondary {font-size: 14px!important;-webkit-border-radius: 3px;border-radius: 3px; float:left; margin-right:5px;}
            #optionsframework .section .controls {min-width: 200px;width: auto;}
            #optionsframework .section .explain {max-width: 100%;}
            #optionsframework .section.section-info {background: #f6f6f6;padding:20px 20px 10px;}

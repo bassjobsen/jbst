@@ -32,7 +32,7 @@ global $fontchoices;
 /* FONT SIZES */
 global $fontsizes;
 $fontsizes = array(
-			'13' => '13px (default)',
+			'13' => '13px ('. __('default','jamedo-bootstrap-start-theme').')',
 			'11' => '11px',
 			'12' => '12px',
 			'14' => '14px',
@@ -41,7 +41,7 @@ $fontsizes = array(
 			);
 /* LINE HEIGHTS */
 global $lineheights;
-$lineheights = array('1.4' => '1.4 (default)','1.5' => '1.5','1.6' => '1.6','1.7' => '1.7','1.8' => '1.8','1.9' => '1.9','2' => '2',);
+$lineheights = array('1.4' => '1.4 ' .__('default','jamedo-bootstrap-start-theme') , '1.5' => '1.5','1.6' => '1.6','1.7' => '1.7','1.8' => '1.8','1.9' => '1.9','2' => '2',);
 
 	do_action('skematik_add_to_customizer');
 
@@ -68,7 +68,7 @@ function skematik_grid_customizer_options($wp_customize) {
 	global $wp_customize;
 
 	$wp_customize->add_section( 'grid_settings', array(
-		'title'          => 'Default grid',
+		'title'          =>__('Default grid','jamedo-bootstrap-start-theme'),
 		'priority'       => 118,
 	) );
 
@@ -78,15 +78,15 @@ function skematik_grid_customizer_options($wp_customize) {
 	) );
 		
 	$wp_customize->add_control( 'default_grid', array(
-		'label'   => 'Default Grid:',
+		'label'   => __('Default Grid','jamedo-bootstrap-start-theme').':',
 		'section' => 'grid_settings',
 		'type'    => 'radio',
 		'priority'        => 10,
 		'choices'    => array(
-			'lg' => 'Large',
-			'md' => 'Medium',
-			'sm' => 'Small',
-			'xs'   => 'Extra Small (never collapse, so non-responsive)' 
+			'lg' => __('Large','jamedo-bootstrap-start-theme'),
+			'md' => __('Medium','jamedo-bootstrap-start-theme'),
+			'sm' => __('Small','jamedo-bootstrap-start-theme'),
+			'xs'   => __('Extra Small','jamedo-bootstrap-start-theme') . '(' . __('never collapse, so non-responsive','jamedo-bootstrap-start-theme').')',
 			),
 	) );
 }
@@ -94,11 +94,11 @@ add_action('skematik_add_to_customizer','skematik_customizer_mainnavigation');
 function skematik_customizer_mainnavigation($wp_customize) {
 global $wp_customize;	
 $wp_customize->add_section( 'nav', array(
-     'title'          => __( 'Navigation' ),
+     'title'          => __( 'Navigation','jamedo-bootstrap-start-theme'),
      'theme_supports' => 'menus',
      'priority'       => 100,
      //'description'    => sprintf( _n('Your theme supports %s menu. Select which menu you would like to use.', 'Your theme supports %s menus. Select which menu appears in each location.', $num_locations ), number_format_i18n( $num_locations ) ) . "\n\n" . __('You can edit your menu content on the Menus screen in the Appearance section.'),
-     'description'    => __('Your theme supports menus. Select which menu you would like to use.') . "\n\n" . __('You can edit your menu content on the Menus screen in the Appearance section.')
+     'description'    => __('Your theme supports menus. Select which menu you would like to use.','jamedo-bootstrap-start-theme') . "\n\n" . __('You can edit your menu content on the Menus screen in the Appearance section.','jamedo-bootstrap-start-theme')
 ) );
 
 	
@@ -107,7 +107,7 @@ $wp_customize->add_section( 'nav', array(
 	) );
 		
 	$wp_customize->add_control( 'menu_depth', array(
-		'label'   => 'Depth, levels of submenus (default 0 = no submenus)',
+		'label'   => __('Depth, levels of submenus (default 0 = no submenus)','jamedo-bootstrap-start-theme'),
 		'section' => 'nav',
 		//'type'    => 'checkbox',
 		'priority'        => 40,
@@ -119,7 +119,7 @@ $wp_customize->add_section( 'nav', array(
 	) );
 		
 	$wp_customize->add_control( 'parent_clickable', array(
-		'label'   => 'Should the parent (indicator) of a submenu be clickable?',
+		'label'   => __('Should the parent (indicator) of a submenu be clickable?','jamedo-bootstrap-start-theme'),
 		'section' => 'nav',
 		'type'    => 'checkbox',
 		'priority'        => 50,
@@ -131,7 +131,7 @@ $wp_customize->add_section( 'nav', array(
 	) );
 		
 	$wp_customize->add_control( 'open_with_click', array(
-		'label'   => 'Open submenus on click (for mobile usage)',
+		'label'   => __('Open submenus on click (for mobile usage)','jamedo-bootstrap-start-theme'),
 		'section' => 'nav',
 		'type'    => 'checkbox',
 		'priority'        => 60,
@@ -148,7 +148,7 @@ function skematik_container_customizer_options($wp_customize) {
 	global $wp_customize;
 
 	$wp_customize->add_section( 'container_settings', array(
-		'title'          => 'Container',
+		'title'          => __('Container','jamedo-bootstrap-start-theme'),
 		'priority'       => 119,
 	) );
 
@@ -158,7 +158,7 @@ function skematik_container_customizer_options($wp_customize) {
 	) );
 		
 	$wp_customize->add_control( 'container_width', array(
-		'label'   => 'Max Container Width:',
+		'label'   => __('Max Container Width','jamedo-bootstrap-start-theme') .':',
 		'section' => 'container_settings',
 		'type'    => 'select',
 		'priority'        => 10,
@@ -179,7 +179,7 @@ function jbst_gridfloatbreakpoint_customizer_options($wp_customize) {
 	global $wp_customize;
 
 	$wp_customize->add_section( 'gridfloatbreakpoint_settings', array(
-		'title'          => 'Grid Float Breakpoint',
+		'title'          => __('Grid Float Breakpoint','jamedo-bootstrap-start-theme'),
 		'priority'       => 120,
 	) );
 
@@ -189,14 +189,14 @@ function jbst_gridfloatbreakpoint_customizer_options($wp_customize) {
 	) );
 		
 	$wp_customize->add_control( 'gridfloatbreakpoint', array(
-		'label'   => 'Grid Float Breakpoint:',
+		'label'   => __('Grid Float Breakpoint','jamedo-bootstrap-start-theme').':',
 		'section' => 'gridfloatbreakpoint_settings',
 		'type'    => 'radio',
 		'priority'        => 10,
 		'choices'    => array(
 			'768' => '768 px',
 			'992' => '992 px',
-			'0' => '0 (always horizontal, never collapse)'
+			'0' => '0 ('.__('always horizontal, never collapse','jamedo-bootstrap-start-theme').')'
 			),
 	) );
 }
@@ -234,13 +234,13 @@ function skematik_logo_customizer_options($wp_customize) {
 	) );
 	
 	$wp_customize->add_control( 'logo_image_position', array(
-	'label'   => 'Logo Image Position:',
+	'label'   => __( 'Logo Image Position', 'jamedo-bootstrap-start-theme').':',
 	'section' => 'site_logo_settings',
 	'type'    => 'select',
 	'priority'        => 20,
 	'choices'    => array(
-		'in-nav' => 'In Navigation Bar',
-		'outside-nav' => 'Outside Navigation Bar',
+		'in-nav' => __( 'In Navigation Bar', 'jamedo-bootstrap-start-theme'),
+		'outside-nav' => __( 'Outside Navigation Bar', 'jamedo-bootstrap-start-theme'),
 		),
 	) );
 
@@ -250,7 +250,7 @@ function skematik_logo_customizer_options($wp_customize) {
 	) );
 
 	$wp_customize->add_control( 'logo_font_family', array(
-	'label'   => 'Logo Font Family:',
+	'label'   => __( 'Logo Font Family', 'jamedo-bootstrap-start-theme').':',
 	'section' => 'site_logo_settings',
 	'type'    => 'select',
 	'priority'        => 25,
@@ -263,7 +263,7 @@ function skematik_logo_customizer_options($wp_customize) {
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'logo_link_color', array(
-		'label'   => 'Navbar Item  Color (hyperlink text)',
+		'label'   =>  __( 'Navbar Item Color', 'jamedo-bootstrap-start-theme') . '(' . __('hyperlink text', 'jamedo-bootstrap-start-theme') . ')',
 		'section' => 'site_logo_settings',
 		'settings'   => 'logo_link_color',
 		'priority'        => 26
@@ -275,7 +275,7 @@ function skematik_logo_customizer_options($wp_customize) {
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'logo_linkhover_color', array(
-		'label'   => 'Navbar Item Hover Color (hyperlink text)',
+		'label'   =>  __( 'Navbar Item Hover Color', 'jamedo-bootstrap-start-theme') . '(' . __('hyperlink text', 'jamedo-bootstrap-start-theme') . ')',
 		'section' => 'site_logo_settings',
 		'settings'   => 'logo_linkhover_color',
 		'priority'        => 27
@@ -294,17 +294,17 @@ function skematik_navbar_customizer_options($wp_customize) {
 	global $skematikecommerce;
 
 	$wp_customize->add_section( 'navbar_settings', array(
-		'title'          => 'Navbar',
+		'title'          => __( 'Navbar', 'jamedo-bootstrap-start-theme'),
 		'priority'       => 127,
 	) );
 
 	/* Navbar Width */
 	$wp_customize->add_setting( 'navbar_style', array(
-	''        => 'Default',
+	''        => __( 'Default', 'jamedo-bootstrap-start-theme'),
 	) );
 		
 	$wp_customize->add_control( 'navbar_style', array(
-		'label'   => 'Navbar Style:',
+		'label'   => __( 'Navbar Style', 'jamedo-bootstrap-start-theme').':',
 		'section' => 'navbar_settings',
 		'type'    => 'select',
 		'priority'        => 10,
@@ -325,7 +325,7 @@ function skematik_navbar_customizer_options($wp_customize) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_background_color', array(
-		'label'   => 'Navbar Background Color',
+		'label'   => __( 'Navbar', 'jamedo-bootstrap-start-theme' ) . __('Background Color', 'jamedo-bootstrap-start-theme').':',
 		'section' => 'navbar_settings',
 		'settings'   => 'navbar_background_color',
 		'priority'        => 20
@@ -337,7 +337,7 @@ function skematik_navbar_customizer_options($wp_customize) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_border_color', array(
-		'label'   => 'Navbar Border Color',
+		'label'   => __( 'Navbar', 'jamedo-bootstrap-start-theme' ) . __('Background Color', 'jamedo-bootstrap-start-theme').':',
 		'section' => 'navbar_settings',
 		'settings'   => 'navbar_border_color',
 		'priority'        => 21
@@ -349,7 +349,7 @@ function skematik_navbar_customizer_options($wp_customize) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_link_color', array(
-		'label'   => 'Navbar Item Color (hyperlink text)',
+		'label'   => __( 'Navbar', 'jamedo-bootstrap-start-theme' ) . __('Item Color', 'jamedo-bootstrap-start-theme') .'(' . __('hyperlink text', 'jamedo-bootstrap-start-theme').')',
 		'section' => 'navbar_settings',
 		'settings'   => 'navbar_link_color',
 		'priority'        => 22
