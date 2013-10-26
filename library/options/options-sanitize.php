@@ -6,13 +6,14 @@ add_filter( 'of_sanitize_text', 'sanitize_text_field' );
 
 /* Textarea */
 
-function of_sanitize_textarea($input) {
+function of_sanitize_textarea($input,$css=false) {
 	global $allowedposttags;
 	$output = wp_kses( $input, $allowedposttags);
+	if($css) return str_replace('&gt;','>',$output);
 	return $output;
 }
 
-add_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
+add_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' ,10,2);
 
 /* Select */
 
