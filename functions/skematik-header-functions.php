@@ -182,7 +182,7 @@ function skematik_main_navbar() {
 function skematik_nav_styles() {
 	if(get_theme_mod( 'navbar_style' ) == '') { //default
 	echo '
-	body { padding: 30px; }
+	body { padding-top: 30px; }
     .navbar { margin-bottom: 30px; }
 	';
 	}
