@@ -30,7 +30,6 @@ add_action( 'skematik_footer', 'skematik_bottom_content_wrapper', 20 );
 function skematik_bottom_content_wrapper() {
 	echo '
 				</div><!-- .row -->
-			</div><!-- #main -->
 		</div><!-- #page .hfeed .site -->
 	</div> <!-- #contentwrap -->';
 }
@@ -46,7 +45,7 @@ SKEMATIK FOOTER AREA
 add_action( 'skematik_footer', 'skematik_footer_area', 30 );
 
 function skematik_footer_area() {?>
-	<footer id="colophon" class="site-footer<?php if(get_theme_mod( 'footer_width', 'full-width' ) == 'cont-width') {echo ' container';}?>" role="contentinfo">
+	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
 		<?php skematik_footer_widgets();?>
 			<div class="row">

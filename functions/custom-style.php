@@ -93,15 +93,6 @@ echo '.progress {background-color:' .$well_color.';background-image:none;}';
 if($border_color){echo '.pager a:hover {background-color:' .$border_color.';}';}
 
 /* Footer Background */
-if(get_theme_mod( 'footer_width', 'full-width' ) == 'cont-width') {
-	echo 'html {background:#fff;}';
-	if($bg_color) {echo 'html{background-color:' .$bg_color.';}';}
-	echo 'footer.site-footer {background:none!important;}';
-        //if($ftr_bg_color) echo 'footer.site-footer > .container {background-color:' .$ftr_bg_color.';}';
-        //else echo 'footer.site-footer > .container {background-color: #ddd;}';
-} else {echo 'html {background:#ddd;}';}
-
-
 echo 'footer.site-footer '.((get_theme_mod( 'footer_width', 'full-width' ) == 'cont-width')?' .container':'').' {';
 if($ftr_bg_color){echo 'background:' .$ftr_bg_color.';';}
 if($ftr_text_color){echo 'color:' .$ftr_text_color.';';}

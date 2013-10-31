@@ -116,9 +116,9 @@ Logo out side navar
 function jbst_logooustside()
 {
 	$extraclasses = apply_filters('jbst_logooustside_classes',array());
-	$string  = '<div class="logo-outside-nav container'.(($extraclasses)?' '.implode('',$extraclasses):'').'">';
+	$string  = '<div class="row"><div class="col-sm-12"><div class="logo-outside-nav container'.(($extraclasses)?' '.implode('',$extraclasses):'').'">';
 	$string .=  skematik_logo();
-	$string .=  '</div>';	
+	$string .=  '</div></div></div>';	
 	return $string;
 }
 
@@ -183,7 +183,8 @@ function skematik_nav_styles() {
 	if(get_theme_mod( 'navbar_style' ) == '') { //default
 	echo '
 	body { padding-top: 30px; }
-    .navbar { margin-bottom: 30px; }
+        .navbar { margin-bottom: 30px; margin-left: -15px;
+    margin-right: -15px;}
 	';
 	}
 	if(get_theme_mod( 'navbar_style') == 'navbar-static-top') {
@@ -279,7 +280,6 @@ function skematik_top_content_wrapper() {
 	echo '
 	<div id="contentwrap">
 		<div id="page" class="hfeed site container">
-			<div id="main">
 				<div class="row">';
 }
 
