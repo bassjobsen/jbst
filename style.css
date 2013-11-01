@@ -13,7 +13,7 @@ body.admin-bar .navbar-fixed-top {top:28px;}
 
 body {background:none;background-color:#fff;}
 
-#page > div {
+#page {
     background-color: #fff;    
 }
 #content,#right-sidebar aside {padding:15px;}
