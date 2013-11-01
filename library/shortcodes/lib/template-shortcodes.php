@@ -157,7 +157,7 @@ function skematik_register_shortcodes() {
 	*/
 	function skematik_shortcode_row( $atts, $content ) {
 	
-		$output = '<div class="row-fluid">';
+		$output = '<div class="row">';
 		$output .= do_shortcode( $content );
 		$output .= '</div>';	
 		return $output;}
@@ -174,7 +174,7 @@ function skematik_register_shortcodes() {
 		'span' => '12',
 		), $atts ) );
 		
-		$output = '<div class="span'.$span.'">';
+		$output = '<div class="'.JBST_GRIDPREFIX.$span.'">';
 		$output .= do_shortcode( $content );
 		$output .= '</div>';	
 		return $output;}
