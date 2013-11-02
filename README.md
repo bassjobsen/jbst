@@ -18,7 +18,7 @@ Installation
 [Download the latest version as .zip file](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/archive/master.zip). Upload the .zip file to your Wordpress theme directory (wp-content/themes) or use Install theme function in your dashboard.
 Activate the theme in your dashboard ( Appearence > themes ).
 
-Migration
+Migration Skematik to JBST
 ---------
 
 1. download from: https://github.com/bassjobsen/jamedo-bootstrap-start-theme/archive/master.zip
@@ -71,6 +71,7 @@ Recommended Plugins
 * [WooCommerce](http://www.woothemes.com/woocommerce/), with [WooCommerce Twitter's Bootstrap Plugin](https://github.com/bassjobsen/woocommerce-twitterbootstrap)
 * [Stimulate correct headings PLugin](https://github.com/bassjobsen/stimulate-correct-headings) for accessibility and seo
 * [WP Defer Loading](https://github.com/bassjobsen/wp-defer-loading), Defer loading javascript for WordPress, see: https://developers.google.com/speed/docs/insights/BlockingJS
+* [Twitter Bootstrap Galleries Plugin](https://github.com/bassjobsen/twitterbootstrap-galleries), Wraps the content of a WordPress media gallery in a Twitter's Bootstrap grid. And make it full responsive.
 
 JBST Expo
 ---------
