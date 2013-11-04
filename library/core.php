@@ -753,15 +753,7 @@ function bones_comments($comment, $args, $depth) {
 } // don't remove this bracket!
 
 	function skematik_comment_button_classes() {?>
-	<script>
-	jQuery(document).ready(function($) {
-	  /* Add to cart buttons */
-	  $(".comment-reply-link").addClass("btn btn-success btn-mini");
-	  $('.comment-reply-link').prepend('<i class="glyphicon glyphicon-share-alt"></i> ');
-	  $("#cancel-comment-reply-link").addClass("btn btn-danger btn-mini");
-	  $('#cancel-comment-reply-link').prepend('<i class="glyphicon glyphicon-remove"></i> ');
-	});
-	</script>
+
 	<?php
 	}
 
