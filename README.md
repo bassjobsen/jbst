@@ -69,9 +69,10 @@ Recommended Plugins
 
 * [Wordpress SEO Plugin](http://yoast.com/wordpress/seo/)
 * [WooCommerce](http://www.woothemes.com/woocommerce/), with [WooCommerce Twitter's Bootstrap Plugin](https://github.com/bassjobsen/woocommerce-twitterbootstrap)
-* [Stimulate correct headings PLugin](https://github.com/bassjobsen/stimulate-correct-headings) for accessibility and seo
+* [Stimulate correct headings Plugin](https://github.com/bassjobsen/stimulate-correct-headings) for accessibility and seo
 * [WP Defer Loading](https://github.com/bassjobsen/wp-defer-loading), Defer loading javascript for WordPress, see: https://developers.google.com/speed/docs/insights/BlockingJS
-* [Twitter Bootstrap Galleries Plugin](https://github.com/bassjobsen/twitterbootstrap-galleries), Wraps the content of a WordPress media gallery in a Twitter's Bootstrap grid. And make it full responsive.
+* [Twitter Bootstrap Galleries Plugin](https://github.com/bassjobsen/twitter-bootstrap-galleries), Wraps the content of a WordPress media gallery in a Twitter's Bootstrap grid. And make it full responsive.
+* [Twitter Bootstrap Slider](https://github.com/bassjobsen/twitter-bootstrap-slider/) responsive image slide show (slider component)
 
 JBST Expo
 ---------
