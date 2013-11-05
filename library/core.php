@@ -235,7 +235,7 @@ global $post;
 }
 
 function skematik_lightbox_js() {
-	wp_register_script( 'skematik_lightbox_js', get_template_directory_uri() . '/library/lightbox/js/lightbox.js', array( 'jquery','skematik_js' ), '20131101', true );
+	wp_register_script( 'skematik_lightbox_js', get_template_directory_uri() . '/library/lightbox/js/lightbox-2.6.min.js', array( 'jquery','skematik_js' ), '20131101', true );
 	wp_enqueue_script( 'skematik_lightbox_js' );
 }
 
@@ -1186,7 +1186,7 @@ function skematik_image($width,$height) {
 					$large_image_url = wp_get_attachment_image_src($attachment->ID, 'large');
 				 }?>
 				 	<a href="<?php echo $large_image_url[0];?>" data-lightbox="lightbox" title="<?php the_title();?>" class="thumbnail" rel="<?php the_title(); ?>">
-						<img src="<?php echo $image['url']; ?>" width="<?php echo $w; ?>" />
+						<img src="<?php echo $image['url']; ?>" class="img-responsive" />
 					</a>
 		
 			<?php } /*else {?>

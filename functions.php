@@ -102,6 +102,19 @@ add_action( 'wp_enqueue_scripts', 'skematik_comments_js' );
 add_action( 'wp_enqueue_scripts', 'skematik_keyboard_nav_js' );
 add_action( 'wp_enqueue_scripts', 'skematik_js' );
 
+/* Galleries */
+// set default link attribute to "file", see: http://sumobi.com/how-to-filter-shortcodes-in-wordpress-3-6/
+
+if (of_get_option('lightbox_switch', 1) == 1) {
+function jbst_gallery_atts( $out, $pairs, $atts ) {
+
+        $out['link'] = 'file';
+        return $out;
+
+}
+add_filter( 'shortcode_atts_gallery', 'jbst_gallery_atts', 10, 3 );
+}
+
 /*
 ==========================================================
 Loads Options
