@@ -268,7 +268,7 @@ CUSTOM TYPOGRAPHY
 */
 add_action( 'skematik_add_to_custom_style', 'skematik_typography', 5);
 function skematik_typography() {
-	echo 'a.brand {font-family:"'.str_replace("+", " ", get_theme_mod('logo_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
+	echo 'a.navbar-brand {font-family:"'.str_replace("+", " ", get_theme_mod('logo_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
 	echo 'body {font-family:"'.str_replace("+", " ", get_theme_mod('body_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
 	echo 'h1,h2,h3 {font-family:"'.str_replace("+", " ", get_theme_mod('heading_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
 	echo '.navbar-inner {font-family:"'.str_replace("+", " ", get_theme_mod('navbar_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
