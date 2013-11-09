@@ -15,8 +15,8 @@ Sets up theme defaults and registers support for various WordPress features. Not
 function skematik_core_setup() {
 	
 	/* Load custom Skematik shortcodes. */
-	require( get_template_directory() . '/library/shortcodes/lib/template-shortcodes.php' );
-	require_once locate_template('/library/shortcodes/shortcodes-init.php');
+	//require( get_template_directory() . '/library/shortcodes/lib/template-shortcodes.php' );
+	//require_once locate_template('/library/shortcodes/shortcodes-init.php');
 
 /*
 ==========================================================
