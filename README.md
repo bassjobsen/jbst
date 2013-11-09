@@ -63,6 +63,16 @@ Use JBST to create child themes for wordpress build on Twitter's Bootstrap 3.
 We provide you a [Boilerplate JBST Child Theme](https://github.com/bassjobsen/Boilerplate-JBST-Child-Theme) and an example of a Webshop based on [Twitter Bootstrap Webshop Template with vertical menu](https://github.com/bassjobsen/twitter-bootstrap-webshop-template). 
 Download this [Demo Webshop E-commerce Template](https://github.com/bassjobsen/jbst-e-commerce-child-theme) or try the [Demo](http://webshop.w3masters.nl/).
 
+Twitter's Boostrap Shortcodes
+-----------------------------
+JBST doesn't integrate Twitter's Boostrap Shortcodes since version 1.1. In stead of integration we offer support for plugins which provide this functionality. We support these plugins:
+
+* [Twitter's Bootstrap Shortcodes Ultimate Add-on](http://wordpress.org/plugins/twitters-bootstrap-shortcodes-ultimate/), recommended!
+* [Easy Bootstrap Shortcode](http://wordpress.org/plugins/easy-bootstrap-shortcodes/)
+* [Bootstrap WP Plugin](http://bootstrapwpplugin.com?affiliates=c9f0f895fb98ab9159f51fd0297e236d)
+
+Download the plugin and activate it. Troubles? Post an issue.
+
 
 Recommended Plugins
 -------------------

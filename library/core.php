@@ -14,10 +14,7 @@ Sets up theme defaults and registers support for various WordPress features. Not
 */
 function skematik_core_setup() {
 	
-	/* Load custom Skematik shortcodes. */
-	//require( get_template_directory() . '/library/shortcodes/lib/template-shortcodes.php' );
-	//require_once locate_template('/library/shortcodes/shortcodes-init.php');
-
+																	
 /*
 ==========================================================
 Internationalizing And Localizing 
@@ -48,7 +45,7 @@ SET THE DEFAULT GRID
 */
 
 define('JBST_GRIDPREFIX','col-'.get_theme_mod( 'default_grid', 'md').'-');
-
+																							
 /*
 ==========================================================
 ADD WELCOME SCREEN TO THE THEME OPTIONS PANEL
@@ -87,7 +84,7 @@ function skematik_options_add_before() {
 		$welcometext .= __('Jamedo\'s Bootstrap Start Theme','jamedo-bootstrap-start-theme');
 		$welcometext .= ' ';  
 		
-		$welcometext .=__('comes bundled with an extensive library of shortcodes for adding unique content elements like columns, buttons, tabs and carousels. Best of all, you don\'t have to remember any of them as we have included a special shortcode generator just above the editor.','jamedo-bootstrap-start-theme');
+		$welcometext .=__('Install <a href="http://gndev.info/shortcodes-ultimate/">Shortcodes Ultimate</a> and <a href="http://wordpress.org/plugins/twitters-bootstrap-shortcodes-ultimate/">Twitter\'s Bootstrap Shortcodes Ultimate Add-on</a> This plugin provide an extensive library of shortcodes for adding unique content elements like columns, buttons, tabs and carousels. Best of all, you don\'t have to remember any of them as we have included a special shortcode generator just above the editor.','jamedo-bootstrap-start-theme');
 		
 		 $welcometext .= sprintf(' <strong>%1$s... %2$s\'s %3$s</strong>.</p></div>',__('Plus','jamedo-bootstrap-start-theme'),__('Jamedo\'s Bootstrap Start Theme','jamedo-bootstrap-start-theme'),__('shortcodes work in widgets too!','jamedo-bootstrap-start-theme'));
 				
