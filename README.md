@@ -73,6 +73,15 @@ JBST doesn't integrate Twitter's Boostrap Shortcodes since version 1.1. In stead
 
 Download the plugin and activate it. Troubles? Post an issue.
 
+Responsive image sliders
+------------------------
+
+JBST offers support for the plugin shown below. Slider plugin are not bundled you will have to install them your self.
+
+* [Twitter Bootstrap Slider](https://github.com/bassjobsen/twitter-bootstrap-slider),recommended! 
+* [Royal Slider](http://dimsemenov.com/plugins/royal-slider/wordpress/)
+* [Flex Slider](http://www.fergusweb.net/software/flex-slider/)
+
 
 Recommended Plugins
 -------------------
