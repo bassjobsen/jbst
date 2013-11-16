@@ -59,7 +59,7 @@
 				
 						<?php edit_post_link( __( 'Edit', 'jamedo-bootstrap-start-theme' ), '<span class="edit-link">', '</span>' ); ?>
 					</footer><!-- .entry-meta -->
-				</article><!-- #post-<?php the_ID(); ?> -->
+				
 			<?php endwhile; ?>
 
 			<?php skematik_content_nav_bottom_single() ?>
@@ -71,3 +71,4 @@
 				if ( comments_open() || '0' != get_comments_number() )
 					comments_template( '', true );
 			?>
+                              </article><!-- #post-<?php the_ID(); ?> -->  
