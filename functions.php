@@ -16,13 +16,13 @@ if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
 
 /* Load Skematik functions on 'after_setup_theme'. */
-add_action( 'after_setup_theme', 'skematik_theme_setup' );
+add_action( 'after_setup_theme', 'jbst_theme_setup' );
 
-if ( ! function_exists( 'skematik_theme_setup' ) ):
+if ( ! function_exists( 'jbst_theme_setup' ) ):
 /*
 Sets up theme defaults and registers support for various WordPress features. Note that this function is hooked into the after_setup_theme hook, which runs before the init hook. The init hook is too late for some features, such as indicating support post thumbnails.@since skematik 1.0
 */
-function skematik_theme_setup() {
+function jbst_theme_setup() {
 	
 	/* Load custom Skematik functions. */
 	require( get_template_directory() . '/functions/template-functions.php' );
@@ -166,61 +166,3 @@ add_action( 'jbst_after_content_page','jbst_close_content_wrappers',10);
 }
 
 add_action( 'wp_head', 'jbst_prepare_wrappers',10);
-
-
-
-/*
-==========================================================
-SAVE CUTOMIZER CSS TO FILE
-==========================================================
-*/
-//http://stackoverflow.com/questions/14802251/hook-into-the-wordpress-theme-customizer-save-action
-/*add_action( 'customize_save_after', 'save_css',10);
-function save_css($c)
-{
-		
-		$values = json_decode( wp_unslash( $_POST['customized'] ), true );
-		
-		if($values['default_grid']=='xs')
-		{
-			$fp = fopen(get_template_directory().'/css/custom.css', 'w+');
-			fwrite($fp, '.xs{width:100%;}'."\n");
-			fclose($fp);
-		}
-		
-		exit;
-}
-
-function my_admin_notice() {
-    ?>
-    <div class="updated">
-        <p><?php _e( 'Updated!', 'my-text-domain' ); ?></p>
-    </div>
-    <?php
-}*/
-
-/*
-==========================================================
-Internationalizing And Localizing 
-==========================================================
-*/
-
-/* text domain will be set in core.php */
-	
-/*
-==========================================================
-AUTOMATIC UPDATES
-==========================================================
-*/
-/*Initialize the update checker.
-add_action( 'admin_init', 'skematik_check_for_update');
-	function skematik_check_for_update() {
-	require_once( get_template_directory() . '/library/updates/theme-update-checker.php' );
-	$example_update_checker = new ThemeUpdateChecker(
-		'jamedo-bootstrap-start-theme',                                            //Theme folder name, AKA "slug". 
-		'http://skematiktheme.com/services/updates/skematik/info.json' //URL of the metadata file.
-	);
-}*/
-
-//require_once(get_template_directory() .'/library/updates/wp-updates-theme.php');
-//new WPUpdatesThemeUpdater( 'http://wp-updates.com/api/1/theme', 75, basename(get_template_directory()) );

@@ -1330,9 +1330,22 @@ function skematik_resize( $attach_id = null, $img_url = null, $width, $height, $
 		}
 
 		// no cache files - let's finally resize it
-		$new_img_path = image_resize( $file_path, $width, $height, $crop );
+		
+  
+        $new_img_path = dirname ($file_path).'/'.$width.'-'.$height.'-'.basename( $file_path );
+        
+		$image = wp_get_image_editor( $file_path  ); // Return an implementation that extends <tt>WP_Image_Editor</tt>
+
+		if ( ! is_wp_error( $image ) ) {
+			
+			$image->resize($width, $height, $crop );
+			$image->save( $new_img_path );
+		}
+		
 		$new_img_size = getimagesize( $new_img_path );
 		$new_img = str_replace( basename( $image_src[0] ), basename( $new_img_path ), $image_src[0] );
+		
+
 
 		// resized output
 		$skematik_image = array (
