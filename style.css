@@ -149,3 +149,5 @@ ol.commentlist li li {margin-left:20px;}
 }
 
 }
+
+img.size-full, widget-area img {max-width:100%;height: auto;}
