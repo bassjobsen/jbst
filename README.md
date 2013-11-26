@@ -18,6 +18,12 @@ Installation
 [Download the latest version as .zip file](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/archive/master.zip). Upload the .zip file to your Wordpress theme directory (wp-content/themes) or use Install theme function in your dashboard.
 Activate the theme in your dashboard ( Appearence > themes ).
 
+Customization and LESS
+----------------------
+
+JBST has a build in customizer. Bootstrap's CSS could by changed by modifying it's LESS file (`library/assets/less/`).
+Also read: [Integrate LESS in JBST WordPress Theme](http://bassjobsen.weblogs.fm/integrate-less-jbst-wordpress-theme/)
+
 Migration Skematik to JBST
 ---------
 
