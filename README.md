@@ -22,7 +22,8 @@ Customization and LESS
 ----------------------
 
 JBST has a build in customizer. Bootstrap's CSS could by changed by modifying it's LESS file (`library/assets/less/`).
-Also read: [Integrate LESS in JBST WordPress Theme](http://bassjobsen.weblogs.fm/integrate-less-jbst-wordpress-theme/)
+Also read: [Integrate LESS in JBST WordPress Theme](http://bassjobsen.weblogs.fm/integrate-less-jbst-wordpress-theme/). 
+LESS implementation build in with [WP LESSCSS](https://github.com/bassjobsen/wp-lesscss) which relies on [less.php](https://github.com/oyejorge/less.php).
 
 Migration Skematik to JBST
 ---------
