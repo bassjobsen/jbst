@@ -171,7 +171,7 @@ add_action( 'wp_head', 'jbst_prepare_wrappers',10);
 add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
 
 /* add less */
-require dirname(__FILE__) . '/vendor/wp-less/bootstrap-for-theme.php';
+require dirname(__FILE__) . '/vendor/wp-lesscss/bootstrap-for-theme.php';
 $less = WPLessPlugin::getInstance();
 $less->dispatch();
 
