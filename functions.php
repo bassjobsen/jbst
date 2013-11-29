@@ -179,5 +179,14 @@ add_action('init', 'theme_enqueue_styles');
 
 function theme_enqueue_styles() {
 	//wp_enqueue_style('theme-main', get_stylesheet_directory_uri().'/stylesheets/theme-main.less');
-	wp_enqueue_style('bootstrap', get_stylesheet_directory_uri().'/library/assets/less/bootstrap.less');
+	wp_enqueue_style('bootstrap', get_template_directory_uri().'/library/assets/less/bootstrap.less');
 }
+
+/*require dirname(__FILE__) . '/vendor/wp-less-to-css/wp-less-to-css.php';
+
+remove_action( 'wp_enqueue_scripts', 'skematik_bootstrap_css', 99 );
+add_filter( 'add_extra_less', 'add_extra_less_now');
+function add_extra_less_now($parser)
+{
+	return 'p{color:pink;}';          
+}*/	
