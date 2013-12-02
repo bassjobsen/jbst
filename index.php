@@ -14,7 +14,6 @@
 get_header();
 do_action( 'jbst_before_content_page' );
 ?>
-
 		<?php if ( have_posts() ) : ?>
 				<?php 
 					if ( is_page() || (function_exists('is_bbpress') && is_bbpress() )) { get_template_part( 'content', 'page' );}

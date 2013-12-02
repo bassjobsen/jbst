@@ -7,7 +7,6 @@
  */
 ?>
 			
-
 			<?php while ( have_posts() ) : the_post(); /* Start the Loop */?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php skematik_page_title();?>

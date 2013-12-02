@@ -168,7 +168,6 @@ add_action( 'jbst_after_content_page','jbst_close_content_wrappers',10);
 add_action( 'wp_head', 'jbst_prepare_wrappers',10);
 
 
-add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
 
 /* add less */
 require dirname(__FILE__) . '/vendor/wp-lesscss/bootstrap-for-theme.php';
@@ -185,8 +184,17 @@ function theme_enqueue_styles() {
 /*require dirname(__FILE__) . '/vendor/wp-less-to-css/wp-less-to-css.php';
 
 remove_action( 'wp_enqueue_scripts', 'skematik_bootstrap_css', 99 );
-add_filter( 'add_extra_less', 'add_extra_less_now');
+
+add_filter( 'add_extra_less_code', 'add_extra_less_now');
 function add_extra_less_now($parser)
 {
 	return 'p{color:pink;}';          
-}*/	
+}
+
+$updatecss = WP_LESS_to_CSS::$instance;
+add_filter( 'add_extra_less_code', 'add_extra_less_now_live');
+function add_extra_less_now_live($parser)
+{
+	return 'p{color:purple;}';          
+}
+$updatecss->wpless2csssavecss();*/

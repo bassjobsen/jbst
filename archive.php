@@ -13,7 +13,6 @@
  */
 get_header();
 ?>
-
 	<div id="primary" class="site-content <?php do_action('jbstmaingridclass'); ?>">
 		<div id="content" role="main">
 		<?php if ( have_posts() ) : ?>

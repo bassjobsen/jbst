@@ -305,6 +305,6 @@ add_action( 'skematik_before_buddypress', 'skematik_buddypress_top_content_wrapp
 function skematik_buddypress_top_content_wrapper() {
 ?>
 	<div id="primary" class="site-content <?php do_action('jbstmaingridclass'); ?>">
-		<div id="content" role="main">
+		<div id="content" role="main">jj
 <?php
 }
