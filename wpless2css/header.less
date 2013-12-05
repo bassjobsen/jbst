@@ -1,0 +1,14 @@
+// Core variables and mixins
+@import "variables.less";
+@import "mixins.less";
+
+header {
+    .container-fixed();
+    .make-row();
+        article {
+            .make-md-column(6);
+        }
+        aside {
+            .make-md-column(6);
+        }
+}

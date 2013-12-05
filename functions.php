@@ -169,32 +169,58 @@ add_action( 'wp_head', 'jbst_prepare_wrappers',10);
 
 
 
-/* add less */
-require dirname(__FILE__) . '/vendor/wp-lesscss/bootstrap-for-theme.php';
-$less = WPLessPlugin::getInstance();
-$less->dispatch();
-
-add_action('init', 'theme_enqueue_styles');
-
-function theme_enqueue_styles() {
-	//wp_enqueue_style('theme-main', get_stylesheet_directory_uri().'/stylesheets/theme-main.less');
-	wp_enqueue_style('bootstrap', get_template_directory_uri().'/library/assets/less/bootstrap.less');
-}
-
-/*require dirname(__FILE__) . '/vendor/wp-less-to-css/wp-less-to-css.php';
-
+/*
+==========================================================
+LESS
+==========================================================
+*/
+require dirname(__FILE__) . '/vendor/wp-less-to-css/wp-less-to-css.php';
 remove_action( 'wp_enqueue_scripts', 'skematik_bootstrap_css', 99 );
 
-add_filter( 'add_extra_less_code', 'add_extra_less_now');
-function add_extra_less_now($parser)
+/* add path to glyphicons */
+
+add_filter( 'add_extra_less_code', 'add_glyphicons_path');
+
+function add_glyphicons_path()
 {
-	return 'p{color:pink;}';          
+	return '@icon-font-path: "'.get_template_directory_uri().'/library/assets/fonts/";';
+}	
+
+add_action( 'customize_save_after', 'lesscustomize' );
+
+add_filter( 'add_extra_less_files', 'add_extra_less_files_live');
+function add_extra_less_files_live()
+{
+	if(!file_exists($customless=get_stylesheet_directory().'/library/assets/less/custom.less'))
+	{
+		if(!file_exists($customless=get_template_directory().'/library/assets/less/custom.less'))
+		{
+		  
+		  wp_die('<strong>/library/assets/less/custom.less</strong> is missing');
+				
+		}
+    }  
+    return array($customless);    
 }
 
+function lesscustomize($setting)
+{
+//$setting is no used here
 $updatecss = WP_LESS_to_CSS::$instance;
 add_filter( 'add_extra_less_code', 'add_extra_less_now_live');
+
 function add_extra_less_now_live($parser)
 {
-	return 'p{color:purple;}';          
+	return '';//'a{color:'.get_theme_mod( 'heading_color').'} p{color:orange;}';          
 }
-$updatecss->wpless2csssavecss();*/
+$updatecss->wpless2csssavecss();
+}
+
+function myactivationfunction($oldname, $oldtheme=false) 
+{
+	$updatecss = WP_LESS_to_CSS::$instance;
+	if ( !is_writable( dirname ( $updatecss->folder ) ) ){wp_die("Before activating make sure ".dirname ( $updatecss->folder )." is writable.");}
+	if( !is_dir( $updatecss->folder ) ) wp_mkdir_p( $updatecss->folder );
+    $updatecss->wpless2csssavecss();
+}
+add_action("after_switch_theme", "myactivationfunction", 10 ,  2);

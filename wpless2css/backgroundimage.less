@@ -1,0 +1,10 @@
+.setbackgroundimage(@index) when (@index > 0)
+{
+	window-@{index}
+	{
+	 background-image: url('/content/images/background-@{index}-window.png');
+	}
+	.setbackgroundimage(@index - 1);
+}
+
+.setbackgroundimage(50);

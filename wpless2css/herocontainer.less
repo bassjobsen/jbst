@@ -1,0 +1,27 @@
+// Core variables and mixins
+@import (reference) "variables.less";
+@import (reference) "mixins.less";
+@import (reference) "buttons.less";
+
+.herocontainer{
+    .make-row();
+    .iphoneblock{
+        .make-sm-column-offset(1);
+        .make-sm-column(4);
+        text-align: center;
+    }
+    .copyblock{
+        .make-sm-column(5);
+        text-align: center;
+        .copytext{
+            @media(min-width: @screen-sm) {
+              padding-top: 100px;
+              }
+        }
+        .buybutton{
+            .btn-lg;
+            .btn-primary;
+            background-color: #d6822f;
+            }
+    }
+}

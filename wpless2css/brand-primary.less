@@ -1,0 +1,287 @@
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+@brand-primary-red:         			#ff0000;
+@link-color-red:            			@brand-primary-red;
+@link-hover-color-red:          		darken(@link-color-red, 15%);
+@component-active-bg-red:   			@brand-primary-red;
+@dropdown-link-active-bg-red:       	@component-active-bg-red;
+@nav-pills-active-link-hover-bg-red:	@component-active-bg-red;
+@list-group-active-bg-red:          	@component-active-bg-red;
+@list-group-active-border-red:          @list-group-active-bg-red;
+@btn-primary-bg-red:        		    @brand-primary-red;
+@pagination-active-bg-red:     			@brand-primary-red;
+@label-primary-bg-red:          		@brand-primary-red;
+@progress-bar-bg-red:           		@brand-primary-red;
+@panel-primary-border-red:      		@brand-primary-red;
+@panel-primary-heading-bg-red:  		@brand-primary-red;
+
+.red-area
+{
+	//type.less
+	.text-primary {
+	  color: @brand-primary-red;
+	  &:hover {
+		color: darken(@brand-primary-red, 10%);
+	  }
+	}
+	
+	//scaffolding.less
+	// Links
+
+	a {
+	  color: @link-color-red;
+	  text-decoration: none;
+
+	  &:hover,
+	  &:focus {
+		color: @link-hover-color-red;
+		text-decoration: underline;
+	  }
+
+	  &:focus {
+		.tab-focus();
+	  }
+	}
+	
+	//thumbnails.less
+	
+	.thumbnail {
+	// Add a hover state for linked versions only
+	  a&:hover,
+	  a&:focus,
+	  a&.active {
+		border-color: @link-color-red;
+	  }
+	  }
+	
+	//buttons.less
+	// Make a button look and behave like a link
+	.btn-link {
+	  color: @link-color-red;
+	  font-weight: normal;
+	  cursor: pointer;
+	  border-radius: 0;
+
+	  &,
+	  &:active,
+	  &[disabled],
+	  fieldset[disabled] & {
+		background-color: transparent;
+		.box-shadow(none);
+	  }
+	  &,
+	  &:hover,
+	  &:focus,
+	  &:active {
+		border-color: transparent;
+	  }
+	  &:hover,
+	  &:focus {
+		color: @link-hover-color-red;
+		text-decoration: underline;
+		background-color: transparent;
+	  }
+	  &[disabled],
+	  fieldset[disabled] & {
+		&:hover,
+		&:focus {
+		  color: @btn-link-disabled-color;
+		  text-decoration: none;
+		}
+	  }
+	}
+	
+	//nav.less
+	  // Open dropdowns
+	  .open > a {
+		&,
+		&:hover,
+		&:focus {
+		  background-color: @nav-link-hover-bg;
+		  border-color: @link-color-red;
+
+		  .caret {
+			border-top-color: @link-hover-color-red;
+			border-bottom-color: @link-hover-color-red;
+		  }
+		}
+	  }
+	
+	//dropdowns.less
+	// Active state
+	.dropdown-menu > .active > a {
+	  &,
+	  &:hover,
+	  &:focus {
+		color: @dropdown-link-active-color;
+		text-decoration: none;
+		outline: 0;
+		background-color: @dropdown-link-active-bg-red;
+	  }
+	}
+	
+	//nav.less
+		.nav-pills {
+	  > li {
+		float: left;
+
+		// Links rendered as pills
+		> a {
+		  border-radius: @nav-pills-border-radius;
+		}
+		+ li {
+		  margin-left: 2px;
+		}
+
+		// Active state
+		&.active > a {
+		  &,
+		  &:hover,
+		  &:focus {
+			color: @nav-pills-active-link-hover-color;
+			background-color: @nav-pills-active-link-hover-bg-red;
+
+			.caret {
+			  border-top-color: @nav-pills-active-link-hover-color;
+			  border-bottom-color: @nav-pills-active-link-hover-color;
+			}
+		  }
+		}
+	  }
+	}
+	
+	//list-group.less
+	// Linked list items
+	a.list-group-item {
+	  color: @list-group-link-color;
+
+	  .list-group-item-heading {
+		color: @list-group-link-heading-color;
+	  }
+
+	  // Hover state
+	  &:hover,
+	  &:focus {
+		text-decoration: none;
+		background-color: @list-group-hover-bg;
+	  }
+
+	  // Active class on item itself, not parent
+	  &.active,
+	  &.active:hover,
+	  &.active:focus {
+		z-index: 2; // Place active items above their siblings for proper border styling
+		color: @list-group-active-color;
+		background-color: @list-group-active-bg-red;
+		border-color: @list-group-active-border-red;
+
+		// Force color to inherit for custom content
+		.list-group-item-heading {
+		  color: inherit;
+		}
+		.list-group-item-text {
+		  color: lighten(@list-group-active-bg, 40%);
+		}
+	  }
+	}
+	
+	//buttons.less
+	.btn-primary {
+	  .button-variant(@btn-primary-color; @btn-primary-bg-red; @btn-primary-border);
+	}
+	
+	//pagination.less
+	.pagination {
+	  display: inline-block;
+	  padding-left: 0;
+	  margin: @line-height-computed 0;
+	  border-radius: @border-radius-base;
+
+	  > li {
+		display: inline; // Remove list-style and block-level defaults
+		> a,
+		> span {
+		  position: relative;
+		  float: left; // Collapse white-space
+		  padding: @padding-base-vertical @padding-base-horizontal;
+		  line-height: @line-height-base;
+		  text-decoration: none;
+		  background-color: @pagination-bg;
+		  border: 1px solid @pagination-border;
+		  margin-left: -1px;
+		}
+		&:first-child {
+		  > a,
+		  > span {
+			margin-left: 0;
+			.border-left-radius(@border-radius-base);
+		  }
+		}
+		&:last-child {
+		  > a,
+		  > span {
+			.border-right-radius(@border-radius-base);
+		  }
+		}
+	  }
+
+	  > li > a,
+	  > li > span {
+		&:hover,
+		&:focus {
+		  background-color: @pagination-hover-bg;
+		}
+	  }
+
+	  > .active > a,
+	  > .active > span {
+		&,
+		&:hover,
+		&:focus {
+		  z-index: 2;
+		  color: @pagination-active-color;
+		  background-color: @pagination-active-bg-red;
+		  border-color: @pagination-active-bg-red;
+		  cursor: default;
+		}
+	  }
+
+	  > .disabled {
+		> span,
+		> span:hover,
+		> span:focus,
+		> a,
+		> a:hover,
+		> a:focus {
+		  color: @pagination-disabled-color;
+		  background-color: @pagination-bg;
+		  border-color: @pagination-border;
+		  cursor: not-allowed;
+		}
+	  }
+	}
+	
+	//labels.less
+	
+	.label-primary {
+	  .label-variant(@label-primary-bg-red);
+	}
+	
+	//progress-bars.less
+	// Bar of progress
+	.progress-bar {
+	  background-color: @progress-bar-bg-red;
+	}
+	
+	//panels.less
+	
+	.panel-primary {
+	  .panel-variant(@panel-primary-border-red; @panel-primary-text; @panel-primary-heading-bg-red; @panel-primary-border-red);
+	}
+	
+}
