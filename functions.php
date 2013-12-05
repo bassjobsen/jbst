@@ -191,7 +191,7 @@ add_action( 'customize_save_after', 'lesscustomize' );
 add_filter( 'add_extra_less_files', 'add_extra_less_files_live');
 function add_extra_less_files_live()
 {
-	if(!file_exists($customless=get_stylesheet_directory().'/library/assets/less/custom.less'))
+	if(!file_exists($customless=get_stylesheet_directory().'/less/custom.less'))
 	{
 		if(!file_exists($customless=get_template_directory().'/library/assets/less/custom.less'))
 		{

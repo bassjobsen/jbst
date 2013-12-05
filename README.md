@@ -16,14 +16,22 @@ Installation
 ------------
 
 [Download the latest version as .zip file](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/archive/master.zip). Upload the .zip file to your Wordpress theme directory (wp-content/themes) or use Install theme function in your dashboard.
-Activate the theme in your dashboard ( Appearence > themes ).
+Activate the theme in your dashboard ( Appearence > themes ). Make sure your wp-content/uploads directory is writable before activating!
 
 Customization and LESS
 ----------------------
 
-JBST has a build in customizer. Bootstrap's CSS could by changed by modifying it's LESS file (`library/assets/less/`).
+JBST has a build in customizer and LESS editor.
 Also read: [Integrate LESS in JBST WordPress Theme](http://bassjobsen.weblogs.fm/integrate-less-jbst-wordpress-theme/). 
-LESS implementation build in with [WP LESSCSS](https://github.com/bassjobsen/wp-lesscss) which relies on [less.php](https://github.com/oyejorge/less.php).
+LESS implementation build in with [WP LESS to CSS](https://github.com/bassjobsen/wp-less-to-css) which relies on [less.php](https://github.com/oyejorge/less.php).
+Add your mixins, variables and function with the editor `Settings > WP LESS to CSS`. Check the plugin documentation for advanched options.
+Optional add LESS code to library/assets/less/custom.less (less/custom.less for child themes) or wpless2css/wpless2css.less (backup when updating the theme!).
+
+Modify the build in Twitter's Boostrap Code:
+Don't edit wpless2css/bootstrap/variables.less but overwrite the variables in the editor mentioned above.
+
+Note: Edit and add LESS code with the editor, unless you understand what you're doing. Modifications with the editor are saved in the database and not over written or lost when you update your theme. Changing less/custom.less in your child theme will also be save.
+Cause CSS is valid LESS you could also add CSS code to the LESS editor.
 
 Migration Skematik to JBST
 ---------
@@ -69,6 +77,9 @@ Child themes
 Use JBST to create child themes for wordpress build on Twitter's Bootstrap 3.
 We provide you a [Boilerplate JBST Child Theme](https://github.com/bassjobsen/Boilerplate-JBST-Child-Theme) and an example of a Webshop based on [Twitter Bootstrap Webshop Template with vertical menu](https://github.com/bassjobsen/twitter-bootstrap-webshop-template). 
 Download this [Demo Webshop E-commerce Template](https://github.com/bassjobsen/jbst-e-commerce-child-theme) or try the [Demo](http://webshop.w3masters.nl/).
+
+Add and edit less/custom.less to add or modify your LESS/CSS code. Or use the LESS editor. 
+You have to use the save function of the LESS editor after changing less/custom.less too. The save function generate new CSS from your LESS files.
 
 Twitter's Boostrap Shortcodes
 -----------------------------
