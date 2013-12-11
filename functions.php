@@ -186,7 +186,6 @@ function add_glyphicons_path()
 	return '@icon-font-path: "'.get_template_directory_uri().'/library/assets/fonts/";';
 }	
 
-add_action( 'customize_save_after', 'lesscustomize' );
 
 add_filter( 'add_extra_less_files', 'add_extra_less_files_live');
 function add_extra_less_files_live()
@@ -202,6 +201,8 @@ function add_extra_less_files_live()
     }  
     return array($customless);    
 }
+
+add_action( 'customize_save_after', 'lesscustomize' );
 
 function lesscustomize($setting)
 {
@@ -224,3 +225,4 @@ function myactivationfunction($oldname, $oldtheme=false)
     $updatecss->wpless2csssavecss();
 }
 add_action("after_switch_theme", "myactivationfunction", 10 ,  2);
+
