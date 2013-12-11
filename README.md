@@ -78,8 +78,8 @@ Use JBST to create child themes for wordpress build on Twitter's Bootstrap 3.
 We provide you a [Boilerplate JBST Child Theme](https://github.com/bassjobsen/Boilerplate-JBST-Child-Theme) and an example of a Webshop based on [Twitter Bootstrap Webshop Template with vertical menu](https://github.com/bassjobsen/twitter-bootstrap-webshop-template). 
 Download this [Demo Webshop E-commerce Template](https://github.com/bassjobsen/jbst-e-commerce-child-theme) or try the [Demo](http://webshop.w3masters.nl/).
 
-Add and edit less/custom.less to add or modify your LESS/CSS code. Or use the LESS editor. 
-You have to use the save function of the LESS editor after changing less/custom.less too. The save function generate new CSS from your LESS files.
+Add and edit wpless2css/wpless2css.less to add or modify your LESS/CSS code. Or use the LESS editor. 
+You have to use the save function of the LESS editor after changing wpless2css/wpless2css.less too. The save function generate new CSS from your LESS files.
 
 Twitter's Boostrap Shortcodes
 -----------------------------
