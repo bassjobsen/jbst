@@ -1,0 +1,45 @@
+# Copyright (C) 2013 WP LESS to CSS
+# This file is distributed under the same license as the WP LESS to CSS package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP LESS to CSS 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-less-to-css\n"
+"POT-Creation-Date: 2013-12-05 09:28:56+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: templates/settings.php:37 wp-less-to-css.php:228
+msgid "Settings"
+msgstr ""
+
+#: templates/settings.php:49
+msgid "Custom Less code"
+msgstr ""
+
+#: wp-less-to-css.php:180
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WP LESS to CSS"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/bassjobsen/wp-less-to-css"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "This plugin helps you to build and maintain your website with LESS."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Bass Jobsen"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://bassjobsen.weblogs.fm/"
+msgstr ""
