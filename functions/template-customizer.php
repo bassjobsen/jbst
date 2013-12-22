@@ -75,6 +75,7 @@ function skematik_grid_customizer_options($wp_customize) {
 	/* Navbar Width */
 	$wp_customize->add_setting( 'default_grid', array(
 	'default'        => 'sm',
+	'transport'   => 'refresh'
 	) );
 		
 	$wp_customize->add_control( 'default_grid', array(

@@ -86,6 +86,8 @@ public function wpless2csssavecss()
 				
 				if($extrafiles = apply_filters('add_extra_less_files',''))
 				{
+					var_dump($extrafiles);
+					
 					foreach($extrafiles as $extrafile)
 					{
 						$parser->parseFile($extrafile);

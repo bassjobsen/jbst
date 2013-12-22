@@ -226,3 +226,26 @@ function myactivationfunction($oldname, $oldtheme=false)
 }
 add_action("after_switch_theme", "myactivationfunction", 10 ,  2);
 
+/*add_action('customize_save', 'updatefiles', 1);
+
+function updatefiles( $wp_customize ) {
+var_dump(WP_Filesystem($_SESSION['creds']));
+}
+function storecedits( $wp_customize ) {
+
+            $in = true;
+            $url = 'customize.php';
+            if (false === ($creds = request_filesystem_credentials($url, '', false, false,null) ) ) {
+                $in = false;
+                exit;
+            }
+            if ($in && ! WP_Filesystem($creds) ) {
+                // our credentials were no good, ask the user for them again
+                request_filesystem_credentials($url, '', true, false,null);
+                $in = false;
+                exit;
+            }
+            $_SESSION['creds'] = $creds;
+            
+}
+add_action('customize_controls_init', 'storecedits', 1);*/

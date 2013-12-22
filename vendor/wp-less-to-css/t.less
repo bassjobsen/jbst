@@ -1,0 +1,13 @@
+.frames(@frames)
+{
+	frames: @frames;
+}
+.keyframes-mixin (@name, @frames) {
+	~"@-webkit-keyframes @{name} "
+	//@-moz-keyframes @name {@frames}
+	//@-ms-keyframes @name {@frames}
+	//@-o-keyframes @name {@frames}
+	//@keyframes @name {@frames}
+}
+
+.keyframes-mixin(rotator,~"from {width: 254px;}	to {width: 512px;}");

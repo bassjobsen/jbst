@@ -49,8 +49,29 @@ function skematik_content_span() {
 	skematik_layout();
 	global $skematik_layout;
 	global $post;
-	if ($skematik_layout == 'left-sidebar') {$contentspan = JBST_GRIDPREFIX . '9';}
-	elseif ($skematik_layout == 'right-sidebar') {$contentspan = JBST_GRIDPREFIX . '9';}
+	if($skematik_layout == 'left-sidebar' || $skematik_layout == 'right-sidebar')
+	{
+	    $contentcolumnxs = get_theme_mod('content_span_xs',9);
+		$contentcolumnsm = get_theme_mod('content_span_sm',9);
+		$contentcolumnmd = get_theme_mod('content_span_md',9);
+		$contentcolumnlg = get_theme_mod('content_span_lg',9);
+		$default_grid = get_theme_mod( 'default_grid', 'md');
+		if($default_grid=='xs') $grids = array('xs','sm','md','lg');
+		elseif($default_grid=='sm') $grids = array('sm','md','lg');
+		elseif($default_grid=='md') $grids = array('md','lg');
+		elseif($default_grid=='lg') $grids = array('lg');
+		$gridclasses = 'col-'.$default_grid.'-'.${'contentcolumn'.$default_grid};
+		foreach($grids as $grid)
+		{
+			if($grid != $default_grid && ${'contentcolumn'.$grid} != ${'contentcolumn'.$default_grid})
+			{
+				$gridclasses .= ' col-'.$grid.'-'.${'contentcolumn'.$grid};
+			}	
+	    }
+	}
+	
+	if ($skematik_layout == 'left-sidebar') {$contentspan = $gridclasses;}
+	elseif ($skematik_layout == 'right-sidebar') {$contentspan = $gridclasses;}
 	elseif ($skematik_layout == 'three-column') {$contentspan = JBST_GRIDPREFIX . '6';}
 	elseif ($skematik_layout == 'full-width') {$contentspan = JBST_GRIDPREFIX . '12';}
 	else {$contentspan = JBST_GRIDPREFIX . '9';}
@@ -63,7 +84,33 @@ function skematik_left_sidebar() {
 	global $skematik_layout;
 	global $post;
 	if(($skematik_layout == 'left-sidebar') || ($skematik_layout == 'three-column')) {
-			echo '<div id="left-sidebar" class="widget-area ' .JBST_GRIDPREFIX. '3 sidebar" role="complementary">';
+	if($skematik_layout == 'three-column')
+	{
+		$gridclasses = JBST_GRIDPREFIX.'3';
+    }
+    else
+    {
+		$sidebarcolumnxs = get_theme_mod('left_sidebar_xs',3);
+		$sidebarcolumnsm = get_theme_mod('left_sidebar_sm',3);
+		$sidebarcolumnmd = get_theme_mod('left_sidebar_md',3);
+		$sidebarcolumnlg = get_theme_mod('left_sidebar_lg',3);
+		$default_grid = get_theme_mod( 'default_grid', 'md');
+		if($default_grid=='xs') $grids = array('xs','sm','md','lg');
+		elseif($default_grid=='sm') $grids = array('sm','md','lg');
+		elseif($default_grid=='md') $grids = array('md','lg');
+		elseif($default_grid=='lg') $grids = array('lg');
+		$gridclasses = 'col-'.$default_grid.'-'.${'sidebarcolumn'.$default_grid};
+		foreach($grids as $grid)
+		{
+			if($grid != $default_grid && ${'sidebarcolumn'.$grid} != ${'sidebarcolumn'.$default_grid})
+			{
+				$gridclasses .= ' col-'.$grid.'-'.${'sidebarcolumn'.$grid};
+			}	
+	    }	
+	}		
+	
+	
+			echo '<div id="left-sidebar" class="widget-area ' .$gridclasses. ' sidebar" role="complementary">';
 			do_action( 'skematik_before_left_sidebar' );
 			
 			if ( ! dynamic_sidebar( 'left-content-sidebar' ) ) :
@@ -79,7 +126,35 @@ function skematik_right_sidebar() {
 	global $skematik_layout;
 	global $post;
 	if(($skematik_layout == 'right-sidebar') || ($skematik_layout == 'three-column')) {
-			echo '<div id="right-sidebar" class="widget-area ' .JBST_GRIDPREFIX. '3 sidebar" role="complementary">';
+		
+	if($skematik_layout == 'three-column')
+	{
+		$gridclasses = JBST_GRIDPREFIX.'3';
+    }
+    else
+    {
+		$sidebarcolumnxs = get_theme_mod('right_sidebar_xs',3);
+		$sidebarcolumnsm = get_theme_mod('right_sidebar_sm',3);
+		$sidebarcolumnmd = get_theme_mod('right_sidebar_md',3);
+		$sidebarcolumnlg = get_theme_mod('right_sidebar_lg',3);
+		$default_grid = get_theme_mod( 'default_grid', 'md');
+		if($default_grid=='xs') $grids = array('xs','sm','md','lg');
+		elseif($default_grid=='sm') $grids = array('sm','md','lg');
+		elseif($default_grid=='md') $grids = array('md','lg');
+		elseif($default_grid=='lg') $grids = array('lg');
+		
+		$gridclasses = 'col-'.$default_grid.'-'.${'sidebarcolumn'.$default_grid};
+		var_dump($gridclasses);
+		foreach($grids as $grid)
+		{
+			if($grid != $default_grid && ${'sidebarcolumn'.$grid} != ${'sidebarcolumn'.$default_grid})
+			{
+				$gridclasses .= ' col-'.$grid.'-'.${'sidebarcolumn'.$grid};
+			}	
+	    }	
+	}	
+		
+			echo '<div id="right-sidebar" class="widget-area ' .$gridclasses. ' sidebar" role="complementary">';
 			do_action( 'skematik_before_right_sidebar' );
 			
 			if ( ! dynamic_sidebar( 'right-content-sidebar' ) ) :
