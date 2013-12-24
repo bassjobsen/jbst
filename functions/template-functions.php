@@ -144,7 +144,7 @@ function skematik_right_sidebar() {
 		elseif($default_grid=='lg') $grids = array('lg');
 		
 		$gridclasses = 'col-'.$default_grid.'-'.${'sidebarcolumn'.$default_grid};
-		var_dump($gridclasses);
+
 		foreach($grids as $grid)
 		{
 			if($grid != $default_grid && ${'sidebarcolumn'.$grid} != ${'sidebarcolumn'.$default_grid})
