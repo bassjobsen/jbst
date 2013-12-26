@@ -50,12 +50,22 @@ public function __construct()
 	add_action('admin_init', array(&$this, 'admin_init')); 
 	add_action('admin_menu', array(&$this, 'add_menu')); 
 	
-        $upload_dir = wp_upload_dir();
-        $this->folder = trailingslashit($upload_dir['basedir']).'wpless2css/';
-        $this->folderurl = trailingslashit($upload_dir['baseurl']).'wpless2css/'; 
-        $this->filename = 'wpless2css.css';
-
-	
+        //$upload_dir = wp_upload_dir();
+        //$this->folder = trailingslashit($upload_dir['basedir']).'wpless2css/';
+        //$this->folderurl = trailingslashit($upload_dir['baseurl']).'wpless2css/'; 
+        
+        /*if(is_child_theme())
+        {
+        $this->folder = get_template_directory().'/assets/css/';
+        $this->folderurl = get_template_directory_uri().'/assets/css/';
+		}
+		else
+		{*/
+        $this->folder = get_template_directory().'/library/assets/css/';
+        $this->folderurl = get_template_directory_uri().'/library/assets/css/';
+        //}
+		$this->filename = 'wpless2css.css';
+		
 	
 	add_filter( 'init', array( $this, 'init' ) );
 } 
@@ -63,15 +73,19 @@ public function __construct()
 
 
 
-public function wpless2csssavecss()
+
+
+public function wpless2csssavecss($creds)
 {
 				$plugindir = plugin_dir_path( __FILE__ );
 				if(!class_exists('Less_Parser'))
 				{
-				require $plugindir.'phpless/Less.php';
+				require $plugindir.'less-php/Less.php';
 			
 				}
-				$parser = new Less_Parser();
+				$options = array( 'compress'=>true, 'credits'=>$creds );
+				$parser = new Less_Parser( $options );
+
 				if(!file_exists($rootless=get_stylesheet_directory().'/wpless2css/wpless2css.less'))
 				{
 					if(!file_exists($rootless=get_template_directory().'/wpless2css/wpless2css.less'))
@@ -92,12 +106,20 @@ public function wpless2csssavecss()
 						$parser->parseFile($extrafile);
 				    }	
 		     	}	
+				$parser->parse( apply_filters('get_theme_mods','') );
 				$parser->parse( apply_filters('add_extra_less_code','') );
 				$parser->parse( get_option('customlesscode'));
 				$css = $parser->getCss();
-			   
-
-				file_put_contents( $this->folder.$this->filename, $css);
+			    WP_Filesystem($creds);
+                global $wp_filesystem; 
+                
+                if ( ! $wp_filesystem->put_contents(  $this->folder.$this->filename, $css, FS_CHMOD_FILE) ) 
+				{
+                wp_die("error saving file!");
+				}
+                
+                
+				//file_put_contents( $this->folder.$this->filename, $css);
 }	
 
 
@@ -170,7 +192,7 @@ function load_options() {
 public function add_menu() 
 {
 	 
-	 add_options_page('WP LESS to CSS', 'WP LESS to CSS', 'manage_options', 'wp-less-to-css', array(&$this, 'WP_LESS_to_CSS_settings_page'));
+	 add_theme_page('WP LESS to CSS', 'WP LESS to CSS', 'manage_options', 'wp-less-to-css', array(&$this, 'WP_LESS_to_CSS_settings_page'));
 } // END public function add_menu() 
 
 /** * Menu Callback */ 

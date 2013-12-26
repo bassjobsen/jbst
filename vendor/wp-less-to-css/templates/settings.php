@@ -3,35 +3,40 @@ if (isset($_POST['SaveCBESettings'])) {
 					
 		if (!empty($_POST) && check_admin_referer( 'cbe-nonce') ) 
 		{
-   	
+			
+			    $SaveCBESettings = 1;
+				$in = true;
+				$url = wp_nonce_url('themes.php?page=wp-less-to-css','cbe-nonce');
+				if (false === ($creds = request_filesystem_credentials($url, '', false, false, array('SaveCBESettings','customlesscode')) ) ) {
+					$in = false;
+				}
+				if ($in && ! WP_Filesystem($creds) ) {
+					// our credentials were no good, ask the user for them again
+					request_filesystem_credentials($url, '', true, false,array('SaveCBESettings','customlesscode'));
+					$in = false;
+				}
+				if($in)
+				{
+					$this->customlesscode = $_POST['customlesscode'];
+					$this->save_options();
+				    $this->wpless2csssavecss($creds);
+					unset($_POST);
+					echo '<div id="message" class="updated"><p><strong>Settings have been saved.</strong></p></div>';
+				    
+				}
+			
+			
+			
 			
 
-			    $this->customlesscode = $_POST['customlesscode'];
-
-			
-			
-        
-                if( !is_dir( $this->folder ) ) wp_mkdir_p( $this->folder );
-                if ( is_writable( $this->folder ) ){
-
-       		
-				$this->save_options();
-				$this->wpless2csssavecss();
-		
-				
-		
-				
-					
-				echo '<div id="message" class="updated"><p><strong>Settings have been saved.</strong></p></div>';
-				
-			    } 
 
 	    }
 }
-?>
+if(empty($_POST))
+{
+	
 
-<?php
-		echo '<div class="wrap">'."\n";
+echo '<div class="wrap">'."\n";
 ?><h2>WP LESS to CSS <?php echo __('Settings','wpless2css');?></h2><?php 
 		
 		
@@ -66,3 +71,4 @@ if (isset($_POST['SaveCBESettings'])) {
 
         <?php
 		echo '</div><!-- wrap -->'."\n";
+}

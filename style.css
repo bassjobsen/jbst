@@ -4,10 +4,10 @@ Theme URI: https://github.com/bassjobsen/jamedo-bootstrap-start-theme
 Author: Bass Jobsen
 Author URI: http://bassjobsen.weblogs.fm/
 Description: Jamedo's Bootstrap Start Theme is a powerful theme framework that can be used as a standalone website builder or as a framework to create child themes. Designed with a mobile-first mindset, Jamedo's Bootstrap Start Theme is built with HTML5, CSS3, and contains the entire Twitter Bootstrap 3 library. It also has built in support for theme options, metaboxes, BuddyPress and eCommerce (WooCommerce, JigoShop and WPeCommerce).
-Version: 1.1
+Version: 1.2
 License: GNU General Public License
 License URI: license.txt
-Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,responsive-layout,buddypress,custom-background,custom-colors,custom-header,custom-menu,theme-options
+Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,responsive-layout,accessibility-ready,buddypress,custom-background,custom-colors,custom-header,custom-menu,theme-options
 */
 .wp-caption {}
 .wp-caption-text {}

@@ -179,12 +179,12 @@ remove_action( 'wp_enqueue_scripts', 'skematik_bootstrap_css', 99 );
 
 /* add path to glyphicons */
 
-add_filter( 'add_extra_less_code', 'add_glyphicons_path');
+/*add_filter( 'add_extra_less_code', 'add_glyphicons_path');
 
 function add_glyphicons_path()
 {
 	return '@icon-font-path: "'.get_template_directory_uri().'/library/assets/fonts/";';
-}	
+}*/
 
 
 add_filter( 'add_extra_less_files', 'add_extra_less_files_live');
@@ -202,35 +202,48 @@ function add_extra_less_files_live()
     return array($customless);    
 }
 
+add_filter( 'get_theme_mods','get_theme_mods_live');
+function get_theme_mods_live()
+{
+   $return = '';
+   if(get_theme_mod('container_width')=='980') $return .= '@media (min-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+  
+}';
+
+   if(get_theme_mod('gridfloatbreakpoint')=='0')
+   {
+	   $return .= '@grid-float-breakpoint:0; @grid-float-breakpoint-max:0;';
+   }
+   elseif(get_theme_mod('gridfloatbreakpoint')=='992')
+   {
+	   $return .= '@grid-float-breakpoint:992px; @grid-float-breakpoint-max:991px;';
+   }    
+   else
+   {
+	   $return .= '@grid-float-breakpoint:768px; @grid-float-breakpoint-max:767px;';
+   }	  
+   return $return; 
+}
+	
 add_action( 'customize_save_after', 'lesscustomize' );
 
 function lesscustomize($setting)
 {
-//$setting is no used here
 $updatecss = WP_LESS_to_CSS::$instance;
-add_filter( 'add_extra_less_code', 'add_extra_less_now_live');
+$updatecss->wpless2csssavecss($_SESSION['creds']);
+}
 
-function add_extra_less_now_live($parser)
+
+function kana_init_session()
 {
-	return '';//'a{color:'.get_theme_mod( 'heading_color').'} p{color:orange;}';          
-}
-$updatecss->wpless2csssavecss();
+  session_start();
 }
 
-function myactivationfunction($oldname, $oldtheme=false) 
-{
-	$updatecss = WP_LESS_to_CSS::$instance;
-	if ( !is_writable( dirname ( $updatecss->folder ) ) ){wp_die("Before activating make sure ".dirname ( $updatecss->folder )." is writable.");}
-	if( !is_dir( $updatecss->folder ) ) wp_mkdir_p( $updatecss->folder );
-    $updatecss->wpless2csssavecss();
-}
-add_action("after_switch_theme", "myactivationfunction", 10 ,  2);
+add_action('admin_init', 'kana_init_session', 1);
 
-/*add_action('customize_save', 'updatefiles', 1);
-
-function updatefiles( $wp_customize ) {
-var_dump(WP_Filesystem($_SESSION['creds']));
-}
 function storecedits( $wp_customize ) {
 
             $in = true;
@@ -248,4 +261,4 @@ function storecedits( $wp_customize ) {
             $_SESSION['creds'] = $creds;
             
 }
-add_action('customize_controls_init', 'storecedits', 1);*/
+add_action('customize_controls_init', 'storecedits', 1);
