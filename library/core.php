@@ -146,19 +146,7 @@ wp_enqueue_style( 'bootstrap' );
 }
 
 function skematik_bootstrap_responsive_css() {
-	$container = get_theme_mod( 'container_width', 1200);
-	if($container == 980) {wp_register_style( 'skematik-maxwidth', get_template_directory_uri() . '/library/assets/css/max980.css', array(), '20130812', 'all' );}
-	wp_enqueue_style( 'skematik-maxwidth' );
-	$gridfloatbreakpoint = get_theme_mod( 'gridfloatbreakpoint', '768');
-	//if($gridfloatbreakpoint !== '768')
-	//{
-		if($gridfloatbreakpoint === '0') {wp_register_style( 'navbar-gridfloatbreakpoint', get_template_directory_uri() . '/library/assets/css/navbar0.min.css', array(), '20130911', 'all' );}
-		elseif($gridfloatbreakpoint === '992') {wp_register_style( 'navbar-gridfloatbreakpoint', get_template_directory_uri() . '/library/assets/css/navbar992.min.css', array(), '20130911', 'all' );}
-		else {wp_register_style( 'navbar-gridfloatbreakpoint', get_template_directory_uri() . '/library/assets/css/navbar768.min.css', array(), '20130911', 'all' );}
-		
-		wp_enqueue_style( 'navbar-gridfloatbreakpoint' );
-	//}	
-	
+
 	$menu_depth = get_theme_mod( 'menu_depth', 0);
 	if($menu_depth>0) {wp_register_style( 'dropdown-submenu', get_template_directory_uri() . '/library/assets/css/dropdown-submenu.css', array(), '20131013', 'all' );}
 	wp_enqueue_style( 'dropdown-submenu' );	
