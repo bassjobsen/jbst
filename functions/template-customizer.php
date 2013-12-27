@@ -696,6 +696,18 @@ function skematik_colors_customizer_options($wp_customize) {
 		'priority'       => 10,
 	) ) );
 	
+		/* Main Content Background Color */
+	$wp_customize->add_setting( 'page_backgroundcolor', array(
+		'default'        => '',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'page_backgroundcolor', array(
+		'label'   => 'Main Content Background Color',
+		'section' => 'color_settings',
+		'settings'   => 'page_backgroundcolor',
+		'priority'       => 10,
+	) ) );
+	
 	/* Main Text Color */
 	$wp_customize->add_setting( 'body_color', array(
 		'default'        => '',

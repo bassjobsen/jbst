@@ -1,5 +1,3 @@
-<style>
-/* BODY */
 <?php
 /* Set Variables */
 $bg_color = get_theme_mod( 'site_background_color');
@@ -137,10 +135,3 @@ if($container == 980) {
 		.navbar-static-cont-width {width:940px;}
 	}';
 }
-
-do_action('skematik_add_to_custom_style');
-
-/* Add custom css styles */
-echo of_get_option('newcontent');
-?>
-</style>

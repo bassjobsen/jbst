@@ -129,15 +129,6 @@ Loads Theme Metaboxes
 */
 require_once( get_template_directory() . '/functions/template-metaboxes.php' );
 
-/*
-==========================================================
-Loads the custom styles from the Theme Customizer
-==========================================================
-*/
-add_action( 'wp_head', 'skematik_custom_style');
-function skematik_custom_style() {
-		require_once( get_template_directory() . '/functions/custom-style.php' );
-		}
 
 /*
 ==========================================================
@@ -167,7 +158,20 @@ add_action( 'jbst_after_content_page','jbst_close_content_wrappers',10);
 
 add_action( 'wp_head', 'jbst_prepare_wrappers',10);
 
+add_action( 'customize_preview_init', 'skematik_custom_style',99);
+function my_styles_method() {
+   ob_start();
+   require_once( get_template_directory() . '/functions/custom-style.php' );
+   do_action('skematik_add_to_custom_style');
+   $return = ob_get_contents ();
+  
+   ob_clean();
+        wp_add_inline_style( 'wpless2css', $return );
+}
 
+function skematik_custom_style() {
+add_action( 'wp_enqueue_scripts', 'my_styles_method' );
+}
 
 /*
 ==========================================================
@@ -205,7 +209,13 @@ function add_extra_less_files_live()
 add_filter( 'get_theme_mods','get_theme_mods_live');
 function get_theme_mods_live()
 {
-   $return = '';
+   ob_start();
+   require_once( get_template_directory() . '/functions/custom-style.php' );
+   do_action('skematik_add_to_custom_style');
+   $return = ob_get_contents ();
+  
+   ob_clean();
+
    if(get_theme_mod('container_width')=='980') $return .= '@media (min-width: 1200px) {
   .container {
     max-width: 970px;
@@ -233,16 +243,9 @@ add_action( 'customize_save_after', 'lesscustomize' );
 function lesscustomize($setting)
 {
 $updatecss = WP_LESS_to_CSS::$instance;
-$updatecss->wpless2csssavecss($_SESSION['creds']);
+$updatecss->wpless2csssavecss(unserialize(get_theme_mod('customizercredits')));
 }
 
-
-function kana_init_session()
-{
-  session_start();
-}
-
-add_action('admin_init', 'kana_init_session', 1);
 
 function storecedits( $wp_customize ) {
 
@@ -252,13 +255,15 @@ function storecedits( $wp_customize ) {
                 $in = false;
                 exit;
             }
+   		
             if ($in && ! WP_Filesystem($creds) ) {
                 // our credentials were no good, ask the user for them again
                 request_filesystem_credentials($url, '', true, false,null);
                 $in = false;
                 exit;
             }
-            $_SESSION['creds'] = $creds;
+                
+            set_theme_mod('customizercredits', serialize($creds));
             
 }
 add_action('customize_controls_init', 'storecedits', 1);
