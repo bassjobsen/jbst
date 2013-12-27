@@ -24,7 +24,7 @@ Customization and LESS
 JBST has a build in customizer and LESS editor.
 Also read: [Integrate LESS in JBST WordPress Theme](http://bassjobsen.weblogs.fm/integrate-less-jbst-wordpress-theme/). 
 LESS implementation build in with [WP LESS to CSS](https://github.com/bassjobsen/wp-less-to-css) which relies on [less.php](https://github.com/oyejorge/less.php).
-Add your mixins, variables and function with the editor `Settings > WP LESS to CSS`. Check the plugin documentation for advanched options.
+Add your mixins, variables and function with the editor `Appearance > WP LESS to CSS`. Check the plugin documentation for advanched options.
 Optional add LESS code to library/assets/less/custom.less (less/custom.less for child themes) or wpless2css/wpless2css.less (backup when updating the theme!).
 
 Modify the build in Twitter's Boostrap Code:
@@ -32,6 +32,13 @@ Don't edit wpless2css/bootstrap/variables.less but overwrite the variables in th
 
 Note: Edit and add LESS code with the editor, unless you understand what you're doing. Modifications with the editor are saved in the database and not over written or lost when you update your theme. Changing less/custom.less in your child theme will also be save.
 Cause CSS is valid LESS you could also add CSS code to the LESS editor.
+
+Security issues
+---------------
+
+The theme will ask for your FTP credentials when saving your LESS settings or using the customizer. Sending your credentials over a non-secure (http) connection will be a bad idea always.
+[http://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants](Add your credentials to your wp-config.php) to make this file saving easy and secure. **Do not forget** to [http://codex.wordpress.org/Changing_File_Permissions](chmod your wp-config.php) to 0600.
+More about all this: [http://wordpress.stackexchange.com/questions/126424/using-wp-filesystem-in-plugins-to-store-customizer-settings/126631](Using wp_filesystem in Plugins to store customizer settings)
 
 Migration Skematik to JBST
 ---------
@@ -133,4 +140,4 @@ Credits
 
 Example
 -------
-![Screendump theme home](http://bassjobsen.weblogs.fm/wp-content/uploads/2013/07/jamedotheme.png)
+![ScreenShot](https://raw.github.com/bassjobsen/jamedo-bootstrap-start-theme/master/screenshot.png)
