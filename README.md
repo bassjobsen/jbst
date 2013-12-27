@@ -37,8 +37,8 @@ Security issues
 ---------------
 
 The theme will ask for your FTP credentials when saving your LESS settings or using the customizer. Sending your credentials over a non-secure (http) connection will be a bad idea always.
-[http://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants](Add your credentials to your wp-config.php) to make this file saving easy and secure. **Do not forget** to [http://codex.wordpress.org/Changing_File_Permissions](chmod your wp-config.php) to 0600.
-More about all this: [http://wordpress.stackexchange.com/questions/126424/using-wp-filesystem-in-plugins-to-store-customizer-settings/126631](Using wp_filesystem in Plugins to store customizer settings)
+[Add your credentials to your wp-config.php](http://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants) to make this file saving easy and secure. **Do not forget** to [chmod your wp-config.php](http://codex.wordpress.org/Changing_File_Permissions) to 0600.
+More about all this: [Using wp_filesystem in Plugins to store customizer settings](http://wordpress.stackexchange.com/questions/126424/using-wp-filesystem-in-plugins-to-store-customizer-settings/126631)
 
 Migration Skematik to JBST
 ---------
