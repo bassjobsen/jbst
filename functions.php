@@ -237,8 +237,6 @@ function get_theme_mods_live()
    }	  
    return $return; 
 }
-	
-add_action( 'customize_save_after', 'lesscustomize' );
 
 function lesscustomize($setting)
 {
@@ -246,6 +244,7 @@ $updatecss = WP_LESS_to_CSS::$instance;
 $updatecss->wpless2csssavecss(unserialize(get_theme_mod('customizercredits')));
 }
 
+add_action( 'customize_save_after', 'lesscustomize' );
 
 function storecedits( $wp_customize ) {
 

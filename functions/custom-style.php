@@ -11,6 +11,7 @@ $body_color = get_theme_mod( 'body_color');
 $body_line = get_theme_mod( 'body_line_height');
 $heading_font = get_theme_mod( 'heading_font');
 $heading_color = get_theme_mod( 'heading_color');
+$page_backgroundcolor = get_theme_mod( 'page_backgroundcolor','#fff;');
 $small_color = get_theme_mod( 'small_color');
 $link_color = get_theme_mod( 'link_color');
 $border_color = get_theme_mod( 'border_color');
@@ -35,6 +36,8 @@ if($bg_repeat) {echo 'background-repeat:' .$bg_repeat.';';}
 if($bg_position) {echo 'background-position:' .$bg_position.';';}
 if($bg_attachment) {echo 'background-attachment:' .$bg_attachment.';';}
 echo '}';
+
+echo '#page { background-color:' .$page_backgroundcolor.'; }';
 
 /* Main Text Typography */
 echo 'body {';
