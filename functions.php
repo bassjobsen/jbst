@@ -181,16 +181,6 @@ LESS
 require dirname(__FILE__) . '/vendor/wp-less-to-css/wp-less-to-css.php';
 remove_action( 'wp_enqueue_scripts', 'skematik_bootstrap_css', 99 );
 
-/* add path to glyphicons */
-
-/*add_filter( 'add_extra_less_code', 'add_glyphicons_path');
-
-function add_glyphicons_path()
-{
-	return '@icon-font-path: "'.get_template_directory_uri().'/library/assets/fonts/";';
-}*/
-
-
 add_filter( 'add_extra_less_files', 'add_extra_less_files_live');
 function add_extra_less_files_live()
 {
@@ -234,7 +224,7 @@ function get_theme_mods_live()
    else
    {
 	   $return .= '@grid-float-breakpoint:768px; @grid-float-breakpoint-max:767px;';
-   }	  
+   }
    return $return; 
 }
 

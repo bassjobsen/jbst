@@ -13,7 +13,7 @@ $heading_font = get_theme_mod( 'heading_font');
 $heading_color = get_theme_mod( 'heading_color');
 $page_backgroundcolor = get_theme_mod( 'page_backgroundcolor','#fff;');
 $small_color = get_theme_mod( 'small_color');
-$link_color = get_theme_mod( 'link_color');
+$link_color = get_theme_mod( 'link_color' );
 $border_color = get_theme_mod( 'border_color');
 $border_accent_color = get_theme_mod( 'accent_color');
 $well_color = get_theme_mod( 'well_color');
@@ -37,7 +37,7 @@ if($bg_position) {echo 'background-position:' .$bg_position.';';}
 if($bg_attachment) {echo 'background-attachment:' .$bg_attachment.';';}
 echo '}';
 
-echo '#page { background-color:' .$page_backgroundcolor.'; }';
+if($page_backgroundcolor) echo '#page { background-color:' .$page_backgroundcolor.'; }';
 
 /* Main Text Typography */
 echo 'body {';
@@ -67,6 +67,7 @@ if($body_color){echo '.search-label a {color:' .$body_color.';}';}
 if($small_color){echo 'h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, blockquote small, .entry-meta {color:' .$small_color.';}';}
 
 /* Link Color */
+
 if($link_color){echo 'a, a:hover {color:'.$link_color.';} .nav-tabs > .active > a, .nav-tabs > .active > a:hover,.nav-pills > .active > a, .nav-pills > .active > a:hover {background:'.$link_color.'} a.thumbnail:hover {border-color:'.$link_color.';}';}
 
 /* Border Color */
