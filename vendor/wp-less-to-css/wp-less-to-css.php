@@ -62,6 +62,7 @@ public function __construct()
 		else
 		{*/
         $this->folder = get_template_directory().'/library/assets/css/';
+        if(defined('FTP_BASE')) $this->folder = str_replace(FTP_BASE,'', $this->folder);
         $this->folderurl = get_template_directory_uri().'/library/assets/css/';
         //}
 		$this->filename = 'wpless2css.css';
