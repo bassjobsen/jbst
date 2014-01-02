@@ -62,7 +62,10 @@ public function __construct()
 		else
 		{*/
         $this->folder = get_template_directory().'/library/assets/css/';
-        if(defined('FTP_BASE')) $this->folder = str_replace(FTP_BASE,'', $this->folder);
+        //if(defined('FTP_BASE')) $this->folder = str_replace(FTP_BASE,'', $this->folder);
+        
+        //$this->folder = trailingslashit( $wp_filesystem->wp_content_dir() ) .trailingslashit(  get_template() ).'library/assets/css/'
+        
         $this->folderurl = get_template_directory_uri().'/library/assets/css/';
         //}
 		$this->filename = 'wpless2css.css';
@@ -84,20 +87,31 @@ public function wpless2csssavecss($creds)
 				require $plugindir.'less-php/Less.php';
 			
 				}
+				
+				WP_Filesystem($creds);
+                global $wp_filesystem; 
+				
 				$options = array( 'compress'=>true, 'credits'=>$creds );
 				$parser = new Less_Parser( $options );
-
-				if(!file_exists($rootless=get_stylesheet_directory().'/wpless2css/wpless2css.less'))
+				
+				if(file_exists(get_stylesheet_directory().'/wpless2css/wpless2css.less'))
 				{
-					if(!file_exists($rootless=get_template_directory().'/wpless2css/wpless2css.less'))
-					{
-						if(!file_exists($rootless=str_replace('/wp-content/themes', '', get_theme_root()) .'/wpless2css/wpless2css.less'))
-						{
-							wp_die(__('<strong>wpless2css/wpless2css.less</strong> is missing',wpless2css));
-						}	
-					}
+					$rootless=trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_stylesheet() ).'wpless2css/wpless2css.less';
 			    }
-				$parser->parseFile($rootless , '' );
+			    elseif(file_exists(get_template_directory().'/wpless2css/wpless2css.less'))
+				{
+					$rootless=trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_template() ).'/wpless2css/wpless2css.less';
+				}
+				elseif(file_exists(str_replace('/wp-content/themes', '', get_theme_root()) .'/wpless2css/wpless2css.less'))
+				{
+					$rootless = trailingslashit( $wp_filesystem->wp_content_dir() ) . 'wpless2css/wpless2css.less';
+				}
+				else
+				{
+					wp_die(__('<strong>wpless2css/wpless2css.less</strong> is missing','wpless2css'));
+				}		
+				
+				$parser->parseFile($rootless);
 				
 				if($extrafiles = apply_filters('add_extra_less_files',''))
 				{
@@ -111,10 +125,15 @@ public function wpless2csssavecss($creds)
 				$parser->parse( apply_filters('add_extra_less_code','') );
 				$parser->parse( get_option('customlesscode'));
 				$css = $parser->getCss();
-			    WP_Filesystem($creds);
-                global $wp_filesystem; 
+
                 
-                if ( ! $wp_filesystem->put_contents(  $this->folder.$this->filename, $css, FS_CHMOD_FILE) ) 
+                
+                
+                $folder = trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_template() ).'library/assets/css/';
+			    
+	
+			     
+                if ( ! $wp_filesystem->put_contents(  $folder.$this->filename, $css, FS_CHMOD_FILE) ) 
 				{
                 wp_die("error saving file!");
 				}

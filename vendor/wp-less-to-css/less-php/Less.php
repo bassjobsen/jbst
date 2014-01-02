@@ -251,7 +251,6 @@ class Less_Parser {//extends Less_Cache{
 		
 			WP_Filesystem($this->env->credits);
 			global $wp_filesystem;
-			if(defined('FTP_BASE'))$file_path = str_replace(FTP_BASE,'',$file_path);
 			$this->input = $wp_filesystem->get_contents( $file_path );
 	    }
 
