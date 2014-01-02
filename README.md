@@ -118,6 +118,13 @@ Recommended Plugins
 * [Twitter Bootstrap Galleries Plugin](https://github.com/bassjobsen/twitter-bootstrap-galleries), Wraps the content of a WordPress media gallery in a Twitter's Bootstrap grid. And make it full responsive.
 * [Twitter Bootstrap Slider](https://github.com/bassjobsen/twitter-bootstrap-slider/) responsive image slide show (slider component)
 
+Buy and Sell JBST Child themes
+------------------------------
+In 2014 we opened a [marketplace for JBST](http://themes.jbst.eu/) child themes. Take a look if you don't want to build a child theme you self and still want to profit from all the JBST features.
+Are you theme developer? We will happy to sell your theme too! [Send us a message](http://www.jamedowebsites.nl/contact/)
+
+Designers, we could convert psd to JBST for you, so you can sell your designs too.
+
 JBST Expo
 ---------
 [JBST Expo](http://expo.jbst.eu/) is a project to showcase the absolute best projects built on JBST.
