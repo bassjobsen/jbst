@@ -96,11 +96,13 @@ public function wpless2csssavecss($creds)
 				
 				if(file_exists(get_stylesheet_directory().'/wpless2css/wpless2css.less'))
 				{
-					$rootless=trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_stylesheet() ).'wpless2css/wpless2css.less';
-			    }
-			    elseif(file_exists(get_template_directory().'/wpless2css/wpless2css.less'))
+					$rootless = get_stylesheet_directory().'/wpless2css/wpless2css.less';
+						//$rootless=trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_stylesheet() ).'wpless2css/wpless2css.less';
+			        }
+			        elseif(file_exists(get_template_directory().'/wpless2css/wpless2css.less'))
 				{
-					$rootless=trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_template() ).'/wpless2css/wpless2css.less';
+					$rootless = get_template_directory().'/wpless2css/wpless2css.less';
+        				//$rootless=trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_template() ).'wpless2css/wpless2css.less';
 				}
 				elseif(file_exists(str_replace('/wp-content/themes', '', get_theme_root()) .'/wpless2css/wpless2css.less'))
 				{
