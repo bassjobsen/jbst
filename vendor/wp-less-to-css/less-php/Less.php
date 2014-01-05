@@ -147,9 +147,9 @@ class Less_Parser {//extends Less_Cache{
 	 */
 	public function parseFile( $filename, $uri_root = '', $returnRoot = false){
 
-		if( !file_exists($filename) ){
+		/*if( !file_exists($filename) ){
 			throw new Less_ParserException(sprintf('File `%s` not found.', $filename));
-		}
+		}*/
 
 		$previousFileInfo = $this->env->currentFileInfo;
 		$this->SetFileInfo($filename, $uri_root);
@@ -249,10 +249,10 @@ class Less_Parser {//extends Less_Cache{
 		if( $file_path )
 		{
 		
-			//WP_Filesystem($this->env->credits);
-			//global $wp_filesystem;
-			$this->input = file_get_contents( $file_path );
-	        }
+			WP_Filesystem($this->env->credits);
+			global $wp_filesystem;
+			$this->input = $wp_filesystem->get_contents( $file_path );
+	    }
 
 		$this->pos = 0;
 		$this->input = preg_replace('/\r\n/', "\n", $this->input);

@@ -88,30 +88,22 @@ public function wpless2csssavecss($creds)
 			
 				}
 				
-				WP_Filesystem($creds);
-                global $wp_filesystem; 
-				
 				$options = array( 'compress'=>true, 'credits'=>$creds );
 				$parser = new Less_Parser( $options );
 				
-				if(file_exists(get_stylesheet_directory().'/wpless2css/wpless2css.less'))
+				WP_Filesystem($creds);
+                global $wp_filesystem; 
+				
+				if(!$wp_filesystem->exists($rootless=trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_stylesheet() ).'wpless2css/wpless2css.less'))
 				{
-					$rootless = get_stylesheet_directory().'/wpless2css/wpless2css.less';
-						//$rootless=trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_stylesheet() ).'wpless2css/wpless2css.less';
-			        }
-			        elseif(file_exists(get_template_directory().'/wpless2css/wpless2css.less'))
-				{
-					$rootless = get_template_directory().'/wpless2css/wpless2css.less';
-        				//$rootless=trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_template() ).'wpless2css/wpless2css.less';
-				}
-				elseif(file_exists(str_replace('/wp-content/themes', '', get_theme_root()) .'/wpless2css/wpless2css.less'))
-				{
-					$rootless = trailingslashit( $wp_filesystem->wp_content_dir() ) . 'wpless2css/wpless2css.less';
-				}
-				else
-				{
-					wp_die(__('<strong>wpless2css/wpless2css.less</strong> is missing','wpless2css'));
-				}		
+					if(!$wp_filesystem->exists($rootless=trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_template() ).'wpless2css/wpless2css.less'))
+					{
+						if(!$wp_filesystem->exists($rootless= trailingslashit( $wp_filesystem->wp_content_dir() ) . 'wpless2css/wpless2css.less'))
+						{
+							wp_die(__('<strong>wpless2css/wpless2css.less</strong> is missing',wpless2css));
+						}	
+					}
+			    }
 				
 				$parser->parseFile($rootless);
 				
@@ -159,11 +151,6 @@ public static function activate()
 public static function deactivate() 
 { 
 
-$upload_dir = wp_upload_dir();
-$folder = trailingslashit($upload_dir['basedir']).'wpless2css/';
-$filename = 'wpless2css.css';
-unlink($folder.$filename);
-rmdir($folder);
 } 
 // END public static function deactivate 
 
