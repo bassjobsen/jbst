@@ -365,16 +365,16 @@ function jbst_nav_login_form() {
 	      <li>
 	        <form name="loginform" id="navloginform" action="<?php echo home_url(); ?>/wp-login.php" method="post">
 					<label><?php _e( 'Username', 'jamedo-bootstrap-start-theme' ); ?><br />
-					<input type="text" name="log" id="user_login" class="input" value="" size="20" tabindex="10" /></label>
+					<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>
 
 					<label><?php _e( 'Password', 'jamedo-bootstrap-start-theme' ); ?><br />
-					<input type="password" name="pwd" id="user_pass" class="input" value="" size="20" tabindex="20" /></label>
-				<label><input name="rememberme" type="checkbox" id="rememberme" value="forever" tabindex="90" /> <?php _e( 'Remember Me', 'jamedo-bootstrap-start-theme' ); ?></label> 
-					<input type="submit" name="wp-submit" id="wp-submit" class="btn <?php jbst_button_class();?>" value="Log In" tabindex="100" />
+					<input type="password" name="pwd" id="user_pass" class="input" value="" size="20" /></label>
+				<label><input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php _e( 'Remember Me', 'jamedo-bootstrap-start-theme' ); ?></label> 
+					<input type="submit" name="wp-submit" id="wp-submit" class="btn <?php jbst_button_class();?>" value="<?php _e( 'Log in', 'jamedo-bootstrap-start-theme' ); ?>"  />
 					<input type="hidden" name="redirect_to" value="<?php echo home_url(); ?>/wp-admin/" />
 			
 					<input type="hidden" name="testcookie" value="1" />
-					 <a href="<?php echo home_url(); ?>/wp-login.php?action=lostpassword" class="lost-password" title="Password Lost and Found"><?php _e( 'Lost Password?', 'jamedo-bootstrap-start-theme' ); ?></a>
+					 <a href="<?php echo home_url(); ?>/wp-login.php?action=lostpassword" class="lost-password" title="<?php _e( 'Password Lost and Found') ?>"><?php _e( 'Lost Password?', 'jamedo-bootstrap-start-theme' ); ?></a>
 			</form>	      
 	      	
 	      </li>

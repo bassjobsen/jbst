@@ -112,7 +112,7 @@
 			  <label for="author"><?php _e("Name",'jamedo-bootstrap-start-theme'); ?> <?php if ($req) echo "(". __("required",'jamedo-bootstrap-start-theme') .")"; ?></label>
 			  <div class="input-group">
 			  	<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-			  	<input class="form-control" type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e("Your Name",'jamedo-bootstrap-start-theme'); ?>" tabindex="1" <?php if ($req) echo ' required aria-required="true"'; ?> />
+			  	<input class="form-control" type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e("Your Name",'jamedo-bootstrap-start-theme'); ?>" <?php if ($req) echo ' required aria-required="true"'; ?> />
 			  </div>
 		  	</div>
 
@@ -122,7 +122,7 @@
 			  <label for="email"><?php _e("Mail",'jamedo-bootstrap-start-theme'); ?> <?php if ($req) echo "(". __("required",'jamedo-bootstrap-start-theme') .")"; ?></label>
 			  <div class="input-group">
 			  	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-			  	<input class="form-control" type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e("Your Email",'jamedo-bootstrap-start-theme'); ?>" tabindex="2" <?php if ($req) echo ' required aria-required="true"'; ?>  />
+			  	<input class="form-control" type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e("Your Email",'jamedo-bootstrap-start-theme'); ?>" <?php if ($req) echo ' required aria-required="true"'; ?>  />
 			  	
 			  </div>
 			  <span class="help-block">(<?php _e("will not be published",'jamedo-bootstrap-start-theme'); ?>)</span>
@@ -133,7 +133,7 @@
 			  <label for="url"><?php _e("Website",'jamedo-bootstrap-start-theme'); ?></label>
 			  <div class="input-group">
 			  <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-			  	<input class="form-control" type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e("Your Website",'jamedo-bootstrap-start-theme'); ?>" tabindex="3" <?php if ($req) echo ' required aria-required="true"'; ?> />
+			  	<input class="form-control" type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e("Your Website",'jamedo-bootstrap-start-theme'); ?>" <?php if ($req) echo ' required aria-required="true"'; ?> />
 			  </div>
 		  	</div>
 
@@ -143,11 +143,11 @@
 	
 	<div class="form-group">
 	
-			<textarea class="form-control" role="textbox" aria-multiline="true" name="comment" id="comment" rows="8" placeholder="<?php _e("Your Comment Here...",'jamedo-bootstrap-start-theme'); ?>" tabindex="4"></textarea>
+			<textarea class="form-control" role="textbox" aria-multiline="true" name="comment" id="comment" rows="8" placeholder="<?php _e("Your Comment Here...",'jamedo-bootstrap-start-theme'); ?>"></textarea>
 
 	</div>
 	<div class="form-group">
-	<button class="btn <?php jbst_button_class();?>" name="submit" id="submitform" tabindex="5"><?php _e("Submit Comment",'jamedo-bootstrap-start-theme'); ?></button>
+	<button class="btn <?php jbst_button_class();?>" name="submit" id="submitform"><?php _e("Submit Comment",'jamedo-bootstrap-start-theme'); ?></button>
 	<?php comment_id_fields(); ?>
 	</div>
 	<?php 
