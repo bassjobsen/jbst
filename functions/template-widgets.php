@@ -1,15 +1,15 @@
 <?php
 /*
 ==========================================================
-SKEMATIK MENU WIDGET
+jbst MENU WIDGET
 ==========================================================
 */
-class Skematik_Menu_Widget extends WP_Widget {
+class jbst_Menu_Widget extends WP_Widget {
 
-  function Skematik_Menu_Widget()
+  function jbst_Menu_Widget()
   {
-    $widget_ops = array('classname' => 'Skematik_Menu_Widget', 'description' => 'Displays one of your custom menus using Bootstrap\'s stacked tabs or stacked pills markup.' );
-    $this->WP_Widget('Skematik_Menu_Widget', 'Skematik Custom Menu', $widget_ops);
+    $widget_ops = array('classname' => 'jbst_Menu_Widget', 'description' => 'Displays one of your custom menus using Bootstrap\'s stacked tabs or stacked pills markup.' );
+    $this->WP_Widget('jbst_Menu_Widget', 'JBST Custom Menu', $widget_ops);
   }
  
   function widget($args, $instance)
@@ -90,11 +90,11 @@ class Skematik_Menu_Widget extends WP_Widget {
   }
  
 }
-register_widget('Skematik_Menu_Widget');
+register_widget('jbst_Menu_Widget');
 
 
 /*
 ==========================================================
-SKEMATIK MENU WIDGET
+jbst MENU WIDGET
 ==========================================================
 */

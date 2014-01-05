@@ -1,73 +1,72 @@
-# Copyright (C) 2013 Bass Jobsen
+# Copyright (C) 2014 Bass Jobsen
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Jamedo's Bootstrap Start Theme 1.0\n"
+"Project-Id-Version: JBST 1.21\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/jamedo-bootstrap-start-"
 "theme\n"
-"POT-Creation-Date: 2013-10-25 21:52:17+00:00\n"
+"POT-Creation-Date: 2014-01-05 13:02:35+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #: comments.php:22 comments.php:25 comments.php:28
-#: functions/skematik-footer-functions.php:77
-#: functions/template-sidebars.php:34
+#: functions/jbst-footer-functions.php:76 functions/template-sidebars.php:34
+#: options.php:32
 msgid "One"
 msgstr ""
 
-#: functions/skematik-footer-functions.php:78
-#: functions/template-sidebars.php:35
+#: functions/jbst-footer-functions.php:77 functions/template-sidebars.php:35
+#: options.php:33
 msgid "Two"
 msgstr ""
 
-#: functions/skematik-footer-functions.php:79
-#: functions/template-sidebars.php:36
+#: functions/jbst-footer-functions.php:78 functions/template-sidebars.php:36
+#: options.php:34
 msgid "Three"
 msgstr ""
 
-#: functions/skematik-footer-functions.php:80
-#: functions/template-sidebars.php:37
+#: functions/jbst-footer-functions.php:79 functions/template-sidebars.php:37
+#: options.php:35
 msgid "Four"
 msgstr ""
 
-#: functions/skematik-footer-functions.php:90
-#: functions/template-sidebars.php:42
+#: functions/jbst-footer-functions.php:89 functions/template-sidebars.php:42
 msgid "Footer Widget"
 msgstr ""
 
-#: functions/skematik-footer-functions.php:93
+#: functions/jbst-footer-functions.php:92
 msgid ""
 "You have activated a Footer Widget! You can deactivate this in the Theme "
 "Customizer or put content in it under \"Appearance > Widgets\"."
 msgstr ""
 
-#: functions/skematik-footer-functions.php:113
+#: functions/jbst-footer-functions.php:112
 msgid "&copy;"
 msgstr ""
 
-#. #-#-#-#-#  jamedo-bootstrap-start-theme.pot (Jamedo's Bootstrap Start Theme 1.0)  #-#-#-#-#
+#. #-#-#-#-#  jamedo-bootstrap-start-theme.pot (JBST 1.21)  #-#-#-#-#
 #. Theme URI of the plugin/theme
-#: functions/skematik-footer-functions.php:113
+#: functions/jbst-footer-functions.php:112
 msgid "https://github.com/bassjobsen/jamedo-bootstrap-start-theme"
 msgstr ""
 
-#: functions/skematik-footer-functions.php:113
+#: functions/jbst-footer-functions.php:112
 msgid "Powered by Jamedo's Bootstrap Start Theme"
 msgstr ""
 
-#: functions/skematik-header-functions.php:58
+#: functions/jbst-header-functions.php:58
 msgid "Page %s"
 msgstr ""
 
-#: functions/skematik-header-functions.php:150
+#: functions/jbst-header-functions.php:150
 msgid "Toggle navigation"
 msgstr ""
 
-#: functions/template-buddypress.php:36 library/core.php:343
+#: functions/template-buddypress.php:36 library/core.php:342
 msgid "My Profile"
 msgstr ""
 
@@ -79,143 +78,143 @@ msgstr ""
 msgid "Default grid"
 msgstr ""
 
-#: functions/template-customizer.php:81
+#: functions/template-customizer.php:82
 msgid "Default Grid"
 msgstr ""
 
-#: functions/template-customizer.php:86
+#: functions/template-customizer.php:87
 msgid "Large"
 msgstr ""
 
-#: functions/template-customizer.php:87
+#: functions/template-customizer.php:88
 msgid "Medium"
 msgstr ""
 
-#: functions/template-customizer.php:88
+#: functions/template-customizer.php:89
 msgid "Small"
 msgstr ""
 
-#: functions/template-customizer.php:89
+#: functions/template-customizer.php:90
 msgid "Extra Small"
 msgstr ""
 
-#: functions/template-customizer.php:89
+#: functions/template-customizer.php:90
 msgid "never collapse, so non-responsive"
 msgstr ""
 
-#: functions/template-customizer.php:97
+#: functions/template-customizer.php:98
 msgid "Navigation"
 msgstr ""
 
-#: functions/template-customizer.php:101
+#: functions/template-customizer.php:102
 msgid "Your theme supports menus. Select which menu you would like to use."
 msgstr ""
 
-#: functions/template-customizer.php:101
+#: functions/template-customizer.php:102
 msgid ""
 "You can edit your menu content on the Menus screen in the Appearance section."
 msgstr ""
 
-#: functions/template-customizer.php:110
+#: functions/template-customizer.php:111
 msgid "Depth, levels of submenus (default 0 = no submenus)"
 msgstr ""
 
-#: functions/template-customizer.php:122
+#: functions/template-customizer.php:123
 msgid "Should the parent (indicator) of a submenu be clickable?"
 msgstr ""
 
-#: functions/template-customizer.php:134
+#: functions/template-customizer.php:135
 msgid "Open submenus on click (for mobile usage)"
 msgstr ""
 
-#: functions/template-customizer.php:151
+#: functions/template-customizer.php:152
 msgid "Container"
 msgstr ""
 
-#: functions/template-customizer.php:161
+#: functions/template-customizer.php:162
 msgid "Max Container Width"
 msgstr ""
 
-#: functions/template-customizer.php:182 functions/template-customizer.php:192
+#: functions/template-customizer.php:183 functions/template-customizer.php:193
 msgid "Grid Float Breakpoint"
 msgstr ""
 
-#: functions/template-customizer.php:199
+#: functions/template-customizer.php:200
 msgid "always horizontal, never collapse"
 msgstr ""
 
-#: functions/template-customizer.php:226
+#: functions/template-customizer.php:227
 msgid "Logo Image"
 msgstr ""
 
-#: functions/template-customizer.php:237
+#: functions/template-customizer.php:238
 msgid "Logo Image Position"
 msgstr ""
 
-#: functions/template-customizer.php:242
+#: functions/template-customizer.php:243
 msgid "In Navigation Bar"
 msgstr ""
 
-#: functions/template-customizer.php:243
+#: functions/template-customizer.php:244
 msgid "Outside Navigation Bar"
 msgstr ""
 
-#: functions/template-customizer.php:253
+#: functions/template-customizer.php:254
 msgid "Logo Font Family"
 msgstr ""
 
-#: functions/template-customizer.php:266
+#: functions/template-customizer.php:267
 msgid "Navbar Item Color"
 msgstr ""
 
-#: functions/template-customizer.php:266 functions/template-customizer.php:278
-#: functions/template-customizer.php:352
+#: functions/template-customizer.php:267 functions/template-customizer.php:279
+#: functions/template-customizer.php:353
 msgid "hyperlink text"
 msgstr ""
 
-#: functions/template-customizer.php:278
+#: functions/template-customizer.php:279
 msgid "Navbar Item Hover Color"
 msgstr ""
 
-#: functions/template-customizer.php:297 functions/template-customizer.php:328
-#: functions/template-customizer.php:340 functions/template-customizer.php:352
+#: functions/template-customizer.php:298 functions/template-customizer.php:329
+#: functions/template-customizer.php:341 functions/template-customizer.php:353
 msgid "Navbar"
 msgstr ""
 
-#: functions/template-customizer.php:303
+#: functions/template-customizer.php:304 library/metaboxes/init.php:208
 msgid "Default"
 msgstr ""
 
-#: functions/template-customizer.php:307
+#: functions/template-customizer.php:308
 msgid "Navbar Style"
 msgstr ""
 
-#: functions/template-customizer.php:328 functions/template-customizer.php:340
+#: functions/template-customizer.php:329 functions/template-customizer.php:341
 msgid "Background Color"
 msgstr ""
 
-#: functions/template-customizer.php:352
+#: functions/template-customizer.php:353
 msgid "Item Color"
 msgstr ""
 
-#: functions/template-customizer.php:544
+#: functions/template-customizer.php:545
 msgid "Background Image"
 msgstr ""
 
-#: functions/template-customizer.php:615
+#: functions/template-customizer.php:616
 msgid "Some basic font choices for your theme."
 msgstr ""
 
-#: functions/template-customizer.php:683
+#: functions/template-customizer.php:684
 msgid "Your theme supports a static front page."
 msgstr ""
 
-#: functions/template-customizer.php:782 functions/template-customizer.php:817
-#: functions/template-customizer.php:927
+#: functions/template-customizer.php:795 functions/template-customizer.php:830
+#: functions/template-customizer.php:940
 msgid "Customize the look of your buttons."
 msgstr ""
 
-#: functions/template-customizer.php:999
+#: functions/template-customizer.php:1012
 msgid "Footer Background Image (full width only)"
 msgstr ""
 
@@ -252,11 +251,11 @@ msgstr ""
 msgid "Additional Description"
 msgstr ""
 
-#: content-archive.php:45 functions/template-functions.php:100 sidebar.php:18
+#: content-archive.php:45 functions/template-functions.php:175 sidebar.php:18
 msgid "Archives"
 msgstr ""
 
-#: functions/template-functions.php:107 sidebar.php:25
+#: functions/template-functions.php:182 sidebar.php:25
 msgid "Meta"
 msgstr ""
 
@@ -284,23 +283,21 @@ msgstr ""
 msgid "Select Style:"
 msgstr ""
 
-#: library/core.php:64
+#: library/core.php:58
 msgid "Welcome to"
 msgstr ""
 
-#. #-#-#-#-#  jamedo-bootstrap-start-theme.pot (Jamedo's Bootstrap Start Theme 1.0)  #-#-#-#-#
-#. Theme Name of the plugin/theme
-#: library/core.php:64 library/core.php:71 library/core.php:87
-#: library/core.php:92 library/core.php:103 library/core.php:107
-#: library/core.php:114
+#: library/core.php:58 library/core.php:65 library/core.php:81
+#: library/core.php:86 library/core.php:97 library/core.php:101
+#: library/core.php:108
 msgid "Jamedo's Bootstrap Start Theme"
 msgstr ""
 
-#: library/core.php:64
+#: library/core.php:58
 msgid "Congratulations"
 msgstr ""
 
-#: library/core.php:64
+#: library/core.php:58
 msgid ""
 "You've just activated one of the most advanced theme frameworks on the "
 "planet! The Jamedo's Bootstrap Framework allows you to create robust sites "
@@ -311,11 +308,11 @@ msgid ""
 "eCommerce platforms (WP e-Commerce, WooCommerce and JigoShop)."
 msgstr ""
 
-#: library/core.php:68
+#: library/core.php:62
 msgid "Getting Started"
 msgstr ""
 
-#: library/core.php:68
+#: library/core.php:62
 msgid ""
 "While Jamedo's Bootstrap Start Theme  handles most things behind the scenes "
 "and activates some default settings, there are just a couple of things "
@@ -325,56 +322,59 @@ msgid ""
 "screen once. That should be all you need to get going!"
 msgstr ""
 
-#: library/core.php:69 library/core.php:76
+#: library/core.php:63 library/core.php:70
 msgid "Theme Customizer"
 msgstr ""
 
-#: library/core.php:76
+#: library/core.php:70
 msgid ""
 "makes extensive use of the %1$s to help you design a unique look for your "
 "site. Using this tool, you can upload a logo, change colors, modify buttons, "
 "adjust image sizes and even activate widgets all in real-time!"
 msgstr ""
 
-#: library/core.php:78
+#: library/core.php:72
 msgid "Wanna try it out?"
 msgstr ""
 
-#: library/core.php:80
+#: library/core.php:74
 msgid ""
 "You'll probably at least want to save one of your custom menus to the "
 "navigation, so %1$s"
 msgstr ""
 
-#: library/core.php:80
+#: library/core.php:74
 msgid "click here to see it in action"
 msgstr ""
 
-#: library/core.php:84
+#: library/core.php:78
 msgid "Shortcodes"
 msgstr ""
 
-#: library/core.php:90
+#: library/core.php:84
 msgid ""
-"comes bundled with an extensive library of shortcodes for adding unique "
+"Install <a href=\"http://gndev.info/shortcodes-ultimate/\">Shortcodes "
+"Ultimate</a> and <a href=\"http://wordpress.org/plugins/twitters-bootstrap-"
+"shortcodes-ultimate/\">Twitter's Bootstrap Shortcodes Ultimate Add-on</a> "
+"This plugin provide an extensive library of shortcodes for adding unique "
 "content elements like columns, buttons, tabs and carousels. Best of all, you "
 "don't have to remember any of them as we have included a special shortcode "
 "generator just above the editor."
 msgstr ""
 
-#: library/core.php:92
+#: library/core.php:86
 msgid "Plus"
 msgstr ""
 
-#: library/core.php:92
+#: library/core.php:86
 msgid "shortcodes work in widgets too!"
 msgstr ""
 
-#: library/core.php:97
+#: library/core.php:91
 msgid "Layout Engine"
 msgstr ""
 
-#: library/core.php:98
+#: library/core.php:92
 msgid ""
 "Rather than resorting to page templates, we've created a layout engine that "
 "lets you choose between four different base layouts for use on both pages "
@@ -383,11 +383,11 @@ msgid ""
 "archives, search pages and even product layouts (if you're using eCommerce)."
 msgstr ""
 
-#: library/core.php:102
+#: library/core.php:96
 msgid "eCommerce Options"
 msgstr ""
 
-#: library/core.php:103
+#: library/core.php:97
 msgid ""
 "Need some selling capabilities? Perhaps raising funds for a cause, selling "
 "tickets for an event, or even running a full-blown eCommerce site? %1$s is "
@@ -395,11 +395,11 @@ msgid ""
 "eCommerce platforms on WordPress: %2$s, %3$s and %4$s."
 msgstr ""
 
-#: library/core.php:113
+#: library/core.php:107
 msgid "BuddyPress"
 msgstr ""
 
-#: library/core.php:114
+#: library/core.php:108
 msgid ""
 "Need some robust social features without the hassle? Setting up BuddyPress "
 "with %1$s is pretty easy. Simply install and activate both %2$s and the "
@@ -408,83 +408,123 @@ msgid ""
 "content wrappers to make sure that all BuddyPress content fits neatly inside."
 msgstr ""
 
-#: library/core.php:354
+#: library/core.php:112
+msgid "LESS"
+msgstr ""
+
+#: library/core.php:113
+msgid ""
+"JBST has full LESS support. Theme Options has a custom LESS editor (also "
+"accepts common CSS). Customizer option are saved to LESS too."
+msgstr ""
+
+#: library/core.php:116
+msgid "Support"
+msgstr ""
+
+#: library/core.php:117
+msgid ""
+"We are always happy to help you. If you have any question regarding \n"
+"this code. <a href=\"http://www.jamedowebsites.nl/contact/\">Send us a "
+"message</a>\n"
+"or contact us on twitter <a href=\"http://twitter.com/JamedoWebsites"
+"\">@JamedoWebsites</a>.<h4>Contribute!</h4>If you have suggestions for a new "
+"feature or improvement, feel free to contact us. Alternatively, you can fork "
+"the theme from <a href=\"https://github.com/bassjobsen/jamedo-bootstrap-"
+"start-theme\">Github</a>.\n"
+msgstr ""
+
+#: library/core.php:123
+msgid "Credits"
+msgstr ""
+
+#: library/core.php:124
+msgid ""
+"<ul><li><a href=\"http://rocketfarmer.net/\">Matt Jones of Rocket Farmer</"
+"a></li><li><a href=\"http://wordpress.org/\">WordPress</a></li> <li><a href="
+"\"http://twitter.github.com/bootstrap/\">Bootstrap</a></li> <li><a href="
+"\"http://www.jquery.com/\">jQuery</a></li> <li><a href=\"http://www.lesscss."
+"org/\">Less.js</a></li> <li><a href=\"http://lessphp.gpeasy.com/\">less.php</"
+"a></li> <li><a href=\"http://wptheming.com/\">Options Framework</a></li></ul>"
+msgstr ""
+
+#: library/core.php:353
 msgid "Sign Out"
 msgstr ""
 
-#: library/core.php:368
+#: library/core.php:367
 msgid "Username"
 msgstr ""
 
-#: library/core.php:371
+#: library/core.php:370
 msgid "Password"
 msgstr ""
 
-#: library/core.php:373
+#: library/core.php:372
 msgid "Remember Me"
 msgstr ""
 
-#: library/core.php:378
+#: library/core.php:377
 msgid "Lost Password?"
 msgstr ""
 
-#: library/core.php:430 searchform.php:10 searchform.php:12
+#: library/core.php:429 searchform.php:11 searchform.php:14
 msgid "Search"
 msgstr ""
 
-#: library/core.php:734
+#: library/core.php:733
 msgid "<h4>%s</h4>"
 msgstr ""
 
-#: library/core.php:739 library/core.php:994
+#: library/core.php:738 library/core.php:914
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: content-page.php:19 content-search.php:72 content-single.php:60
-#: content.php:62 image.php:34 image.php:103 library/core.php:746
+#: content-page.php:18 content-search.php:72 content-single.php:60
+#: content.php:62 image.php:34 image.php:103 library/core.php:745
 msgid "Edit"
 msgstr ""
 
-#: library/core.php:882
+#: library/core.php:802
 msgid "Post navigation"
 msgstr ""
 
-#: library/core.php:887
+#: library/core.php:807
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
 
-#: library/core.php:888
+#: library/core.php:808
 msgctxt "Next post link"
 msgid "&rarr;"
 msgstr ""
 
-#: library/core.php:893
+#: library/core.php:813
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: library/core.php:897
+#: library/core.php:817
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: library/core.php:981
+#: library/core.php:901
 msgid "Pingback:"
 msgstr ""
 
-#: library/core.php:981 library/core.php:1004
+#: library/core.php:901 library/core.php:924
 msgid "(Edit)"
 msgstr ""
 
-#: library/core.php:991
+#: library/core.php:911
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
 #. translators: 1: date, 2: time
-#: library/core.php:1002
+#: library/core.php:922
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: library/core.php:1034
+#: library/core.php:954
 msgid ""
 "Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class="
 "\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline"
@@ -492,491 +532,446 @@ msgid ""
 "title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 msgstr ""
 
-#: library/core.php:1040
+#: library/core.php:960
 msgid "View all posts by %s"
 msgstr ""
 
-#: library/options/options-framework.php:170
-#: library/options/options-framework.php:365
+#: library/metaboxes/example-functions.php:25
+msgid "Test Metabox"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:33
+#: library/metaboxes/example-functions.php:254
+msgid "Test Text"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:34
+#: library/metaboxes/example-functions.php:42
+#: library/metaboxes/example-functions.php:49
+#: library/metaboxes/example-functions.php:56
+#: library/metaboxes/example-functions.php:64
+#: library/metaboxes/example-functions.php:71
+#: library/metaboxes/example-functions.php:83
+#: library/metaboxes/example-functions.php:89
+#: library/metaboxes/example-functions.php:96
+#: library/metaboxes/example-functions.php:102
+#: library/metaboxes/example-functions.php:108
+#: library/metaboxes/example-functions.php:116
+#: library/metaboxes/example-functions.php:123
+#: library/metaboxes/example-functions.php:129
+#: library/metaboxes/example-functions.php:135
+#: library/metaboxes/example-functions.php:147
+#: library/metaboxes/example-functions.php:158
+#: library/metaboxes/example-functions.php:169
+#: library/metaboxes/example-functions.php:180
+#: library/metaboxes/example-functions.php:187
+#: library/metaboxes/example-functions.php:194
+#: library/metaboxes/example-functions.php:201
+#: library/metaboxes/example-functions.php:207
+#: library/metaboxes/example-functions.php:218
+#: library/metaboxes/example-functions.php:255
+#: library/metaboxes/example-functions.php:274
+#: library/metaboxes/example-functions.php:281
+#: library/metaboxes/example-functions.php:288
+#: library/metaboxes/example-functions.php:294
+#: library/metaboxes/example-functions.php:300
+#: library/metaboxes/example-functions.php:306
+#: library/metaboxes/example-functions.php:312
+msgid "field description (optional)"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:41
+msgid "Test Text Small"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:48
+msgid "Test Text Medium"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:55
+msgid "Website URL"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:63
+msgid "Test Text Email"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:70
+msgid "Test Time"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:76
+#: library/metaboxes/example-functions.php:77
+msgid "Time zone"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:82
+msgid "Test Date Picker"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:88
+msgid "Test Date Picker (UNIX timestamp)"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:95
+msgid "Test Date/Time Picker Combo (UNIX timestamp)"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:101
+msgid "Test Date/Time Picker/Time zone Combo (serialized DateTime object)"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:107
+msgid "Test Money"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:115
+msgid "Test Color Picker"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:122
+msgid "Test Text Area"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:128
+msgid "Test Text Area Small"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:134
+msgid "Test Text Area for Code"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:140
+msgid "Test Title Weeeee"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:141
+msgid "This is a title description"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:146
+msgid "Test Select"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:151
+#: library/metaboxes/example-functions.php:162
+#: library/metaboxes/example-functions.php:173
+msgid "Option One"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:152
+#: library/metaboxes/example-functions.php:163
+#: library/metaboxes/example-functions.php:174
+msgid "Option Two"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:153
+#: library/metaboxes/example-functions.php:164
+#: library/metaboxes/example-functions.php:175
+msgid "Option Three"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:157
+msgid "Test Radio inline"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:168
+msgid "Test Radio"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:179
+msgid "Test Taxonomy Radio"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:186
+msgid "Test Taxonomy Select"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:193
+msgid "Test Taxonomy Multi Checkbox"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:200
+msgid "Test Checkbox"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:206
+msgid "Test Multi Checkbox"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:211
+msgid "Check One"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:212
+msgid "Check Two"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:213
+msgid "Check Three"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:217
+msgid "Test wysiwyg"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:224
+msgid "Test Image"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:225
+msgid "Upload an image or enter a URL."
+msgstr ""
+
+#: library/metaboxes/example-functions.php:230
+msgid "Multiple Files"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:231
+msgid "Upload or add multiple images/attachments."
+msgstr ""
+
+#: library/metaboxes/example-functions.php:236
+msgid "oEmbed"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:237
+msgid ""
+"Enter a youtube, twitter, or instagram URL. Supports services listed at <a "
+"href=\"http://codex.wordpress.org/Embeds\">http://codex.wordpress.org/"
+"Embeds</a>."
+msgstr ""
+
+#: library/metaboxes/example-functions.php:246
+msgid "About Page Metabox"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:267
+msgid "User Profile Metabox"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:273
+msgid "Extra Info"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:280
+msgid "Avatar"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:287
+msgid "Facebook URL"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:293
+msgid "Twitter URL"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:299
+msgid "Google+ URL"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:305
+msgid "Linkedin URL"
+msgstr ""
+
+#: library/metaboxes/example-functions.php:311
+msgid "User Field"
+msgstr ""
+
+#: library/metaboxes/helpers/cmb_Meta_Box_ajax.php:47
+msgid "Please Try Again"
+msgstr ""
+
+#: library/metaboxes/helpers/cmb_Meta_Box_ajax.php:118
+msgid "Remove Embed"
+msgstr ""
+
+#: library/metaboxes/helpers/cmb_Meta_Box_ajax.php:121
+msgid "No oEmbed Results Found for %s. View more info at"
+msgstr ""
+
+#: library/metaboxes/helpers/cmb_Meta_Box_types.php:139
+msgid "Add Row"
+msgstr ""
+
+#: library/metaboxes/helpers/cmb_Meta_Box_types.php:167
+#: library/metaboxes/helpers/cmb_Meta_Box_types.php:459
+#: library/metaboxes/helpers/cmb_Meta_Box_types.php:502
+#: library/options/includes/class-options-media-uploader.php:68
+#: library/options/includes/class-options-media-uploader.php:120
+msgid "Remove"
+msgstr ""
+
+#: library/metaboxes/helpers/cmb_Meta_Box_types.php:437
+#: library/metaboxes/helpers/cmb_Meta_Box_types.php:475
+msgid "Add or Upload File"
+msgstr ""
+
+#: library/metaboxes/helpers/cmb_Meta_Box_types.php:448
+#: library/metaboxes/helpers/cmb_Meta_Box_types.php:494
+msgid "Remove Image"
+msgstr ""
+
+#: library/metaboxes/helpers/cmb_Meta_Box_types.php:459
+#: library/metaboxes/helpers/cmb_Meta_Box_types.php:502
+msgid "File:"
+msgstr ""
+
+#: library/metaboxes/helpers/cmb_Meta_Box_types.php:459
+#: library/metaboxes/helpers/cmb_Meta_Box_types.php:502
+msgid "Download"
+msgstr ""
+
+#: library/metaboxes/init.php:207
+msgid "Clear"
+msgstr ""
+
+#: library/metaboxes/init.php:209
+msgid "Select Color"
+msgstr ""
+
+#: library/metaboxes/init.php:210
+msgid "Current Color"
+msgstr ""
+
+#: library/metaboxes/init.php:936
+msgid "Save"
+msgstr ""
+
+#: library/options/includes/class-options-framework-admin.php:97
+#: library/options/includes/class-options-framework-admin.php:98
+#: library/options/includes/class-options-framework-admin.php:343
 msgid "Theme Options"
 msgstr ""
 
-#: library/options/options-framework.php:237
+#: library/options/includes/class-options-framework-admin.php:206
 msgid "Save Options"
 msgstr ""
 
-#: library/options/options-framework.php:238
-msgid "Restore Default Options"
+#: library/options/includes/class-options-framework-admin.php:207
+msgid "Restore Defaults"
 msgstr ""
 
-#: library/options/options-framework.php:238
-msgid ""
-"Click OK to reset. Any theme settings you have specified in this panel will "
-"be lost!"
+#: library/options/includes/class-options-framework-admin.php:207
+msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr ""
 
-#: library/options/options-framework.php:239
-msgid "Reset Theme Mods"
-msgstr ""
-
-#: library/options/options-framework.php:239
-msgid ""
-"Click OK to reset. Any theme mods you have set in the Theme Customizer will "
-"be lost!"
-msgstr ""
-
-#: library/options/options-framework.php:271
+#: library/options/includes/class-options-framework-admin.php:238
 msgid "Default options restored."
 msgstr ""
 
-#: library/options/options-framework.php:314
+#: library/options/includes/class-options-framework-admin.php:294
 msgid "Options saved."
 msgstr ""
 
-#: library/options/options-medialibrary-uploader.php:26
-msgid "Theme Options Media"
+#: library/options/includes/class-options-media-uploader.php:63
+msgid "No file chosen"
 msgstr ""
 
-#: library/options/options-medialibrary-uploader.php:129
+#: library/options/includes/class-options-media-uploader.php:66
+#: library/options/includes/class-options-media-uploader.php:119
 msgid "Upload"
 msgstr ""
 
-#: library/options/options-medialibrary-uploader.php:152
+#: library/options/includes/class-options-media-uploader.php:71
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: library/options/includes/class-options-media-uploader.php:95
 msgid "View File"
 msgstr ""
 
-#: library/options/options-medialibrary-uploader.php:289
-msgid "Gallery"
-msgstr ""
-
-#: library/options/options-medialibrary-uploader.php:289
-msgid "Previously Uploaded"
-msgstr ""
-
-#: library/options/options-sanitize.php:232
+#: library/options/includes/class-options-sanitization.php:241
 msgid "No Repeat"
 msgstr ""
 
-#: library/options/options-sanitize.php:233
+#: library/options/includes/class-options-sanitization.php:242
 msgid "Repeat Horizontally"
 msgstr ""
 
-#: library/options/options-sanitize.php:234
+#: library/options/includes/class-options-sanitization.php:243
 msgid "Repeat Vertically"
 msgstr ""
 
-#: library/options/options-sanitize.php:235
+#: library/options/includes/class-options-sanitization.php:244
 msgid "Repeat All"
 msgstr ""
 
-#: library/options/options-sanitize.php:248
+#: library/options/includes/class-options-sanitization.php:257
 msgid "Top Left"
 msgstr ""
 
-#: library/options/options-sanitize.php:249
+#: library/options/includes/class-options-sanitization.php:258
 msgid "Top Center"
 msgstr ""
 
-#: library/options/options-sanitize.php:250
+#: library/options/includes/class-options-sanitization.php:259
 msgid "Top Right"
 msgstr ""
 
-#: library/options/options-sanitize.php:251
+#: library/options/includes/class-options-sanitization.php:260
 msgid "Middle Left"
 msgstr ""
 
-#: library/options/options-sanitize.php:252
+#: library/options/includes/class-options-sanitization.php:261
 msgid "Middle Center"
 msgstr ""
 
-#: library/options/options-sanitize.php:253
+#: library/options/includes/class-options-sanitization.php:262
 msgid "Middle Right"
 msgstr ""
 
-#: library/options/options-sanitize.php:254
+#: library/options/includes/class-options-sanitization.php:263
 msgid "Bottom Left"
 msgstr ""
 
-#: library/options/options-sanitize.php:255
+#: library/options/includes/class-options-sanitization.php:264
 msgid "Bottom Center"
 msgstr ""
 
-#: library/options/options-sanitize.php:256
+#: library/options/includes/class-options-sanitization.php:265
 msgid "Bottom Right"
 msgstr ""
 
-#: library/options/options-sanitize.php:269
+#: library/options/includes/class-options-sanitization.php:278
 msgid "Scroll Normally"
 msgstr ""
 
-#: library/options/options-sanitize.php:270
+#: library/options/includes/class-options-sanitization.php:279
 msgid "Fixed in Place"
 msgstr ""
 
-#: library/options/options-sanitize.php:344
+#: library/options/includes/class-options-sanitization.php:353
 msgid "Normal"
 msgstr ""
 
-#: library/options/options-sanitize.php:345
+#: library/options/includes/class-options-sanitization.php:354
 msgid "Italic"
 msgstr ""
 
-#: library/options/options-sanitize.php:346
+#: library/options/includes/class-options-sanitization.php:355
 msgid "Bold"
 msgstr ""
 
-#: library/options/options-sanitize.php:347
+#: library/options/includes/class-options-sanitization.php:356
 msgid "Bold Italic"
 msgstr ""
 
-#: library/plugins/dnd_featured_image.php:50
-msgid "Featured Image"
+#: vendor/wp-less-to-css/templates/settings.php:40
+#: vendor/wp-less-to-css/wp-less-to-css.php:271
+msgid "Settings"
 msgstr ""
 
-#: library/plugins/dnd_featured_image.php:71
-msgid "Remove featured image"
+#: vendor/wp-less-to-css/templates/settings.php:52
+msgid "Custom Less code"
 msgstr ""
 
-#: library/plugins/dnd_featured_image.php:80
-msgid "Drop files here"
+#: vendor/wp-less-to-css/wp-less-to-css.php:113
+msgid "<strong>wpless2css/wpless2css.less</strong> is missing"
 msgstr ""
 
-#: library/plugins/dnd_featured_image.php:81
-msgctxt "Uploader: Drop files here - or - Select Files"
-msgid "or"
-msgstr ""
-
-#: library/plugins/dnd_featured_image.php:82
-msgid "Select Files"
-msgstr ""
-
-#: library/plugins/dnd_featured_image.php:102
-msgid "Allowed Files"
-msgstr ""
-
-#: library/plugins/dnd_featured_image.php:280
-msgid "Plugin options for drag to feature"
-msgstr ""
-
-#: library/plugins/dnd_featured_image.php:315
-msgid "Available options:"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:12
-msgid "DEFAULT SKEMATIK SHORTCODES"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:27
-msgid "Button Group"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:42
-msgid "Button Text"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:47
-msgid "Button Link"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:58
-#: library/shortcodes/lib/available.php:465
-#: library/shortcodes/lib/available.php:548
-msgid "Button Size"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:72
-#: library/shortcodes/lib/available.php:478
-#: library/shortcodes/lib/available.php:561
-msgid "Button Style (color)"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:79
-#: library/shortcodes/lib/available.php:522
-msgid "Button Icon"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:89
-#: library/shortcodes/lib/available.php:530
-msgid "Icon Color"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:99
-msgid "Button Link Target"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:103
-#: library/shortcodes/lib/available.php:482
-#: library/shortcodes/lib/available.php:565
-msgid "3 sizes, 7 colors and 140 icons"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:127
-msgid "Label Style (color)"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:132
-msgid "Label Text"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:136
-#: library/shortcodes/lib/available.php:168
-msgid "Text surrounded by a solid color for importance."
-msgstr ""
-
-#: library/shortcodes/lib/available.php:159
-msgid "Badge Style (color)"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:164
-msgid "Badge Text"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:186
-msgid "Scroll"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:190
-msgid "Code goes here"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:191
-msgid "Code box for showing code."
-msgstr ""
-
-#: library/shortcodes/lib/available.php:205
-msgid "Row"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:232
-msgid "Column Span."
-msgstr ""
-
-#: library/shortcodes/lib/available.php:236
-#: library/shortcodes/lib/available.php:261
-#: library/shortcodes/lib/available.php:326
-#: library/shortcodes/lib/available.php:703
-msgid "Content goes here"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:237
-msgid "Empty space with adjustable height"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:257
-msgid "text alignment"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:262
-msgid "Lead Paragraph"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:277
-msgid "Heading Text"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:282
-msgid "Sub Text"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:286
-msgid "Page Header."
-msgstr ""
-
-#: library/shortcodes/lib/available.php:300
-msgid "Divider"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:315
-msgid "Background color"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:321
-msgid "Text Color"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:327
-msgid "A big header area for the top of your page."
-msgstr ""
-
-#: library/shortcodes/lib/available.php:343
-msgid "Alert Heading"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:352
-msgid "Alert Style"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:360
-msgid "Block Padding"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:368
-msgid "Close Button"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:372
-msgid "Alert box with optional padding and close button"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:388
-msgid "Blockquote Cite"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:397
-msgid "Float (causes text wrap)"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:405
-msgid "Text Align"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:409
-msgid "Blockquote quotation with citation"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:424
-#: library/shortcodes/lib/available.php:497
-msgid "Text"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:429
-msgid "Popover Title"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:434
-msgid "Popover description"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:439
-#: library/shortcodes/lib/available.php:507
-msgid "Link Url"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:447
-#: library/shortcodes/lib/available.php:515
-msgid "Link Target"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:455
-#: library/shortcodes/lib/available.php:538
-msgid "Button"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:502
-msgid "Tooltip description"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:580
-msgid "Percentage of Progress"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:588
-msgid "Striped"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:596
-msgid "Animate (requires striped)"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:607
-msgid "Style (color)"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:611
-msgid "A Progress bar"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:626
-msgid "Include specific image IDs"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:631
-msgid "Exclude specific image IDs"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:635
-msgid "A Carousel of your gallery's images"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:653
-msgid "Style"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:661
-msgid "Stacked Vertically"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:665
-msgid "Display any of your menus."
-msgstr ""
-
-#: library/shortcodes/lib/available.php:694
-msgid "Title"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:699
-msgid "ID: (no spaces)"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:704
-msgid "Collapsible content areas."
-msgstr ""
-
-#: library/shortcodes/lib/available.php:721
-msgid "Icon"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:737
-msgid "Size"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:746
-msgid "Float"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:751
-msgid "Color"
-msgstr ""
-
-#: library/shortcodes/lib/available.php:756
-msgid "210 icons"
-msgstr ""
-
-#: library/shortcodes/lib/generator.php:58
-msgid "Content"
-msgstr ""
-
-#: library/shortcodes/lib/generator.php:61
-msgid "Insert"
-msgstr ""
-
-#: library/shortcodes/lib/generator.php:62
-msgid "Demo"
-msgstr ""
-
-#: library/shortcodes/shortcodes-init.php:144
-msgid "Insert shortcode"
-msgstr ""
-
-#: library/shortcodes/shortcodes-init.php:160
-msgid "Select shortcode"
-msgstr ""
-
-#: library/shortcodes/shortcodes-init.php:160
-msgid "Shortcode not found"
-msgstr ""
-
-#: library/shortcodes/shortcodes-init.php:184
-#: library/shortcodes/shortcodes-init.php:185
-msgid "http://skematiktheme.com"
-msgstr ""
-
-#: library/shortcodes/shortcodes-init.php:184
-msgid "Tutorial"
-msgstr ""
-
-#: library/shortcodes/shortcodes-init.php:185
-msgid "Support"
+#: vendor/wp-less-to-css/wp-less-to-css.php:223
+msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
 #: comments.php:7
@@ -1063,39 +1058,43 @@ msgstr ""
 msgid "Log out"
 msgstr ""
 
-#: comments.php:113
+#: comments.php:112
 msgid "Name"
 msgstr ""
 
-#: comments.php:116
+#: comments.php:112 comments.php:122
+msgid "required"
+msgstr ""
+
+#: comments.php:115
 msgid "Your Name"
 msgstr ""
 
-#: comments.php:123
+#: comments.php:122
 msgid "Mail"
 msgstr ""
 
-#: comments.php:126
+#: comments.php:125
 msgid "Your Email"
 msgstr ""
 
-#: comments.php:127
+#: comments.php:128
 msgid "will not be published"
 msgstr ""
 
-#: comments.php:134
+#: comments.php:133
 msgid "Website"
 msgstr ""
 
-#: comments.php:137
+#: comments.php:136
 msgid "Your Website"
 msgstr ""
 
-#: comments.php:148
+#: comments.php:146
 msgid "Your Comment Here..."
 msgstr ""
 
-#: comments.php:152
+#: comments.php:150
 msgid "Submit Comment"
 msgstr ""
 
@@ -1167,7 +1166,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: content-page.php:16 content-search.php:39 content-single.php:22
+#: content-page.php:15 content-search.php:39 content-single.php:22
 #: content-wpec.php:16 content.php:30 image.php:89 pagewpec.php:28
 #: single-wpsc-product.php:32
 msgid "Pages:"
@@ -1240,6 +1239,10 @@ msgid ""
 "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
 
+#: functions.php:254
+msgid "Customizer credentials"
+msgstr ""
+
 #: image.php:24
 msgid ""
 "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
@@ -1280,44 +1283,64 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr ""
 
-#: options.php:43
-msgid "Skematik Options"
+#: options.php:36
+msgid "Five"
 msgstr ""
 
-#: options.php:155
+#: options.php:41
+msgid "French Toast"
+msgstr ""
+
+#: options.php:42
+msgid "Pancake"
+msgstr ""
+
+#: options.php:43
+msgid "Omelette"
+msgstr ""
+
+#: options.php:44
+msgid "Crepe"
+msgstr ""
+
+#: options.php:45
+msgid "Waffle"
+msgstr ""
+
+#: options.php:119
 msgid ""
 "This theme is equipped with specific core features that we have made "
 "optional for you. By default, most are turned on, but you can deactivate any "
 "that you choose."
 msgstr ""
 
-#: options.php:160
+#: options.php:124
 msgid "Automatic Page Titles"
 msgstr ""
 
-#: options.php:161
+#: options.php:125
 msgid ""
 "By default, pages will automatically display their titles in a page header "
 "div with an <h1> tag wrapper. You can elect to turn this off and manually "
 "enter your titles in the page content."
 msgstr ""
 
-#: options.php:168
+#: options.php:132
 msgid "Automatic Thumbnails"
 msgstr ""
 
-#: options.php:169
+#: options.php:133
 msgid ""
 "By default, if you have not specified a thumbnail, the theme will grab the "
 "first image from that post (if one exists) to use as a thumbnail on blog "
 "pages."
 msgstr ""
 
-#: options.php:176
+#: options.php:140
 msgid "Lightbox Images & Galleries"
 msgstr ""
 
-#: options.php:177
+#: options.php:141
 msgid ""
 "By default, all images that are wrapped in a link to the larger image will "
 "be have the Lightbox2 popup script added to them for nicer viewing. This "
@@ -1325,31 +1348,11 @@ msgid ""
 "are using a different plugin for this feature."
 msgstr ""
 
-#: options.php:184
-msgid "Drag & Drop Featured Image"
-msgstr ""
-
-#: options.php:185
-msgid ""
-"This turns the featured image area into a drag and drop interface on the "
-"edit screen for posts, pages and products."
-msgstr ""
-
-#: options.php:192
-msgid "Code Mirror Syntax Highlighting"
-msgstr ""
-
-#: options.php:193
-msgid ""
-"This turns on syntax highlighting on the Custom CSS tab as well as the "
-"standard WordPress file editor to make editing much easier."
-msgstr ""
-
-#: options.php:200
+#: options.php:148
 msgid "Login Redirect to Homepage"
 msgstr ""
 
-#: options.php:201
+#: options.php:149
 msgid ""
 "By default, users are redirected to the homepage of the site after login. "
 "You can turn this option off to enable default WordPress login behavior of "
@@ -1358,11 +1361,11 @@ msgid ""
 "to avoid locking you out of your site.</strong></em>"
 msgstr ""
 
-#: options.php:208
+#: options.php:156
 msgid "Retina Display Support (BETA)"
 msgstr ""
 
-#: options.php:209
+#: options.php:157
 msgid ""
 "By activating this feature, images will be displayed at 2X resolution for "
 "devices with a pixel ratio equal to 2 or greater (iPhones & the new Retina "
@@ -1371,21 +1374,7 @@ msgid ""
 "is stable however and you shouldn't have to worry about activating it."
 msgstr ""
 
-#: options.php:216
-msgid "Press Trends"
-msgstr ""
-
-#: options.php:217
-msgid ""
-"PressTrends is a service that allows our customers to send ANONYMOUS data to "
-"a theme analytics service so that we can get an idea of how well the theme "
-"is performing. No user info is shared and it will not affect the performance "
-"of your site. We hope you appreciate this effort to make the theme better. "
-"Of course, you are not required to opt-in and may choose to turn this "
-"feature off."
-msgstr ""
-
-#: options.php:233
+#: options.php:173
 msgid ""
 "The layout of your site is controlled by a combination of the options set on "
 "both this page and on individual post and page edit screens. You can specify "
@@ -1401,7 +1390,7 @@ msgid ""
 "under \"Appearance > Widgets\"."
 msgstr ""
 
-#: options.php:240
+#: options.php:180
 msgid ""
 "For the ultimate in flexibility, we recommend that you install and activate "
 "the <a target=\"_blank\" href=\"http://wordpress.org/extend/plugins/custom-"
@@ -1413,7 +1402,7 @@ msgid ""
 "Sidebars plugin is activated."
 msgstr ""
 
-#: options.php:335
+#: options.php:275
 msgid ""
 "The ecommerce options only appear if you have activated one of the "
 "compatible ecommerce platforms, which are WooCommerce, JigoShop and WP "
@@ -1423,24 +1412,28 @@ msgid ""
 "dropdown functions, etc."
 msgstr ""
 
-#: options.php:376
+#: options.php:316
 msgid ""
-"Use the CSS editor below to add custom styles to your site. Any styles added "
-"here won't be affected by upgrading your theme."
+"Use the LESS editor below to add custom styles to your site. Any styles "
+"added here won't be affected by upgrading your theme."
 msgstr ""
 
-#: searchform.php:11
+#: searchform.php:12
 msgid "Search &hellip;"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "JBST"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Jamedo's Bootstrap Start Theme is a powerful theme framework that can be "
-"used as a standalone website builder or as a framework to create child "
-"themes. Designed with a mobile-first mindset, Jamedo's Bootstrap Start Theme "
-"is built with HTML5, CSS3, and contains the entire Twitter Bootstrap 3 "
-"library. It also has built in support for theme options, metaboxes, "
-"BuddyPress and eCommerce (WooCommerce, JigoShop and WPeCommerce)."
+"JBST is a powerful theme framework that can be used as a standalone website "
+"builder or as a framework to create child themes for wordpress. JBST build "
+"on on the top of Twitter's Bootstrap 3 and is full customizable with LESS. "
+"Integrated customizer for easy website building. It also has built in "
+"support for BuddyPress, BBpress and eCommerce (WooCommerce, JigoShop and "
+"WPeCommerce)."
 msgstr ""
 
 #. Author of the plugin/theme

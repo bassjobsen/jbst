@@ -1,5 +1,5 @@
 <?php
-/* This is just a reference for all of the hooks available in Skematik */
+/* This is just a reference for all of the hooks available in JBST */
 
 
 /* content nav - runs above and below all content. We recommend you further filter these, for example only making content navigation buttons on posts and not other content types */

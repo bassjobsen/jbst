@@ -1,12 +1,15 @@
-=== Skematik ===
+=== JBST ===
+Contributors: bassjobsen
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SNYGRL7YNVYQW
+Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,responsive-layout,accessibility-ready,buddypress,custom-background,custom-colors,custom-header,custom-menu,theme-options
+Requires at least: 3.6
+Tested up to: 3.9
+Stable tag: 1.21
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Hi. I created this theme out of a personal passion for WordPress and all that it can do, and a respect for the community that has evolved around it. As a result this framework stays true to two principles…
+JBST is a powerful theme framework that can be used as a standalone website builder or as a framework to create child themes for wordpress.
 
-1) It is 100% GPL licensed, the way everything surrounding WordPress should be
-2) It is built as a framework first, meaning all decisions about it's direction are made from the standpoint that it won't compromise but rather enhance a developer's ability to build child themes and extensions for it, and...
-3) It highlights some of the special niches that have meant the most to me over my years developing for WordPress. Specifically, these are eCommerce, BuddyPress and responsive design.
+== Description ==
 
-I hope you enjoy creating with Skematik and appreciate the path we've chosen for it's development. Support, demos, child themes, extensions and a growing community of developers and content-creators can all be found at http://jbsttheme.com.
-
-Matt Jones
-CEO - Rocket Farmer, LLC
+JBST is a powerful theme framework that can be used as a standalone website builder or as a framework to create child themes for wordpress. JBST build on on the top of Twitter's Bootstrap 3 and is full customizable with LESS. Integrated customizer for easy website building. It also has built in support for BuddyPress, BBpress and eCommerce (WooCommerce, JigoShop and WPeCommerce).
