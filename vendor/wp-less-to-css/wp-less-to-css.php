@@ -128,13 +128,11 @@ public function wpless2csssavecss($creds)
 				$parser->parse( get_option('customlesscode'));
 				$css = $parser->getCss();
 
-                
+              
                 
                 
                 $folder = trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_template() ).'library/assets/css/';
-			    
-	
-			     
+	     
                 if ( ! $wp_filesystem->put_contents(  $folder.$this->filename, $css, FS_CHMOD_FILE) ) 
 				{
                 wp_die("error saving file!");
@@ -214,7 +212,7 @@ function load_options() {
 public function add_menu() 
 {
 	 
-	 add_theme_page('WP LESS to CSS', 'WP LESS to CSS', 'manage_options', 'wp-less-to-css', array(&$this, 'WP_LESS_to_CSS_settings_page'));
+	 //add_theme_page('WP LESS to CSS', 'WP LESS to CSS', 'manage_options', 'wp-less-to-css', array(&$this, 'WP_LESS_to_CSS_settings_page'));
 } // END public function add_menu() 
 
 /** * Menu Callback */ 

@@ -1,4 +1,4 @@
-<?php skematik_comment_button_classes();
+<?php jbst_comment_button_classes();
 // Do not delete these lines
   if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
     die ('Please do not load this page directly. Thanks!');
@@ -147,7 +147,7 @@
 
 	</div>
 	<div class="form-group">
-	<button class="btn <?php skematik_button_class();?>" name="submit" id="submitform" tabindex="5"><?php _e("Submit Comment",'jamedo-bootstrap-start-theme'); ?></button>
+	<button class="btn <?php jbst_button_class();?>" name="submit" id="submitform" tabindex="5"><?php _e("Submit Comment",'jamedo-bootstrap-start-theme'); ?></button>
 	<?php comment_id_fields(); ?>
 	</div>
 	<?php 

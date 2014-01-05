@@ -33,7 +33,7 @@ class Skematik_Menu_Widget extends WP_Widget {
 			echo $args['before_title'] . $instance['title'] . $args['after_title'];
 	           global $wp_query;     
 
-		wp_nav_menu( array( 'fallback_cb' => '', 'menu' => $nav_menu, 'link_before' => '<i class="glyphicon glyphicon-chevron-right"></i>', 'menu_class' => 'nav skematik_custom_nav '.$show_info.' nav-stacked', 'walker' => new wp_bootstrap_navwalker()) );
+		wp_nav_menu( array( 'fallback_cb' => '', 'menu' => $nav_menu, 'link_before' => '<i class="glyphicon glyphicon-chevron-right"></i>', 'menu_class' => 'nav jbst_custom_nav '.$show_info.' nav-stacked', 'walker' => new wp_bootstrap_navwalker()) );
 
 		echo $args['after_widget'];
   } 

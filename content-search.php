@@ -1,32 +1,32 @@
 <?php
 /**
- * @package skematik
- * @since skematik 1.0
+ * @package jbst
+ * @since jbst 1.0
  */
 ?>
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'jamedo-bootstrap-start-theme' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header>
 
-			<?php skematik_content_nav( 'nav-above' ); ?>
+			<?php jbst_content_nav( 'nav-above' ); ?>
 
-			<?php do_action( 'skematik_before_content_search' );?>
+			<?php do_action( 'jbst_before_content_search' );?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="page-header">
-					<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'jamedo-bootstrap-start-theme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a> <?php skematik_search_label();?></h1>
+					<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'jamedo-bootstrap-start-theme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a> <?php jbst_search_label();?></h1>
 			
 					<?php if ( 'post' == get_post_type() ) : ?>
 					<div class="entry-meta">
-						<?php skematik_posted_on(); ?>
+						<?php jbst_posted_on(); ?>
 					</div><!-- .entry-meta -->
 					<?php endif; ?>
 				</header><!-- .entry-header -->
 			
 				<?php if ( is_search() ) : // Only display Excerpts for Search ?>
-				<?php skematik_post_thumbnail();?>
+				<?php jbst_post_thumbnail();?>
 				<div class="entry-summary">
 					<?php echo wp_trim_words( get_the_content(), 100, '...' ); ?>
 					<?php if ( 'post' == get_post_type() ) : ?>
@@ -45,7 +45,7 @@
 						<?php
 							/* translators: used between list items, there is a space after the comma */
 							$categories_list = get_the_category_list( __( ', ', 'jamedo-bootstrap-start-theme' ) );
-							if ( $categories_list && skematik_categorized_blog() ) :
+							if ( $categories_list && jbst_categorized_blog() ) :
 						?>
 						<span class="cat-links">
 							<?php printf( __( 'Posted in %1$s', 'jamedo-bootstrap-start-theme' ), $categories_list ); ?>
@@ -75,4 +75,4 @@
 
 			<?php endwhile; ?>
 
-			<?php skematik_content_nav( 'nav-below' ); ?>
+			<?php jbst_content_nav( 'nav-below' ); ?>

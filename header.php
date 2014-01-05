@@ -1,1 +1,1 @@
-<?php do_action( 'skematik_header' ); ?>
+<?php do_action( 'jbst_header' ); ?>

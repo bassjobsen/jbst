@@ -8,8 +8,8 @@ settings in your options table.
 ==================================================================
 */
 
-add_action('customize_register', 'skematik_customizer');
-function skematik_customizer($wp_customize) {
+add_action('customize_register', 'jbst_customizer');
+function jbst_customizer($wp_customize) {
 global $wp_customize;
 
 /* Add a custom class for textarea */
@@ -43,15 +43,15 @@ $fontsizes = array(
 global $lineheights;
 $lineheights = array('1.4' => '1.4 ' .__('default','jamedo-bootstrap-start-theme') , '1.5' => '1.5','1.6' => '1.6','1.7' => '1.7','1.8' => '1.8','1.9' => '1.9','2' => '2',);
 
-	do_action('skematik_add_to_customizer');
+	do_action('jbst_add_to_customizer');
 
-} //END OF skematik_customizer
+} //END OF jbst_customizer
 
 
 /*
 ==================================================================
 NOW WE REGISTER ALL THE CORE THEME CUSTOMIZER OPTIONS AND ADD THEM
-USING THE skematik_add_to_customizer ACTION HOOK. WE DO THIS SO
+USING THE jbst_add_to_customizer ACTION HOOK. WE DO THIS SO
 THAT THEY CAN BE EASILY REMOVED BY DEVELOPERS. ALSO, IF YOU WANT
 TO REGISTER YOUR OWN, SIMPLY COPY ANY OF THE SECTIONS BELOW INTO
 YOUR OWN THEME OR PLUGIN AND EDIT FOR YOUR NEEDS. 
@@ -63,8 +63,8 @@ YOUR OWN THEME OR PLUGIN AND EDIT FOR YOUR NEEDS.
 Grid
 ==================================================================
 */
-add_action('skematik_add_to_customizer','skematik_grid_customizer_options');
-function skematik_grid_customizer_options($wp_customize) {
+add_action('jbst_add_to_customizer','jbst_grid_customizer_options');
+function jbst_grid_customizer_options($wp_customize) {
 	global $wp_customize;
 
 	$wp_customize->add_section( 'grid_settings', array(
@@ -91,8 +91,8 @@ function skematik_grid_customizer_options($wp_customize) {
 			),
 	) );
 }
-add_action('skematik_add_to_customizer','skematik_customizer_mainnavigation');
-function skematik_customizer_mainnavigation($wp_customize) {
+add_action('jbst_add_to_customizer','jbst_customizer_mainnavigation');
+function jbst_customizer_mainnavigation($wp_customize) {
 global $wp_customize;	
 $wp_customize->add_section( 'nav', array(
      'title'          => __( 'Navigation','jamedo-bootstrap-start-theme'),
@@ -144,8 +144,8 @@ $wp_customize->add_section( 'nav', array(
 Navbar
 ==================================================================
 */
-add_action('skematik_add_to_customizer','skematik_container_customizer_options');
-function skematik_container_customizer_options($wp_customize) {
+add_action('jbst_add_to_customizer','jbst_container_customizer_options');
+function jbst_container_customizer_options($wp_customize) {
 	global $wp_customize;
 
 	$wp_customize->add_section( 'container_settings', array(
@@ -175,7 +175,7 @@ function skematik_container_customizer_options($wp_customize) {
 Grid Float Breakpoint
 ==================================================================
 */
-add_action('skematik_add_to_customizer','jbst_gridfloatbreakpoint_customizer_options');
+add_action('jbst_add_to_customizer','jbst_gridfloatbreakpoint_customizer_options');
 function jbst_gridfloatbreakpoint_customizer_options($wp_customize) {
 	global $wp_customize;
 
@@ -209,8 +209,8 @@ function jbst_gridfloatbreakpoint_customizer_options($wp_customize) {
 Logo
 ==================================================================
 */
-add_action('skematik_add_to_customizer','skematik_logo_customizer_options');
-function skematik_logo_customizer_options($wp_customize) {
+add_action('jbst_add_to_customizer','jbst_logo_customizer_options');
+function jbst_logo_customizer_options($wp_customize) {
 	global $wp_customize;
 	global $fontchoices;
 	
@@ -288,11 +288,11 @@ function skematik_logo_customizer_options($wp_customize) {
 Navbar
 ==================================================================
 */
-add_action('skematik_add_to_customizer','skematik_navbar_customizer_options');
-function skematik_navbar_customizer_options($wp_customize) {
+add_action('jbst_add_to_customizer','jbst_navbar_customizer_options');
+function jbst_navbar_customizer_options($wp_customize) {
 	global $wp_customize;
 	global $fontchoices;
-	global $skematikecommerce;
+	global $jbstecommerce;
 
 	$wp_customize->add_section( 'navbar_settings', array(
 		'title'          => __( 'Navbar', 'jamedo-bootstrap-start-theme'),
@@ -476,7 +476,7 @@ function skematik_navbar_customizer_options($wp_customize) {
 			),
 	) );
 
-	if ($skematikecommerce == true) {
+	if ($jbstecommerce == true) {
 		/* Navbar Cart */
 		$wp_customize->add_setting( 'navbar_cart', array(
 		'default'        => 1,
@@ -518,8 +518,8 @@ function skematik_navbar_customizer_options($wp_customize) {
 BACKGROUND
 ==================================================================
 */
-add_action('skematik_add_to_customizer','skematik_background_customizer_options');
-function skematik_background_customizer_options($wp_customize) {
+add_action('jbst_add_to_customizer','jbst_background_customizer_options');
+function jbst_background_customizer_options($wp_customize) {
 	global $wp_customize;
 	$wp_customize->add_section( 'site_background_settings', array(
 		'title'          => 'Background',
@@ -604,8 +604,8 @@ function skematik_background_customizer_options($wp_customize) {
 TYPOGRAPHY
 ==================================================================
 */
-add_action('skematik_add_to_customizer','skematik_typography_customizer_options');
-function skematik_typography_customizer_options($wp_customize) {
+add_action('jbst_add_to_customizer','jbst_typography_customizer_options');
+function jbst_typography_customizer_options($wp_customize) {
 	global $wp_customize;
 	global $fontchoices;
 	global $fontsizes;
@@ -675,8 +675,8 @@ function skematik_typography_customizer_options($wp_customize) {
 SITE COLORS
 ==================================================================
 */
-add_action('skematik_add_to_customizer','skematik_colors_customizer_options');
-function skematik_colors_customizer_options($wp_customize) {
+add_action('jbst_add_to_customizer','jbst_colors_customizer_options');
+function jbst_colors_customizer_options($wp_customize) {
 	global $wp_customize;
 	$wp_customize->add_section( 'color_settings', array(
 		'title'          => 'Color Scheme',
@@ -786,8 +786,8 @@ function skematik_colors_customizer_options($wp_customize) {
 BUTTONS
 ==================================================================
 */
-add_action('skematik_add_to_customizer','skematik_buttons_customizer_options');
-function skematik_buttons_customizer_options($wp_customize) {
+add_action('jbst_add_to_customizer','jbst_buttons_customizer_options');
+function jbst_buttons_customizer_options($wp_customize) {
 	global $wp_customize;
 	$wp_customize->add_section( 'button_settings', array(
 		'title'          => 'Buttons',
@@ -821,8 +821,8 @@ function skematik_buttons_customizer_options($wp_customize) {
 BLOG SETTINGS
 ==================================================================
 */
-add_action('skematik_add_to_customizer','skematik_blog_customizer_options');
-function skematik_blog_customizer_options($wp_customize) {
+add_action('jbst_add_to_customizer','jbst_blog_customizer_options');
+function jbst_blog_customizer_options($wp_customize) {
 	global $wp_customize;
 	$wp_customize->add_section( 'blog_settings', array(
 		'title'          => 'Blog Settings',
@@ -931,8 +931,8 @@ function skematik_blog_customizer_options($wp_customize) {
 DISCUSSION SETTINGS
 ==================================================================
 */
-add_action('skematik_add_to_customizer','skematik_discussion_customizer_options');
-function skematik_discussion_customizer_options($wp_customize) {
+add_action('jbst_add_to_customizer','jbst_discussion_customizer_options');
+function jbst_discussion_customizer_options($wp_customize) {
 	global $wp_customize;
 	$wp_customize->add_section( 'discussion_settings', array(
 		'title'          => 'Discussion Settings',
@@ -960,8 +960,8 @@ function skematik_discussion_customizer_options($wp_customize) {
 FOOTER
 ==================================================================
 */
-add_action('skematik_add_to_customizer','skematik_footer_customizer_options');
-function skematik_footer_customizer_options($wp_customize) {
+add_action('jbst_add_to_customizer','jbst_footer_customizer_options');
+function jbst_footer_customizer_options($wp_customize) {
 	global $wp_customize;
 	/* Add footer section and color styles to customizer */
 	$wp_customize->add_section( 'footer_settings', array(
@@ -1106,10 +1106,10 @@ WP E-COMMERCE
 */
 if ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) 
 {			
-add_action('skematik_add_to_customizer','skematik_wpec_customizer_options');
-function skematik_wpec_customizer_options($wp_customize) {
+add_action('jbst_add_to_customizer','jbst_wpec_customizer_options');
+function jbst_wpec_customizer_options($wp_customize) {
 	global $wp_customize;
-	global $skematikecommerce;
+	global $jbstecommerce;
 	/* Add footer section and color styles to customizer */
 	$wp_customize->add_section( 'wpec_settings', array(
 		'title'          => 'WP e-Commerce',
@@ -1156,9 +1156,9 @@ function skematik_wpec_customizer_options($wp_customize) {
 DEMO
 ==================================================================
 */
-add_action('skematik_add_to_customizer','skematik_demo_customizer_options');
-function skematik_demo_customizer_options($wp_customize) {
+add_action('jbst_add_to_customizer','jbst_demo_customizer_options');
+function jbst_demo_customizer_options($wp_customize) {
 	global $wp_customize;
 	global $fontchoices;
-	global $skematikecommerce;
+	global $jbstecommerce;
 }// END DEMO SETTINGS

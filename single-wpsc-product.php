@@ -8,8 +8,8 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package skematik
- * @since skematik 1.0
+ * @package jbst
+ * @since jbst 1.0
  */
 get_header();
 ?>
@@ -18,7 +18,7 @@ get_header();
 		<div id="content" role="main">
 		<?php if ( have_posts() ) : ?>
 
-			<?php do_action( 'skematik_before_wpec_product_single' );?>
+			<?php do_action( 'jbst_before_wpec_product_single' );?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>

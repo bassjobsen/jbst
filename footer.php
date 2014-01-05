@@ -1,1 +1,1 @@
-<?php do_action( 'skematik_footer' ); ?>
+<?php do_action( 'jbst_footer' ); ?>

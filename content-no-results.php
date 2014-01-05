@@ -4,13 +4,13 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package skematik
- * @since skematik 1.0
+ * @package jbst
+ * @since jbst 1.0
  */
 ?>
-			<?php skematik_content_nav( 'nav-above' ); ?>
+			<?php jbst_content_nav( 'nav-above' ); ?>
 
-			<?php do_action( 'skematik_before_content_no_results' );?>
+			<?php do_action( 'jbst_before_content_no_results' );?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -40,4 +40,4 @@
 				</article><!-- #post-0 -->
 			<?php endwhile; ?>
 
-			<?php skematik_content_nav( 'nav-below' ); ?>
+			<?php jbst_content_nav( 'nav-below' ); ?>

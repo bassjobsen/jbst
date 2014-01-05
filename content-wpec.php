@@ -1,16 +1,16 @@
 <?php
 /**
- * @package skematik
- * @since skematik 1.0
+ * @package jbst
+ * @since jbst 1.0
  */
 global $wp_query;
 ?>
 
-			<?php do_action( 'skematik_before_wpec_products' );?>
+			<?php do_action( 'jbst_before_wpec_products' );?>
 
 			<?php while ( have_posts() ) : the_post(); /* Start the Loop */?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<?php skematik_page_title();?>
+					<?php jbst_page_title();?>
 					<div class="entry-content">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'jamedo-bootstrap-start-theme' ), 'after' => '</div>' ) ); ?>

@@ -2,8 +2,8 @@
 /**
  * The template for displaying image attachments.
  *
- * @package skematik
- * @since skematik 1.0
+ * @package jbst
+ * @since jbst 1.0
  */
 
 get_header();
@@ -73,7 +73,7 @@ get_header();
 								?>
 
 								<a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
-									$attachment_size = apply_filters( 'skematik_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
+									$attachment_size = apply_filters( 'jbst_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
 									echo wp_get_attachment_image( $post->ID, $attachment_size );
 								?></a>
 							</div><!-- .attachment -->

@@ -1,11 +1,11 @@
 <?php
 /**
- * @package skematik
- * @since skematik 1.0
+ * @package jbst
+ * @since jbst 1.0
  */
 ?>
-			<?php skematik_content_nav_top(); ?>
-			<?php do_action( 'skematik_before_content' );?>
+			<?php jbst_content_nav_top(); ?>
+			<?php do_action( 'jbst_before_content' );?>
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -14,12 +14,12 @@
 						<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'jamedo-bootstrap-start-theme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 						<?php if ( 'post' == get_post_type() ) : ?>
 						<small class="entry-meta">
-							<?php skematik_posted_on(); ?>
+							<?php jbst_posted_on(); ?>
 						</small><!-- .entry-meta -->
 						<?php endif; ?>
 						</h2>
 					</header><!-- .entry-header -->
-					<?php skematik_post_thumbnail();?>
+					<?php jbst_post_thumbnail();?>
 					<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 					<div class="entry-summary">
 						<?php the_excerpt(); ?>
@@ -35,7 +35,7 @@
 							<?php
 								/* translators: used between list items, there is a space after the comma */
 								$categories_list = get_the_category_list( __( ', ', 'jamedo-bootstrap-start-theme' ) );
-								if ( $categories_list && skematik_categorized_blog() ) :
+								if ( $categories_list && jbst_categorized_blog() ) :
 							?>
 							<span class="cat-links">
 								<?php printf( __( 'Posted in %1$s', 'jamedo-bootstrap-start-theme' ), $categories_list ); ?>
@@ -67,4 +67,4 @@
 			
 			<?php endwhile; ?>
 
-			<?php skematik_content_nav_bottom(); ?>
+			<?php jbst_content_nav_bottom(); ?>

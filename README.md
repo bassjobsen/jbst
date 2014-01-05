@@ -48,7 +48,7 @@ Migration Skematik to JBST
 3. (search and) replace all “span*” classes in your theme files with “col(-sm|lg)-*”, see Grid (below) and also: [http://stackoverflow.com/a/17890898/1596547](http://stackoverflow.com/a/17890898/1596547). Or try [Twitter's Bootstrap Migrator](http://bootstrapmigrator.w3masters.nl/)
 4. fix all other points (general issues should be send by email to bass@w3masters.nl, twitter @bassjobsen, or send as a pull request )
 
-[Read more](http://bassjobsen.weblogs.fm/migrate_skematik_to_twitter_bootstrap3/)
+[Read more](http://bassjobsen.weblogs.fm/migrate_jbst_to_twitter_bootstrap3/)
 
 Grid
 ----
@@ -142,8 +142,12 @@ Credits
 -------
 
 * [Matt Jones of Rocket Farmer](http://rocketfarmer.net/)
+* [WordPress](http://wordpress.org/)
 * [Bootstrap](http://twitter.github.com/bootstrap/)
 * [jQuery](http://www.jquery.com/)
+* [Less.js](http://www.lesscss.org/)
+* [less.php](http://lessphp.gpeasy.com/)
+* [Options Framework](http://wptheming.com/)
 
 Example
 -------

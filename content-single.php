@@ -1,23 +1,23 @@
 <?php
 /**
- * @package skematik
- * @since skematik 1.0
+ * @package jbst
+ * @since jbst 1.0
  */
 ?>
 
-			<?php skematik_content_nav_top_single() ?>
+			<?php jbst_content_nav_top_single() ?>
 
-			<?php do_action( 'skematik_before_content_single' );?>
+			<?php do_action( 'jbst_before_content_single' );?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="page-header">
-    					<h1 class="entry-title"><?php the_title(); ?><small class="entry-meta"><?php skematik_posted_on(); ?></small></h1>
+    					<h1 class="entry-title"><?php the_title(); ?><small class="entry-meta"><?php jbst_posted_on(); ?></small></h1>
 				    </div>
 				
 					<div class="entry-content">
-						<?php skematik_single_thumbnail(800);?>
+						<?php jbst_single_thumbnail(800);?>
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'jamedo-bootstrap-start-theme' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
@@ -30,7 +30,7 @@
 							/* translators: used between list items, there is a space after the comma */
 							$tag_list = get_the_tag_list( '', ', ' );
 				
-							if ( ! skematik_categorized_blog() ) {
+							if ( ! jbst_categorized_blog() ) {
 								// This blog only has 1 category so we just need to worry about tags in the meta text
 								if ( '' != $tag_list ) {
 									$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'jamedo-bootstrap-start-theme' );
@@ -62,7 +62,7 @@
 				
 			<?php endwhile; ?>
 
-			<?php skematik_content_nav_bottom_single() ?>
+			<?php jbst_content_nav_bottom_single() ?>
 			
 			<hr class="bs-docs-separator clear">
 			

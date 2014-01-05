@@ -4,11 +4,11 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package skematik
- * @since skematik 1.0
+ * @package jbst
+ * @since jbst 1.0
  */
 ?>
-<?php do_action( 'skematik_before_content' );?>
+<?php do_action( 'jbst_before_content' );?>
 <article id="post-0" class="post no-results not-found">
 	<header class="entry-header">
 		<h1 class="entry-title"><?php _e( 'Nothing Found', 'jamedo-bootstrap-start-theme' ); ?></h1>

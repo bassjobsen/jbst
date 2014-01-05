@@ -1,7 +1,7 @@
 <?php
-global $skematikecommerce;
-/* Initially set skematikecommerce to false */
-$skematikecommerce = false;
+global $jbstecommerce;
+/* Initially set jbstecommerce to false */
+$jbstecommerce = false;
 
 /*
 ===============================================================
@@ -9,17 +9,17 @@ WOOCOMMERCE FUNCTIONS
 ===============================================================
 */
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-global $skematikecommerce;
-$skematikecommerce = true;
+global $jbstecommerce;
+$jbstecommerce = true;
 
-	function skematik_cart_dropdown() {
+	function jbst_cart_dropdown() {
 	global $current_user;
 	get_currentuserinfo();
 	global $woocommerce;
 			?>
 			
 				<div class="btn-group navbar-right" id="nav-cart-dropdown">
-				  <button type="button" class="btn <?php skematik_nav_shop_button_class();?> navbar-btn  dropdown-toggle" data-toggle="dropdown">
+				  <button type="button" class="btn <?php jbst_nav_shop_button_class();?> navbar-btn  dropdown-toggle" data-toggle="dropdown">
 					<i class="glyphicon glyphicon-shopping-cart"></i> <span class="cart-contents"><?php echo sprintf(_n('%d item &ndash; ', '%d items &ndash; ', $woocommerce->cart->get_cart_contents_count(), 'woothemes'), $woocommerce->cart->get_cart_contents_count()) . $woocommerce->cart->get_cart_total();?></span>
 		     		<span class="caret"></span>
 				  </button>
@@ -60,27 +60,27 @@ $skematikecommerce = true;
 
 	
 	// Define the WooCommerce content wrappers
-	function skematik_open_woocommerce_content_wrappers() {
+	function jbst_open_woocommerce_content_wrappers() {
 			jbst_open_content_wrappers();
 	
 	}
 	
-	function skematik_close_woocommerce_content_wrappers() {
+	function jbst_close_woocommerce_content_wrappers() {
 			jbst_close_content_wrappers();
 
 	}
 	
-	function skematik_prepare_woocommerce_wrappers()
+	function jbst_prepare_woocommerce_wrappers()
 	{
 	   
 	    remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 	    remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 	
-	    add_action( 'woocommerce_before_main_content', 'skematik_open_woocommerce_content_wrappers', 10 );
-	    add_action( 'woocommerce_after_main_content', 'skematik_close_woocommerce_content_wrappers', 10 );
+	    add_action( 'woocommerce_before_main_content', 'jbst_open_woocommerce_content_wrappers', 10 );
+	    add_action( 'woocommerce_after_main_content', 'jbst_close_woocommerce_content_wrappers', 10 );
 	}
 	
-	add_action( 'wp_head', 'skematik_prepare_woocommerce_wrappers',50);
+	add_action( 'wp_head', 'jbst_prepare_woocommerce_wrappers',50);
 	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 	
 	// Redefine woocommerce_output_related_products()
@@ -90,7 +90,7 @@ $skematikecommerce = true;
 	
 	/* Account Profile Button
 	----------------------------------------------- */
-	function skematik_woo_account_profile_link() {    
+	function jbst_woo_account_profile_link() {    
 		echo '<li><a href="';
 		$id = get_option('woocommerce_myaccount_page_id');
 		echo get_permalink( $id );
@@ -112,16 +112,16 @@ $skematikecommerce = true;
 		echo _e( 'Edit Address', 'jamedo-bootstrap-start-theme' );
 		echo '</a></li>';
 	}
-	add_action( 'skematik_nav_profile_dropdown', 'skematik_woo_account_profile_link', 10);
+	add_action( 'jbst_nav_profile_dropdown', 'jbst_woo_account_profile_link', 10);
 	
 	
 	/* Add custom WOO styling
 	----------------------------------------------- */
-	function skematik_woo_css() {    
-		wp_register_style( 'skematik-woo-css', get_stylesheet_directory_uri() . '/assets/css/woo.css', array(), '20121008', 'all' );
-	    wp_enqueue_style( 'skematik-woo-css' );
+	function jbst_woo_css() {    
+		wp_register_style( 'jbst-woo-css', get_stylesheet_directory_uri() . '/assets/css/woo.css', array(), '20121008', 'all' );
+	    wp_enqueue_style( 'jbst-woo-css' );
 	}
-	add_action( 'wp_enqueue_scripts', 'skematik_woo_css', 99 );
+	add_action( 'wp_enqueue_scripts', 'jbst_woo_css', 99 );
 	
 }
 
@@ -131,15 +131,15 @@ JIGOSHOP FUNCTIONS
 ===============================================================
 */
 elseif ( in_array( 'jigoshop/jigoshop.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-global $skematikecommerce;
-$skematikecommerce = true;
-	function skematik_cart_dropdown() {
+global $jbstecommerce;
+$jbstecommerce = true;
+	function jbst_cart_dropdown() {
 	global $current_user;
 	get_currentuserinfo();
 	global $jigoshop;
 			?>
 			  <div class="btn-group pull-right" id="nav-cart-dropdown">
-			    <a class="btn dropdown-toggle <?php skematik_nav_shop_button_class();?>" data-toggle="dropdown" href="#">
+			    <a class="btn dropdown-toggle <?php jbst_nav_shop_button_class();?>" data-toggle="dropdown" href="#">
 			      <i class="glyphicon glyphicon-shopping-cart"></i> <span class="cart-contents"><?php echo sprintf(_n('%d item &ndash; ', '%d items &ndash; ', jigoshop_cart::$cart_contents_count, 'jigoshop'), jigoshop_cart::$cart_contents_count) .jigoshop_cart::get_cart_total();?></span>
 			      <span class="caret"></span>
 			    </a>
@@ -171,42 +171,42 @@ $skematikecommerce = true;
 
 	
 // Define the Jigosohp content wrappers
-	function skematik_open_jigoshop_content_wrappers() {?>
+	function jbst_open_jigoshop_content_wrappers() {?>
 			<div id="primary" class="site-content <?php do_action('jbstmaingridclass'); ?>">
 				<div id="content" role="main">
 	<?php
 	}
 	
-	function skematik_close_jigoshop_content_wrappers() {?>
+	function jbst_close_jigoshop_content_wrappers() {?>
 				</div><!-- #content -->
 			</div><!-- #primary .site-content -->
 	<?php
 	}
 	
-	function skematik_prepare_jigoshop_wrappers()
+	function jbst_prepare_jigoshop_wrappers()
 	{
 	    remove_action( 'jigoshop_before_main_content', 'jigoshop_output_content_wrapper', 10 );
 	    remove_action( 'jigoshop_after_main_content', 'jigoshop_output_content_wrapper_end', 10);
 	
-	    add_action( 'jigoshop_before_main_content', 'skematik_open_jigoshop_content_wrappers', 10 );
-	    add_action( 'jigoshop_after_main_content', 'skematik_close_jigoshop_content_wrappers', 10 );
+	    add_action( 'jigoshop_before_main_content', 'jbst_open_jigoshop_content_wrappers', 10 );
+	    add_action( 'jigoshop_after_main_content', 'jbst_close_jigoshop_content_wrappers', 10 );
 	}
-	add_action( 'wp_head', 'skematik_prepare_jigoshop_wrappers' );
+	add_action( 'wp_head', 'jbst_prepare_jigoshop_wrappers' );
 
 	// Remove the Jigosohp content wrappers
 	remove_action( 'jigoshop_sidebar', 'jigoshop_get_sidebar', 10);
 
 	/* Add custom JigoShop styling
 	----------------------------------------------- */
-	function skematik_jigo_css() {    
-		wp_register_style( 'skematik-jigo-css', get_stylesheet_directory_uri() . '/assets/css/jigo.css', array(), '20121008', 'all' );
-	    wp_enqueue_style( 'skematik-jigo-css' );
+	function jbst_jigo_css() {    
+		wp_register_style( 'jbst-jigo-css', get_stylesheet_directory_uri() . '/assets/css/jigo.css', array(), '20121008', 'all' );
+	    wp_enqueue_style( 'jbst-jigo-css' );
 	}
-	add_action( 'wp_enqueue_scripts', 'skematik_jigo_css', 99 );
+	add_action( 'wp_enqueue_scripts', 'jbst_jigo_css', 99 );
 
 	/* Account Profile Button
 	----------------------------------------------- */
-	function skematik_jigo_account_profile_link() {    
+	function jbst_jigo_account_profile_link() {    
 		echo '<li><a href="';
 		$id = get_option('jigoshop_myaccount_page_id');
 		echo get_permalink( $id );
@@ -228,7 +228,7 @@ $skematikecommerce = true;
 		echo _e( 'Edit Address', 'jamedo-bootstrap-start-theme' );
 		echo '</a></li>';
 	}
-	add_action( 'skematik_nav_profile_dropdown', 'skematik_jigo_account_profile_link', 10);
+	add_action( 'jbst_nav_profile_dropdown', 'jbst_jigo_account_profile_link', 10);
 
 } 
 
@@ -241,13 +241,13 @@ WPECOMMERCE FUNCTIONS
 elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 	/* Ajax Update Cart
 	----------------------------------------------- */
-	function skematik_wpec_cat_template() {
+	function jbst_wpec_cat_template() {
 	    if(wpsc_is_viewable_taxonomy()) {get_template_part( 'pagewpec' );exit();}
 	}
-	add_action('skematik_before_index', 'skematik_wpec_cat_template');
+	add_action('jbst_before_index', 'jbst_wpec_cat_template');
 
-	global $skematikecommerce;
-	$skematikecommerce = true;
+	global $jbstecommerce;
+	$jbstecommerce = true;
 	global $wpsc_cart, $wpdb, $wpsc_checkout, $wpsc_gateway, $wpsc_coupons;
 	
 	/* Reset the following functions since woocommerce and jigoshop aren't active
@@ -272,13 +272,13 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 	
 	/* Cart drop down
 	----------------------------------------------- */
-	function skematik_cart_dropdown() {
+	function jbst_cart_dropdown() {
 	global $current_user;
 	get_currentuserinfo();
 	global $jigoshop;
 			?>
 			  <div class="btn-group pull-right" id="nav-cart-dropdown">
-			    <a class="btn dropdown-toggle <?php skematik_nav_shop_button_class();?>" href="<?php echo get_option('shopping_cart_url');?>">
+			    <a class="btn dropdown-toggle <?php jbst_nav_shop_button_class();?>" href="<?php echo get_option('shopping_cart_url');?>">
 			      <i class="glyphicon glyphicon-shopping-cart"></i> <span class="cart-contents"><?php if(wpsc_cart_item_count() > 0) {echo wpsc_cart_item_count().' item(s) - '.wpsc_cart_total_widget();} else {echo wpsc_cart_total_widget();}?></span>
 			    </a>
 			  </div>
@@ -287,12 +287,12 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 
 	/* Ajax Update Cart
 	----------------------------------------------- */
-	function skematik_wpec_cart_update() {
+	function jbst_wpec_cart_update() {
 	    $cart_count = wpsc_cart_item_count();
 	    $total = wpsc_cart_item_count().' item(s) - '.wpsc_cart_total_widget();
 	    echo 'jQuery(".cart-contents").html("'.$total.'");';
 	}
-	add_action('wpsc_alternate_cart_html', 'skematik_wpec_cart_update');
+	add_action('wpsc_alternate_cart_html', 'jbst_wpec_cart_update');
 
 	/* Deregister WPEC scripts and styles
 	----------------------------------------------- */
@@ -309,7 +309,7 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 	
 	/* Use jQuery to add bootstrap classes to stuff
 	----------------------------------------------- */
-	function skematik_wpec_add_classes() {?>
+	function jbst_wpec_add_classes() {?>
 	<script>
 	jQuery(document).ready(function($) {
 	  /* Add to cart buttons */
@@ -343,7 +343,7 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 	  <?php $columns = get_theme_mod('wpec_columns', 'four-column');$layout = get_theme_mod('wpec_layout', 'list-view');?>
 	  $("#default_products_page_container").addClass("<?php echo $columns;?>");
 	  <?php if($layout == 'grid-view') {echo '
-	  $("#default_products_page_container").addClass("skematik-grid-view");
+	  $("#default_products_page_container").addClass("jbst-grid-view");
 	  $("#product-grid-view").addClass("active");
 	  $("#product-list-view").removeClass("active");
 	  ';}?> 
@@ -351,12 +351,12 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 	</script>
 	<?php
 	}
-	add_action('wp_head','skematik_wpec_add_classes', 30);
+	add_action('wp_head','jbst_wpec_add_classes', 30);
 	
 	/* Add images beneath the product description
 	----------------------------------------------- */
-	add_action('wpsc_theme_footer','skematik_wpec_image_gallery', 30);
-	function skematik_wpec_image_gallery() {
+	add_action('wpsc_theme_footer','jbst_wpec_image_gallery', 30);
+	function jbst_wpec_image_gallery() {
 	$tabs = 0;
 	if(wpsc_is_single_product()) {
 		global $wp_query;
@@ -374,7 +374,7 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
               <?php if ( wpsc_the_product_additional_description() ) : ?>
               	<li class="<?php if (!$attachments) {echo 'active';}?>"><a href="#proddesc" data-toggle="tab"><?php _e( 'Additional Description', 'jamedo-bootstrap-start-theme' );?></a></li>
               <?php endif;?>
-              <?php do_action( 'skematik_wpec_prod_add_tabs' );?>
+              <?php do_action( 'jbst_wpec_prod_add_tabs' );?>
         </ul>
 		<div id="myTabContent" class="tab-content">
               
@@ -383,14 +383,14 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 			if ($attachments) {
 			$tabs = 1;
 			echo '<div class="tab-pane fade active in" id="addimages">';
-			echo '<div class="skematik-wpec-product-add-images"><h3>';
+			echo '<div class="jbst-wpec-product-add-images"><h3>';
 			//_e( 'Additional Images', 'jamedo-bootstrap-start-theme' );
 			echo '</h3>';
 			$thumbwidth = 125;
 			$thumbheight = 125;
 			foreach ( $attachments as $attachment ) { 
 					$thumbnail = wp_get_attachment_url( $attachment->ID , false );
-			$image = skematik_resize( $attachment->ID, '', $thumbwidth, $thumbheight, true );
+			$image = jbst_resize( $attachment->ID, '', $thumbwidth, $thumbheight, true );
 			
 			?>
 		     	      <a rel="<?php echo wpsc_the_product_title(); ?>" class="preview_link thumbnail" href="<?php echo wp_get_attachment_url( $attachment->ID , false ); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php the_title(); ?>" width="<?php echo $thumbwidth;?>" height="<?php echo $thumbwidth;?>" border="0" /></a>
@@ -408,7 +408,7 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 	                <?php echo wpsc_the_product_additional_description(); ?>
 	              </div>
               <?php endif;?>
-              <?php do_action( 'skematik_wpec_prod_add_tab_containers' );?>
+              <?php do_action( 'jbst_wpec_prod_add_tab_containers' );?>
             </div><?php
 			
 			
@@ -416,39 +416,39 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 		
 		if ($tabs == 0) {echo '<style>ul#myTab {display:none;}</style>';}
 		
-	}//END skematik_wpec_image_gallery()
+	}//END jbst_wpec_image_gallery()
 	
 	/* Clear end of product form
 	----------------------------------------------- */
-	add_action('wpsc_product_form_fields_end','skematik_wpec_after_default_product_image', 30);
-	function skematik_wpec_after_default_product_image() {echo '<div class="clear"></div>';}
+	add_action('wpsc_product_form_fields_end','jbst_wpec_after_default_product_image', 30);
+	function jbst_wpec_after_default_product_image() {echo '<div class="clear"></div>';}
 
 	/* Add custom WPEC styling
 	----------------------------------------------- */
-	function skematik_wpec_css() {    
-		wp_register_style( 'skematik-wpec-css', get_stylesheet_directory_uri() . '/assets/css/wpec.css', array(), '20121004', 'all' );
-	    wp_enqueue_style( 'skematik-wpec-css' );
+	function jbst_wpec_css() {    
+		wp_register_style( 'jbst-wpec-css', get_stylesheet_directory_uri() . '/assets/css/wpec.css', array(), '20121004', 'all' );
+	    wp_enqueue_style( 'jbst-wpec-css' );
 	}
-	add_action( 'wp_enqueue_scripts', 'skematik_wpec_css', 99 );
+	add_action( 'wp_enqueue_scripts', 'jbst_wpec_css', 99 );
 
 	/* Account Profile Button
 	----------------------------------------------- */
-	function skematik_wpec_account_profile_link() {    
+	function jbst_wpec_account_profile_link() {    
 		echo '<li><a href="';
 		echo get_option('user_account_url');
 		echo '">';
 		echo _e( 'My Account', 'jamedo-bootstrap-start-theme' );
 		echo '</a></li>';
 	}
-	add_action( 'skematik_nav_profile_dropdown', 'skematik_wpec_account_profile_link', 11);
-	remove_action( 'skematik_nav_profile_dropdown','skematik_account_profile_link');
+	add_action( 'jbst_nav_profile_dropdown', 'jbst_wpec_account_profile_link', 11);
+	remove_action( 'jbst_nav_profile_dropdown','jbst_account_profile_link');
 
 	/* Products Page View Switch Button
 	----------------------------------------------- */
 	
-	add_action('wpsc_top_of_products_page', 'skematik_wpec_view_switch_button');
+	add_action('wpsc_top_of_products_page', 'jbst_wpec_view_switch_button');
 	
-	function skematik_wpec_view_switch_button() {
+	function jbst_wpec_view_switch_button() {
 	if (!is_product()){
 		echo '
 		<div id="product-view-switch" class="btn-group pull-right">
@@ -459,39 +459,39 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 		<script>
 		jQuery(document).ready(function($) {
 		$("#product-list-view").click(function() {
-		  $("#default_products_page_container").addClass("skematik-list-view");
-		  $("#default_products_page_container").removeClass("skematik-grid-view");
+		  $("#default_products_page_container").addClass("jbst-list-view");
+		  $("#default_products_page_container").removeClass("jbst-grid-view");
 
 		  $("#product-list-view").addClass("active");
 		  $("#product-grid-view").removeClass("active");
 		});
 		$("#product-grid-view").click(function() {
-		  $("#default_products_page_container").addClass("skematik-grid-view");
+		  $("#default_products_page_container").addClass("jbst-grid-view");
 		  $("#product-grid-view").addClass("active");
 		  $("#product-list-view").removeClass("active");
-		  	  var highestCol = Math.max($(".skematik-grid-view .prodtitle").height(),$(".skematik-grid-view .prodtitle").height());
-	  $(".skematik-grid-view .prodtitle").height(highestCol);
+		  	  var highestCol = Math.max($(".jbst-grid-view .prodtitle").height(),$(".jbst-grid-view .prodtitle").height());
+	  $(".jbst-grid-view .prodtitle").height(highestCol);
 		});
 		});
 		</script>
 		<style>
 		#product-view-switch {margin-bottom:30px;}
-		.skematik-grid-view .default_product_display .imagecol {float:none;margin-left:0;}
+		.jbst-grid-view .default_product_display .imagecol {float:none;margin-left:0;}
 		
-		.skematik-grid-view .default_product_display {width:32%;margin-right:2%;float:left;border-bottom:0px;}
-		.skematik-grid-view .default_product_display:nth-child(3n+3) {margin-right:0;float:left;}
+		.jbst-grid-view .default_product_display {width:32%;margin-right:2%;float:left;border-bottom:0px;}
+		.jbst-grid-view .default_product_display:nth-child(3n+3) {margin-right:0;float:left;}
 
-		.skematik-grid-view.two-column .default_product_display {width:49%;margin-right:2%;float:left;border-bottom:0px;}
-		.skematik-grid-view.two-column .default_product_display:nth-child(2n+2) {margin-right:0;float:left;}
+		.jbst-grid-view.two-column .default_product_display {width:49%;margin-right:2%;float:left;border-bottom:0px;}
+		.jbst-grid-view.two-column .default_product_display:nth-child(2n+2) {margin-right:0;float:left;}
 		
-		.skematik-grid-view.four-column .default_product_display {width:23.5%;margin-right:2%;float:left;border-bottom:0px;}
-		.skematik-grid-view.four-column .default_product_display:nth-child(4n+4) {margin-right:0;float:left;}
+		.jbst-grid-view.four-column .default_product_display {width:23.5%;margin-right:2%;float:left;border-bottom:0px;}
+		.jbst-grid-view.four-column .default_product_display:nth-child(4n+4) {margin-right:0;float:left;}
 		
-		.skematik-grid-view.five-column .default_product_display {width:18.4%;margin-right:2%;float:left;border-bottom:0px;}
-		.skematik-grid-view.five-column .default_product_display:nth-child(5n+5) {margin-right:0;float:left;}
+		.jbst-grid-view.five-column .default_product_display {width:18.4%;margin-right:2%;float:left;border-bottom:0px;}
+		.jbst-grid-view.five-column .default_product_display:nth-child(5n+5) {margin-right:0;float:left;}
 
-		.skematik-grid-view .productcol {display:none;}
-		.skematik-grid-view .default_product_display h2.prodtitle {margin-bottom: 10px;margin-left: 4px;font-size:16px;margin-bottom:6px;line-height:1;}
+		.jbst-grid-view .productcol {display:none;}
+		.jbst-grid-view .default_product_display h2.prodtitle {margin-bottom: 10px;margin-left: 4px;font-size:16px;margin-bottom:6px;line-height:1;}
 		</style>
 		';
 		}
@@ -506,7 +506,7 @@ WELL…I GUESS ECOMMERCE ISN'T ACTIVE!
 */
 else {
 	/* RESET THE CART */
-	function skematik_cart_dropdown() {
+	function jbst_cart_dropdown() {
 	/* Nothing here since ecommerce is not activated */
 	}
 }

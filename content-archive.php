@@ -1,11 +1,11 @@
 <?php
 /**
- * @package skematik
- * @since skematik 1.0
+ * @package jbst
+ * @since jbst 1.0
  */
 ?>
 
-			<?php do_action( 'skematik_before_content_archive' );?>
+			<?php do_action( 'jbst_before_content_archive' );?>
 				    
 				<header class="page-header">
 					<h1 class="page-title">

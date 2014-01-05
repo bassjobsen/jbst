@@ -53,7 +53,7 @@
 	*Added native bp.css file. Disable css from template pack now or it will affect buttons.
 	*Fixes for footer layouts…specifically with container-width layout (no double border)
 	*Fixed comments bug where 'btn-primary' was showing up
-	*Adjusted styling for borders in the footer including skematik custom menu
+	*Adjusted styling for borders in the footer including jbst custom menu
 
 2012.11.05 - version 1.0.6.5
 	*Fixed footer custom styling bug (style.css,custom-style.php)
@@ -97,8 +97,8 @@
 
 
 2012.10.23 - version 1.0.4
-	*Re-registered Skematik style script as 'skematik-style' instead of 'style' (functions.php)
-	*Removed 'skematik_before_header' action from index.php.
+	*Re-registered Skematik style script as 'jbst-style' instead of 'style' (functions.php)
+	*Removed 'jbst_before_header' action from index.php.
 	*Made login redirect function only active if nav account button is active
 	*Added text to theme options panel explaining above
 
@@ -108,7 +108,7 @@
 	*Extensive styling fixes for footer and other bootstrap elements to work with the Theme Customizer
 	*Fixed issue with shortcode formatting with a custom filter for content and widgets (shortcodes-init.php)
 	*Fixed erroneous logo link markup
-	*Moved skematik_logo function to core.php
+	*Moved jbst_logo function to core.php
 
 2012.10.16 - version 1.0.2
 	*Added responsive styling to WooCommerce (woo.css)

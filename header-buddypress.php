@@ -1,4 +1,4 @@
 <?php
-do_action( 'skematik_header' );
-do_action( 'skematik_before_buddypress' );
+do_action( 'jbst_header' );
+do_action( 'jbst_before_buddypress' );
 ?>

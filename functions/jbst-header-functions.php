@@ -2,7 +2,7 @@
 /*
 ==========================================================
 THE FUNCTIONS IN THIS FILE ALL TIE INTO THE
-'skematik_header' ACTION HOOK WHICH IS CALLED IN header.php
+'jbst_header' ACTION HOOK WHICH IS CALLED IN header.php
 FILE. DEVELOPERS CAN REMOVE ANYTHING HERE WITH A SIMPLE
 'remove_action' CALL.
 ==========================================================
@@ -12,12 +12,12 @@ FILE. DEVELOPERS CAN REMOVE ANYTHING HERE WITH A SIMPLE
 
 /*
 ==========================================================
-Skematik Doc Type
+jbst Doc Type
 ==========================================================
 */
 // Create the doc type and initial meta tags
-add_action( 'skematik_header', 'skematik_doc_type', 9 );
-function skematik_doc_type() {
+add_action( 'jbst_header', 'jbst_doc_type', 9 );
+function jbst_doc_type() {
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -31,12 +31,12 @@ function skematik_doc_type() {
 
 /*
 ==========================================================
-Skematik Title
+jbst Title
 ==========================================================
 */
 // Create the title attribute for each page
-add_action( 'skematik_header', 'skematik_doc_title', 20 );
-function skematik_doc_title() {
+add_action( 'jbst_header', 'jbst_doc_title', 20 );
+function jbst_doc_title() {
 ?>
 <title>
 	<?php
@@ -65,12 +65,12 @@ function skematik_doc_title() {
 
 /*
 ==========================================================
-Skematik Head
+jbst Head
 ==========================================================
 */
 // 
-add_action( 'skematik_header', 'skematik_head_after', 30 );
-function skematik_head_after() {
+add_action( 'jbst_header', 'jbst_head_after', 30 );
+function jbst_head_after() {
 ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -81,7 +81,7 @@ function skematik_head_after() {
       <script src="<?php echo get_template_directory_uri(); ?>/library/assets/js/respond.min.js"></script>
     <![endif]-->
 <?php
-do_action('skematik_head');
+do_action('jbst_head');
 wp_head();
 global $woocommerce;?>
 </head>
@@ -92,16 +92,16 @@ global $woocommerce;?>
 
 /*
 ==========================================================
-Skematik BODY
+jbst BODY
 ==========================================================
 */
 // 
-add_action( 'skematik_header', 'skematik_body_open', 40 );
-function skematik_body_open() {
+add_action( 'jbst_header', 'jbst_body_open', 40 );
+function jbst_body_open() {
 ?>
 <body <?php body_class(); ?>>
-<?php do_action( 'skematik_before' ); ?>
-<div class="skematik-site-wrap">
+<?php do_action( 'jbst_before' ); ?>
+<div class="jbst-site-wrap">
 <?php
 }
 
@@ -117,21 +117,21 @@ function jbst_logooustside()
 {
 	$extraclasses = apply_filters('jbst_logooustside_classes',array());
 	$string  = '<div class="row"><div class="col-sm-12"><div class="logo-outside-nav container'.(($extraclasses)?' '.implode('',$extraclasses):'').'">';
-	$string .=  skematik_logo();
+	$string .=  jbst_logo();
 	$string .=  '</div></div></div>';	
 	return $string;
 }
 
 /*
 ==========================================================
-Skematik Main Nav
+jbst Main Nav
 ==========================================================
 */
 // 
 
 
-add_action( 'skematik_header', 'skematik_main_navbar', 50 );
-function skematik_main_navbar() { 
+add_action( 'jbst_header', 'jbst_main_navbar', 50 );
+function jbst_main_navbar() { 
 	
 	$fixed = preg_match('/fixed/',get_theme_mod( 'navbar_style' ));
 	
@@ -142,7 +142,7 @@ function skematik_main_navbar() {
 	
 	if(get_theme_mod( 'navbar_style' ) == '') {?><div class="container"><?php } ?>
 	
-	<nav role="navigation" class="navbar navbar-default <?php echo get_theme_mod( 'navbar_style', '' );?> <?php //echo get_theme_mod( 'navbar_color', 'navbar-default' );?>" id="skematik-top-nav">
+	<nav role="navigation" class="navbar navbar-default <?php echo get_theme_mod( 'navbar_style', '' );?> <?php //echo get_theme_mod( 'navbar_color', 'navbar-default' );?>" id="jbst-top-nav">
       <?php if(get_theme_mod( 'navbar_style' ) != '') {?><div class="container"><?php } ?>
        <div class="navbar-header">
 		<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
@@ -152,17 +152,17 @@ function skematik_main_navbar() {
 		  <span class="icon-bar"></span>
 		  <span class="icon-bar"></span>
 		</button>
-			<?php if(get_theme_mod('logo_image_position', 'in-nav') == 'in-nav') {echo skematik_logo();} ?>
+			<?php if(get_theme_mod('logo_image_position', 'in-nav') == 'in-nav') {echo jbst_logo();} ?>
        </div>
          
 		  
          <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse navbar-ex1-collapse">
-		  <?php skematik_main_nav(); // Adjust using Menus in Wordpress Admin ?>
-		  <?php if(get_theme_mod( 'navbar_search', 1 ) == 1) {skematik_nav_search();} ?> 
+		  <?php jbst_main_nav(); // Adjust using Menus in Wordpress Admin ?>
+		  <?php if(get_theme_mod( 'navbar_search', 1 ) == 1) {jbst_nav_search();} ?> 
 		  <!--ul class="nav navbar-nav navbar-right"-->
-		  <?php if(get_theme_mod( 'navbar_cart', 1 ) == 1) {skematik_cart_dropdown();} ?>
-		  <?php if(get_theme_mod( 'navbar_account', 1 ) == 1) {skematik_account_dropdown();} ?>
+		  <?php if(get_theme_mod( 'navbar_cart', 1 ) == 1) {jbst_cart_dropdown();} ?>
+		  <?php if(get_theme_mod( 'navbar_account', 1 ) == 1) {jbst_account_dropdown();} ?>
           <!--/ul-->
           </div>
         
@@ -177,9 +177,9 @@ function skematik_main_navbar() {
 	}  
 	
 	
-} // END skematik_main_navbar
+} // END jbst_main_navbar
 
-function skematik_nav_styles() {
+function jbst_nav_styles() {
 	if(get_theme_mod( 'navbar_style' ) == '') { //default
 	echo '
 	body { padding-top: 30px; }
@@ -267,16 +267,16 @@ function skematik_nav_styles() {
     
     
 }
-add_action('skematik_add_to_custom_style','skematik_nav_styles');
+add_action('jbst_add_to_custom_style','jbst_nav_styles');
 
 /*
 ==========================================================
-Skematik Content Wrappers
+jbst Content Wrappers
 ==========================================================
 */
 // Create content wrapper HTML
-add_action( 'skematik_header', 'skematik_top_content_wrapper', 60 );
-function skematik_top_content_wrapper() {
+add_action( 'jbst_header', 'jbst_top_content_wrapper', 60 );
+function jbst_top_content_wrapper() {
 	echo '
 	<div id="contentwrap">
 		<div id="page" class="hfeed site container">
@@ -287,22 +287,22 @@ function skematik_top_content_wrapper() {
 
 /*
 ==========================================================
-Skematik Left Sidebar
+jbst Left Sidebar
 ==========================================================
 */
 // Call the left sidebar if this template has one.
-add_action( 'skematik_header', 'skematik_left_sidebar', 80 );
+add_action( 'jbst_header', 'jbst_left_sidebar', 80 );
 
 
 
 /*
 ==========================================================
-Skematik BuddyPress Top Content Wrapper
+jbst BuddyPress Top Content Wrapper
 ==========================================================
 */
 // 
-add_action( 'skematik_before_buddypress', 'skematik_buddypress_top_content_wrapper', 10 );
-function skematik_buddypress_top_content_wrapper() {
+add_action( 'jbst_before_buddypress', 'jbst_buddypress_top_content_wrapper', 10 );
+function jbst_buddypress_top_content_wrapper() {
 ?>
 	<div id="primary" class="site-content <?php do_action('jbstmaingridclass'); ?>">
 		<div id="content" role="main">jj

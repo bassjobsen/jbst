@@ -1,8 +1,8 @@
 <?php
 /*
-Skematik functions and definitions
-@package skematik
-@since skematik 1.0
+JBST functions and definitions
+@package jbst
+@since jbst 1.2
 */
 require_once( trailingslashit( get_template_directory() ) . 'library/core.php' );
 /*
@@ -11,35 +11,35 @@ THEME DEFAULTS
 ==========================================================
 */
 
-/* Set the content width based on the theme's design and stylesheet. @since skematik 1.0 */
+/* Set the content width based on the theme's design and stylesheet. @since jbst 1.0 */
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
 
-/* Load Skematik functions on 'after_setup_theme'. */
+/* Load jbst functions on 'after_setup_theme'. */
 add_action( 'after_setup_theme', 'jbst_theme_setup' );
 
 if ( ! function_exists( 'jbst_theme_setup' ) ):
 /*
-Sets up theme defaults and registers support for various WordPress features. Note that this function is hooked into the after_setup_theme hook, which runs before the init hook. The init hook is too late for some features, such as indicating support post thumbnails.@since skematik 1.0
+Sets up theme defaults and registers support for various WordPress features. Note that this function is hooked into the after_setup_theme hook, which runs before the init hook. The init hook is too late for some features, such as indicating support post thumbnails.@since jbst 1.0
 */
 function jbst_theme_setup() {
 	
-	/* Load custom Skematik functions. */
+	/* Load custom jbst functions. */
 	require( get_template_directory() . '/functions/template-functions.php' );
 
-	/* Load custom Skematik header functions. */
-	require( get_template_directory() . '/functions/skematik-header-functions.php' );
+	/* Load custom jbst header functions. */
+	require( get_template_directory() . '/functions/jbst-header-functions.php' );
 	
-	/* Load custom Skematik header functions. */
-	require( get_template_directory() . '/functions/skematik-footer-functions.php' );
+	/* Load custom jbst header functions. */
+	require( get_template_directory() . '/functions/jbst-footer-functions.php' );
 	
-	/* Load custom Skematik Theme widgets. */
+	/* Load custom jbst Theme widgets. */
 	require( get_template_directory() . '/functions/template-widgets.php' );
 	
-	/* Load custom Skematik Theme Customizer options. */
+	/* Load custom jbst Theme Customizer options. */
 	require( get_template_directory() . '/functions/template-customizer.php' );
 
-	/* Load custom Skematik Theme functions. */
+	/* Load custom jbst Theme functions. */
 	require( get_template_directory() . '/functions/template-ecommerce.php' );
 	
 	/* Load BuddyPress functions after checking if it's active. */
@@ -51,9 +51,6 @@ function jbst_theme_setup() {
 	
 	/* Load basic styles to the editor */
 	add_editor_style('style-editor.css');
-
-	/* Make theme available for translation. Translations can be filed in the /languages/ directory */
-	load_theme_textdomain( 'skematiktheme', get_template_directory() . '/languages' );
 
 	/* Add default posts and comments RSS feed links to head */
 	add_theme_support( 'automatic-feed-links' );
@@ -68,7 +65,7 @@ function jbst_theme_setup() {
 	add_theme_support('woocommerce');
 
 }
-endif; // skematik_setup
+endif; // jbst_setup
 
 
 /*
@@ -77,30 +74,30 @@ Call stylesheets and scripts from Core
 ==========================================================
 */
 /* Put the call to this theme's css into a function */
-function skematik_styles_css() {
-	wp_enqueue_style( 'skematik-style', get_stylesheet_uri() );
+function jbst_styles_css() {
+	wp_enqueue_style( 'jbst-style', get_stylesheet_uri() );
 }
 
 /* Load stylesheets */
-add_action( 'wp_enqueue_scripts', 'skematik_bootstrap_css', 99 );
-add_action( 'wp_enqueue_scripts', 'skematik_bootstrap_responsive_css', 99  );
-add_action( 'wp_enqueue_scripts', 'skematik_styles_css',99 );
-add_action( 'wp_enqueue_scripts', 'skematik_prettify_css', 99  );
+add_action( 'wp_enqueue_scripts', 'jbst_bootstrap_css', 99 );
+add_action( 'wp_enqueue_scripts', 'jbst_bootstrap_responsive_css', 99  );
+add_action( 'wp_enqueue_scripts', 'jbst_styles_css',99 );
+add_action( 'wp_enqueue_scripts', 'jbst_prettify_css', 99  );
 if (of_get_option('lightbox_switch', 1) == 1) {
-	add_action( 'wp_enqueue_scripts', 'skematik_lightbox_css', 99  );
+	add_action( 'wp_enqueue_scripts', 'jbst_lightbox_css', 99  );
 }
 
 /* Load Scripts */
-add_action( 'wp_enqueue_scripts', 'skematik_jquery_js' );
-add_action( 'wp_enqueue_scripts', 'skematik_bootstrap_js' );
-add_action( 'wp_enqueue_scripts', 'skematik_custom_js' );
-add_action( 'wp_enqueue_scripts', 'skematik_prettify_js' );
+add_action( 'wp_enqueue_scripts', 'jbst_jquery_js' );
+add_action( 'wp_enqueue_scripts', 'jbst_bootstrap_js' );
+add_action( 'wp_enqueue_scripts', 'jbst_custom_js' );
+add_action( 'wp_enqueue_scripts', 'jbst_prettify_js' );
 if (of_get_option('lightbox_switch', 1) == 1) {
-	add_action( 'wp_enqueue_scripts', 'skematik_lightbox_js' );
+	add_action( 'wp_enqueue_scripts', 'jbst_lightbox_js' );
 }
-add_action( 'wp_enqueue_scripts', 'skematik_comments_js' );
-add_action( 'wp_enqueue_scripts', 'skematik_keyboard_nav_js' );
-add_action( 'wp_enqueue_scripts', 'skematik_js' );
+add_action( 'wp_enqueue_scripts', 'jbst_comments_js' );
+add_action( 'wp_enqueue_scripts', 'jbst_keyboard_nav_js' );
+add_action( 'wp_enqueue_scripts', 'jbst_js' );
 
 /* Galleries */
 // set default link attribute to "file", see: http://sumobi.com/how-to-filter-shortcodes-in-wordpress-3-6/
@@ -138,10 +135,10 @@ FEATURED IMAGE DRAG & DROP
 /* Load the Featured Image */
 if ( ! function_exists( 'dgd_removeDefaultBoxes' ) ) {
 	if (of_get_option('drag_and_drop_featured_image_switch', 1) == 1) {
-		function skematik_drag_and_drop_featured_image() {
+		function jbst_drag_and_drop_featured_image() {
 			require_once( get_template_directory() . '/library/plugins/dnd_featured_image.php' );
 		}
-		add_action( 'after_setup_theme', 'skematik_drag_and_drop_featured_image' );
+		add_action( 'after_setup_theme', 'jbst_drag_and_drop_featured_image' );
 	}
 }
 
@@ -158,18 +155,18 @@ add_action( 'jbst_after_content_page','jbst_close_content_wrappers',10);
 
 add_action( 'wp_head', 'jbst_prepare_wrappers',10);
 
-add_action( 'customize_preview_init', 'skematik_custom_style',99);
+add_action( 'customize_preview_init', 'jbst_custom_style',99);
 function my_styles_method() {
    ob_start();
    require_once( get_template_directory() . '/functions/custom-style.php' );
-   do_action('skematik_add_to_custom_style');
+   do_action('jbst_add_to_custom_style');
    $return = ob_get_contents ();
   
    ob_clean();
         wp_add_inline_style( 'wpless2css', $return );
 }
 
-function skematik_custom_style() {
+function jbst_custom_style() {
 add_action( 'wp_enqueue_scripts', 'my_styles_method' );
 }
 
@@ -179,7 +176,7 @@ LESS
 ==========================================================
 */
 require dirname(__FILE__) . '/vendor/wp-less-to-css/wp-less-to-css.php';
-remove_action( 'wp_enqueue_scripts', 'skematik_bootstrap_css', 99 );
+remove_action( 'wp_enqueue_scripts', 'jbst_bootstrap_css', 99 );
 
 add_filter( 'add_extra_less_files', 'add_extra_less_files_live');
 function add_extra_less_files_live()
@@ -201,7 +198,7 @@ function get_theme_mods_live()
 {
    ob_start();
    require_once( get_template_directory() . '/functions/custom-style.php' );
-   do_action('skematik_add_to_custom_style');
+   do_action('jbst_add_to_custom_style');
    $return = ob_get_contents ();
   
    ob_clean();
@@ -233,26 +230,82 @@ function lesscustomize($setting)
 $updatecss = WP_LESS_to_CSS::$instance;
 $updatecss->wpless2csssavecss(unserialize(get_theme_mod('customizercredits')));
 }
+function deletestoredcredits()
+{
+		remove_theme_mod( 'customizercredits' );
+}	
+add_action('wp_login','deletestoredcredits' );
 
 add_action( 'customize_save_after', 'lesscustomize' );
 
+function jbst_tmpadminheader()
+{
+				/**
+				 * Dashboard Administration Screen
+				 *
+				 * @package WordPress
+				 * @subpackage Administration
+				 */
+
+				/** Load WordPress Bootstrap */
+				require_once(ABSPATH . 'wp-admin/admin.php' );
+
+				/** Load WordPress dashboard API */
+				require_once(ABSPATH . 'wp-admin/includes/dashboard.php');
+
+				wp_dashboard_setup();
+
+				wp_enqueue_script( 'dashboard' );
+				if ( current_user_can( 'edit_theme_options' ) )
+					wp_enqueue_script( 'customize-loader' );
+				if ( current_user_can( 'install_plugins' ) )
+					wp_enqueue_script( 'plugin-install' );
+				if ( current_user_can( 'upload_files' ) )
+					wp_enqueue_script( 'media-upload' );
+				add_thickbox();
+
+				if ( wp_is_mobile() )
+					wp_enqueue_script( 'jquery-touch-punch' );
+
+				$title = __('Customizer credentials');
+				$parent_file = 'index.php';
+				include( ABSPATH . 'wp-admin/admin-header.php' );
+}	
+
 function storecedits( $wp_customize ) {
 
+           
+            if(! WP_Filesystem(unserialize(get_theme_mod('customizercredits'))))
+            {
+				
+				
+			ob_start();	
             $in = true;
             $url = 'customize.php';
             if (false === ($creds = request_filesystem_credentials($url, '', false, false,null) ) ) {
                 $in = false;
+                
+                $form = ob_get_contents();
+                ob_end_clean();
+                jbst_tmpadminheader();
+				echo $form;
+                require( ABSPATH . 'wp-admin/admin-footer.php' );
                 exit;
             }
-   		
+			ob_end_clean();
             if ($in && ! WP_Filesystem($creds) ) {
-                // our credentials were no good, ask the user for them again
+                // our credentials were no good, ask the user for theme again
+                jbst_tmpadminheader();
                 request_filesystem_credentials($url, '', true, false,null);
+                require( ABSPATH . 'wp-admin/admin-footer.php' );
                 $in = false;
                 exit;
             }
-                
+            
+            
+            
             set_theme_mod('customizercredits', serialize($creds));
+			}
             
 }
 add_action('customize_controls_init', 'storecedits', 1);

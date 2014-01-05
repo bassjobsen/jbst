@@ -1,101 +1,56 @@
 <?php
-/*
-==================================================================
-THEME OPTIONS PANEL
-Defines an array of options that will be used to generate the
-settings page and be saved in the database. When creating the
-"id" fields, make sure to use all lowercase and no spaces.
-==================================================================
-*/
-/*
-==================================================================
-Helper function to return the theme option value. If no value has
-been saved, it returns $default. Needed because options are saved
-as serialized strings.
-==================================================================
-*/
-
-//Delete theme_mods from Theme Customizer if asked to
-if ( isset( $_POST['resetmods'] ) ) {
-	remove_theme_mods();
-}
-
-//Redirect to welcome screen on activating the theme
-if (is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
-		header( 'Location: '.admin_url().'themes.php?page=options-framework');
-	}
-
-add_action('init', 'optionsframework_rolescheck' );
-
-function skematikframework_rolescheck () {
-	if ( current_user_can( 'edit_theme_options' ) ) {
-		// If the user can edit theme options, let the fun begin!
-		add_action( 'admin_menu', 'skematik_options_add_page');
-		add_action( 'admin_init', 'optionsframework_init' );
-		add_action( 'admin_init', 'optionsframework_mlu_init' );
-		add_action( 'wp_before_admin_bar_render', 'skematikframework_adminbar' );
-	}
-}
-
-if ( !function_exists( 'skematik_options_add_page' ) ) {
-
-	function skematik_options_add_page() {
-		$of_page = add_theme_page(__('Skematik Options', 'options_framework_theme'), __('Skematik Options', 'options_framework_theme'), 'edit_theme_options', 'options-framework','optionsframework_page');
-		
-		// Load the required CSS and javscript
-		add_action('admin_enqueue_scripts', 'optionsframework_load_scripts');
-		add_action( 'admin_print_styles-' . $of_page, 'optionsframework_load_styles' );
-	}
-	
-}
-
-if ( !function_exists( 'of_get_option' ) ) {
-	function of_get_option($name, $default = false) {
-		
-		$optionsframework_settings = get_option('optionsframework');
-		
-		// Gets the unique option id
-		$option_name = $optionsframework_settings['id'];
-		
-		if ( get_option($option_name) ) {
-			$options = get_option($option_name);
-		}
-			
-		if ( isset($options[$name]) ) {
-			return $options[$name];
-		} else {
-			return $default;
-		}
-	}
-}
-
-/*
-==================================================================
-The theme option name is set as 'options-theme-customizer' here.
-In your own project, you should use a different option name.
-I'd recommend using the name of your theme.
-
-This option name will be used later when we set up the options
-for the front end theme customizer.
-==================================================================
-*/
+/**
+ * A unique identifier is defined to store the options in the database and reference them from the theme.
+ * By default it uses the theme name, in lowercase and without spaces, but this can be changed if needed.
+ * If the identifier changes, it'll appear as if the options have been reset.
+ */
 
 function optionsframework_option_name() {
 
-	$optionsframework_settings = get_option('optionsframework');
-	
-	// Edit 'options-theme-customizer' and set your own theme name instead
-	$optionsframework_settings['id'] = 'options_theme_customizer';
-	update_option('optionsframework', $optionsframework_settings);
+	// This gets the theme name from the stylesheet
+	$themename = wp_get_theme();
+	$themename = preg_replace("/\W/", "_", strtolower($themename) );
+
+	$optionsframework_settings = get_option( 'optionsframework' );
+	$optionsframework_settings['id'] = $themename;
+	update_option( 'optionsframework', $optionsframework_settings );
 }
+
+/**
+ * Defines an array of options that will be used to generate the settings page and be saved in the database.
+ * When creating the 'id' fields, make sure to use all lowercase and no spaces.
+ *
+ * If you are making your theme translatable, you should replace 'options_framework_theme'
+ * with the actual text domain for your theme.  Read more:
+ * http://codex.wordpress.org/Function_Reference/load_theme_textdomain
+ */
 
 function optionsframework_options() {
 
-/*
-==================================================================
-DEFAULT VALUES AND SETUPS
-==================================================================
-*/
+	// Test data
+	$test_array = array(
+		'one' => __('One', 'options_framework_theme'),
+		'two' => __('Two', 'options_framework_theme'),
+		'three' => __('Three', 'options_framework_theme'),
+		'four' => __('Four', 'options_framework_theme'),
+		'five' => __('Five', 'options_framework_theme')
+	);
+
+	// Multicheck Array
+	$multicheck_array = array(
+		'one' => __('French Toast', 'options_framework_theme'),
+		'two' => __('Pancake', 'options_framework_theme'),
+		'three' => __('Omelette', 'options_framework_theme'),
+		'four' => __('Crepe', 'options_framework_theme'),
+		'five' => __('Waffle', 'options_framework_theme')
+	);
+
+	// Multicheck Defaults
+	$multicheck_defaults = array(
+		'one' => '1',
+		'five' => '1'
+	);
+
 	// Background Defaults
 	$background_defaults = array(
 		'color' => '',
@@ -103,13 +58,20 @@ DEFAULT VALUES AND SETUPS
 		'repeat' => 'repeat',
 		'position' => 'top center',
 		'attachment'=>'scroll' );
-		
+
+	// Typography Defaults
+	$typography_defaults = array(
+		'size' => '15px',
+		'face' => 'georgia',
+		'style' => 'bold',
+		'color' => '#bada55' );
+
 	// Typography Options
 	$typography_options = array(
-		'sizes' => array( '6','12','14','16','20','24','30' ),
-		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial','Georgia' => 'Georgia' ),
+		'sizes' => array( '6','12','14','16','20' ),
+		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
 		'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
-		'color' => true
+		'color' => false
 	);
 
 	// Pull all the categories into an array
@@ -118,13 +80,14 @@ DEFAULT VALUES AND SETUPS
 	foreach ($options_categories_obj as $category) {
 		$options_categories[$category->cat_ID] = $category->cat_name;
 	}
-	
+
 	// Pull all tags into an array
 	$options_tags = array();
 	$options_tags_obj = get_tags();
 	foreach ( $options_tags_obj as $tag ) {
 		$options_tags[$tag->term_id] = $tag->name;
 	}
+
 
 	// Pull all the pages into an array
 	$options_pages = array();
@@ -139,8 +102,9 @@ DEFAULT VALUES AND SETUPS
 
 
 	// Add extra options through function(used by core)
-	if ( function_exists("skematik_options_add_before") )
-		$options = skematik_options_add_before();
+	if ( function_exists("jbst_options_add_before") )
+	$options = jbst_options_add_before();
+	else $options = array();
 
 /*
 ==================================================================
@@ -324,8 +288,8 @@ if ( !in_array( 'custom-sidebars/customsidebars.php', apply_filters( 'active_plu
 SHOP
 ==================================================================
 */
-	global $skematikecommerce;
-	if ($skematikecommerce == true) {
+	global $jbstecommerce;
+	if ($jbstecommerce == true) {
 	
 			$options[] = array( "name" => "Shop",
 				"type" => "heading" );
@@ -368,62 +332,20 @@ SHOP
 CUSTOM CSS
 ==================================================================
 */
-	$options[] = array( "name" => "Custom CSS",
+	$options[] = array( "name" => "Custom LESS",
 		"type" => "heading" );
 		
 	$options[] = array(
-		"name" => "Custom CSS Editor",
-		'desc' => __("Use the CSS editor below to add custom styles to your site. Any styles added here won't be affected by upgrading your theme."),
+		"name" => "Custom LESS Editor",
+		'desc' => __("Use the LESS editor below to add custom styles to your site. Any styles added here won't be affected by upgrading your theme."),
 		'type' => 'info' );
 		
 	$options[] = array(
 		'desc' => "",
-		'id' => "newcontent",
-		'std' => "/* Add custom CSS below */",
+		'id' => "customlesscode",
+		'std' => "/* Add custom LESS below */",
 		'type' => "textarea"
 	);
-	    
-// Add extra options through function
-if ( function_exists("skematik_options_add_after") )
-	$options = skematik_options_add_after($options);
+
 	return $options;
-}
-
-
-
-function optionsframework_custom_scripts() { ?>
-
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-
-	$('#example_showhidden').click(function() {
-  		$('#section-example_text_hidden').fadeToggle(400);
-	});
-
-	if ($('#example_showhidden:checked').val() !== undefined) {
-		$('#section-example_text_hidden').show();
-	}
-	
-		editAreaLoader.init({
-			id: "custom_css_style"	// id of the text area to transform	
-			,start_highlight: true	
-			,font_size: "10"
-			,font_family: "verdana, monospace"
-			,allow_resize: "y"
-			,allow_toggle: false
-			,language: "en"
-			,allow_toggle: true
-			,syntax: "css"	
-			,toolbar: "char map, |, search, go_to_line, |, undo, redo, |, select_font, |, change_smooth_selection, highlight, reset_highlight"
-			,load_callback: "my_load"
-			,save_callback: "my_save"
-			,plugins: "charmap"
-			,charmap_default: "arrows"
-				
-		});
-
-});
-</script>
-
-<?php
 }

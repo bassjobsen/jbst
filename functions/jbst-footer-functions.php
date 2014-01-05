@@ -2,7 +2,7 @@
 /*
 ==========================================================
 THE FUNCTIONS IN THIS FILE ALL TIE INTO THE
-'skematik_footer' ACTION HOOK WHICH IS CALLED IN footer.php
+'jbst_footer' ACTION HOOK WHICH IS CALLED IN footer.php
 FILE. DEVELOPERS CAN REMOVE ANYTHING HERE WITH A SIMPLE
 'remove_action' CALL.
 ==========================================================
@@ -12,22 +12,22 @@ FILE. DEVELOPERS CAN REMOVE ANYTHING HERE WITH A SIMPLE
 
 /*
 ==========================================================
-Skematik Right Sidebar
+jbst Right Sidebar
 ==========================================================
 */
 // Call the right sidebar function
-add_action( 'skematik_footer', 'skematik_right_sidebar', 9 );
+add_action( 'jbst_footer', 'jbst_right_sidebar', 9 );
 
 
 
 /*
 ==========================================================
-Skematik Bottom Content Wrapper
+jbst Bottom Content Wrapper
 ==========================================================
 */
 // Close the content wrapper html
-add_action( 'skematik_footer', 'skematik_bottom_content_wrapper', 20 );
-function skematik_bottom_content_wrapper() {
+add_action( 'jbst_footer', 'jbst_bottom_content_wrapper', 20 );
+function jbst_bottom_content_wrapper() {
 	echo '
 				</div><!-- .row -->
 		</div><!-- #page .hfeed .site -->
@@ -38,19 +38,19 @@ function skematik_bottom_content_wrapper() {
 
 /*
 ==========================================================
-SKEMATIK FOOTER AREA
+jbst FOOTER AREA
 ==========================================================
 */
 // Call the footer area function (widget areas)
-add_action( 'skematik_footer', 'skematik_footer_area', 30 );
+add_action( 'jbst_footer', 'jbst_footer_area', 30 );
 
-function skematik_footer_area() {?>
+function jbst_footer_area() {?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
-		<?php skematik_footer_widgets();?>
+		<?php jbst_footer_widgets();?>
 			<div class="row">
 				<div class="site-info <?php echo JBST_GRIDPREFIX;?>12">
-					<?php do_action( 'skematik_credits' ); ?>
+					<?php do_action( 'jbst_credits' ); ?>
 				</div><!-- .site-info -->
 			</div>
 		</div>
@@ -64,7 +64,7 @@ function skematik_footer_area() {?>
 FOOTER WIDGETS
 ==========================================================
 */
-function skematik_footer_widgets() {
+function jbst_footer_widgets() {
 $ftr_widgets = get_theme_mod( 'footer_widgets_number', 4 );
 
 if($ftr_widgets > 0) 
@@ -106,28 +106,28 @@ if($ftr_widgets > 0)
 FOOTER CREDITS
 ==========================================================
 */
-function skematik_custom_credits() {
+function jbst_custom_credits() {
 	if(get_theme_mod('footer_credits') <> "") {echo get_theme_mod('footer_credits');}
 	else {?>
 		<?php printf( __( '&copy;', 'jamedo-bootstrap-start-theme' )); ?> <?php echo date('Y');?> <?php echo bloginfo('name');?><span class="sep"> | </span><a target="_blank" href="<?php esc_attr_e( 'https://github.com/bassjobsen/jamedo-bootstrap-start-theme', 'jamedo-bootstrap-start-theme' ); ?>" title="<?php esc_attr_e( 'Powered by Jamedo\'s Bootstrap Start Theme', 'jamedo-bootstrap-start-theme' ); ?>" rel="generator"><?php printf( __( 'Powered by Jamedo\'s Bootstrap Start Theme', 'jamedo-bootstrap-start-theme' ), 'jamedo-bootstrap-start-theme' ); ?></a>
 	<?php }
 }
 
-add_action('skematik_credits', 'skematik_custom_credits');
+add_action('jbst_credits', 'jbst_custom_credits');
 
 
 
 /*
 ==========================================================
-Skematik Body Close
+jbst Body Close
 ==========================================================
 */
 // Create the doc type and initial meta tags
-add_action( 'skematik_footer', 'skematik_body_close', 40 );
-function skematik_body_close() {
+add_action( 'jbst_footer', 'jbst_body_close', 40 );
+function jbst_body_close() {
 ?>
-</div><!-- END skematik-site-wrap -->
-<?php do_action( 'skematik_after' ); ?>
+</div><!-- END jbst-site-wrap -->
+<?php do_action( 'jbst_after' ); ?>
 <?php wp_footer(); ?>
 </body>
 </html>
@@ -138,12 +138,12 @@ function skematik_body_close() {
 
 /*
 ==========================================================
-Skematik BuddyPress Bottom Content Wrapper
+jbst BuddyPress Bottom Content Wrapper
 ==========================================================
 */
 // 
-add_action( 'skematik_after_buddypress', 'skematik_buddypress_bottom_content_wrapper', 9 );
-function skematik_buddypress_bottom_content_wrapper() {
+add_action( 'jbst_after_buddypress', 'jbst_buddypress_bottom_content_wrapper', 9 );
+function jbst_buddypress_bottom_content_wrapper() {
 ?>
 		</div><!-- #content -->
 	</div><!-- #primary .site-content -->
