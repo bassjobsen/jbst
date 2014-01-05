@@ -145,22 +145,6 @@ SETUP
 	    'type' => 'checkbox');
 
 	$options[] = array(
-	    'name' => __('Drag & Drop Featured Image', 'options_check'),
-	    'desc' => __('This turns the featured image area into a drag and drop interface on the edit screen for posts, pages and products.', 'options_check'),
-	    'id' => 'drag_and_drop_featured_image_switch',
-	    'std' => '1',
-	    'class' => 'switch',
-	    'type' => 'checkbox');
-	    
-	$options[] = array(
-	    'name' => __('Code Mirror Syntax Highlighting', 'options_check'),
-	    'desc' => __('This turns on syntax highlighting on the Custom CSS tab as well as the standard WordPress file editor to make editing much easier.', 'options_check'),
-	    'id' => 'code_mirror_switch',
-	    'std' => '1',
-	    'class' => 'switch',
-	    'type' => 'checkbox');
-
-	$options[] = array(
 	    'name' => __('Login Redirect to Homepage', 'options_check'),
 	    'desc' => __('By default, users are redirected to the homepage of the site after login. You can turn this option off to enable default WordPress login behavior of redirecting to the WordPress dashboard. <em><strong>NOTE: This feature will be turned off if you do not have an account button in your navbar. This is to avoid locking you out of your site.</strong></em>', 'options_check'),
 	    'id' => 'login_redirect_switch',
@@ -173,14 +157,6 @@ SETUP
 	    'desc' => __('By activating this feature, images will be displayed at 2X resolution for devices with a pixel ratio equal to 2 or greater (iPhones & the new Retina Macbook Pro). This feature is considered BETA(experimental) in that currently it works only for thumbnails and featured images on the blog. It is stable however and you shouldn\'t have to worry about activating it.', 'options_check'),
 	    'id' => 'retina_display_switch',
 	    'std' => '0',
-	    'class' => 'switch',
-	    'type' => 'checkbox');
-	    
-	$options[] = array(
-	    'name' => __('Press Trends', 'options_check'),
-	    'desc' => __('PressTrends is a service that allows our customers to send ANONYMOUS data to a theme analytics service so that we can get an idea of how well the theme is performing. No user info is shared and it will not affect the performance of your site. We hope you appreciate this effort to make the theme better. Of course, you are not required to opt-in and may choose to turn this feature off.', 'options_check'),
-	    'id' => 'press_trends',
-	    'std' => '1',
 	    'class' => 'switch',
 	    'type' => 'checkbox');
 

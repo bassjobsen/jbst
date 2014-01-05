@@ -1,9 +1,7 @@
 Jamedo's Bootstrap Start Theme (JBST)
 =====================================
 
-Powerful theme framework that can be used as a standalone website builder or as a framework to create child themes for wordpress build on Twitter's Bootstrap 3.
-The original framework is written by [Matt Jones of Rocket Farmer, LLC](http://rocketfarmer.net/) (former Skematik theme framework)
-It also has built in support for theme options, metaboxes, BuddyPress and eCommerce (WooCommerce, JigoShop and WPeCommerce).
+JBST is a powerful theme framework that can be used as a standalone website builder or as a framework to create child themes for wordpress. JBST build on on the top of Twitter's Bootstrap 3 and is full customizable with LESS. Integrated customizer for easy website building. It also has built in support for BuddyPress, BBpress and eCommerce (WooCommerce, JigoShop and WPeCommerce).
 
 * [Twitter's Bootstrap 3](http://getboostrap.com/) ready
 * E-Commerce ( we recommend WooCommerce )
@@ -15,8 +13,7 @@ Demo of default install: http://demo.jbst.eu/ (some quick install notes: https:/
 Installation
 ------------
 
-[Download the latest version as .zip file](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/archive/master.zip). Upload the .zip file to your Wordpress theme directory (wp-content/themes) or use Install theme function in your dashboard.
-Activate the theme in your dashboard ( Appearence > themes ). Make sure your wp-content/uploads directory is writable before activating!
+[Download the latest version as .zip file](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/archive/master.zip). Upload the .zip file to your Wordpress theme directory (wp-content/themes) or use Install theme function in your dashboard. Activate the theme in your dashboard ( Appearence > themes ). 
 
 Customization and LESS
 ----------------------
@@ -117,6 +114,7 @@ Recommended Plugins
 * [WP Defer Loading](https://github.com/bassjobsen/wp-defer-loading), Defer loading javascript for WordPress, see: https://developers.google.com/speed/docs/insights/BlockingJS
 * [Twitter Bootstrap Galleries Plugin](https://github.com/bassjobsen/twitter-bootstrap-galleries), Wraps the content of a WordPress media gallery in a Twitter's Bootstrap grid. And make it full responsive.
 * [Twitter Bootstrap Slider](https://github.com/bassjobsen/twitter-bootstrap-slider/) responsive image slide show (slider component)
+* [Drag & Drop Featured Image](http://wordpress.org/plugins/drag-drop-featured-image/) Drag & Drop Featured Image is a plugin that replaces the default "Set featured image" metabox with a drop zone for faster uploads.
 
 Buy and Sell JBST Child themes
 ------------------------------

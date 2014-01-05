@@ -126,22 +126,6 @@ Loads Theme Metaboxes
 */
 require_once( get_template_directory() . '/functions/template-metaboxes.php' );
 
-
-/*
-==========================================================
-FEATURED IMAGE DRAG & DROP
-==========================================================
-*/
-/* Load the Featured Image */
-if ( ! function_exists( 'dgd_removeDefaultBoxes' ) ) {
-	if (of_get_option('drag_and_drop_featured_image_switch', 1) == 1) {
-		function jbst_drag_and_drop_featured_image() {
-			require_once( get_template_directory() . '/library/plugins/dnd_featured_image.php' );
-		}
-		add_action( 'after_setup_theme', 'jbst_drag_and_drop_featured_image' );
-	}
-}
-
 /*
 ==========================================================
 TEMPLATES
