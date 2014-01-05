@@ -92,7 +92,7 @@ public function wpless2csssavecss($creds)
 				$parser = new Less_Parser( $options );
 				
 				WP_Filesystem($creds);
-                global $wp_filesystem; 
+                                global $wp_filesystem; 
 				
 				if(!$wp_filesystem->exists($rootless=trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_stylesheet() ).'wpless2css/wpless2css.less'))
 				{
@@ -105,9 +105,10 @@ public function wpless2csssavecss($creds)
 					}
 			    }
 				
+				//$parser->parseFile($rootless);
+				//$parser->SetImportDirs(array('/domains/demo.jbst.eu/public_html/wp-content/themes/jamedo-bootstrap-start-theme/wpless2css/'));
 				$parser->parseFile($rootless);
-				
-				/*if($extrafiles = apply_filters('add_extra_less_files',''))
+                                /*if($extrafiles = apply_filters('add_extra_less_files',''))
 				{
 										
 					foreach($extrafiles as $extrafile)

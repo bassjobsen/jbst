@@ -147,10 +147,13 @@ class Less_Parser {//extends Less_Cache{
 	 */
 	public function parseFile( $filename, $uri_root = '', $returnRoot = false){
 
-		/*if( !file_exists($filename) ){
-			throw new Less_ParserException(sprintf('File `%s` not found.', $filename));
-		}*/
+		WP_Filesystem($this->env->credits);
+                global $wp_filesystem;
 
+                if( !$wp_filesystem->exists($filename) ){
+			throw new Less_ParserException(sprintf('File `%s` not found.', $filename));
+		}
+                
 		$previousFileInfo = $this->env->currentFileInfo;
 		$this->SetFileInfo($filename, $uri_root);
 
@@ -4511,13 +4514,15 @@ class Less_Tree_Import extends Less_Tree{
 
 		$evald = $this->compileForImport($env);
 		$uri = $full_path = false;
-
+                WP_Filesystem($env->credits);
+                global $wp_filesystem;
+                 
 		//get path & uri
 		$evald_path = $evald->getPath();
 		if( $evald_path && Less_Environment::isPathRelative($evald_path) ){
 			foreach(Less_Parser::$import_dirs as $rootpath => $rooturi){
 				$temp = $rootpath.$evald_path;
-				if( file_exists($temp) ){
+				if( $wp_filesystem->exists($temp) ){
 					$full_path = Less_Environment::normalizePath($temp);
 					$uri = Less_Environment::normalizePath(dirname($rooturi.$evald_path));
 					break;
