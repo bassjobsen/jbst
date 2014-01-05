@@ -251,7 +251,7 @@ function jbst_tmpadminheader()
 				if ( wp_is_mobile() )
 					wp_enqueue_script( 'jquery-touch-punch' );
 
-				$title = __('Customizer credentials');
+				$title = __('Customizer credentials','jamedo-bootstrap-start-theme');
 				$parent_file = 'index.php';
 				include( ABSPATH . 'wp-admin/admin-header.php' );
 }	
