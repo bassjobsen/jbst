@@ -107,14 +107,15 @@ public function wpless2csssavecss($creds)
 				
 				$parser->parseFile($rootless);
 				
-				if($extrafiles = apply_filters('add_extra_less_files',''))
+				/*if($extrafiles = apply_filters('add_extra_less_files',''))
 				{
 										
 					foreach($extrafiles as $extrafile)
 					{
 						$parser->parseFile($extrafile);
 				    }	
-		     	}	
+		     	}*/	
+		     	
 				$parser->parse( apply_filters('get_theme_mods','') );
 				$parser->parse( apply_filters('add_extra_less_code','') );
 				$parser->parse( get_option('customlesscode'));
@@ -124,7 +125,7 @@ public function wpless2csssavecss($creds)
                 
                 
                 $folder = trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_template() ).'library/assets/css/';
-	     
+
                 if ( ! $wp_filesystem->put_contents(  $folder.$this->filename, $css, FS_CHMOD_FILE) ) 
 				{
                 wp_die("error saving file!");

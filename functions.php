@@ -63,8 +63,7 @@ function jbst_theme_setup() {
 
 	/* Identify support for WooCommerce */
 	add_theme_support('woocommerce');
-	
-	add_theme_support('custom-header');
+
 
 }
 endif; // jbst_setup

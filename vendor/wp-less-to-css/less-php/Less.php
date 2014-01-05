@@ -252,7 +252,7 @@ class Less_Parser {//extends Less_Cache{
 			WP_Filesystem($this->env->credits);
 			global $wp_filesystem;
 			$this->input = $wp_filesystem->get_contents( $file_path );
-	    }
+	        }
 
 		$this->pos = 0;
 		$this->input = preg_replace('/\r\n/', "\n", $this->input);
