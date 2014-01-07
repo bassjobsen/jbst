@@ -1,31 +1,6 @@
 <?php
 global $optionscheck;
 $optionscheck = 0;
-/* Set the content width based on the theme's design and stylesheet. @since jbst 1.0 */
-if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
-
-/* Load jbst functions on 'after_setup_theme'. */
-add_action( 'after_setup_theme', 'jbst_core_setup' );
-
-if ( ! function_exists( 'jbst_core_setup' ) ):
-/*
-Sets up theme defaults and registers support for various WordPress features. Note that this function is hooked into the after_setup_theme hook, which runs before the init hook. The init hook is too late for some features, such as indicating support post thumbnails.@since jbst 1.0
-*/
-function jbst_core_setup() {
-	
-																	
-/*
-==========================================================
-Internationalizing And Localizing 
-==========================================================
-*/
-
-	/* Make theme available for translation. Translations can be filed in the /languages/ directory. You can load a theme text domain in the theme's functions file. */
-	load_theme_textdomain( 'jamedo-bootstrap-start-theme', get_template_directory() . '/languages' );
-}
-endif; // jbst_setup
-
 /*
 ==========================================================
 Loads the Options Framework

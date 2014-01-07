@@ -219,16 +219,14 @@ function jbst_nav_styles() {
 	if(!empty($navbar_link_color))
 	{
 		echo '.navbar .navbar-nav > li > a {
-    color: '.$navbar_link_color.';
-}';
+    color: '.$navbar_link_color.';}';
     }
     
     $navbar_linkhover_color = get_theme_mod( 'navbar_linkhover_color');
 	if(!empty($navbar_linkhover_color))
 	{
 		echo '.navbar .navbar-nav > li > a:hover {
-    color: '.$navbar_linkhover_color.';
-}';
+    color: '.$navbar_linkhover_color.';}';
     }	
     
     $navbar_activelink_color = get_theme_mod( 'navbar_activelink_color');
@@ -252,17 +250,13 @@ function jbst_nav_styles() {
     $logo_link_color = get_theme_mod( 'logo_link_color');
 	if(!empty($logo_link_color))
 	{
-		echo '.navbar-brand {
-    color: '.$logo_link_color.';
-}';
+		echo '#jbst-top-nav .navbar-brand {color: '.$logo_link_color.';}';
     }
     
     $logo_linkhover_color = get_theme_mod( 'logo_linkhover_color');
 	if(!empty($logo_linkhover_color))
 	{
-		echo '.navbar-brand:hover {
-    color: '.$logo_linkhover_color.';
-}';
+		echo '#jbst-top-nav .navbar-brand:hover {color: '.$logo_linkhover_color.';}';
     }
     
     
@@ -305,6 +299,6 @@ add_action( 'jbst_before_buddypress', 'jbst_buddypress_top_content_wrapper', 10 
 function jbst_buddypress_top_content_wrapper() {
 ?>
 	<div id="primary" class="site-content <?php do_action('jbstmaingridclass'); ?>">
-		<div id="content" role="main">jj
+		<div id="content" role="main">
 <?php
 }

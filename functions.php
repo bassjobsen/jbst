@@ -63,7 +63,19 @@ function jbst_theme_setup() {
 
 	/* Identify support for WooCommerce */
 	add_theme_support('woocommerce');
+	
+	// Add theme support for Semantic Markup
+	$markup = array( 'search-form', 'comment-form', 'comment-list', );
+	add_theme_support( 'html5', $markup );
+	
+/*
+==========================================================
+Internationalizing And Localizing 
+==========================================================
+*/
 
+	/* Make theme available for translation. Translations can be filed in the /languages/ directory. You can load a theme text domain in the theme's functions file. */
+	load_theme_textdomain( 'jamedo-bootstrap-start-theme', get_template_directory() . '/languages' );	
 
 }
 endif; // jbst_setup
@@ -141,6 +153,7 @@ add_action( 'jbst_after_content_page','jbst_close_content_wrappers',10);
 add_action( 'wp_head', 'jbst_prepare_wrappers',10);
 
 add_action( 'customize_preview_init', 'jbst_custom_style',99);
+
 function my_styles_method() {
    ob_start();
    require_once( get_template_directory() . '/functions/custom-style.php' );
@@ -148,7 +161,8 @@ function my_styles_method() {
    $return = ob_get_contents ();
   
    ob_clean();
-        wp_add_inline_style( 'wpless2css', $return );
+   
+   wp_add_inline_style( 'wpless2css', $return );
 }
 
 function jbst_custom_style() {
@@ -179,6 +193,7 @@ function add_extra_less_files_live()
 }
 
 add_filter( 'get_theme_mods','get_theme_mods_live');
+
 function get_theme_mods_live()
 {
    ob_start();
@@ -207,6 +222,7 @@ function get_theme_mods_live()
    {
 	   $return .= '@grid-float-breakpoint:768px; @grid-float-breakpoint-max:767px;';
    }
+   
    return $return; 
 }
 
@@ -215,6 +231,7 @@ function lesscustomize($setting)
 $updatecss = WP_LESS_to_CSS::$instance;
 $updatecss->wpless2csssavecss(unserialize(get_theme_mod('customizercredits')));
 }
+
 function deletestoredcredits()
 {
 		remove_theme_mod( 'customizercredits' );
