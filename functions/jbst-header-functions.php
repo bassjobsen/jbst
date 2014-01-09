@@ -203,26 +203,27 @@ function jbst_nav_styles() {
 	';
 	}
 	
-	$navbar_background_color = get_theme_mod( 'navbar_background_color');
+	$navbar_background_color = get_theme_mod( 'navbar_background_color','');
 	if(!empty($navbar_background_color))
 	{
 		echo '.navbar {background-color: '.$navbar_background_color.';}';
 	}	
+
     
-    $navbar_border_color = get_theme_mod( 'navbar_border_color');
+    $navbar_border_color = get_theme_mod( 'navbar_border_color','');
 	if(!empty($navbar_border_color))
 	{
 		echo '.navbar {border-color: '.$navbar_border_color.';}';
     }
     
-    $navbar_link_color = get_theme_mod( 'navbar_link_color');
+    $navbar_link_color = get_theme_mod( 'navbar_link_color','');
 	if(!empty($navbar_link_color))
 	{
 		echo '.navbar .navbar-nav > li > a {
     color: '.$navbar_link_color.';}';
     }
     
-    $navbar_linkhover_color = get_theme_mod( 'navbar_linkhover_color');
+    $navbar_linkhover_color = get_theme_mod( 'navbar_linkhover_color'.'');
 	if(!empty($navbar_linkhover_color))
 	{
 		echo '.navbar .navbar-nav > li > a:hover {
@@ -247,7 +248,7 @@ function jbst_nav_styles() {
     
     /* LOGO */
 
-    $logo_link_color = get_theme_mod( 'logo_link_color');
+    $logo_link_color = get_theme_mod( 'logo_link_color','');
 	if(!empty($logo_link_color))
 	{
 		echo '#jbst-top-nav .navbar-brand {color: '.$logo_link_color.';}';
@@ -285,7 +286,7 @@ jbst Left Sidebar
 ==========================================================
 */
 // Call the left sidebar if this template has one.
-add_action( 'jbst_header', 'jbst_left_sidebar', 80 );
+//add_action( 'jbst_header', 'jbst_left_sidebar', 80 );
 
 
 

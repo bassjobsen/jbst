@@ -56,7 +56,7 @@ echo '<div class="wrap">'."\n";
 		
 					?></textarea></p>
 			  </fieldset>
-                <p class="submit"><input type="submit" name="SaveCBESettings" value="Save All Changes" class="button-primary" /></p>
+                <p class="submit"><input type="submit" name="SaveCBESettings" value="Recompile LESS code" class="button-primary" /></p>
             </div>
         </div><!-- postbox -->
         

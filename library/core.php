@@ -1,15 +1,7 @@
 <?php
 global $optionscheck;
 $optionscheck = 0;
-/*
-==========================================================
-Loads the Options Framework
-==========================================================
-*/
-if ( !function_exists( 'optionsframework_init' ) ) {
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/library/options/' );
-	require_once dirname( __FILE__ ) . '/options/options-framework.php';
-}
+
 /*
 ==========================================================
 SET THE DEFAULT GRID
@@ -17,7 +9,11 @@ SET THE DEFAULT GRID
 */
 
 define('JBST_GRIDPREFIX','col-'.get_theme_mod( 'default_grid', 'md').'-');
-																							
+if(!defined('JBST_RTL'))
+{
+	if((of_get_option('show_rtl', 0) == 1))define('JBST_RTL',1);
+	else define('JBST_RTL',0);
+}																								
 /*
 ==========================================================
 ADD WELCOME SCREEN TO THE THEME OPTIONS PANEL
@@ -110,12 +106,13 @@ or contact us on twitter <a href="http://twitter.com/JamedoWebsites">@JamedoWebs
 
 /*
 ==========================================================
-Loads the Metaboxes Framework
+Loads the Metaboxes Framework and Theme Metaboxes
 ==========================================================
 */
 // Initialize the metabox class
 add_action( 'init', 'jbst_initialize_cmb_meta_boxes', 9999 );
 function jbst_initialize_cmb_meta_boxes() {
+require_once( get_template_directory() . '/functions/template-metaboxes.php' );
 	if ( !class_exists( 'cmb_Meta_Box' ) ) {
 		require_once dirname( __FILE__ ) . '/metaboxes/init.php';
 	}
@@ -147,11 +144,7 @@ function jbst_prettify_css() {
     wp_enqueue_style( 'jbst-prettify' );
 }
 
-function jbst_lightbox_css() {
-	wp_register_style( 'jbst_lightbox_css', get_template_directory_uri() . '/library/lightbox/css/lightbox.css', array(), '20121005', 'all' );
-    wp_enqueue_style( 'jbst_lightbox_css' );
-}
-	
+
 /*
 ==========================================================
 Scripts
@@ -208,10 +201,6 @@ global $post;
 	}
 }
 
-function jbst_lightbox_js() {
-	wp_register_script( 'jbst_lightbox_js', get_template_directory_uri() . '/library/lightbox/js/lightbox-2.6.min.js', array( 'jquery','jbst_js' ), '20131101', true );
-	wp_enqueue_script( 'jbst_lightbox_js' );
-}
 
 /*
 ==========================================================
@@ -448,24 +437,6 @@ function jbst_main_nav($menu_class='') {
 do_action( 'jbst_after_main_nav' );
 }
 
-function jbst_main_nav_fallback() {?>
-<ul id="menu-main-navigation" class="nav navbar-nav">
-  <?php
-  $pages = get_pages(); 
-  foreach ( $pages as $page ) {
-  	$option = '<li>';
-  	$option .= '<a href="'.get_page_link( $page->ID ).'">';
-	$option .= $page->post_title;
-	$option .= '</a>';
-	$option .= '</li>';
-	echo $option;
-  }
-  ?>
-</ul>
-<?php	
-}
-
-
 
 /**
  * Class Name: wp_bootstrap_navwalker
@@ -657,8 +628,8 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
 			$fb_output = null;
 
-			if ( $container ) {
-				$fb_output = '<' . $container;
+
+				/*$fb_output = '<div';
 
 				if ( $container_id )
 					$fb_output .= ' id="' . $container_id . '"';
@@ -666,8 +637,8 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 				if ( $container_class )
 					$fb_output .= ' class="' . $container_class . '"';
 
-				$fb_output .= '>';
-			}
+				$fb_output .= '>';*/
+		
 
 			$fb_output .= '<ul';
 
@@ -681,8 +652,8 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">Add a menu</a></li>';
 			$fb_output .= '</ul>';
 
-			if ( $container )
-				$fb_output .= '</' . $container . '>';
+
+				//$fb_output .= '</div>';
 
 			echo $fb_output;
 		}
@@ -1084,12 +1055,7 @@ function jbst_image($width,$height) {
 						<img src="<?php echo $image['url']; ?>" class="img-responsive" />
 					</a>
 		
-			<?php } /*else {?>
-			<a href="<?php echo the_permalink(); ?>" class="thumbnail" rel="<?php the_title(); ?>">
-					<img src="<?php echo get_template_directory_uri(); ?>/library/assets/img/default.jpg" width="<?php echo $w;?>px" />
-				</a>
-			<?php
-			}*/
+			<?php } 
 		}
 	}
 }
@@ -1099,12 +1065,7 @@ function jbst_image_only($width,$height) {
 		global $retina;
 		if($width) {$w = $width;} else {$w = get_theme_mod('post_thumbnail_width', 200);}
 		if($height) {$h = $height;} else {$h = get_theme_mod('post_thumbnail_width', 200);}
-		if (of_get_option('full_size_height', 1000) <> "") {
-			$fh = of_get_option('full_size_height', 1000);
-		} else {$fh = 50000;}
-		if (of_get_option('full_size_width', 1000) <> "") {
-			$fw = of_get_option('full_size_width', 1000);
-		} else {$fw = 50000;}
+
 	if(has_post_thumbnail()) {
 		$thumb = get_post_thumbnail_id();
 		if($retina) {$image = jbst_resize( $thumb,'' , $w * 2, $h * 2, true);}

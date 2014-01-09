@@ -332,9 +332,7 @@ elseif ( in_array( 'wp-e-commerce/wp-shopping-cart.php', apply_filters( 'active_
 	  $("a.preview_link").addClass("preview_link thumbnail");
 	  $(".wpsc-breadcrumbs").addClass("breadcrumb");	  
 	  	  
-	  /* Add lightbox to preview images */
-	  $('a.preview_link').attr('rel', 'lightbox[gallery]');
-	  $('.default_product_display a.preview_link').attr('rel', 'lightbox'); 
+
 	  
 	  var highestCol = Math.max($('.single_product_display .imagecol').height(),$('.single_product_display .productcol').height());
 	  $('.single_product_display .imagecol').height(highestCol);

@@ -4,6 +4,9 @@ JBST functions and definitions
 @package jbst
 @since jbst 1.2
 */
+
+/* Load custom jbst functions. */
+require( get_template_directory() . '/functions/options-functions.php' );
 require_once( trailingslashit( get_template_directory() ) . 'library/core.php' );
 /*
 ==========================================================
@@ -23,6 +26,7 @@ if ( ! function_exists( 'jbst_theme_setup' ) ):
 Sets up theme defaults and registers support for various WordPress features. Note that this function is hooked into the after_setup_theme hook, which runs before the init hook. The init hook is too late for some features, such as indicating support post thumbnails.@since jbst 1.0
 */
 function jbst_theme_setup() {
+	
 	
 	/* Load custom jbst functions. */
 	require( get_template_directory() . '/functions/template-functions.php' );
@@ -96,34 +100,17 @@ add_action( 'wp_enqueue_scripts', 'jbst_bootstrap_css', 99 );
 add_action( 'wp_enqueue_scripts', 'jbst_bootstrap_responsive_css', 99  );
 add_action( 'wp_enqueue_scripts', 'jbst_styles_css',99 );
 add_action( 'wp_enqueue_scripts', 'jbst_prettify_css', 99  );
-if (of_get_option('lightbox_switch', 1) == 1) {
-	add_action( 'wp_enqueue_scripts', 'jbst_lightbox_css', 99  );
-}
 
 /* Load Scripts */
 add_action( 'wp_enqueue_scripts', 'jbst_jquery_js' );
 add_action( 'wp_enqueue_scripts', 'jbst_bootstrap_js' );
 add_action( 'wp_enqueue_scripts', 'jbst_custom_js' );
 add_action( 'wp_enqueue_scripts', 'jbst_prettify_js' );
-if (of_get_option('lightbox_switch', 1) == 1) {
-	add_action( 'wp_enqueue_scripts', 'jbst_lightbox_js' );
-}
+
 add_action( 'wp_enqueue_scripts', 'jbst_comments_js' );
 add_action( 'wp_enqueue_scripts', 'jbst_keyboard_nav_js' );
 add_action( 'wp_enqueue_scripts', 'jbst_js' );
 
-/* Galleries */
-// set default link attribute to "file", see: http://sumobi.com/how-to-filter-shortcodes-in-wordpress-3-6/
-
-if (of_get_option('lightbox_switch', 1) == 1) {
-function jbst_gallery_atts( $out, $pairs, $atts ) {
-
-        $out['link'] = 'file';
-        return $out;
-
-}
-add_filter( 'shortcode_atts_gallery', 'jbst_gallery_atts', 10, 3 );
-}
 
 /*
 ==========================================================
@@ -132,12 +119,6 @@ Loads Options
 */
 require_once dirname( __FILE__ ) . '/options.php';
 
-/*
-==========================================================
-Loads Theme Metaboxes
-==========================================================
-*/
-require_once( get_template_directory() . '/functions/template-metaboxes.php' );
 
 /*
 ==========================================================
@@ -174,7 +155,11 @@ add_action( 'wp_enqueue_scripts', 'my_styles_method' );
 LESS
 ==========================================================
 */
+
+if ( ! class_exists( 'WP_LESS_to_CSS' ) ) {
 require dirname(__FILE__) . '/vendor/wp-less-to-css/wp-less-to-css.php';
+}
+
 remove_action( 'wp_enqueue_scripts', 'jbst_bootstrap_css', 99 );
 
 add_filter( 'add_extra_less_files', 'add_extra_less_files_live');
@@ -189,7 +174,7 @@ function add_extra_less_files_live()
 				
 		}
     }  
-    return array($customless);    
+    return array(str_replace(ABSPATH,'',$customless));    
 }
 
 add_filter( 'get_theme_mods','get_theme_mods_live');

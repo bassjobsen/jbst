@@ -221,6 +221,7 @@ function jbst_logo_customizer_options($wp_customize) {
 
 	/* Logo Image Upload */
 	$wp_customize->add_setting( 'logo_image', array(
+	'default'        => ''
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo_image', array(
@@ -338,7 +339,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_border_color', array(
-		'label'   => __( 'Navbar', 'jamedo-bootstrap-start-theme' ) . __('Background Color', 'jamedo-bootstrap-start-theme').':',
+		'label'   => __( 'Navbar', 'jamedo-bootstrap-start-theme' ) . __('Background Border Color', 'jamedo-bootstrap-start-theme').':',
 		'section' => 'navbar_settings',
 		'settings'   => 'navbar_border_color',
 		'priority'        => 21
@@ -971,7 +972,7 @@ function jbst_footer_customizer_options($wp_customize) {
 	
 	/* Footer Width */
 	$wp_customize->add_setting( 'footer_width', array(
-	'default'        => 'full-width',
+	'default'        => 'cont-width',
 	) );
 
 	$wp_customize->add_control( 'footer_width', array(

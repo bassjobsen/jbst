@@ -92,15 +92,14 @@ public function wpless2csssavecss($creds)
 				$parser = new Less_Parser( $options );
 				
 				WP_Filesystem($creds);
-                                global $wp_filesystem; 
-				
+                global $wp_filesystem; 
 				if(!$wp_filesystem->exists($rootless=trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_stylesheet() ).'wpless2css/wpless2css.less'))
 				{
 					if(!$wp_filesystem->exists($rootless=trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_template() ).'wpless2css/wpless2css.less'))
 					{
 						if(!$wp_filesystem->exists($rootless= trailingslashit( $wp_filesystem->wp_content_dir() ) . 'wpless2css/wpless2css.less'))
 						{
-							wp_die(__('<strong>wpless2css/wpless2css.less</strong> is missing',wpless2css));
+							wp_die(__('<strong>wpless2css/wpless2css.less</strong> is missing','wpless2css'));
 						}	
 					}
 			    }
@@ -108,22 +107,31 @@ public function wpless2csssavecss($creds)
 				//$parser->parseFile($rootless);
 				//$parser->SetImportDirs(array('/domains/demo.jbst.eu/public_html/wp-content/themes/jamedo-bootstrap-start-theme/wpless2css/'));
 				$parser->parseFile($rootless);
-                                /*if($extrafiles = apply_filters('add_extra_less_files',''))
+                if($extrafiles = apply_filters('add_extra_less_files',''))
 				{
 										
 					foreach($extrafiles as $extrafile)
 					{
-						$parser->parseFile($extrafile);
+						$parser->parseFile(trailingslashit( str_replace('wp-content/','',$wp_filesystem->wp_content_dir())).$extrafile);
 				    }	
-		     	}*/	
+		     	}
 		     	
 				$parser->parse( apply_filters('get_theme_mods','') );
 				$parser->parse( apply_filters('add_extra_less_code','') );
 				$parser->parse( get_option('customlesscode'));
 				$css = $parser->getCss();
-
-              
-                
+				if(JBST_RTL)
+				{
+				$css = str_replace('navbar-left','navbar-l',$css);	
+				$css = str_replace('navbar-right','navbar-r',$css);
+				$css = str_replace('left','wasleft',$css);
+				$css = str_replace('right','left',$css);
+				$css = str_replace('wasleft','right',$css); 
+				$css = str_replace('navbar-l','navbar-left',$css);
+				$css = str_replace('navbar-r','navbar-right',$css);
+				$css .= ' body{direction: rtl; unicode-bidi: embed;}';
+			    } 
+    
                 
                 $folder = trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_template() ).'library/assets/css/';
 
@@ -201,7 +209,7 @@ function load_options() {
 public function add_menu() 
 {
 	 
-	 //add_theme_page('WP LESS to CSS', 'WP LESS to CSS', 'manage_options', 'wp-less-to-css', array(&$this, 'WP_LESS_to_CSS_settings_page'));
+	 add_theme_page('LESS Editor', 'LESS Editor', 'manage_options', 'wp-less-to-css', array(&$this, 'WP_LESS_to_CSS_settings_page'));
 } // END public function add_menu() 
 
 /** * Menu Callback */ 

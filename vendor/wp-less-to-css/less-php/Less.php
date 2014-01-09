@@ -149,7 +149,6 @@ class Less_Parser {//extends Less_Cache{
 
 		WP_Filesystem($this->env->credits);
                 global $wp_filesystem;
-
                 if( !$wp_filesystem->exists($filename) ){
 			throw new Less_ParserException(sprintf('File `%s` not found.', $filename));
 		}

@@ -116,46 +116,46 @@ SETUP
 
 	$options[] = array(
 		"name" => "Core Features",
-		'desc' => __('This theme is equipped with specific core features that we have made optional for you. By default, most are turned on, but you can deactivate any that you choose.', 'options_check'),
+		'desc' => __('This theme is equipped with specific core features that we have made optional for you. By default, most are turned on, but you can deactivate any that you choose.', 'jamedo-bootstrap-start-theme'),
 		'type' => 'info' );
 
 	    
 	$options[] = array(
-	    'name' => __('Automatic Page Titles', 'options_check'),
-	    'desc' => __('By default, pages will automatically display their titles in a page header div with an <h1> tag wrapper. You can elect to turn this off and manually enter your titles in the page content.', 'options_check'),
+	    'name' => __('Automatic Page Titles', 'jamedo-bootstrap-start-theme'),
+	    'desc' => __('By default, pages will automatically display their titles in a page header div with an <h1> tag wrapper. You can elect to turn this off and manually enter your titles in the page content.', 'jamedo-bootstrap-start-theme'),
 	    'id' => 'display_page_title',
 	    'std' => '1',
 	    'class' => 'switch',
 	    'type' => 'checkbox');
 	    
 	$options[] = array(
-	    'name' => __('Automatic Thumbnails', 'options_check'),
-	    'desc' => __('By default, if you have not specified a thumbnail, the theme will grab the first image from that post (if one exists) to use as a thumbnail on blog pages.', 'options_check'),
+	    'name' => __('Automatic Thumbnails', 'jamedo-bootstrap-start-theme'),
+	    'desc' => __('By default, if you have not specified a thumbnail, the theme will grab the first image from that post (if one exists) to use as a thumbnail on blog pages.', 'jamedo-bootstrap-start-theme'),
 	    'id' => 'automatic_thumbnails',
 	    'std' => '0',
 	    'class' => 'switch',
 	    'type' => 'checkbox');
 
-	$options[] = array(
-	    'name' => __('Lightbox Images & Galleries', 'options_check'),
-	    'desc' => __('By default, all images that are wrapped in a link to the larger image will be have the Lightbox2 popup script added to them for nicer viewing. This includes navigation of image galleries. You may want to turn this off if you are using a different plugin for this feature.', 'options_check'),
-	    'id' => 'lightbox_switch',
-	    'std' => '1',
-	    'class' => 'switch',
-	    'type' => 'checkbox');
 
 	$options[] = array(
-	    'name' => __('Login Redirect to Homepage', 'options_check'),
-	    'desc' => __('By default, users are redirected to the homepage of the site after login. You can turn this option off to enable default WordPress login behavior of redirecting to the WordPress dashboard. <em><strong>NOTE: This feature will be turned off if you do not have an account button in your navbar. This is to avoid locking you out of your site.</strong></em>', 'options_check'),
+	    'name' => __('Login Redirect to Homepage', 'jamedo-bootstrap-start-theme'),
+	    'desc' => __('By default, users are redirected to the homepage of the site after login. You can turn this option off to enable default WordPress login behavior of redirecting to the WordPress dashboard. <em><strong>NOTE: This feature will be turned off if you do not have an account button in your navbar. This is to avoid locking you out of your site.</strong></em>', 'jamedo-bootstrap-start-theme'),
 	    'id' => 'login_redirect_switch',
 	    'std' => '0',
 	    'class' => 'switch',
 	    'type' => 'checkbox');
 
 	$options[] = array(
-	    'name' => __('Retina Display Support (BETA)', 'options_check'),
-	    'desc' => __('By activating this feature, images will be displayed at 2X resolution for devices with a pixel ratio equal to 2 or greater (iPhones & the new Retina Macbook Pro). This feature is considered BETA(experimental) in that currently it works only for thumbnails and featured images on the blog. It is stable however and you shouldn\'t have to worry about activating it.', 'options_check'),
+	    'name' => __('Retina Display Support (BETA)', 'jamedo-bootstrap-start-theme'),
+	    'desc' => __('By activating this feature, images will be displayed at 2X resolution for devices with a pixel ratio equal to 2 or greater (iPhones & the new Retina Macbook Pro). This feature is considered BETA(experimental) in that currently it works only for thumbnails and featured images on the blog. It is stable however and you shouldn\'t have to worry about activating it.', 'jamedo-bootstrap-start-theme'),
 	    'id' => 'retina_display_switch',
+	    'std' => '0',
+	    'class' => 'switch',
+	    'type' => 'checkbox');
+	$options[] = array(
+	    'name' => __('Right-To-Left (RTL)', 'jamedo-bootstrap-start-theme'),
+	    'desc' => __('By activating this feature, writing starts from the right of the page and continues to the left. You have to <a href="themes.php?page=wp-less-to-css">"recompile your LESS"</a> after changing this option', 'jamedo-bootstrap-start-theme'),
+	    'id' => 'show_rtl',
 	    'std' => '0',
 	    'class' => 'switch',
 	    'type' => 'checkbox');
@@ -272,7 +272,7 @@ SHOP
 	
 			$options[] = array(
 			"name" => "eCommerce Options",
-			'desc' => __("The ecommerce options only appear if you have activated one of the compatible ecommerce platforms, which are WooCommerce, JigoShop and WP eCommerce. You may only activate one of these platforms at a time, and the theme will automatically detect which platform is installed and update any applicable code for you. This will affect CSS styles, the cart and account dropdown functions, etc.", 'options_check'),
+			'desc' => __("The ecommerce options only appear if you have activated one of the compatible ecommerce platforms, which are WooCommerce, JigoShop and WP eCommerce. You may only activate one of these platforms at a time, and the theme will automatically detect which platform is installed and update any applicable code for you. This will affect CSS styles, the cart and account dropdown functions, etc.", 'jamedo-bootstrap-start-theme'),
 			'type' => 'info' );	
 			
 			$options[] = array(
@@ -308,7 +308,7 @@ SHOP
 CUSTOM CSS
 ==================================================================
 */
-	$options[] = array( "name" => "Custom LESS",
+	/*$options[] = array( "name" => "Custom LESS",
 		"type" => "heading" );
 		
 	$options[] = array(
@@ -319,9 +319,9 @@ CUSTOM CSS
 	$options[] = array(
 		'desc' => "",
 		'id' => "customlesscode",
-		'std' => "/* Add custom LESS below */",
+		'std' => " Add custom LESS below ",
 		'type' => "textarea"
-	);
+	);*/
 
 	return $options;
 }
