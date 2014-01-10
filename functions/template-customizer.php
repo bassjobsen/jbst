@@ -104,7 +104,7 @@ $wp_customize->add_section( 'nav', array(
 
 	
 	$wp_customize->add_setting( 'menu_depth', array(
-	'default'        => 0,
+	'default'        => 1,
 	) );
 		
 	$wp_customize->add_control( 'menu_depth', array(
@@ -126,17 +126,7 @@ $wp_customize->add_section( 'nav', array(
 		'priority'        => 50,
 	) );
 	
-	/* open on click? */
-	$wp_customize->add_setting( 'open_with_click', array(
-	'default'        => 0,
-	) );
-		
-	$wp_customize->add_control( 'open_with_click', array(
-		'label'   => __('Open submenus on click (for mobile usage)','jamedo-bootstrap-start-theme'),
-		'section' => 'nav',
-		'type'    => 'checkbox',
-		'priority'        => 60,
-	) );
+
 
 }
 /*

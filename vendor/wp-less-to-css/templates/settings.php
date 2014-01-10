@@ -37,7 +37,7 @@ if(empty($_POST))
 	
 
 echo '<div class="wrap">'."\n";
-?><h2>WP LESS to CSS <?php echo __('Settings','wpless2css');?></h2><?php 
+?><h2><?php echo __('LESS Compiler','wpless2css');?></h2><?php 
 		
 		
 		// Show Forms

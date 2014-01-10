@@ -152,13 +152,7 @@ SETUP
 	    'std' => '0',
 	    'class' => 'switch',
 	    'type' => 'checkbox');
-	$options[] = array(
-	    'name' => __('Right-To-Left (RTL)', 'jamedo-bootstrap-start-theme'),
-	    'desc' => __('By activating this feature, writing starts from the right of the page and continues to the left. You have to <a href="themes.php?page=wp-less-to-css">"recompile your LESS"</a> after changing this option', 'jamedo-bootstrap-start-theme'),
-	    'id' => 'show_rtl',
-	    'std' => '0',
-	    'class' => 'switch',
-	    'type' => 'checkbox');
+
 
 /*
 ==================================================================

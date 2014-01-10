@@ -9,11 +9,7 @@ SET THE DEFAULT GRID
 */
 
 define('JBST_GRIDPREFIX','col-'.get_theme_mod( 'default_grid', 'md').'-');
-if(!defined('JBST_RTL'))
-{
-	if((of_get_option('show_rtl', 0) == 1))define('JBST_RTL',1);
-	else define('JBST_RTL',0);
-}																								
+																							
 /*
 ==========================================================
 ADD WELCOME SCREEN TO THE THEME OPTIONS PANEL
@@ -133,7 +129,7 @@ wp_enqueue_style( 'bootstrap' );
 
 function jbst_bootstrap_responsive_css() {
 
-	$menu_depth = get_theme_mod( 'menu_depth', 0);
+	$menu_depth = get_theme_mod( 'menu_depth', 1);
 	if($menu_depth>0) {wp_register_style( 'dropdown-submenu', get_template_directory_uri() . '/library/assets/css/dropdown-submenu.css', array(), '20131013', 'all' );}
 	wp_enqueue_style( 'dropdown-submenu' );	
 }
@@ -170,11 +166,6 @@ function jbst_custom_js() {
 function jbst_js() {	
 	wp_register_script('jbst_js', get_template_directory_uri() . '/library/assets/js/jbst.js', array( 'jquery' ), '20120703', true );
 	wp_enqueue_script( 'jbst_js' );
-	if(get_theme_mod('open_with_click',0)==1)
-	{
-		wp_register_script('open_with_click_js', get_template_directory_uri() . '/library/assets/js/open_with_click.js', array( 'jquery' ), '20131310', true );
-	    wp_enqueue_script( 'open_with_click_js' );
-    }	
 }
 
 function jbst_prettify_js() {
@@ -425,7 +416,7 @@ function jbst_main_nav($menu_class='') {
     wp_nav_menu( array(
         'menu'              => 'main_nav',
         'theme_location'    => 'main_nav',
-        'depth'             => get_theme_mod( 'menu_depth', 0)+1,
+        'depth'             => get_theme_mod( 'menu_depth', 1)+1,
         'container'         => 'false',
         'container_class'   => 'collapse navbar-collapse navbar-jbst-collapse',
         'menu_class'        => 'nav navbar-nav',
@@ -500,7 +491,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
-			if ( $args->has_children && $depth<(get_theme_mod( 'menu_depth', 0)))
+			if ( $args->has_children && $depth<(get_theme_mod( 'menu_depth', 1)))
 				//$class_names .= ' dropdown';
 				//add by bass
 			{
@@ -570,7 +561,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 				$item_output .= '<a'. $attributes .'>';
 
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
+			$item_output .= ((get_theme_mod( 'menu_depth', 1)>0) && $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
 			$item_output .= $args->after;
 
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
@@ -1278,3 +1269,32 @@ function jbst_deactivate_ecommerce_scripts() {
 	}
 */
 }
+
+function jbst_showAdminMessages()
+{
+
+	if (current_user_can('manage_options') )
+	{
+	if(is_rtl() && (get_theme_mod( 'rtl_compiled', 0 ) == 0))  
+	{
+		?>
+		 <div class="error"><p>
+		<?php
+		 echo __('Your website use a right-to-left(RTL) written language. <a href="themes.php?page=wp-less-to-css">Recompile your LESS</a> code to change your site to RTL too.','jamedo-bootstrap-start-theme');
+		 ?>
+		 </p></div>
+		 <?php		 
+    }
+	if(!is_rtl() && (get_theme_mod( 'rtl_compiled', 0 ) == 1)) 
+	{
+		?>
+		 <div class="error"><p>
+		<?php		
+			echo __('Your website use a left-to-right(LTR) written language. <a href="themes.php?page=wp-less-to-css">Recompile your LESS</a> code to change your site to LTR too.','jamedo-bootstrap-start-theme');
+		 ?>
+		 </p></div>
+		 <?php	    
+	}	
+	}
+}	
+add_action('admin_notices', 'jbst_showAdminMessages');  

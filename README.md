@@ -1,7 +1,7 @@
 Jamedo's Bootstrap Start Theme (JBST)
 =====================================
 
-JBST is a powerful theme framework that can be used as a standalone website builder or as a framework to create child themes for wordpress. JBST build on on the top of Twitter's Bootstrap 3 and is full customizable with LESS. Integrated customizer for easy website building. It also has built in support for BuddyPress, BBpress and eCommerce (WooCommerce, JigoShop and WPeCommerce).
+JBST is a powerful theme framework that can be used as a standalone website builder or as a framework to create child themes for WordPress. JBST build on the top of Twitter's Bootstrap 3 and is full customizable with LESS. Integrated customizer for easy responsive website building. Right-To-Left (RTL) support. It also has built in support for BuddyPress, BBpress and eCommerce (WooCommerce, JigoShop and WPeCommerce).
 
 * [Twitter's Bootstrap 3](http://getboostrap.com/) ready
 * E-Commerce ( we recommend WooCommerce )
@@ -13,13 +13,13 @@ Demo of default install: http://demo.jbst.eu/ (some quick install notes: https:/
 Installation
 ------------
 
-[Download the latest version as .zip file](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/archive/master.zip). Upload the .zip file to your Wordpress theme directory (wp-content/themes) or use Install theme function in your dashboard. Activate the theme in your dashboard ( Appearence > themes ). 
+[Download the latest version as .zip file](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/archive/master.zip). Upload the .zip file to your WordPress theme directory (wp-content/themes) or use Install theme function in your dashboard. Activate the theme in your dashboard ( Appearence > themes ). 
 
 Customization and LESS
 ----------------------
 
 JBST has a build in customizer and LESS editor.
-Also read: [Integrate LESS in JBST WordPress Theme](http://bassjobsen.weblogs.fm/integrate-less-jbst-wordpress-theme/). 
+Also read: [Integrate LESS in JBST WordPress Theme](http://bassjobsen.weblogs.fm/integrate-less-jbst-WordPress-theme/). 
 LESS implementation build in with [WP LESS to CSS](https://github.com/bassjobsen/wp-less-to-css) which relies on [less.php](https://github.com/oyejorge/less.php).
 Add your mixins, variables and function with the editor `Appearance > WP LESS to CSS`. Check the plugin documentation for advanched options.
 Optional add LESS code to library/assets/less/custom.less (less/custom.less for child themes) or wpless2css/wpless2css.less (backup when updating the theme!).
@@ -34,8 +34,8 @@ Security issues
 ---------------
 
 The theme will ask for your FTP credentials when saving your LESS settings or using the customizer. Sending your credentials over a non-secure (http) connection will be a bad idea always.
-[Add your credentials to your wp-config.php](http://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants) to make this file saving easy and secure. **Do not forget** to [chmod your wp-config.php](http://codex.wordpress.org/Changing_File_Permissions) to 0600.
-More about all this: [Using wp_filesystem in Plugins to store customizer settings](http://wordpress.stackexchange.com/questions/126424/using-wp-filesystem-in-plugins-to-store-customizer-settings/126631)
+[Add your credentials to your wp-config.php](http://codex.WordPress.org/Editing_wp-config.php#WordPress_Upgrade_Constants) to make this file saving easy and secure. **Do not forget** to [chmod your wp-config.php](http://codex.WordPress.org/Changing_File_Permissions) to 0600.
+More about all this: [Using wp_filesystem in Plugins to store customizer settings](http://WordPress.stackexchange.com/questions/126424/using-wp-filesystem-in-plugins-to-store-customizer-settings/126631)
 
 Migration Skematik to JBST
 ---------
@@ -78,16 +78,16 @@ Localization workflow is managed on http://poeditor.com/
 
 Child themes
 ------------
-Use JBST to create child themes for wordpress build on Twitter's Bootstrap 3.
+Use JBST to create child themes for WordPress build on Twitter's Bootstrap 3.
 We provide you a [Boilerplate JBST Child Theme](https://github.com/bassjobsen/Boilerplate-JBST-Child-Theme) and an example of a Webshop based on [Twitter Bootstrap Webshop Template with vertical menu](https://github.com/bassjobsen/twitter-bootstrap-webshop-template). 
 Download this [Demo Webshop E-commerce Template](https://github.com/bassjobsen/jbst-e-commerce-child-theme) or try the [Demo](http://webshop.w3masters.nl/).
 
 Add and edit wpless2css/wpless2css.less to add or modify your LESS/CSS code. Or use the LESS editor. 
 You have to use the save function of the LESS editor after changing wpless2css/wpless2css.less too. The save function generate new CSS from your LESS files.
 
-Twitter's Boostrap Shortcodes
------------------------------
-JBST doesn't integrate Twitter's Boostrap Shortcodes since version 1.1. In stead of integration we offer support for plugins which provide this functionality. We support these plugins:
+Twitter's Bootstrap Shortcodes
+------------------------------
+JBST doesn't integrate Twitter's Bootstrap Shortcodes since version 1.1. In stead of integration we offer support for plugins which provide this functionality. We support these plugins:
 
 * [Twitter's Bootstrap Shortcodes Ultimate Add-on](http://wordpress.org/plugins/twitters-bootstrap-shortcodes-ultimate/), recommended!
 * [Easy Bootstrap Shortcode](http://wordpress.org/plugins/easy-bootstrap-shortcodes/)
@@ -95,26 +95,33 @@ JBST doesn't integrate Twitter's Boostrap Shortcodes since version 1.1. In stead
 
 Download the plugin and activate it. Troubles? Post an issue.
 
+Right-To-Left (RTL)
+-------------------
+To use Right-To-Left (RTL) you will have to install the Options Framework to turn it on. Or define: `define('JBST_RTL',1);` in your wp_config.php or functions.php. In both cases you have to recompile the CSS.
+Appearance-> LESS Editor. 
+
 Responsive image sliders
 ------------------------
 
 JBST offers support for the plugin shown below. Slider plugin are not bundled you will have to install them your self.
 
 * [Twitter Bootstrap Slider](https://github.com/bassjobsen/twitter-bootstrap-slider),recommended! 
-* [Royal Slider](http://dimsemenov.com/plugins/royal-slider/wordpress/)
+* [Royal Slider](http://dimsemenov.com/plugins/royal-slider/WordPress/)
 * [Flex Slider](http://www.fergusweb.net/software/flex-slider/)
 
 
 Recommended Plugins
 -------------------
 
-* [Wordpress SEO Plugin](http://yoast.com/wordpress/seo/)
+* [WordPress SEO Plugin](http://yoast.com/WordPress/seo/)
 * [WooCommerce](http://www.woothemes.com/woocommerce/), with [WooCommerce Twitter's Bootstrap Plugin](https://github.com/bassjobsen/woocommerce-twitterbootstrap)
 * [Stimulate correct headings Plugin](https://github.com/bassjobsen/stimulate-correct-headings) for accessibility and seo
 * [WP Defer Loading](https://github.com/bassjobsen/wp-defer-loading), Defer loading javascript for WordPress, see: https://developers.google.com/speed/docs/insights/BlockingJS
 * [Twitter Bootstrap Galleries Plugin](https://github.com/bassjobsen/twitter-bootstrap-galleries), Wraps the content of a WordPress media gallery in a Twitter's Bootstrap grid. And make it full responsive.
 * [Twitter Bootstrap Slider](https://github.com/bassjobsen/twitter-bootstrap-slider/) responsive image slide show (slider component)
 * [Drag & Drop Featured Image](http://wordpress.org/plugins/drag-drop-featured-image/) Drag & Drop Featured Image is a plugin that replaces the default "Set featured image" metabox with a drop zone for faster uploads.
+* [Options Framework](http://wordpress.org/plugins/options-framework/) A framework for building theme options. 
+
 
 Buy and Sell JBST Child themes
 ------------------------------
@@ -122,6 +129,11 @@ In 2014 we opened a [marketplace for JBST](http://themes.jbst.eu/) child themes.
 Are you theme developer? We will happy to sell your theme too! [Send us a message](http://www.jamedowebsites.nl/contact/)
 
 Designers, we could convert psd to JBST for you, so you can sell your designs too.
+
+Knowledge base
+--------------
+Find answers to faq and other tips and tricks in our [Knowledge base](http://jbst.eu/knowledge-base/).
+You will find answers and tips for s.a. LightBox2 integration, using JBST with a Jumbotron.
 
 JBST Expo
 ---------

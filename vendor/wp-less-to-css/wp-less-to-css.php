@@ -50,24 +50,9 @@ public function __construct()
 	add_action('admin_init', array(&$this, 'admin_init')); 
 	add_action('admin_menu', array(&$this, 'add_menu')); 
 	
-        //$upload_dir = wp_upload_dir();
-        //$this->folder = trailingslashit($upload_dir['basedir']).'wpless2css/';
-        //$this->folderurl = trailingslashit($upload_dir['baseurl']).'wpless2css/'; 
-        
-        /*if(is_child_theme())
-        {
-        $this->folder = get_template_directory().'/assets/css/';
-        $this->folderurl = get_template_directory_uri().'/assets/css/';
-		}
-		else
-		{*/
+
         $this->folder = get_template_directory().'/library/assets/css/';
-        //if(defined('FTP_BASE')) $this->folder = str_replace(FTP_BASE,'', $this->folder);
-        
-        //$this->folder = trailingslashit( $wp_filesystem->wp_content_dir() ) .trailingslashit(  get_template() ).'library/assets/css/'
-        
         $this->folderurl = get_template_directory_uri().'/library/assets/css/';
-        //}
 		$this->filename = 'wpless2css.css';
 		
 	
@@ -104,9 +89,7 @@ public function wpless2csssavecss($creds)
 					}
 			    }
 				
-				//$parser->parseFile($rootless);
-				//$parser->SetImportDirs(array('/domains/demo.jbst.eu/public_html/wp-content/themes/jamedo-bootstrap-start-theme/wpless2css/'));
-				$parser->parseFile($rootless);
+			    $parser->parseFile($rootless);
                 if($extrafiles = apply_filters('add_extra_less_files',''))
 				{
 										
@@ -120,7 +103,7 @@ public function wpless2csssavecss($creds)
 				$parser->parse( apply_filters('add_extra_less_code','') );
 				$parser->parse( get_option('customlesscode'));
 				$css = $parser->getCss();
-				if(JBST_RTL)
+				if(is_rtl())
 				{
 				$css = str_replace('navbar-left','navbar-l',$css);	
 				$css = str_replace('navbar-right','navbar-r',$css);
@@ -130,7 +113,12 @@ public function wpless2csssavecss($creds)
 				$css = str_replace('navbar-l','navbar-left',$css);
 				$css = str_replace('navbar-r','navbar-right',$css);
 				$css .= ' body{direction: rtl; unicode-bidi: embed;}';
+				set_theme_mod('rtl_compiled',1);
 			    } 
+			    else
+			    {
+					set_theme_mod('rtl_compiled',0);
+			    }	
     
                 
                 $folder = trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_template() ).'library/assets/css/';
@@ -140,7 +128,7 @@ public function wpless2csssavecss($creds)
                 wp_die("error saving file!");
 				}
                 
-                
+               
 				//file_put_contents( $this->folder.$this->filename, $css);
 }	
 
@@ -183,6 +171,8 @@ public function init_settings()
 	// register the settings for this plugin 
 	register_setting('wpless2cssversion-group', 'customlesscode'); 
 	register_setting('wpless2cssversion-group', 'wpless2cssversion'); 
+	
+	if (isset($_POST['SaveCBESettings'])) {remove_action('admin_notices', 'jbst_showAdminMessages'); } 
 } // END public function init_custom_settings()
 
 

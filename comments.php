@@ -87,11 +87,6 @@
 	
 	} else {comment_form_title( __("Leave a Reply",'jamedo-bootstrap-start-theme'), __("Leave a Reply to",'jamedo-bootstrap-start-theme') . ' %s' );} ?>
 	</h3>
-
-	<div id="cancel-comment-reply">
-		<p class="small"><?php cancel_comment_reply_link( __("Cancel",'jamedo-bootstrap-start-theme') ); ?></p>
-	</div>
-
 	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
   	<div class="help">
   		<p><?php _e("You must be",'jamedo-bootstrap-start-theme'); ?> <a href="<?php echo wp_login_url( get_permalink() ); ?>"><?php _e("logged in",'jamedo-bootstrap-start-theme'); ?></a> <?php _e("to post a comment",'jamedo-bootstrap-start-theme'); ?>.</p>
