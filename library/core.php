@@ -377,15 +377,8 @@ echo $buttonclass;
 NAVIGATION SEARCH
 ==========================================================
 */
-function jbst_nav_search() {?>
-		
-	<form class="navbar-form navbar-search navbar-left" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-	  <div class="form-group">
-        <input type="text" class="form-control" name="s" id="s" type="text" autocomplete="off" placeholder="<?php _e( 'Search', 'jamedo-bootstrap-start-theme' ); ?>">
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-<?php
+function jbst_nav_search() {	
+get_search_form();	
 }
 
 /*

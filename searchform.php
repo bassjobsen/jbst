@@ -6,10 +6,14 @@
  * @since jbst 1.0
  */
 ?>
-	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+    
+	<form method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 		<div class="form-group">
-		<label for="s" class="sr-only"><?php _e( 'Search', 'jamedo-bootstrap-start-theme' ); ?></label>
-		<input type="text" class="form-control" name="s" id="s" placeholder="<?php esc_attr_e( 'Search &hellip;', 'jamedo-bootstrap-start-theme' ); ?>" />
+		<label>
+		<span class="sr-only"><?php esc_attr_e( 'Search &hellip;', 'jamedo-bootstrap-start-theme' ); ?>" value="" name="s" title="<?php esc_attr_e( 'Search for:', 'jamedo-bootstrap-start-theme' ); ?></span>
+		<input type="search" class="form-control" placeholder="<?php esc_attr_e( 'Search &hellip;', 'jamedo-bootstrap-start-theme' ); ?>" value="" name="s" title="<?php esc_attr_e( 'Search for:', 'jamedo-bootstrap-start-theme' ); ?>" />
+		</label>
+	
+		<button type="submit" class="btn <?php jbst_button_class();?> searchbutton" name="submit"><?php esc_attr_e( 'Search', 'jamedo-bootstrap-start-theme' ); ?></button>
 		</div>
-		<input type="submit" class="btn <?php jbst_button_class();?>" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'jamedo-bootstrap-start-theme' ); ?>" />
 	</form>

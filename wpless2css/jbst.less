@@ -53,15 +53,10 @@ footer .widget .nav li {padding:0;border-bottom:0;}
 button,input,select,textarea {font-size: 100%; /* Corrects font size not being inherited in all browsers */margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */vertical-align: baseline; /* Improves appearance and consistency in all browsers */*vertical-align: middle; /* Improves appearance and consistency in all browsers */}
 button,input {line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */}
 input[type="checkbox"],input[type="radio"] {box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */padding: 0; /* Addresses excess padding in IE8/9 */}
-input[type="search"] {-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */-moz-box-sizing: content-box;-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */box-sizing: content-box;}
-input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */-webkit-appearance: none;}
 button::-moz-focus-inner,input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */border: 0;padding: 0;}
 input[type=text]:focus,textarea:focus {color: #111;}
 textarea {overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */padding-left: 3px;vertical-align: top; /* Improves readability and alignment in all browsers */width: 98%;}
 
-#searchsubmit {
-    display: none;
-}
 
 /* =Comments
 ----------------------------------------------- */
@@ -76,7 +71,7 @@ ol.commentlist a.comment-edit-link{color: #ffffff;text-decoration: none;padding-
 
 ol.commentlist li.bypostauthor{}
 
-#comment-nav ul{list-style-type: none;margin: 0;}
+.comment-nav ul{list-style-type: none;margin: 0;}
 #commentform .form-group {padding: 0 30px;}
 .comment .vcard .avatar{padding-right: 0;}
 .comment .vcard .comment-text{margin-left: 0;}
@@ -216,3 +211,25 @@ img.wp-smiley,
 }
 
 #navloginform {padding: 15px;}
+
+.navbar .search-form
+{
+	&:extend(.navbar-form);
+	&:extend(.navbar-search);
+	&:extend(.navbar-left);
+}
+
+.navbar .search-form .form-control {
+    display: inline-block;
+}
+
+.navbar .search-form .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+.widget_search .searchbutton
+{
+&:extend(.sr-only);
+}
+

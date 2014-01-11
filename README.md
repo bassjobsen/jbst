@@ -34,7 +34,7 @@ Security issues
 ---------------
 
 The theme will ask for your FTP credentials when saving your LESS settings or using the customizer. Sending your credentials over a non-secure (http) connection will be a bad idea always.
-[Add your credentials to your wp-config.php](http://codex.WordPress.org/Editing_wp-config.php#WordPress_Upgrade_Constants) to make this file saving easy and secure. **Do not forget** to [chmod your wp-config.php](http://codex.WordPress.org/Changing_File_Permissions) to 0600.
+[Add your credentials to your wp-config.php](http://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants) to make this file saving easy and secure. **Do not forget** to [chmod your wp-config.php](http://codex.wordpress.org/Changing_File_Permissions) to 0600.
 More about all this: [Using wp_filesystem in Plugins to store customizer settings](http://WordPress.stackexchange.com/questions/126424/using-wp-filesystem-in-plugins-to-store-customizer-settings/126631)
 
 Migration Skematik to JBST
@@ -97,8 +97,7 @@ Download the plugin and activate it. Troubles? Post an issue.
 
 Right-To-Left (RTL)
 -------------------
-To use Right-To-Left (RTL) you will have to install the Options Framework to turn it on. Or define: `define('JBST_RTL',1);` in your wp_config.php or functions.php. In both cases you have to recompile the CSS.
-Appearance-> LESS Editor. 
+Text direction is automatic detected based on the language by WordPress. If you use a RTL language or switch to one you will need to recompile the CSS with the build in LESS compiler. 
 
 Responsive image sliders
 ------------------------

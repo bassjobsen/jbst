@@ -116,9 +116,9 @@ Logo out side navar
 function jbst_logooustside()
 {
 	$extraclasses = apply_filters('jbst_logooustside_classes',array());
-	$string  = '<div class="row"><div class="col-sm-12"><div class="logo-outside-nav container'.(($extraclasses)?' '.implode('',$extraclasses):'').'">';
+	$string  = '<div class="container"><div class="row"><div class="col-sm-12"><div class="logo-outside-nav container'.(($extraclasses)?' '.implode('',$extraclasses):'').'">';
 	$string .=  jbst_logo();
-	$string .=  '</div></div></div>';	
+	$string .=  '</div></div></div></div>';	
 	return $string;
 }
 
@@ -144,6 +144,8 @@ function jbst_main_navbar() {
 	
 	<nav role="navigation" class="navbar navbar-default <?php echo get_theme_mod( 'navbar_style', '' );?> <?php //echo get_theme_mod( 'navbar_color', 'navbar-default' );?>" id="jbst-top-nav">
       <?php if(get_theme_mod( 'navbar_style' ) != '') {?><div class="container"><?php } ?>
+       <a class="sr-only" href="#content"><?php _e( 'Skip to content', 'jamedo-bootstrap-start-theme' ); ?></a>
+
        <div class="navbar-header">
 		<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">

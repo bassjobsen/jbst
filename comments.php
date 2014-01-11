@@ -30,7 +30,8 @@
 	
 	</h3>
 
-	<nav id="comment-nav">
+	<nav class="comment-nav" id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+		<h3 class="sr-only"><?php _e( 'Comment navigation', 'jamedo-bootstrap-start-theme' ); ?></h3>
 		<ul>
 	  		<li><?php previous_comments_link( __("Older comments",'jamedo-bootstrap-start-theme') ) ?></li>
 	  		<li><?php next_comments_link( __("Newer comments",'jamedo-bootstrap-start-theme') ) ?></li>
@@ -41,7 +42,8 @@
 		<?php wp_list_comments('type=comment&callback=bones_comments&format=html5'); ?>
 	</ol>
 	
-	<nav id="comment-nav">
+	<nav class="comment-nav" id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+		<h3 class="sr-only"><?php _e( 'Comment navigation', 'jamedo-bootstrap-start-theme' ); ?></h3>
 		<ul>
 	  		<li><?php previous_comments_link( __("Older comments",'jamedo-bootstrap-start-theme') ) ?></li>
 	  		<li><?php next_comments_link( __("Newer comments",'jamedo-bootstrap-start-theme') ) ?></li>
