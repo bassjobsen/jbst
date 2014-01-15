@@ -181,7 +181,7 @@ function jbst_main_navbar() {
 	
 } // END jbst_main_navbar
 
-function jbst_nav_styles() {
+function jbst_nav_styles() { 
 	if(get_theme_mod( 'navbar_style' ) == '') { //default
 	echo '
 	body { padding-top: 30px; }
@@ -204,13 +204,16 @@ function jbst_nav_styles() {
 	body {  padding-padding-bottom: 70px; }
 	';
 	}
-	
-	$navbar_background_color = get_theme_mod( 'navbar_background_color','');
+
+	$navbar_background_color = get_theme_mod( 'navbar_background_color',navbar_background_color);
 	if(!empty($navbar_background_color))
 	{
-		echo '.navbar {background-color: '.$navbar_background_color.';}';
+		//echo '.navbar {background-color: '.$navbar_background_color.';}';
+		
+		echo '@navbar-default-bg:               '.$navbar_background_color.';';
+		echo '@navbar-default-border:            darken(@navbar-default-bg, 6.5%);';
 	}	
-
+  
     
     $navbar_border_color = get_theme_mod( 'navbar_border_color','');
 	if(!empty($navbar_border_color))

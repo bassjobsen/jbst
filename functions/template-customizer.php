@@ -313,7 +313,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	
 	/* Navbar Background Color */
 	$wp_customize->add_setting( 'navbar_background_color', array(
-		'default'        => '',
+		'default'        => false,
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_background_color', array(

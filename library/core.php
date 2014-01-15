@@ -4,6 +4,18 @@ $optionscheck = 0;
 
 /*
 ==========================================================
+SET DEFAULT SETTINGS
+==========================================================
+*/
+function jbst_default_settings()
+{
+	do_action('jbst_child_settings');
+	//if(!defined('navbar_background_color'))define('navbar_background_color','#ED9C28');
+}	
+
+
+/*
+==========================================================
 SET THE DEFAULT GRID
 ==========================================================
 */
