@@ -31,13 +31,13 @@ function jbst_layout(){
 
 // Define the WooCommerce content wrappers
 function jbst_open_content_wrappers() {?>
-			<div id="primary" class="site-content <?php do_action('jbstmaingridclass'); ?>">
-				<div id="content" role="main">
+			<div id="content" role="main" class="site-content <?php do_action('jbstmaingridclass'); ?>">
+				
 	<?php
 }
 	
 function jbst_close_content_wrappers() {?>
-				</div><!-- #content -->
+				
 			</div><!-- #primary .site-content -->
 	<?php
 }
@@ -110,14 +110,14 @@ function jbst_left_sidebar() {
 	}		
 	
 	
-			echo '<div id="left-sidebar" class="widget-area ' .$gridclasses. ' sidebar" role="complementary">';
+			echo '<aside id="left-sidebar" class="widget-area ' .$gridclasses. ' sidebar" role="complementary">';
 			do_action( 'jbst_before_left_sidebar' );
 			
 			if ( ! dynamic_sidebar( 'left-content-sidebar' ) ) :
 				jbst_sidebar_default_content();
 			endif;
 			
-			echo '</div><!-- #secondary .widget-area -->';
+			echo '</aside><!-- #secondary .widget-area -->';
 	}
 }
 
@@ -154,14 +154,14 @@ function jbst_right_sidebar() {
 	    }	
 	}	
 		
-			echo '<div id="right-sidebar" class="widget-area ' .$gridclasses. ' sidebar" role="complementary">';
+			echo '<aside id="right-sidebar" class="widget-area ' .$gridclasses. ' sidebar" role="complementary">';
 			do_action( 'jbst_before_right_sidebar' );
 			
 			if ( ! dynamic_sidebar( 'right-content-sidebar' ) ) :
 				jbst_sidebar_default_content();
 			endif;
 			
-			echo '</div><!-- #secondary .widget-area -->';
+			echo '</aside><!-- #secondary .widget-area -->';
 	}
 }
 

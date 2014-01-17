@@ -40,6 +40,12 @@ function jbst_theme_setup() {
 	/* Load custom jbst Theme widgets. */
 	require( get_template_directory() . '/functions/template-widgets.php' );
 	
+	/* Load custom jbst Comment functions. */
+	require( get_template_directory() . '/functions/template-comments.php' );
+	
+	/* Load custom jbst Tag functions. */
+	require( get_template_directory() . '/functions/template-tags.php' );
+	
 	/* Load custom jbst Theme Customizer options. */
 	require( get_template_directory() . '/functions/template-customizer.php' );
 

@@ -139,7 +139,7 @@
 	<?php endif; ?>
 	
 	<div class="form-group">
-	
+			<label for="comment" class="sr-only"><?php is_product()?_e("Review",'jamedo-bootstrap-start-theme'):_e("Reply",'jamedo-bootstrap-start-theme'); ?></label>
 			<textarea class="form-control" role="textbox" aria-multiline="true" name="comment" id="comment" rows="8" placeholder="<?php _e("Your Comment Here...",'jamedo-bootstrap-start-theme'); ?>"></textarea>
 
 	</div>

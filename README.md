@@ -1,4 +1,4 @@
-Jamedo's Bootstrap Start Theme (JBST)
+JBST (Jamedo's Bootstrap Start Theme)
 =====================================
 
 JBST is a powerful theme framework that can be used as a standalone website builder or as a framework to create child themes for WordPress. JBST build on the top of Twitter's Bootstrap 3 and is full customizable with LESS. Integrated customizer for easy responsive website building. Right-To-Left (RTL) support. It also has built in support for BuddyPress, BBpress and eCommerce (WooCommerce, JigoShop and WPeCommerce).
@@ -37,16 +37,6 @@ The theme will ask for your FTP credentials when saving your LESS settings or us
 [Add your credentials to your wp-config.php](http://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants) to make this file saving easy and secure. **Do not forget** to [chmod your wp-config.php](http://codex.wordpress.org/Changing_File_Permissions) to 0600.
 More about all this: [Using wp_filesystem in Plugins to store customizer settings](http://WordPress.stackexchange.com/questions/126424/using-wp-filesystem-in-plugins-to-store-customizer-settings/126631)
 
-Migration Skematik to JBST
----------
-
-1. download from: https://github.com/bassjobsen/jamedo-bootstrap-start-theme/archive/master.zip
-2. unzip this file in the wp-content/themes folder (this will create a folder with the name “jamedo-bootstrap-start-theme”)
-3. (search and) replace all “span*” classes in your theme files with “col(-sm|lg)-*”, see Grid (below) and also: [http://stackoverflow.com/a/17890898/1596547](http://stackoverflow.com/a/17890898/1596547). Or try [Twitter's Bootstrap Migrator](http://bootstrapmigrator.w3masters.nl/)
-4. fix all other points (general issues should be send by email to bass@w3masters.nl, twitter @bassjobsen, or send as a pull request )
-
-[Read more](http://bassjobsen.weblogs.fm/migrate_jbst_to_twitter_bootstrap3/)
-
 Grid
 ----
 The most important changes in Twitter Bootstrap 3 will be the more mobile-first approaching and the grid. From now Twitter’s Bootstrap defines three grids: Extra small (xs) grid for Phones (&lt;768px), Small/Medium grid for Tablets (&gt=;768px), the Medium grid for Laptops (&gt;=992px) and the Large grid for Desktops. The row class prefixes for these grid are “.col-xs”, “.col-sm-”,“.col-md-“ and “.col-lg-”. The Large grid will stacks below 1200px pixels screen width. So does the Medium grid below 992px pixels and the small below 768px. The extra small grid never stacks. (updated for Twitter's Bootstrap3 RC1). Also read: [Twitter Bootstrap 3 breakpoints and grid](http://bassjobsen.weblogs.fm/twitter-bootstrap-3-breakpoints-and-grid/)
@@ -59,22 +49,27 @@ NOTE: Twitter's Bootstrap 3 RC2 intoduced a new grid class (`col-xs-*`). The cla
 
 Without Responsive features
 ---------------------------
-Before reading futher, first read: [http://getbootstrap.com/getting-started/#disable-responsive](http://getbootstrap.com/getting-started/#disable-responsive)
-
-The Extra Small grid will never stack so use this if you don't want to use responsive features of Twitter's Bootstrap. There is no option to choose between repsonsive and non-responsive at the moment. Beside the Extra Small grid setting you will need to add some custom css and an extra class to your templates, see: [Bootstrap 3 - Turn off responsive completely](http://stackoverflow.com/questions/18146476/bootstrap-3-turn-off-responsive-completely/18185520).
-
-Keep in mind this setting don't set the @grid-float-breakpoint. This (Less) setting will be used for the collapsing point of the navbar. The setting is also used for modals, forms and carousels. To (re)set the @grid-float-breakpoint you will have to compile your own copy of the Bootstrap CSS and use this (replace libary/assets/css/bootstrap.min.css). 
+For a non responsive website set the default grid in the customizer to "Extra Small" and set the Max container width.
 
 To remove all responsive features consider to replace the Bootstrap CSS (replace libary/assets/css/bootstrap.min.css) with the one from
 https://github.com/bassjobsen/non-responsive-tb3. Also read: [Compile Twitter’s Bootstrap 3 without responsive features](http://bassjobsen.weblogs.fm/compile-twitters-bootstrap-3-without-responsive-features/).
 
-For a non responsive website set the default grid in the customizer to "Extra Small" and set the Max container width.
-
 Internationalizing and Localizing 
 ---------------------------------
 
-The default language for the theme is English (US). Translation into Dutch has been started [Help us Translate](https://poeditor.com/join/project?hash=9e7060d127eef15b8f922b0672380177) 
-Localization workflow is managed on http://poeditor.com/
+The default language for the theme is English (US). Translation into Dutch and Frensh has been started [Help us Translate](https://poeditor.com/join/project?hash=9e7060d127eef15b8f922b0672380177) 
+Localization workflow is managed on [http://poeditor.com/](http://poeditor.com/)
+
+Accessibility / a11y
+--------------------
+
+JBST is a11y ready by default. When building your site by changing the settings or creating a child theme a11y checks can be broken. Color settings should check for contrast. Also other installed plugins or settings can influence the accessibility of your site. JBST helps you to meet the a11y standard but you also have to check your site after changing it.
+Condsider to install [WP Accessibility](http://wordpress.org/plugins/wp-retina-2x/) and check your color settings on [GrayBit](http://gray-bit.com/).
+
+Menu levels
+-----------
+
+After installing the number of possible submenu levels is set to 1. Bootstrap 3 support only 1 sub level for navigation. See also: [issue #20](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/issues/20). JBST implements infinite submenu levels, set in the customizer.
 
 Child themes
 ------------
@@ -109,8 +104,8 @@ JBST offers support for the plugin shown below. Slider plugin are not bundled yo
 * [Flex Slider](http://www.fergusweb.net/software/flex-slider/)
 
 
-Recommended Plugins
--------------------
+Recommended and Supported Plugins
+---------------------------------
 
 * [WordPress SEO Plugin](http://yoast.com/WordPress/seo/)
 * [WooCommerce](http://www.woothemes.com/woocommerce/), with [WooCommerce Twitter's Bootstrap Plugin](https://github.com/bassjobsen/woocommerce-twitterbootstrap)
@@ -120,7 +115,8 @@ Recommended Plugins
 * [Twitter Bootstrap Slider](https://github.com/bassjobsen/twitter-bootstrap-slider/) responsive image slide show (slider component)
 * [Drag & Drop Featured Image](http://wordpress.org/plugins/drag-drop-featured-image/) Drag & Drop Featured Image is a plugin that replaces the default "Set featured image" metabox with a drop zone for faster uploads.
 * [Options Framework](http://wordpress.org/plugins/options-framework/) A framework for building theme options. 
-
+* [WP Retina 2x](http://wordpress.org/plugins/options-framework/) Make your website look beautiful and smooth on Retina (high-DPI) displays such as the MacBook Pro Retina and the iPad.
+* [WP Accessibility](http://wordpress.org/plugins/wp-retina-2x/) WP Accessibility provides fixes for common accessibility issues in your WordPress site.
 
 Buy and Sell JBST Child themes
 ------------------------------
@@ -146,6 +142,8 @@ Support
 We are always happy to help you. If you have any question regarding 
 this code. [Send us a message](http://www.jamedowebsites.nl/contact/)
 or contact us on twitter [@JamedoWebsites](http://twitter.com/JamedoWebsites)
+
+[Migration Skematik to JBST](http://bassjobsen.weblogs.fm/migrate_jbst_to_twitter_bootstrap3/)
 
 Credits
 -------

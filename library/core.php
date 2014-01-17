@@ -10,7 +10,18 @@ SET DEFAULT SETTINGS
 function jbst_default_settings()
 {
 	do_action('jbst_child_settings');
-	//if(!defined('navbar_background_color'))define('navbar_background_color','#ED9C28');
+	if(!defined('navbar_background_color'))define('navbar_background_color',false);
+	if(!defined('logo_image_position'))define('logo_image_position','outside-nav');
+	if(!defined('logo_image'))define('logo_image',get_template_directory_uri().'/images/logo.png');
+	
+	if(!defined('logo_outside_nav_text_align'))define('logo_outside_nav_text_align','left');
+	
+	
+	/* footer */
+	if(!defined('footer_width'))define('footer_width','cont-width');
+	if(!defined('footer_bg_color'))define('footer_bg_color','#371B2C');
+	if(!defined('footer_text_color'))define('footer_text_color','#D1D6E7');
+	if(!defined('footer_link_color'))define('footer_link_color','#D1D6E7');
 }	
 
 
@@ -251,7 +262,7 @@ CUSTOM LOGO
 */
 
 function jbst_logo() { 
-	$custom_logo = get_theme_mod( 'logo_image', '');
+	$custom_logo = get_theme_mod( 'logo_image', logo_image);
 	if ($custom_logo) 
 	{
 	return "<a id='logo-link-container' href='".home_url()."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."'><img class='site-logo' src='$custom_logo' alt='".esc_attr( get_bloginfo( 'name', 'display' ) )."' /></a>"; 
@@ -314,7 +325,7 @@ add_action( 'jbst_nav_profile_dropdown', 'jbst_account_profile_link', 10);
 /* Account Signout Button
 ----------------------------------------------- */
 function jbst_account_signout_link() {    
-	echo '<li class="divider"></li><li><a href="';
+	echo '<li><a href="';
 	echo wp_logout_url(home_url());
 	echo '">';
 	echo _e( 'Sign Out', 'jamedo-bootstrap-start-theme' );
@@ -341,7 +352,7 @@ function jbst_nav_login_form() {
 					<input type="hidden" name="redirect_to" value="<?php echo home_url(); ?>/wp-admin/" />
 			
 					<input type="hidden" name="testcookie" value="1" />
-					 <a href="<?php echo home_url(); ?>/wp-login.php?action=lostpassword" class="lost-password" title="<?php _e( 'Password Lost and Found') ?>"><?php _e( 'Lost Password?', 'jamedo-bootstrap-start-theme' ); ?></a>
+					 <a href="<?php echo home_url(); ?>/wp-login.php?action=lostpassword" class="lost-password" title="<?php _e( 'Password Lost and Found','jamedo-bootstrap-start-theme') ?>"><?php _e( 'Lost Password?', 'jamedo-bootstrap-start-theme' ); ?></a>
 			</form>	      
 	      	
 	      </li>
@@ -529,8 +540,11 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			    {
 					$atts['href']   		= '#';
 			    }
+			    if($depth<(get_theme_mod( 'menu_depth', 1)))
+			    {
 				$atts['data-toggle']	= 'dropdown';
 				$atts['class']			= 'dropdown-toggle';
+			    }
 			} 
 			//add by bass
 			/*elseif( $args->has_children && $depth >0 )
@@ -886,24 +900,6 @@ endif; // ends check for jbst_comment()
 POSTED ON
 ==========================================================
 */
-if ( ! function_exists( 'jbst_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- *
- * @since jbst 1.0
- */
-function jbst_posted_on() {
-	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'jamedo-bootstrap-start-theme' ),
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'jamedo-bootstrap-start-theme' ), get_the_author() ) ),
-		esc_html( get_the_author() )
-	);
-}
-endif;
 
 
 function jbst_search_label() {
@@ -963,272 +959,13 @@ add_action( 'edit_category', 'jbst_category_transient_flusher' );
 add_action( 'save_post', 'jbst_category_transient_flusher' );
 
 
-/*
-==========================================================
-RETINA DETECT
-==========================================================
-*/
-function jbst_retina_detect() {
-	$retina = false;
-	if (of_get_option('retina_display_switch', 0) == 1) {  
-		if ( isset( $_COOKIE['retina'] ) ) {
-		global $retina;
-		$ratio = $_COOKIE['retina']; if( $ratio >= 1 ) { $retina = true; }
-		} else { ?>
-		<script type="text/javascript">
-			var retina = 'retina='+ window.devicePixelRatio +';'+ retina;
-			document.cookie = retina;
-			if ( document.cookie.length !== 0 ) { document.location.reload(true); }
-		</script>
-		<?php }
-	}
-}
-add_action( 'jbst_before_header', 'jbst_retina_detect', 1);
-
-function jbst_retina_display() {   
-global $retina;
-if($retina) {echo "I am Retina!";}
-}
-add_action( 'jbst_before_content_single', 'jbst_retina_display', 1);
 
 /*
 ==========================================================
 jbst POST THUMBNAILS
 ==========================================================
 */
-function jbst_post_thumbnail() {
-	echo '<div class="post-thumbnail">';	
-	jbst_image(get_theme_mod('post_thumbnail_width', 200),get_theme_mod('post_thumbnail_height', 200));
-	echo '</div>';
-}
 
-function jbst_single_thumbnail() {
-	echo '<div class="single-post-thumbnail">';
-	jbst_image(get_theme_mod( 'featured_image_width', 900 ),get_theme_mod( 'featured_image_height', 350 ));
-	echo '</div>';
-}
-
-/*
-==========================================================
-jbst IMAGE
-==========================================================
-*/
-
-function jbst_image($width,$height) {
-		global $post;
-		global $retina;
-		if($width) {$w = $width;} else {$w = get_theme_mod('post_thumbnail_width', 200);}
-		if($height) {$h = $height;} else {$h = get_theme_mod('post_thumbnail_width', 200);}
-		if (of_get_option('full_size_height', 1000) <> "") {
-			$fh = of_get_option('full_size_height', 1000);
-		} else {$fh = 50000;}
-		if (of_get_option('full_size_width', 1000) <> "") {
-			$fw = of_get_option('full_size_width', 1000);
-		} else {$fw = 50000;}
-	if(has_post_thumbnail()) {
-		$thumb = get_post_thumbnail_id();
-		if($retina) {$image = jbst_resize( $thumb,'' , $w * 2, $h * 2, true);}
-		else {$image = jbst_resize( $thumb,'' , $w, $h, true);}
-		$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
-		?>
-				<a href="<?php echo $large_image_url[0];?>" title="<?php the_title();?>" class="thumbnail" rel="lightbox">
-					<img src="<?php echo $image['url']; ?>" width="<?php echo $w; ?>" />
-				</a>
-		<?php
-	} 
-	
-	else {
-		if (of_get_option('automatic_thumbnails', 0) == 1) {
-			$attachments = get_children( array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image','number posts' => 1) );
-			
-			if ($attachments) {
-			     foreach ( $attachments as $attachment ){
-			        if($retina) {$image = jbst_resize( $attachment->ID, '', $w * 2, $h * 2, true );}
-			        else {$image = jbst_resize( $attachment->ID, '', $w, $h, true );}
-					$large_image_url = wp_get_attachment_image_src($attachment->ID, 'large');
-				 }?>
-				 	<a href="<?php echo $large_image_url[0];?>" data-lightbox="lightbox" title="<?php the_title();?>" class="thumbnail" rel="<?php the_title(); ?>">
-						<img src="<?php echo $image['url']; ?>" class="img-responsive" />
-					</a>
-		
-			<?php } 
-		}
-	}
-}
-
-function jbst_image_only($width,$height) {
-		global $post;
-		global $retina;
-		if($width) {$w = $width;} else {$w = get_theme_mod('post_thumbnail_width', 200);}
-		if($height) {$h = $height;} else {$h = get_theme_mod('post_thumbnail_width', 200);}
-
-	if(has_post_thumbnail()) {
-		$thumb = get_post_thumbnail_id();
-		if($retina) {$image = jbst_resize( $thumb,'' , $w * 2, $h * 2, true);}
-		else {$image = jbst_resize( $thumb,'' , $w, $h, true);}
-		$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
-		?>
-					<img src="<?php echo $image['url']; ?>" width="<?php echo $w; ?>" />
-		<?php
-	} 
-	
-	else {
-		if (of_get_option('automatic_thumbnails', 1) == 1) {
-			$attachments = get_children( array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image','number posts' => 1) );
-			
-			if ($attachments) {
-			     foreach ( $attachments as $attachment ){
-			        if($retina) {$image = jbst_resize( $attachment->ID, '', $w * 2, $h * 2, true );}
-			        else {$image = jbst_resize( $attachment->ID, '', $w, $h, true );}
-					$large_image_url = wp_get_attachment_image_src($attachment->ID, 'large');
-				 }?>
-						<img src="<?php echo $image['url']; ?>" width="<?php echo $w; ?>" />
-		
-			<?php } /*else {?>
-			<a href="<?php echo the_permalink(); ?>" class="thumbnail" rel="<?php the_title(); ?>">
-					<img src="<?php echo get_template_directory_uri(); ?>/library/assets/img/default.jpg" width="<?php echo $w;?>px" />
-				</a>
-			<?php
-			}*/
-		}
-	}
-}
-
-/*
-==========================================================
-jbst RESIZE
-==========================================================
-*/
-/* Used by jbst_image() to resize images */
-function jbst_resize( $attach_id = null, $img_url = null, $width, $height, $crop = false ) {
-
-	// this is an attachment, so we have the ID
-	if ( $attach_id ) {
-	
-		$image_src = wp_get_attachment_image_src( $attach_id, 'full' );
-		$file_path = get_attached_file( $attach_id );
-	
-	// this is not an attachment, let's use the image url
-	} else if ( $img_url ) {
-	
-		 if ( is_multisite() ) /* CHECK IF MULTISITE IS ENABLED */ {
-	
-	
-			
-			$file_path = parse_url( $img_url );
-			global $blog_id;
-			$file_path = $_SERVER['DOCUMENT_ROOT'] .'/wp-content/blogs.dir/' . $blog_id . $file_path['path'];
-			
-			//$file_path = ltrim( $file_path['path'], '/' );
-			//$file_path = rtrim( ABSPATH, '/' ).$file_path['path'];
-			
-			$orig_size = getimagesize( $file_path );
-			
-			$image_src[0] = $img_url;
-			$image_src[1] = $orig_size[0];
-			$image_src[2] = $orig_size[1];
-		} /* IF MULTISITE IS NOT ENABLED */
-		
-		else {
-		$file_path = parse_url( $img_url );
-			$file_path = $_SERVER['DOCUMENT_ROOT'] . $file_path['path'];
-			
-			//$file_path = ltrim( $file_path['path'], '/' );
-			//$file_path = rtrim( ABSPATH, '/' ).$file_path['path'];
-			
-			$orig_size = getimagesize( $file_path );
-			
-			$image_src[0] = $img_url;
-			$image_src[1] = $orig_size[0];
-			$image_src[2] = $orig_size[1];
-		} //END OF MULITSITE CHECK
-	}
-	
-	$file_info = pathinfo( $file_path );
-	$extension = '.'. $file_info['extension'];
-
-	// the image path without the extension
-	$no_ext_path = $file_info['dirname'].'/'.$file_info['filename'];
-
-	$cropped_img_path = $no_ext_path.'-'.$width.'x'.$height.$extension;
-
-	// checking if the file size is larger than the target size
-	// if it is smaller or the same size, stop right here and return
-	if ( $image_src[1] > $width || $image_src[2] > $height ) {
-
-		// the file is larger, check if the resized version already exists (for $crop = true but will also work for $crop = false if the sizes match)
-		if ( file_exists( $cropped_img_path ) ) {
-
-			$cropped_img_url = str_replace( basename( $image_src[0] ), basename( $cropped_img_path ), $image_src[0] );
-			
-			$jbst_image = array (
-				'url' => $cropped_img_url,
-				'width' => $width,
-				'height' => $height
-			);
-			
-			return $jbst_image;
-		}
-
-		// $crop = false
-		if ( $crop == false ) {
-		
-			// calculate the size proportionaly
-			$proportional_size = wp_constrain_dimensions( $image_src[1], $image_src[2], $width, $height );
-			$resized_img_path = $no_ext_path.'-'.$proportional_size[0].'x'.$proportional_size[1].$extension;			
-
-			// checking if the file already exists
-			if ( file_exists( $resized_img_path ) ) {
-			
-				$resized_img_url = str_replace( basename( $image_src[0] ), basename( $resized_img_path ), $image_src[0] );
-
-				$jbst_image = array (
-					'url' => $resized_img_url,
-					'width' => $proportional_size[0],
-					'height' => $proportional_size[1]
-				);
-				
-				return $jbst_image;
-			}
-		}
-
-		// no cache files - let's finally resize it
-		
-  
-        $new_img_path = dirname ($file_path).'/'.$width.'-'.$height.'-'.basename( $file_path );
-        
-		$image = wp_get_image_editor( $file_path  ); // Return an implementation that extends <tt>WP_Image_Editor</tt>
-
-		if ( ! is_wp_error( $image ) ) {
-			
-			$image->resize($width, $height, $crop );
-			$image->save( $new_img_path );
-		}
-		
-		$new_img_size = getimagesize( $new_img_path );
-		$new_img = str_replace( basename( $image_src[0] ), basename( $new_img_path ), $image_src[0] );
-		
-
-
-		// resized output
-		$jbst_image = array (
-			'url' => $new_img,
-			'width' => $new_img_size[0],
-			'height' => $new_img_size[1]
-		);
-		
-		return $jbst_image;
-	}
-
-	// default output - without resizing
-	$jbst_image = array (
-		'url' => $image_src[0],
-		'width' => $image_src[1],
-		'height' => $image_src[2]
-	);
-	
-	return $jbst_image;
-}
 
 /*
 ==========================================================

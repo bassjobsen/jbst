@@ -211,7 +211,7 @@ function jbst_logo_customizer_options($wp_customize) {
 
 	/* Logo Image Upload */
 	$wp_customize->add_setting( 'logo_image', array(
-	'default'        => ''
+	'default'        => logo_image
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo_image', array(
@@ -222,7 +222,7 @@ function jbst_logo_customizer_options($wp_customize) {
 	
 	/* Logo Position */
 	$wp_customize->add_setting( 'logo_image_position', array(
-	'default'        => 'in-nav',
+	'default'        => logo_image_position
 	) );
 	
 	$wp_customize->add_control( 'logo_image_position', array(
@@ -313,7 +313,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	
 	/* Navbar Background Color */
 	$wp_customize->add_setting( 'navbar_background_color', array(
-		'default'        => false,
+		'default'        => navbar_background_color,
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_background_color', array(
@@ -934,7 +934,7 @@ function jbst_discussion_customizer_options($wp_customize) {
 	
 	/* Page Comments */
 	$wp_customize->add_setting( 'page_comments', array(
-	'default'        => 1,
+	'default'        => 0,
 	) );
 		
 	$wp_customize->add_control( 'page_comments', array(
@@ -962,7 +962,7 @@ function jbst_footer_customizer_options($wp_customize) {
 	
 	/* Footer Width */
 	$wp_customize->add_setting( 'footer_width', array(
-	'default'        => 'cont-width',
+	'default'        => footer_width,
 	) );
 
 	$wp_customize->add_control( 'footer_width', array(
@@ -1008,7 +1008,7 @@ function jbst_footer_customizer_options($wp_customize) {
 
 	/* Footer Background Color */
 	$wp_customize->add_setting( 'footer_bg_color', array(
-		'default'        => '',
+		'default'        => footer_bg_color,
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_bg_color', array(
@@ -1020,7 +1020,7 @@ function jbst_footer_customizer_options($wp_customize) {
 	
 	/* Footer Text Color */
 	$wp_customize->add_setting( 'footer_text_color', array(
-		'default'        => '',
+		'default'        => footer_text_color,
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_text_color', array(
@@ -1032,7 +1032,7 @@ function jbst_footer_customizer_options($wp_customize) {
 	
 	/* Footer Link Color */
 	$wp_customize->add_setting( 'footer_link_color', array(
-		'default'        => '',
+		'default'        => footer_link_color,
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_link_color', array(

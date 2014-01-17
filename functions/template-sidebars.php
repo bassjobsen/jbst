@@ -9,16 +9,16 @@ function jbst_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Left Content Sidebar', 'jamedo-bootstrap-start-theme' ),
 		'id' => 'left-content-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => "</div>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
 	register_sidebar( array(
 		'name' => __( 'Right Content Sidebar', 'jamedo-bootstrap-start-theme' ),
 		'id' => 'right-content-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => "</div>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );

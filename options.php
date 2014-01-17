@@ -145,14 +145,6 @@ SETUP
 	    'class' => 'switch',
 	    'type' => 'checkbox');
 
-	$options[] = array(
-	    'name' => __('Retina Display Support (BETA)', 'jamedo-bootstrap-start-theme'),
-	    'desc' => __('By activating this feature, images will be displayed at 2X resolution for devices with a pixel ratio equal to 2 or greater (iPhones & the new Retina Macbook Pro). This feature is considered BETA(experimental) in that currently it works only for thumbnails and featured images on the blog. It is stable however and you shouldn\'t have to worry about activating it.', 'jamedo-bootstrap-start-theme'),
-	    'id' => 'retina_display_switch',
-	    'std' => '0',
-	    'class' => 'switch',
-	    'type' => 'checkbox');
-
 
 /*
 ==================================================================
