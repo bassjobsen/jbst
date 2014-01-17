@@ -31,13 +31,13 @@
 if (!is_search())
 {
 	?>
-		<div class="entry-meta">
+		<div class="entry-meta"><p>
 			<?php
 				if ( 'post' == get_post_type() )
 					jbst_posted_on();
 
 			?>
-		</div><!-- .entry-meta -->
+		</p></div><!-- .entry-meta -->
 <?php		
 }
 ?>
@@ -59,7 +59,14 @@ if (!is_search())
 		?>
 		<?php
 			//the_content( __( 'Continue reading', 'jamedo-bootstrap-start-theme' ) .  sprintf($ontitlestr,': ') .'<span class="meta-nav">&rarr;</span>' );
-			the_excerpt();
+			if(is_single())
+			{
+				the_content();
+			}
+			else
+			{
+				the_excerpt();
+			}	
 			wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'jamedo-bootstrap-start-theme' ), 'after' => '</div>' ) ); 
 		?>
 	</div><!-- .entry-content -->
@@ -78,20 +85,30 @@ if(!is_search())
 							?>
 							<span class="cat-links">
 								<?php printf( __( 'Posted in %1$s', 'jamedo-bootstrap-start-theme' ), $categories_list ); ?>
-							</span><span class="sep"> | </span>
+							</span>
 							<?php endif; // End if categories ?>
 				
 							<?php
 
-								$tags_list = get_the_tag_list( '', ',&nbsp;' );
-								if ( $tags_list ) :
+							$tags_list = get_the_tag_list( '', ',&nbsp;' );
+							if ( $tags_list ) :
+							
+							if($categories_list){
+								?><span class="sep"> | </span><?php
+							}
+							
 							?>
 							
 							<span class="tag-links">
 									<?php printf( __( 'Tagged %1$s', 'jamedo-bootstrap-start-theme' ), $tags_list ); ?>
 							</span>
 							<?php endif; // End if $tags_list ?>
-						<?php endif; // End if 'post' == get_post_type() ?>
+						<?php endif; // End if 'post' == get_post_type() 
+				
+						if($categories_list || $tags_list){
+						$sep = '<span class="sep"> | </span>';
+						}?>		
+				
 				
 						<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 						
@@ -99,8 +116,10 @@ if(!is_search())
 						
 						if(!get_theme_mod('page_comments', 0))
 						{
+						
+						echo $sep;
+						
 						?>
-						<span class="sep"> | </span>	
 						<span class="comments-link"><?php 
 						jbst_comments_popup_link( 
 						sprintf(__( 'Leave a comment %s', 'jamedo-bootstrap-start-theme' ),sprintf($ontitlestr,' on ')), 
@@ -114,7 +133,7 @@ if(!is_search())
 						
 						<?php endif; ?>
 				
-						<?php edit_post_link( __( 'Edit', 'jamedo-bootstrap-start-theme' ) . sprintf($ontitlestr,': ') , '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
+						<?php edit_post_link( __( 'Edit', 'jamedo-bootstrap-start-theme' ) . sprintf($ontitlestr,': ') , $sep.'<span class="edit-link">', '</span>' ); ?>
 					</footer><!-- #entry-meta -->
 <?php
 }

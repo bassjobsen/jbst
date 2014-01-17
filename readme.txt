@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,responsive-layout,accessibility-ready,buddypress,custom-background,custom-colors,custom-header,custom-menu,theme-options
 Requires at least: 3.6
 Tested up to: 3.9
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,4 +30,3 @@ JBST is a powerful theme framework that can be used as a standalone website buil
  
 -- images -- 
  * assets/img/*, GPLv2 
- * assets/img/*, images/logo.png, http://www.logo-ontwikkeling.nl/, CC0

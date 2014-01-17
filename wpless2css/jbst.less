@@ -240,3 +240,17 @@ a.navbar-brand {font-weight:bold;}
 {
 	margin-top: 0;
 }
+
+/* make images responsive by default */
+
+img {
+  &:extend(.img-responsive);
+}
+.widget-area select, footer select
+{
+max-width: 90%;
+}
+.widget-area li li li li, .site-footer li li li li
+{
+	display: none;
+}

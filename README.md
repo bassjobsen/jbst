@@ -19,7 +19,7 @@ Customization and LESS
 ----------------------
 
 JBST has a build in customizer and LESS editor.
-Also read: [Integrate LESS in JBST WordPress Theme](http://bassjobsen.weblogs.fm/integrate-less-jbst-WordPress-theme/). 
+Also read: [Integrate LESS in JBST WordPress Theme](http://bassjobsen.weblogs.fm/integrate-less-jbst-wordpress-theme/). 
 LESS implementation build in with [WP LESS to CSS](https://github.com/bassjobsen/wp-less-to-css) which relies on [less.php](https://github.com/oyejorge/less.php).
 Add your mixins, variables and function with the editor `Appearance > WP LESS to CSS`. Check the plugin documentation for advanched options.
 Optional add LESS code to library/assets/less/custom.less (less/custom.less for child themes) or wpless2css/wpless2css.less (backup when updating the theme!).
@@ -35,7 +35,7 @@ Security issues
 
 The theme will ask for your FTP credentials when saving your LESS settings or using the customizer. Sending your credentials over a non-secure (http) connection will be a bad idea always.
 [Add your credentials to your wp-config.php](http://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants) to make this file saving easy and secure. **Do not forget** to [chmod your wp-config.php](http://codex.wordpress.org/Changing_File_Permissions) to 0600.
-More about all this: [Using wp_filesystem in Plugins to store customizer settings](http://WordPress.stackexchange.com/questions/126424/using-wp-filesystem-in-plugins-to-store-customizer-settings/126631)
+More about all this: [Using wp_filesystem in Plugins to store customizer settings](http://wordpress.stackexchange.com/questions/126424/using-wp-filesystem-in-plugins-to-store-customizer-settings/126631)
 
 Grid
 ----
@@ -100,14 +100,14 @@ Responsive image sliders
 JBST offers support for the plugin shown below. Slider plugin are not bundled you will have to install them your self.
 
 * [Twitter Bootstrap Slider](https://github.com/bassjobsen/twitter-bootstrap-slider),recommended! 
-* [Royal Slider](http://dimsemenov.com/plugins/royal-slider/WordPress/)
+* [Royal Slider](http://dimsemenov.com/plugins/royal-slider/wordpress/)
 * [Flex Slider](http://www.fergusweb.net/software/flex-slider/)
 
 
 Recommended and Supported Plugins
 ---------------------------------
 
-* [WordPress SEO Plugin](http://yoast.com/WordPress/seo/)
+* [WordPress SEO Plugin](http://yoast.com/wordress/seo/)
 * [WooCommerce](http://www.woothemes.com/woocommerce/), with [WooCommerce Twitter's Bootstrap Plugin](https://github.com/bassjobsen/woocommerce-twitterbootstrap)
 * [Stimulate correct headings Plugin](https://github.com/bassjobsen/stimulate-correct-headings) for accessibility and seo
 * [WP Defer Loading](https://github.com/bassjobsen/wp-defer-loading), Defer loading javascript for WordPress, see: https://developers.google.com/speed/docs/insights/BlockingJS
