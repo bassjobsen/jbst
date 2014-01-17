@@ -30,3 +30,14 @@ $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
 });
 /* make clickable */
 jQuery('.nav a.dropdown-toggle').on('click', function (e) { if(jQuery(this).attr('href') !== "#" ) { location.href = jQuery(this).attr('href');} return true; })
+
+/* navbar login form */
+
+jQuery(function(){
+  // Fix input element click problem
+  jQuery('#navloginform').click(function(e) {
+    e.stopPropagation();
+    
+  });
+});
+

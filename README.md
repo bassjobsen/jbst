@@ -64,7 +64,7 @@ Accessibility / a11y
 --------------------
 
 JBST is a11y ready by default. When building your site by changing the settings or creating a child theme a11y checks can be broken. Color settings should check for contrast. Also other installed plugins or settings can influence the accessibility of your site. JBST helps you to meet the a11y standard but you also have to check your site after changing it.
-Condsider to install [WP Accessibility](http://wordpress.org/plugins/wp-retina-2x/) and check your color settings on [GrayBit](http://gray-bit.com/).
+Condsider to install [WP Accessibility](http://wordpress.org/plugins/wp-accessibility/) and check your color settings on [GrayBit](http://gray-bit.com/).
 
 Menu levels
 -----------
@@ -115,8 +115,8 @@ Recommended and Supported Plugins
 * [Twitter Bootstrap Slider](https://github.com/bassjobsen/twitter-bootstrap-slider/) responsive image slide show (slider component)
 * [Drag & Drop Featured Image](http://wordpress.org/plugins/drag-drop-featured-image/) Drag & Drop Featured Image is a plugin that replaces the default "Set featured image" metabox with a drop zone for faster uploads.
 * [Options Framework](http://wordpress.org/plugins/options-framework/) A framework for building theme options. 
-* [WP Retina 2x](http://wordpress.org/plugins/options-framework/) Make your website look beautiful and smooth on Retina (high-DPI) displays such as the MacBook Pro Retina and the iPad.
-* [WP Accessibility](http://wordpress.org/plugins/wp-retina-2x/) WP Accessibility provides fixes for common accessibility issues in your WordPress site.
+* [WP Retina 2x](http://wordpress.org/plugins/wp-retina-2x/) Make your website look beautiful and smooth on Retina (high-DPI) displays such as the MacBook Pro Retina and the iPad.
+* [WP Accessibility](http://wordpress.org/plugins/wp-accessibility/) WP Accessibility provides fixes for common accessibility issues in your WordPress site.
 
 Buy and Sell JBST Child themes
 ------------------------------
