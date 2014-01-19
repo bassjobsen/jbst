@@ -10,10 +10,16 @@ SET DEFAULT SETTINGS
 function jbst_default_settings()
 {
 	do_action('jbst_child_settings');
+	
+	/* navbar */
+	
 	if(!defined('navbar_background_color'))define('navbar_background_color',false);
+	if(!defined('navbar_search'))define('navbar_search',1);
+	if(!defined('navbar_account'))define('navbar_account',1);
+	
+	/* logo */
 	if(!defined('logo_image_position'))define('logo_image_position','in-nav');
 	if(!defined('logo_image'))define('logo_image','');
-	
 	if(!defined('logo_outside_nav_text_align'))define('logo_outside_nav_text_align','left');
 	
 	
@@ -435,7 +441,7 @@ function jbst_main_nav($menu_class='') {
         'depth'             => get_theme_mod( 'menu_depth', 1)+1,
         'container'         => 'false',
         'container_class'   => 'collapse navbar-collapse navbar-jbst-collapse',
-        'menu_class'        => 'nav navbar-nav',
+        'menu_class'        => apply_filters('navbar_menu_class','nav navbar-nav'),
         'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
         'walker'            => new wp_bootstrap_navwalker())
     );

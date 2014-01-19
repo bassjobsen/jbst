@@ -1,6 +1,10 @@
 body.admin-bar .navbar-fixed-top {top:28px;}
 
-body {background:none;background-color:#fff;}
+body {
+background:none;background-color:#fff;
+-ms-word-wrap: break-word;
+word-wrap: break-word;
+}
 
 
 /* =Navigation
@@ -216,19 +220,21 @@ img.wp-smiley,
 	&:extend(.navbar-left);
 }
 
-.navbar .search-form .form-control {
+.search-form .form-control {
     display: inline-block;
 }
 .search-form label {margin-bottom:0;}
+
 .navbar .search-form .form-group {
-    display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
 }
+
 .widget_search .searchbutton
 {
 &:extend(.sr-only);
 }
+
 a.navbar-brand {font-weight:bold;}
 
 .logo-outside-nav #logo-link-container {float: none;margin-bottom: 0; text-align:@logo-outside-nav-text-align;}
@@ -246,6 +252,7 @@ a.navbar-brand {font-weight:bold;}
 img {
   &:extend(.img-responsive);
 }
+
 .widget-area select, footer select
 {
 max-width: 90%;

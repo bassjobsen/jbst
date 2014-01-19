@@ -4,10 +4,9 @@
  * @since jbst 1.0
  */
 ?>
+
 			<?php jbst_content_nav( 'nav-above' ); ?>
 			<?php do_action( 'jbst_before_content_404' );?>
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
 			
 				<article id="post-0" class="post error404 not-found">
 					<header class="entry-header">
@@ -29,8 +28,8 @@
 						</div>
 	
 						<?php
-						/* translators: %1$s: smilie */
-						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'jamedo-bootstrap-start-theme' ), convert_smilies( ':)' ) ) . '</p>';
+						
+						$archive_content = '<p>' . __( 'Try looking in the monthly archives.', 'jamedo-bootstrap-start-theme' )  . '</p>';
 						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 						?>
 	
@@ -38,6 +37,6 @@
 	
 					</div><!-- .entry-content -->
 				</article><!-- #post-0 -->
-			<?php endwhile; ?>
+
 
 			<?php jbst_content_nav( 'nav-below' ); ?>

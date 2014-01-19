@@ -201,11 +201,11 @@ function get_theme_mods_live()
   
 }';
 
-   if(get_theme_mod('gridfloatbreakpoint')=='0')
+   if(get_theme_mod('gridfloatbreakpoint','768')=='0')
    {
 	   $return .= '@grid-float-breakpoint:0; @grid-float-breakpoint-max:0;';
    }
-   elseif(get_theme_mod('gridfloatbreakpoint')=='992')
+   elseif(get_theme_mod('gridfloatbreakpoint','768')=='992')
    {
 	   $return .= '@grid-float-breakpoint:992px; @grid-float-breakpoint-max:991px;';
    }    

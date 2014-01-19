@@ -15,17 +15,17 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
 	<header class="entry-header">
 
-	<?php
-							$ontitle = the_title_attribute( array('echo' => 0 ) );
+	<?php 					$ontitle = the_title_attribute( array('echo' => 0 ) );
 							$ontitlestr = '<span class="sr-only">%s'.esc_attr(  str_replace('%','',$ontitle )).'</span>';
 						
 
-
+			echo '<h1 class="entry-title">';
 			if ( is_single() ) :
-				the_title( '<h1 class="entry-title">', '</h1>' );
+				the_title();
 			else :
-				the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+				the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' );
 			endif;
+			echo '</h1>';
 		?>
 <?php
 if (!is_search())
@@ -58,7 +58,6 @@ if (!is_search())
 				} 
 		?>
 		<?php
-			//the_content( __( 'Continue reading', 'jamedo-bootstrap-start-theme' ) .  sprintf($ontitlestr,': ') .'<span class="meta-nav">&rarr;</span>' );
 			if(is_single())
 			{
 				the_content();
@@ -77,10 +76,13 @@ if(!is_search())
 	$sep = '';
 ?>	
 	<footer class="entry-meta no-border">
-						<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-							<?php
-
-								$categories_list = get_the_category_list(',&nbsp;');
+						<?php 
+						
+						if ( 'post' == get_post_type() ) 
+						{
+							
+							$ispost = true;
+								$categories_list = get_the_category_list(', ');
 							if ( $categories_list && jbst_categorized_blog() ) :
 							?>
 							<span class="cat-links">
@@ -90,7 +92,7 @@ if(!is_search())
 				
 							<?php
 
-							$tags_list = get_the_tag_list( '', ',&nbsp;' );
+							$tags_list = get_the_tag_list( '', ', ' );
 							if ( $tags_list ) :
 							
 							if($categories_list){
@@ -103,21 +105,27 @@ if(!is_search())
 									<?php printf( __( 'Tagged %1$s', 'jamedo-bootstrap-start-theme' ), $tags_list ); ?>
 							</span>
 							<?php endif; // End if $tags_list ?>
-						<?php endif; // End if 'post' == get_post_type() 
-				
-						if($categories_list || $tags_list){
-						$sep = '<span class="sep"> | </span>';
+							
+							<?php if($categories_list || $tags_list){
+								$sep = '<span class="sep"> | </span>';
+								}
+							
+						}//End if 'post' == get_post_type()
+			            else
+			            {
+								$sep = '<span class="sep"> | </span>';
+								$ispost = false;
 						}?>		
+				         
 				
-				
-						<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+						<?if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 						
 						<?php
 						
 						if(!get_theme_mod('page_comments', 0))
 						{
 						
-						echo $sep;
+						if($ispost)echo $sep;
 						
 						?>
 						<span class="comments-link"><?php 
@@ -144,6 +152,7 @@ if(!is_search())
 			<?php
 			if(is_single() && !get_theme_mod('page_comments', 0)) {
 				// If comments are open or we have at least one comment, load up the comment template
+				
 				if ( comments_open() || '0' != get_comments_number() )
 				{
 					comments_template();

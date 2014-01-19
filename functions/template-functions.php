@@ -17,7 +17,7 @@ function jbst_layout(){
 	if (($custom_page_layout == 'left-sidebar') || ($custom_page_layout == 'right-sidebar') || ($custom_page_layout == 'full-width') || ($custom_page_layout == 'three-column')) {
 		$jbst_layout = get_post_meta( $post->ID, '_cmb_page_layout', true );
 	} else {
-		if (is_page()) {$jbst_layout = of_get_option('default_page_layout', 'right-sidebar');}
+		if (is_page() || is_home()) {$jbst_layout = of_get_option('default_page_layout', 'right-sidebar');}
 		elseif (is_search()) {$jbst_layout = of_get_option('default_search_layout', 'right-sidebar');}
 		elseif (is_archive()) {$jbst_layout = of_get_option('default_archive_layout', 'right-sidebar');}
 		else {$jbst_layout = of_get_option('default_blog_layout', 'right-sidebar');}

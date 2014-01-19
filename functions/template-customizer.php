@@ -425,7 +425,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 
 	/* Navbar Search */
 	$wp_customize->add_setting( 'navbar_search', array(
-	'default'        => 1,
+	'default'        => navbar_search,
 	) );
 		
 	$wp_customize->add_control( 'navbar_search', array(
@@ -437,7 +437,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 
 	/* Navbar Account */
 	$wp_customize->add_setting( 'navbar_account', array(
-	'default'        => 1,
+	'default'        => navbar_account,
 	) );
 		
 	$wp_customize->add_control( 'navbar_account', array(

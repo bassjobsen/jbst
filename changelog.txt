@@ -1,4 +1,12 @@
 *** JBST Changelog ***
+
+2014.19.01 - version 2.0.4
+
+	*add content-page.php / Make page edit link a11y proof
+	*update image.php
+	*bugfix comments.php (for case show comments when closed)
+	*add wordwrap css
+
 2014.01.01 - version 1.21
     *Clean up to get ready for WordPress.org
 

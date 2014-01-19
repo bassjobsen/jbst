@@ -162,10 +162,10 @@ function jbst_main_navbar() {
          <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse navbar-ex1-collapse">
 		  <?php jbst_main_nav(); // Adjust using Menus in Wordpress Admin ?>
-		  <?php if(get_theme_mod( 'navbar_search', 1 ) == 1) {jbst_nav_search();} ?> 
+		  <?php if(get_theme_mod( 'navbar_search', navbar_search ) == 1) {jbst_nav_search();} ?> 
 		  <!--ul class="nav navbar-nav navbar-right"-->
 		  <?php if(get_theme_mod( 'navbar_cart', 1 ) == 1) {jbst_cart_dropdown();} ?>
-		  <?php if(get_theme_mod( 'navbar_account', 1 ) == 1) {jbst_account_dropdown();} ?>
+		  <?php if(get_theme_mod( 'navbar_account', 1 ) == navbar_account) {jbst_account_dropdown();} ?>
           <!--/ul-->
           </div>
         
