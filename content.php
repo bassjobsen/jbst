@@ -118,7 +118,7 @@ if(!is_search())
 						}?>		
 				         
 				
-						<?if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+						<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 						
 						<?php
 						
