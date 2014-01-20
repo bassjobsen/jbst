@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,responsive-layout,accessibility-ready,buddypress,custom-background,custom-colors,custom-header,custom-menu,theme-options
 Requires at least: 3.6
 Tested up to: 3.9
-Stable tag: 2.0.4
+Stable tag: 2.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

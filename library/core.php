@@ -441,7 +441,7 @@ function jbst_main_nav($menu_class='') {
         'depth'             => get_theme_mod( 'menu_depth', 1)+1,
         'container'         => 'false',
         'container_class'   => 'collapse navbar-collapse navbar-jbst-collapse',
-        'menu_class'        => apply_filters('navbar_menu_class','nav navbar-nav'),
+        'menu_class'        => apply_filters('jbst_navbar_menu_class','nav navbar-nav'),
         'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
         'walker'            => new wp_bootstrap_navwalker())
     );
@@ -511,7 +511,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 			$classes[] = 'menu-item-' . $item->ID;
 
-			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+			$class_names = join( ' ', apply_filters( 'jbst_nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
 			if ( $args->has_children && $depth<(get_theme_mod( 'menu_depth', 1)))
 				//$class_names .= ' dropdown';
@@ -526,7 +526,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
-			$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
+			$id = apply_filters( 'jbst_nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
 			$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
 			$output .= $indent . '<li' . $id . $value . $class_names .'>';
@@ -561,7 +561,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 			}
 
-			$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
+			$atts = apply_filters( 'jbst_nav_menu_link_attributes', $atts, $item, $args );
 
 			$attributes = '';
 			foreach ( $atts as $attr => $value ) {
@@ -589,7 +589,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$item_output .= ((get_theme_mod( 'menu_depth', 1)>0) && $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
 			$item_output .= $args->after;
 
-			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+			$output .= apply_filters( 'jbst_walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 		}
 	}
 
