@@ -1,9 +1,31 @@
 <?php
-/*
-JBST functions and definitions
-@package jbst
-@since jbst 1.2
-*/
+/**
+ * Twenty Fourteen functions and definitions
+ *
+ * Set up the theme and provides some helper functions, which are used in the
+ * theme as custom template tags. Others are attached to action and filter
+ * hooks in WordPress to change core functionality.
+ *
+ * When using a child theme you can override certain functions (those wrapped
+ * in a function_exists() call) by defining them first in your child theme's
+ * functions.php file. The child theme's functions.php file is included before
+ * the parent theme's file, so the child theme functions would be used.
+ *
+ * @link http://codex.wordpress.org/Theme_Development
+ * @link http://codex.wordpress.org/Child_Themes
+ *
+ * Functions that are not pluggable (not wrapped in function_exists()) are
+ * instead attached to a filter or action hook.
+ *
+ * For more information on hooks, actions, and filters,
+ * @link http://codex.wordpress.org/Plugin_API
+ *
+ * @package WordPress
+ * @subpackage JBST
+ * @since 2.0.6
+ */
+
+
 
 /* Load custom jbst functions. */
 require( get_template_directory() . '/functions/options-functions.php' );
@@ -14,7 +36,13 @@ THEME DEFAULTS
 ==========================================================
 */
 
-/* Set the content width based on the theme's design and stylesheet. @since jbst 1.0 */
+/**
+ * Set up the content width value based on the theme's design.
+ *
+ * @see jbst_content_width()
+ *
+ * @since JBST 1.0
+ */
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
 
@@ -102,10 +130,9 @@ function jbst_styles_css() {
 }
 
 /* Load stylesheets */
-add_action( 'wp_enqueue_scripts', 'jbst_bootstrap_css', 99 );
-add_action( 'wp_enqueue_scripts', 'jbst_bootstrap_responsive_css', 99  );
 add_action( 'wp_enqueue_scripts', 'jbst_styles_css',99 );
 add_action( 'wp_enqueue_scripts', 'jbst_prettify_css', 99  );
+add_action( 'wp_enqueue_scripts', 'jbst_dropdown_submenu', 99  );
 
 /* Load Scripts */
 add_action( 'wp_enqueue_scripts', 'jbst_jquery_js' );
@@ -166,7 +193,16 @@ if ( ! class_exists( 'WP_LESS_to_CSS' ) ) {
 require dirname(__FILE__) . '/vendor/wp-less-to-css/wp-less-to-css.php';
 }
 
-remove_action( 'wp_enqueue_scripts', 'jbst_bootstrap_css', 99 );
+/* add path for custom fonts  */
+
+add_filter( 'add_extra_less_code', 'add_custom_fonts_path');
+
+if ( ! function_exists( 'add_custom_fonts_path' ) ) :
+function add_custom_fonts_path()
+{
+	return '@custom-font-dir: "'.get_stylesheet_directory_uri().'/assets/fonts/";';
+}
+endif;
 
 add_filter( 'add_extra_less_files', 'add_extra_less_files_live');
 function add_extra_less_files_live()

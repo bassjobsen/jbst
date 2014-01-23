@@ -1,5 +1,10 @@
 *** JBST Changelog ***
 
+2014.23.01 - version 2.0.6
+
+	*add extra default settings
+	*new hooks
+	
 2014.19.01 - version 2.0.4
 
 	*add content-page.php / Make page edit link a11y proof

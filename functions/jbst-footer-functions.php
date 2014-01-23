@@ -30,8 +30,11 @@ add_action( 'jbst_footer', 'jbst_bottom_content_wrapper', 20 );
 function jbst_bottom_content_wrapper() {
 	echo '
 				</div><!-- .row -->
-		</div><!-- #page .hfeed .site -->
-	</div> <!-- #contentwrap -->';
+		</div><!-- #page .hfeed .site -->';
+    
+    do_action( 'after_page_content' ); 		
+	
+	echo '</div> <!-- #contentwrap -->';
 }
 
 
@@ -46,14 +49,22 @@ add_action( 'jbst_footer', 'jbst_footer_area', 30 );
 
 function jbst_footer_area() {?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
+	<?php do_action( 'jbst_footer_start_content' ); ?>	
 		<div class="container">
-		<?php jbst_footer_widgets();?>
+		<?php do_action( 'jbst_footer_widgets' );?>
 			<div class="row">
 				<div class="site-info <?php echo JBST_GRIDPREFIX;?>12">
-					<?php do_action( 'jbst_credits' ); ?>
+					<?php
+					 /*
+					 * @hooked jbst_custom_credits - 10
+					 * 
+					 * @since 2.0.6
+					 */
+					 do_action( 'jbst_credits' ); ?>
 				</div><!-- .site-info -->
 			</div>
 		</div>
+	<?php do_action( 'jbst_footer_end_content' ); ?>	
 	</footer><!-- .site-footer .site-footer -->
 <?php }
 
@@ -64,7 +75,8 @@ function jbst_footer_area() {?>
 FOOTER WIDGETS
 ==========================================================
 */
-function jbst_footer_widgets() {
+
+function jbst_footer_show_widgets() {
 $ftr_widgets = get_theme_mod( 'footer_widgets_number', 4 );
 
 if($ftr_widgets > 0) 
@@ -98,7 +110,7 @@ if($ftr_widgets > 0)
 	echo '</div>';
 }
 }
-
+add_action('jbst_credits', 'jbst_custom_credits',10);
 
 
 /*
@@ -110,10 +122,10 @@ function jbst_custom_credits() {
 	if(get_theme_mod('footer_credits') <> "") {echo get_theme_mod('footer_credits');}
 	else {?>
 		<?php printf( __( '&copy;', 'jamedo-bootstrap-start-theme' )); ?> <?php echo date('Y');?> <?php echo bloginfo('name');?><span class="sep"> | </span><a target="_blank" href="<?php esc_attr_e( 'http://www.jbst.eu/', 'jamedo-bootstrap-start-theme' ); ?>" title="<?php esc_attr_e( 'Powered by JBST', 'jamedo-bootstrap-start-theme' ); ?>" rel="generator"><?php printf( __( 'Powered by JBST', 'jamedo-bootstrap-start-theme' ), 'jamedo-bootstrap-start-theme' ); ?></a>
-	<?php }
+	<?php } 
 }
 
-add_action('jbst_credits', 'jbst_custom_credits');
+add_action('jbst_footer_widgets', 'jbst_footer_show_widgets',10);
 
 
 

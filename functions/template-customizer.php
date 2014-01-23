@@ -325,7 +325,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	
 	/* Navbar Border Color */
 	$wp_customize->add_setting( 'navbar_border_color', array(
-		'default'        => '',
+		'default'        => navbar_border_color,
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_border_color', array(
@@ -337,7 +337,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	
 	/* Navbar Link Color */
 	$wp_customize->add_setting( 'navbar_link_color', array(
-		'default'        => '',
+		'default'        => navbar_link_color,
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_link_color', array(
@@ -349,7 +349,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	
 	/* Navbar Link hover Color */
 	$wp_customize->add_setting( 'navbar_linkhover_color', array(
-		'default'        => '',
+		'default'        => navbar_linkhover_color,
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_linkhover_color', array(
@@ -361,7 +361,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	
 	/* Navbar Active item Color */
 	$wp_customize->add_setting( 'navbar_activelink_color', array(
-		'default'        => '',
+		'default'        => navbar_activelink_color,
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_activelink_color', array(
@@ -373,7 +373,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	
 		/* Navbar Active item Background Color */
 	$wp_customize->add_setting( 'navbar_activebackground_color', array(
-		'default'        => '',
+		'default'        => navbar_activebackground_color,
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_activebackground_color', array(
@@ -470,14 +470,14 @@ function jbst_navbar_customizer_options($wp_customize) {
 	if ($jbstecommerce == true) {
 		/* Navbar Cart */
 		$wp_customize->add_setting( 'navbar_cart', array(
-		'default'        => 1,
+		'default'        => navbar_cart,
 		) );
 			
 		$wp_customize->add_control( 'navbar_cart', array(
 			'label'   => 'Show shopping cart in navbar?',
 			'section' => 'navbar_settings',
 			'type'    => 'checkbox',
-			'default'        => 1,
+			'default'        => navbar_cart,
 			'priority'        => 70,
 		) );
 		/* Shop Nav Button */
@@ -1012,7 +1012,7 @@ function jbst_footer_customizer_options($wp_customize) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_bg_color', array(
-		'label'   => 'Footer Background Color (full width only)',
+		'label'   => 'Footer Background Color',
 		'section' => 'footer_settings',
 		'settings'   => 'footer_bg_color',
 		'priority'       => 15,
