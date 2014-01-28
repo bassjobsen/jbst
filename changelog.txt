@@ -4,6 +4,7 @@
 
 	*add extra default settings
 	*new hooks
+	*add @fontface mixins (wpless2css/jbstmixins.less)
 	
 2014.19.01 - version 2.0.4
 

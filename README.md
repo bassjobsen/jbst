@@ -30,6 +30,8 @@ Don't edit wpless2css/bootstrap/variables.less but overwrite the variables in th
 Note: Edit and add LESS code with the editor, unless you understand what you're doing. Modifications with the editor are saved in the database and not over written or lost when you update your theme. Changing less/custom.less in your child theme will also be save.
 Cause CSS is valid LESS you could also add CSS code to the LESS editor.
 
+[Notes and examples Customization and LESS](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/issues/86#issuecomment-33525619)
+
 Security issues
 ---------------
 
@@ -117,6 +119,8 @@ Recommended and Supported Plugins
 * [Options Framework](http://wordpress.org/plugins/options-framework/) A framework for building theme options. 
 * [WP Retina 2x](http://wordpress.org/plugins/wp-retina-2x/) Make your website look beautiful and smooth on Retina (high-DPI) displays such as the MacBook Pro Retina and the iPad.
 * [WP Accessibility](http://wordpress.org/plugins/wp-accessibility/) WP Accessibility provides fixes for common accessibility issues in your WordPress site.
+* [WP Code Prettify](http://wordpress.org/extend/plugins/wp-code-prettify/) This plugin enable syntax highlighting of code snippets in your post using Google Code Prettify.
+
 
 Buy and Sell JBST Child themes
 ------------------------------

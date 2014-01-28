@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Fourteen functions and definitions
+ * JBST functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -24,7 +24,6 @@
  * @subpackage JBST
  * @since 2.0.6
  */
-
 
 
 /* Load custom jbst functions. */
@@ -87,8 +86,10 @@ function jbst_theme_setup() {
 	
 	require( get_template_directory() . '/functions/template-sidebars.php' );
 	
-	/* Load basic styles to the editor */
-	add_editor_style('style-editor.css');
+        /* Load basic styles to the editor */
+        //add_editor_style('library/assets/wptoless/wp2less.css');
+         /* Load basic styles to the editor */
+        add_editor_style('library/assets/css/wpless2css.css');
 
 	/* Add default posts and comments RSS feed links to head */
 	add_theme_support( 'automatic-feed-links' );
@@ -131,17 +132,13 @@ function jbst_styles_css() {
 
 /* Load stylesheets */
 add_action( 'wp_enqueue_scripts', 'jbst_styles_css',99 );
-add_action( 'wp_enqueue_scripts', 'jbst_prettify_css', 99  );
-add_action( 'wp_enqueue_scripts', 'jbst_dropdown_submenu', 99  );
 
 /* Load Scripts */
 add_action( 'wp_enqueue_scripts', 'jbst_jquery_js' );
 add_action( 'wp_enqueue_scripts', 'jbst_bootstrap_js' );
 add_action( 'wp_enqueue_scripts', 'jbst_custom_js' );
-add_action( 'wp_enqueue_scripts', 'jbst_prettify_js' );
 
 add_action( 'wp_enqueue_scripts', 'jbst_comments_js' );
-add_action( 'wp_enqueue_scripts', 'jbst_keyboard_nav_js' );
 add_action( 'wp_enqueue_scripts', 'jbst_js' );
 
 
