@@ -25,7 +25,6 @@
  * @since 2.0.6
  */
 
-
 /* Load custom jbst functions. */
 require( get_template_directory() . '/functions/options-functions.php' );
 require_once( trailingslashit( get_template_directory() ) . 'library/core.php' );
@@ -128,6 +127,7 @@ Call stylesheets and scripts from Core
 /* Put the call to this theme's css into a function */
 function jbst_styles_css() {
 	wp_enqueue_style( 'jbst-style', get_stylesheet_uri() );
+	if(function_exists('is_shop') && !is_shop())wp_dequeue_style( 'woocommerce_frontend_styles');
 }
 
 /* Load stylesheets */
@@ -169,6 +169,9 @@ function my_styles_method() {
    ob_start();
    require_once( get_template_directory() . '/functions/custom-style.php' );
    do_action('jbst_add_to_custom_style');
+   /* set stylsheet which are compiled in LESS */
+   require_once( get_template_directory() . '/functions/custom-style-css.php' );
+   
    $return = ob_get_contents ();
   
    ob_clean();
