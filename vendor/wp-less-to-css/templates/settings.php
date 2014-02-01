@@ -17,7 +17,8 @@ if (isset($_POST['SaveCBESettings'])) {
 				}
 				if($in)
 				{
-					$this->customlesscode = $_POST['customlesscode'];
+					
+					$this->customlesscode = stripslashes($_POST['customlesscode']);
 					$this->save_options();
 				    $this->wpless2csssavecss($creds);
 					unset($_POST);

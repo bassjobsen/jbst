@@ -138,7 +138,6 @@ Call stylesheets and scripts from Core
 /* Put the call to this theme's css into a function */
 function jbst_styles_css() {
 	wp_enqueue_style( 'jbst-style', get_stylesheet_uri() );
-	if(function_exists('is_shop') && !is_shop())wp_dequeue_style( 'woocommerce_frontend_styles');
 }
 
 /* Load stylesheets */
