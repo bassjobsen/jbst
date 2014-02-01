@@ -35,7 +35,12 @@ function jbst_default_settings()
 	if(!defined('footer_bg_color'))define('footer_bg_color','#371B2C');
 	if(!defined('footer_text_color'))define('footer_text_color','#D1D6E7');
 	if(!defined('footer_link_color'))define('footer_link_color','#D1D6E7');
-
+	
+	/* disable LESS / Customizer / Options  */
+	if(!defined('jbst_less'))define('jbst_less',1);
+	if(!defined('jbst_customizer'))define('jbst_customizer',1);
+	if(!defined('jbst_options'))define('jbst_options',1);
+	
 }	
 
 

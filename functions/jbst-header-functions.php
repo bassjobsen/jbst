@@ -327,9 +327,8 @@ jbst Content Wrappers
 // Create content wrapper HTML
 add_action( 'jbst_header', 'jbst_top_content_wrapper', 60 );
 function jbst_top_content_wrapper() {
-	echo '
-	<div id="contentwrap">
-		<div id="page" class="hfeed site container">
+	echo '<div id="contentwrap">
+			<div id="page" class="hfeed site container">
 				<div class="row">';
 }
 

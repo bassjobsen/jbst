@@ -11,6 +11,7 @@
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					
 					<?php jbst_page_title();?>
+					
 					<div class="entry-content">
 					<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 									  the_post_thumbnail('large',array('class'=>'img-responsive img-page-class'));
