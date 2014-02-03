@@ -13,7 +13,7 @@ $heading_font = get_theme_mod( 'heading_font');
 $heading_color = get_theme_mod( 'heading_color');
 $page_backgroundcolor = get_theme_mod( 'page_backgroundcolor','');
 $small_color = get_theme_mod( 'small_color');
-$link_color = get_theme_mod( 'link_color' );
+$link_color = get_theme_mod( 'link_color',link_color );
 $border_color = get_theme_mod( 'border_color');
 $border_accent_color = get_theme_mod( 'accent_color');
 $well_color = get_theme_mod( 'well_color');
@@ -26,6 +26,7 @@ $ftr_bottom_border_color = get_theme_mod( 'footer_bottom_border_color');
 $ftr_top_border_color = get_theme_mod( 'footer_top_border_color');
 $ftr_widget_border_color = get_theme_mod( 'footer_widget_border_color');
 $ftr_link_color = get_theme_mod( 'footer_link_color',footer_link_color);
+$ftr_linkhover_color = get_theme_mod( 'footer_linkhover_color',footer_linkhover_color);
 $container = get_theme_mod( 'container_width', 1200);
 
 /* Site Background */
@@ -68,7 +69,7 @@ if($small_color){echo 'h1 small, h2 small, h3 small, h4 small, h5 small, h6 smal
 
 /* Link Color */
 
-if($link_color){echo 'a, a:hover {color:'.$link_color.';} .nav-tabs > .active > a, .nav-tabs > .active > a:hover,.nav-pills > .active > a, .nav-pills > .active > a:hover {background:'.$link_color.'} a.thumbnail:hover {border-color:'.$link_color.';}';}
+if($link_color){echo '@link-color: '.$link_color.';';}
 
 /* Border Color */
 if($border_color){echo '.page-header,footer,.thumbnail,.default_product_display,ol.commentlist li article,.nav-tabs,.nav-tabs > .active > a, .nav-tabs > .active > a:hover,.nav-tabs li a:hover,.pager a,table.checkout_cart td, table.checkout_cart th,form.wpsc_checkout_forms table.table-4,.table th, .table td,#fancy_notification,table.shop_table,table.shop_table td,.cart-collaterals .cart_totals tr td, .cart-collaterals .cart_totals tr th,#payment div.form-row,.nav-tabs.nav-stacked > li > a,blockquote {border-color:' .$border_color.';}';}
@@ -95,16 +96,21 @@ echo '.progress {background-color:' .$well_color.';background-image:none;}';
 if($border_color){echo '.pager a:hover {background-color:' .$border_color.';}';}
 
 /* Footer Background */
-echo 'footer.site-footer '.((get_theme_mod( 'footer_width', footer_width ) == 'cont-width')?' .container':'').' {';
-if($ftr_bg_color){echo 'background:' .$ftr_bg_color.';';}
-if($ftr_text_color){echo 'color:' .$ftr_text_color.';';}
+echo 'footer#colophon '.((get_theme_mod( 'footer_width', footer_width ) == 'cont-width')?' .container':'').' {';
 if($ftr_top_border_color){echo 'border-top:1px solid ' .$ftr_top_border_color.';';}
 if($ftr_bg_image){echo 'background-image:url("' .$ftr_bg_image.'");';}
 echo'}';
 
+if($ftr_bg_color){echo '@footer-bg-color:' .$ftr_bg_color.';';}
+if($ftr_text_color){echo '@footer-text-color:' .$ftr_text_color.';';}
+
 /* Footer Borders */
 if($ftr_bottom_border_color){echo '.site-info {border-color:' .$ftr_bottom_border_color.';}';}
-if($ftr_link_color){echo 'footer.site-footer a, footer.site-footer a:hover {color:' .$ftr_link_color.';}';}
+
+/* Footer Links */
+if($ftr_link_color){echo '@footer-link-color:' .$ftr_link_color.';';}
+if($ftr_linkhover_color){echo '@footer-link-hover-color:' .$ftr_linkhover_color.';';}
+
 if($ftr_widget_border_color){echo 'footer .widget li, footer .shoppingcart table td, footer .shoppingcart table th,.site-footer .widget .nav-tabs.nav-stacked > li > a {border-color:' .$ftr_widget_border_color.';}.site-footer .widget .nav-tabs.nav-stacked > li > a:hover {background:' .$ftr_widget_border_color.';}';}
 
 if(get_theme_mod( 'footer_width', footer_width ) == 'cont-width') {

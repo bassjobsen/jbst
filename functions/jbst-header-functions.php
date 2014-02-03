@@ -164,18 +164,17 @@ function jbst_main_navbar() {
  * @param string $content empty HTML5 string.
  */
 	echo apply_filters('jbst_before_headercontent','');
-	$fixed = preg_match('/fixed/',get_theme_mod( 'navbar_style' ));
-
+	$fixed = preg_match('/fixed/',get_theme_mod( 'navbar_style', navbar_style ));
 
 	if(	get_theme_mod('logo_image_position', logo_image_position) == 'outside-nav' && !$fixed ) 
 	{
 	echo apply_filters('jbst_logooustside',jbst_logooustside());
 	}  
 	
-	if(get_theme_mod( 'navbar_style' ) == '') {?><div class="container"><?php } ?>
+	if(get_theme_mod( 'navbar_style',navbar_style ) == 'default') {?><div class="container"><?php } ?>
 	
-	<nav role="navigation" class="navbar navbar-default <?php echo get_theme_mod( 'navbar_style', '' );?> <?php //echo get_theme_mod( 'navbar_color', 'navbar-default' );?>" id="jbst-top-nav">
-      <?php if(get_theme_mod( 'navbar_style' ) != '') {?><div class="container"><?php } ?>
+	<nav role="navigation" class="navbar navbar-default <?php echo get_theme_mod(  'navbar_style',navbar_style );?> <?php //echo get_theme_mod( 'navbar_color', 'navbar-default' );?>" id="jbst-top-nav">
+      <?php if(get_theme_mod(  'navbar_style',navbar_style ) != 'default') {?><div class="container"><?php } ?>
        <a class="sr-only" href="#content"><?php _e( 'Skip to content', 'jamedo-bootstrap-start-theme' ); ?></a>
 
        <div class="navbar-header">
@@ -200,9 +199,9 @@ function jbst_main_navbar() {
           <!--/ul-->
           </div>
         
-       <?php if(get_theme_mod( 'navbar_style' ) != '') {?></div><?php } ?>
+       <?php if(get_theme_mod(  'navbar_style',navbar_style ) != 'default') {?></div><?php } ?>
     </nav>
-    <?php if(get_theme_mod( 'navbar_style' ) == '') {?></div><?php } ?>
+    <?php if(get_theme_mod(  'navbar_style',navbar_style ) == 'default') {?></div><?php } ?>
 	<?php
 	
 	if(	get_theme_mod('logo_image_position', 'in-nav') == 'outside-nav' && 	$fixed)
@@ -232,24 +231,24 @@ function jbst_main_navbar() {
 } // END jbst_main_navbar
 
 function jbst_nav_styles() { 
-	if(get_theme_mod( 'navbar_style' ) == '') { //default
+	if(get_theme_mod( 'navbar_style', navbar_style) == 'default') { //default
 	echo '
 	body { padding-top: 30px; }
         .navbar { margin-bottom: 30px; margin-left: -15px;
     margin-right: -15px;}
 	';
 	}
-	if(get_theme_mod( 'navbar_style') == 'navbar-static-top') {
+	elseif(get_theme_mod( 'navbar_style', navbar_style) == 'navbar-static-top') {
 	echo '
 	.navbar-static-top {  margin-bottom: 19px; }
 	';
 	}
-	if(get_theme_mod( 'navbar_style') == 'navbar-fixed-top') {
+	elseif(get_theme_mod( 'navbar_style', navbar_style) == 'navbar-fixed-top') {
 	echo '
 	body {  padding-top: 70px; }
 	';
 	}
-	if(get_theme_mod( 'navbar_style') == 'navbar-fixed-bottom') {
+	elseif(get_theme_mod( 'navbar_style', navbar_style) == 'navbar-fixed-bottom') {
 	echo '
 	body {  padding-padding-bottom: 70px; }
 	';
@@ -302,17 +301,18 @@ function jbst_nav_styles() {
     
     
     /* LOGO */
-
-    $logo_link_color = get_theme_mod( 'logo_link_color','');
-	if(!empty($logo_link_color))
-	{
-		echo '#jbst-top-nav .navbar-brand {color: '.$logo_link_color.';}';
+	if(!$logo_link_color=get_theme_mod( 'logo_link_color',logo_link_color)) {
+		$logo_link_color=get_theme_mod( 'navbar_link_color',navbar_link_color);
+    }	
+	if($logo_link_color) {
+		echo '@navbar-default-brand-color: '. $logo_link_color.';';
     }
-    
-    $logo_linkhover_color = get_theme_mod( 'logo_linkhover_color');
-	if(!empty($logo_linkhover_color))
-	{
-		echo '#jbst-top-nav .navbar-brand:hover {color: '.$logo_linkhover_color.';}';
+
+	if(!$logo_linkhover_color=get_theme_mod( 'logo_linkhover_color',logo_linkhover_color)) {
+		$logo_linkhover_color=get_theme_mod( 'navbar_linkhover_color',navbar_linkhover_color);
+    }	
+	if($logo_linkhover_color) {
+		echo '@navbar-default-brand-hover-color: '. $logo_linkhover_color.';';
     }
     
     

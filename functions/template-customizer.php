@@ -251,7 +251,7 @@ function jbst_logo_customizer_options($wp_customize) {
 	
 	/* Logo Link  Color */
 	$wp_customize->add_setting( 'logo_link_color', array(
-		'default'        => '',
+		'default'        => logo_link_color,
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'logo_link_color', array(
@@ -263,7 +263,7 @@ function jbst_logo_customizer_options($wp_customize) {
 	
 	/* Logo Link hover Color */
 	$wp_customize->add_setting( 'logo_linkhover_color', array(
-		'default'        => '',
+		'default'        => logo_linkhover_color,
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'logo_linkhover_color', array(
@@ -292,7 +292,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 
 	/* Navbar Width */
 	$wp_customize->add_setting( 'navbar_style', array(
-	''        => __( 'Default', 'jamedo-bootstrap-start-theme'),
+	'default'        => navbar_style,
 	) );
 		
 	$wp_customize->add_control( 'navbar_style', array(
@@ -301,7 +301,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 		'type'    => 'select',
 		'priority'        => 10,
 		'choices'    => array(
-			''=> 'Default',
+			'default'=> __( 'Default', 'jamedo-bootstrap-start-theme'),
 			'navbar-static-top' => 'Static top navbar',
 			'navbar-fixed-top' => 'Fixed to top',
 			'navbar-fixed-bottom' => 'Fixed to bottom',
@@ -725,7 +725,7 @@ function jbst_colors_customizer_options($wp_customize) {
 	
 	/* Link Color */
 	$wp_customize->add_setting( 'link_color', array(
-		'default'        => '',
+		'default'        => link_color,
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(

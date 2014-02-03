@@ -48,7 +48,7 @@ jbst FOOTER AREA
 add_action( 'jbst_footer', 'jbst_footer_area', 30 );
 
 function jbst_footer_area() {?>
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" role="contentinfo">
 	<?php do_action( 'jbst_footer_start_content' ); ?>	
 		<div class="container">
 		<?php do_action( 'jbst_footer_widgets' );?>
@@ -140,7 +140,7 @@ function jbst_body_close() {
 ?>
 </div><!-- END jbst-site-wrap -->
 <?php do_action( 'jbst_after' ); ?>
-<?php wp_footer(); ?>
+<?php wp_footer(); ?>  
 </body>
 </html>
 <?php

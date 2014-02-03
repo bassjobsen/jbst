@@ -12,6 +12,8 @@ function jbst_default_settings()
 	do_action('jbst_child_settings');
 	
 	/* navbar */
+	if(!defined('navbar_style'))define('navbar_style','default');
+	
 	if(!defined('navbar_background_color'))define('navbar_background_color',false);
 	if(!defined('navbar_border_color'))define('navbar_border_color',false);
 	if(!defined('navbar_link_color'))define('navbar_link_color',false);
@@ -24,6 +26,10 @@ function jbst_default_settings()
 	if(!defined('navbar_account'))define('navbar_account',1);
 	if(!defined('navbar_cart'))define('navbar_cart',1);
 	
+	/* logo text */
+	if(!defined('logo_link_color'))define('logo_link_color',false);
+	if(!defined('logo_linkhover_color'))define('logo_linkhover_color',false);
+	
 	/* logo */
 	if(!defined('logo_image_position'))define('logo_image_position','in-nav');
 	if(!defined('logo_image'))define('logo_image','');
@@ -32,14 +38,19 @@ function jbst_default_settings()
 	
 	/* footer */
 	if(!defined('footer_width'))define('footer_width','cont-width');
-	if(!defined('footer_bg_color'))define('footer_bg_color','#371B2C');
-	if(!defined('footer_text_color'))define('footer_text_color','#D1D6E7');
-	if(!defined('footer_link_color'))define('footer_link_color','#D1D6E7');
+	if(!defined('footer_bg_color'))define('footer_bg_color',false);
+	if(!defined('footer_text_color'))define('footer_text_color',false);
+	if(!defined('footer_link_color'))define('footer_link_color',false);
+	if(!defined('footer_linkhover_color'))define('footer_linkhover_color',false);
+	
 	
 	/* disable LESS / Customizer / Options  */
 	if(!defined('jbst_less'))define('jbst_less',1);
 	if(!defined('jbst_customizer'))define('jbst_customizer',1);
 	if(!defined('jbst_options'))define('jbst_options',1);
+	
+	/* site color */
+	if(!defined('link_color'))define('link_color',false);
 	
 }	
 

@@ -199,7 +199,7 @@ function load_options() {
 public function add_menu() 
 {
 	 
-	 add_theme_page('LESS Editor', 'LESS Editor', 'manage_options', 'wp-less-to-css', array(&$this, 'WP_LESS_to_CSS_settings_page'));
+	 add_theme_page('LESS Compiler', 'LESS Compiler', 'manage_options', 'wp-less-to-css', array(&$this, 'WP_LESS_to_CSS_settings_page'));
 } // END public function add_menu() 
 
 /** * Menu Callback */ 
