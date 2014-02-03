@@ -58,13 +58,13 @@ if (!is_search())
 				} 
 		?>
 		<?php
-			if(is_single())
+			if(is_home() || is_category() || is_tag() || is_search())
 			{
-				the_content();
+				the_excerpt();
 			}
 			else
 			{
-				the_excerpt();
+				the_content();
 			}	
 			wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'jamedo-bootstrap-start-theme' ), 'after' => '</div>' ) ); 
 		?>
@@ -161,4 +161,4 @@ if(!is_search())
 			?>
 
 
-<?php is_single()?jbst_content_nav_bottom_single():jbst_content_nav_bottom(); ?>
+<?php is_single()?jbst_content_nav_bottom_single():((is_home() || is_category() || is_tag() || is_search())?jbst_content_nav_bottom():''); ?>
