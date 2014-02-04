@@ -1,5 +1,11 @@
 *** JBST Changelog ***
 
+2014.04.02 - version 2.1.0
+
+	*update to Bootstrap 3.1.0
+	*fix footer width
+	*
+
 2014.23.01 - version 2.0.6
 
 	*add extra default settings

@@ -52,6 +52,9 @@ function jbst_default_settings()
 	/* site color */
 	if(!defined('link_color'))define('link_color',false);
 	
+	/* */
+	if(!defined('container_width'))define('container_width','1200');
+	
 }	
 
 

@@ -98,6 +98,7 @@ if($border_color){echo '.pager a:hover {background-color:' .$border_color.';}';}
 /* Footer Background */
 echo 'footer#colophon '.((get_theme_mod( 'footer_width', footer_width ) == 'cont-width')?' .container':'').' {';
 if($ftr_top_border_color){echo 'border-top:1px solid ' .$ftr_top_border_color.';';}
+echo 'background-color:@footer-bg-color;';
 if($ftr_bg_image){echo 'background-image:url("' .$ftr_bg_image.'");';}
 echo'}';
 

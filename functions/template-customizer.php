@@ -145,7 +145,7 @@ function jbst_container_customizer_options($wp_customize) {
 
 	/* Navbar Width */
 	$wp_customize->add_setting( 'container_width', array(
-	'default'        => 1200,
+	'default'        => container_width,
 	) );
 		
 	$wp_customize->add_control( 'container_width', array(
@@ -154,6 +154,7 @@ function jbst_container_customizer_options($wp_customize) {
 		'type'    => 'select',
 		'priority'        => 10,
 		'choices'    => array(
+			'full' => 'full width (fluid)',
 			1200 => '1200px',
 			980 => '980px',
 			),

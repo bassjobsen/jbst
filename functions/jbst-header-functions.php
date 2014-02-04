@@ -328,7 +328,7 @@ jbst Content Wrappers
 add_action( 'jbst_header', 'jbst_top_content_wrapper', 60 );
 function jbst_top_content_wrapper() {
 	echo '<div id="contentwrap">
-			<div id="page" class="hfeed site container">
+			<div id="page" class="hfeed site '.((get_theme_mod( 'container_width',container_width)=='full')?'container-fluid':'container').'">
 				<div class="row">';
 }
 
