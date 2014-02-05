@@ -26,7 +26,6 @@
  */
 
 /* Load custom jbst functions. */
-remove_theme_mods();
 require( get_template_directory() . '/functions/options-functions.php' );
 require_once( trailingslashit( get_template_directory() ) . 'library/core.php' );
 /*
