@@ -979,7 +979,7 @@ function jbst_footer_customizer_options($wp_customize) {
 	
 	/* Footer Widgets */
 	$wp_customize->add_setting( 'footer_widgets_number', array(
-		'default'        => 4,
+		'default'        => footer_widgets_number,
 	) );	
 	
 	$wp_customize->add_control( 'footer_widgets_number', array(

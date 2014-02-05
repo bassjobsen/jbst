@@ -77,7 +77,7 @@ FOOTER WIDGETS
 */
 
 function jbst_footer_show_widgets() {
-$ftr_widgets = get_theme_mod( 'footer_widgets_number', 4 );
+$ftr_widgets = get_theme_mod( 'footer_widgets_number', footer_widgets_number );
 
 if($ftr_widgets > 0) 
 {

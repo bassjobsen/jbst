@@ -42,6 +42,7 @@ function jbst_default_settings()
 	if(!defined('footer_text_color'))define('footer_text_color',false);
 	if(!defined('footer_link_color'))define('footer_link_color',false);
 	if(!defined('footer_linkhover_color'))define('footer_linkhover_color',false);
+	if(!defined('footer_widgets_number'))define('footer_widgets_number',4);
 	
 	
 	/* disable LESS / Customizer / Options  */
