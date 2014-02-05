@@ -117,22 +117,7 @@ function jbst_body_open() {
 <?php
 }
 
-/*
-==========================================================
-Logo out side navar
-==========================================================
-*/
-//       
 
-
-function jbst_logooustside()
-{
-	$extraclasses = apply_filters('jbst_logooustside_classes',array());
-	$string  = '<div class="container"><div class="row"><div class="col-xs-12"><div class="logo-outside-nav container'.(($extraclasses)?' '.implode('',$extraclasses):'').'">';
-	$string .=  jbst_logo();
-	$string .=  '</div></div></div></div>';	
-	return $string;
-}
 
 /*
 ==========================================================
@@ -185,7 +170,7 @@ function jbst_main_navbar() {
 		  <span class="icon-bar"></span>
 		  <span class="icon-bar"></span>
 		</button>
-			<?php if(get_theme_mod('logo_image_position', logo_image_position) == 'in-nav') {echo jbst_logo();} ?>
+			<?php if(get_theme_mod('logo_image_position', logo_image_position) == 'in-nav') {echo apply_filters('jbst_logo',jbst_logo());} ?>
        </div>
          
 		  
@@ -332,6 +317,37 @@ function jbst_top_content_wrapper() {
 				<div class="row">';
 }
 
+/*
+==========================================================
+CUSTOM LOGO
+==========================================================
+*/
+
+function jbst_logo() { 
+	$custom_logo = get_theme_mod( 'logo_image', logo_image);
+	if ($custom_logo) 
+	{
+	return "<a id='logo-link-container' href='".home_url()."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."'><img class='site-logo' src='$custom_logo' alt='".esc_attr( get_bloginfo( 'name', 'display' ) )."' /></a>"; 
+	} 
+	return '<a class="navbar-brand" href="'. home_url() . '">' . get_bloginfo('name') . '</a>';
+}
+
+/*
+==========================================================
+Logo out side navar
+==========================================================
+*/
+//       
+
+
+function jbst_logooustside()
+{
+	$extraclasses = apply_filters('jbst_logooustside_classes',array());
+	$string  = '<div class="container"><div class="row"><div class="col-xs-12"><div class="logo-outside-nav container'.(($extraclasses)?' '.implode('',$extraclasses):'').'">';
+	$string .=  apply_filters('jbst_logo',jbst_logo());
+	$string .=  '</div></div></div></div>';	
+	return $string;
+}
 
 
 /*
