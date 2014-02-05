@@ -171,7 +171,6 @@ function my_styles_method() {
    ob_start();
    require_once( get_template_directory() . '/functions/custom-style.php' );
    do_action('jbst_add_to_custom_style');
-   /* set stylsheet which are compiled in LESS */
    require_once( get_template_directory() . '/functions/custom-style-css.php' );
    
    $return = ob_get_contents ();
