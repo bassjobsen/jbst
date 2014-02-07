@@ -22,7 +22,6 @@
  * @hooked jbst_body_open - 40 
  * @hooked jbst_main_navbar - 50 
  * @hooked jbst_top_content_wrapper - 60 
- * 
  * @since 2.0.6
  */
 do_action( 'jbst_header' ); ?>

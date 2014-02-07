@@ -1025,4 +1025,4 @@ function jbst_showAdminMessages()
 	}	
 	}
 }	
-add_action('admin_notices', 'jbst_showAdminMessages');  
+add_action('admin_notices', 'jbst_showAdminMessages');

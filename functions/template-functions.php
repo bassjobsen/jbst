@@ -12,11 +12,16 @@ function jbst_layout(){
 	global $post;
 	if($jbst_layout)return;
 	/* get the page layout */
-	$custom_page_layout= 'default';
-	if(is_singular(array( 'page', 'post' ))) {$custom_page_layout = get_post_meta( $post->ID, '_cmb_page_layout', true );}
-	if (($custom_page_layout == 'left-sidebar') || ($custom_page_layout == 'right-sidebar') || ($custom_page_layout == 'full-width') || ($custom_page_layout == 'three-column')) {
-		$jbst_layout = $custom_page_layout; //get_post_meta( $post->ID, '_cmb_page_layout', true );
-	} else {
+	$jbst_layout = 'right-sidebar';
+	if (
+			is_singular(array( 'page', 'post' )) 
+	   ) {
+		   if(!$jbst_layout = get_post_meta( $post->ID, '_cmb_page_layout', true ))
+		   {
+			   $jbst_layout = of_get_option('default_page_layout', 'right-sidebar');
+	       }	   
+		 }
+	else {
 		if (is_page() || is_home()) {$jbst_layout = of_get_option('default_page_layout', 'right-sidebar');}
 		elseif (is_search()) {$jbst_layout = of_get_option('default_search_layout', 'right-sidebar');}
 		elseif (is_archive()) {$jbst_layout = of_get_option('default_archive_layout', 'right-sidebar');}
@@ -26,7 +31,6 @@ function jbst_layout(){
 			if (is_product()) {$jbst_layout = of_get_option('default_product_layout', 'right-sidebar');}
 		}
 	}
-
 }
 
 // Define the WooCommerce content wrappers

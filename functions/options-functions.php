@@ -6,27 +6,33 @@
 /**
  * Theme options require the "Options Framework" plugin to be installed in order to display.
  * If it's not installed, default settings will be used.
+ *
+ * Helper function to return the theme option value.
+ * If no value has been saved, it returns $default.
+ * Needed because options are saved as serialized strings.
+ *
+ * Not in a class to support backwards compatibility in themes.
  */
 
-if ( !function_exists( 'of_get_option' ) ) {
-function of_get_option($name, $default = false) {
+if ( ! function_exists( 'of_get_option' ) ) :
 
-	$optionsframework_settings = get_option('optionsframework');
+function of_get_option( $name, $default = false ) {
+	$config = get_option( 'optionsframework' );
 
-	// Gets the unique option id
-	$option_name = $optionsframework_settings['id'];
-
-	if ( get_option($option_name) ) {
-		$options = get_option($option_name);
-	}
-
-	if ( isset($options[$name]) ) {
-		return $options[$name];
-	} else {
+	if ( ! isset( $config['id'] ) ) {
 		return $default;
 	}
+
+	$options = get_option( $config['id'] );
+
+	if ( isset( $options[$name] ) ) {
+		return $options[$name];
+	}
+
+	return $default;
 }
-}
+
+endif;
 
 if ( !function_exists( 'optionsframework_init' ) && current_user_can('edit_theme_options') ) {
 	function jbst_options_default() {

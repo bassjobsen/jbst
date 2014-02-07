@@ -356,7 +356,7 @@ jbst Left Sidebar
 ==========================================================
 */
 // Call the left sidebar if this template has one.
-//add_action( 'jbst_header', 'jbst_left_sidebar', 80 );
+add_action( 'jbst_header', 'jbst_left_sidebar', 80 );
 
 
 
