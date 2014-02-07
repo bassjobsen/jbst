@@ -46,7 +46,7 @@ if ( ! isset( $content_width ) )
 
 /* Load jbst functions on 'after_setup_theme'. */
 add_action( 'after_setup_theme', 'jbst_default_settings' );
-add_action( 'after_setup_theme', 'jbst_theme_setup' );
+add_action( 'after_setup_theme', 'jbst_theme_setup');
 
 if ( ! function_exists( 'jbst_theme_setup' ) ):
 /*
@@ -125,7 +125,6 @@ Internationalizing And Localizing
 	*/
 	if(jbst_options)require_once dirname( __FILE__ ) . '/options.php';
 	
-
 }
 endif; // jbst_setup
 

@@ -120,7 +120,9 @@ Recommended and Supported Plugins
 * [WP Retina 2x](http://wordpress.org/plugins/wp-retina-2x/) Make your website look beautiful and smooth on Retina (high-DPI) displays such as the MacBook Pro Retina and the iPad.
 * [WP Accessibility](http://wordpress.org/plugins/wp-accessibility/) WP Accessibility provides fixes for common accessibility issues in your WordPress site.
 * [WP Code Prettify](http://wordpress.org/extend/plugins/wp-code-prettify/) This plugin enable syntax highlighting of code snippets in your post using Google Code Prettify.
+* [JBST FitVids for WordPress](https://github.com/bassjobsen/JBST-FitVids-for-WordPress) This plugin makes videos responsive using the [FitVids jQuery plugin](https://github.com/davatron5000/FitVids.js) on WordPress. 
 
+NB only install plugin you really need! And [remove](http://codex.wordpress.org/WordPress_Housekeeping) the ones you don't use.
 
 Buy and Sell JBST Child themes
 ------------------------------

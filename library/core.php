@@ -55,7 +55,6 @@ function jbst_default_settings()
 	
 	/* */
 	if(!defined('container_width'))define('container_width','1200');
-	
 }	
 
 
