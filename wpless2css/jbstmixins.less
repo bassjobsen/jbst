@@ -1,11 +1,11 @@
-.include-custom-font(@family: arial, @path: @custom-font-dir, @weight: normal, @style: normal){
+.include-custom-font(@family: arial,@font-path, @path: @custom-font-dir, @weight: normal, @style: normal){
     @font-face{
         font-family: @family;
-        src:url('@{path}/@{family}.eot');
-        src:url('@{path}/@{family}.eot?#iefix') format('embedded-opentype'),
-            url('@{path}/@{family}.woff') format('woff'),
-            url('@{path}/@{family}.ttf') format('truetype'),
-            url('@{path}/@{family}.svg#icon') format('svg');
+        src:url('@{path}@{font-path}.eot');
+        src:url('@{path}@{font-path}.eot?#iefix') format('embedded-opentype'),
+            url('@{path}@{font-path}.woff') format('woff'),
+            url('@{path}@{font-path}.ttf') format('truetype'),
+            url('@{path}@{font-path}.svg#icon') format('svg');
         font-weight: @weight;
         font-style: @style;
     }
