@@ -65,12 +65,12 @@ function get_theme_mods_live()
    {
 	   $return .= '@grid-float-breakpoint:768px; @grid-float-breakpoint-max:767px;';
    }
-   
    return $return; 
 }
 
 function lesscustomize($setting)
 {
+//add_filter( 'get_theme_mods','get_theme_mods_live');
 $updatecss = WP_LESS_to_CSS::$instance;
 $updatecss->wpless2csssavecss(unserialize(get_theme_mod('customizercredits')));
 }

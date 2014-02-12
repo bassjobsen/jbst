@@ -44,7 +44,9 @@ $fontsizes = array(
 global $lineheights;
 $lineheights = array('1.4' => '1.4 ' .__('default','jamedo-bootstrap-start-theme') , '1.5' => '1.5','1.6' => '1.6','1.7' => '1.7','1.8' => '1.8','1.9' => '1.9','2' => '2',);
 
-	do_action('jbst_add_to_customizer');
+
+
+do_action('jbst_add_to_customizer');
 
 } //END OF jbst_customizer
 
@@ -58,13 +60,23 @@ TO REGISTER YOUR OWN, SIMPLY COPY ANY OF THE SECTIONS BELOW INTO
 YOUR OWN THEME OR PLUGIN AND EDIT FOR YOUR NEEDS. 
 ==================================================================
 */
+$options=array('grid','mainnavigation','container','gridfloatbreakpoint','logo','navbar','background','typography','buttons','blog','discussion','footer');
+if(is_array($options=apply_filters('jbst_customizer_options',$options)))
+{
+	foreach ($options as $option)
+	{
+		add_action('jbst_add_to_customizer','jbst_'.$option.'_customizer_options');
+	}	
+}
+
 
 /*
 ==================================================================
 Grid
 ==================================================================
 */
-add_action('jbst_add_to_customizer','jbst_grid_customizer_options');
+
+
 function jbst_grid_customizer_options($wp_customize) {
 	global $wp_customize;
 
@@ -92,8 +104,12 @@ function jbst_grid_customizer_options($wp_customize) {
 			),
 	) );
 }
-add_action('jbst_add_to_customizer','jbst_customizer_mainnavigation');
-function jbst_customizer_mainnavigation($wp_customize) {
+/*
+==================================================================
+Main Navigation
+==================================================================
+*/
+function jbst_mainnavigation_customizer_options($wp_customize) {
 global $wp_customize;	
 $wp_customize->add_section( 'nav', array(
      'title'          => __( 'Navigation','jamedo-bootstrap-start-theme'),
@@ -132,10 +148,10 @@ $wp_customize->add_section( 'nav', array(
 }
 /*
 ==================================================================
-Navbar
+Grid Container width
 ==================================================================
 */
-add_action('jbst_add_to_customizer','jbst_container_customizer_options');
+
 function jbst_container_customizer_options($wp_customize) {
 	global $wp_customize;
 
@@ -150,7 +166,7 @@ function jbst_container_customizer_options($wp_customize) {
 	) );
 		
 	$wp_customize->add_control( 'container_width', array(
-		'label'   => __('Max Container Width','jamedo-bootstrap-start-theme') .':',
+		'label'   => __('Max Grid Container Width','jamedo-bootstrap-start-theme') .':',
 		'section' => 'container_settings',
 		'type'    => 'select',
 		'priority'        => 10,
@@ -167,7 +183,6 @@ function jbst_container_customizer_options($wp_customize) {
 Grid Float Breakpoint
 ==================================================================
 */
-add_action('jbst_add_to_customizer','jbst_gridfloatbreakpoint_customizer_options');
 function jbst_gridfloatbreakpoint_customizer_options($wp_customize) {
 	global $wp_customize;
 
@@ -201,7 +216,7 @@ function jbst_gridfloatbreakpoint_customizer_options($wp_customize) {
 Logo
 ==================================================================
 */
-add_action('jbst_add_to_customizer','jbst_logo_customizer_options');
+
 function jbst_logo_customizer_options($wp_customize) {
 	global $wp_customize;
 	global $fontchoices;
@@ -281,7 +296,7 @@ function jbst_logo_customizer_options($wp_customize) {
 Navbar
 ==================================================================
 */
-add_action('jbst_add_to_customizer','jbst_navbar_customizer_options');
+
 function jbst_navbar_customizer_options($wp_customize) {
 	global $wp_customize;
 	global $fontchoices;
@@ -511,7 +526,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 BACKGROUND
 ==================================================================
 */
-add_action('jbst_add_to_customizer','jbst_background_customizer_options');
+
 function jbst_background_customizer_options($wp_customize) {
 	global $wp_customize;
 	$wp_customize->add_section( 'site_background_settings', array(
@@ -597,7 +612,7 @@ function jbst_background_customizer_options($wp_customize) {
 TYPOGRAPHY
 ==================================================================
 */
-add_action('jbst_add_to_customizer','jbst_typography_customizer_options');
+
 function jbst_typography_customizer_options($wp_customize) {
 	global $wp_customize;
 	global $fontchoices;
@@ -668,7 +683,7 @@ function jbst_typography_customizer_options($wp_customize) {
 SITE COLORS
 ==================================================================
 */
-add_action('jbst_add_to_customizer','jbst_colors_customizer_options');
+
 function jbst_colors_customizer_options($wp_customize) {
 	global $wp_customize;
 	$wp_customize->add_section( 'color_settings', array(
@@ -779,7 +794,7 @@ function jbst_colors_customizer_options($wp_customize) {
 BUTTONS
 ==================================================================
 */
-add_action('jbst_add_to_customizer','jbst_buttons_customizer_options');
+
 function jbst_buttons_customizer_options($wp_customize) {
 	global $wp_customize;
 	$wp_customize->add_section( 'button_settings', array(
@@ -814,7 +829,7 @@ function jbst_buttons_customizer_options($wp_customize) {
 BLOG SETTINGS
 ==================================================================
 */
-add_action('jbst_add_to_customizer','jbst_blog_customizer_options');
+
 function jbst_blog_customizer_options($wp_customize) {
 	global $wp_customize;
 	$wp_customize->add_section( 'blog_settings', array(
@@ -924,7 +939,7 @@ function jbst_blog_customizer_options($wp_customize) {
 DISCUSSION SETTINGS
 ==================================================================
 */
-add_action('jbst_add_to_customizer','jbst_discussion_customizer_options');
+
 function jbst_discussion_customizer_options($wp_customize) {
 	global $wp_customize;
 	$wp_customize->add_section( 'discussion_settings', array(
@@ -953,7 +968,7 @@ function jbst_discussion_customizer_options($wp_customize) {
 FOOTER
 ==================================================================
 */
-add_action('jbst_add_to_customizer','jbst_footer_customizer_options');
+
 function jbst_footer_customizer_options($wp_customize) {
 	global $wp_customize;
 	/* Add footer section and color styles to customizer */
@@ -1144,14 +1159,4 @@ function jbst_wpec_customizer_options($wp_customize) {
 	) );
 }// END WP e-Commerce SETTINGS	
 }
-/*
-==================================================================
-DEMO
-==================================================================
-*/
-add_action('jbst_add_to_customizer','jbst_demo_customizer_options');
-function jbst_demo_customizer_options($wp_customize) {
-	global $wp_customize;
-	global $fontchoices;
-	global $jbstecommerce;
-}// END DEMO SETTINGS
+

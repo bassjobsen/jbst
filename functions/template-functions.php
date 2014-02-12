@@ -32,10 +32,13 @@ function jbst_layout(){
 		}
 	}
 }
-
+function jbst_posttype_set_classes() {
+	if(wp_attachment_is_image()) return 'image-attachment';
+	return 'site-content';
+}
 // Define the WooCommerce content wrappers
 function jbst_open_content_wrappers() {?>
-			<div id="content" role="main" class="site-content <?php do_action('jbstmaingridclass'); ?>">
+			<div id="content" role="main" class="<?php echo apply_filters('jbst_posttype_classes',jbst_posttype_set_classes()) ?> <?php echo apply_filters('jbstmaingridclass',jbst_content_span()) ?>">
 				
 	<?php
 }
@@ -46,7 +49,6 @@ function jbst_close_content_wrappers() {?>
 	<?php
 }
 
-add_action('jbstmaingridclass','jbst_content_span',1);
 
 // Content Span
 function jbst_content_span() {

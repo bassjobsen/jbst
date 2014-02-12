@@ -202,13 +202,6 @@ function jbst_bootstrap_js() {
 	wp_enqueue_script( 'bootstrap' );
 }
 
-function jbst_custom_js() {	
-	wp_register_script('custom_js', get_stylesheet_directory_uri() . '/assets/js/custom.js', array( 'jquery','bootstrap' ), '20132210', true );
-	wp_enqueue_script( 'custom_js' );
-}
-
-
-
 function jbst_js() {	
 	wp_register_script('jbst_js', get_template_directory_uri() . '/library/assets/js/jbst.js', array( 'jquery' ), '20120703', true );
 	wp_enqueue_script( 'jbst_js' );
@@ -435,8 +428,7 @@ function jbst_main_nav($menu_class='') {
 
 
 do_action( 'jbst_after_main_nav' );
-}
-
+}	
 
 /**
  * Class Name: wp_bootstrap_navwalker

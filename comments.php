@@ -149,7 +149,7 @@
 	</div>
 	<?php 
 		//comment_form();
-		do_action('comment_form()', $post->ID); 
+		do_action('comment_form', $post->ID); 
 	
 	?>
 

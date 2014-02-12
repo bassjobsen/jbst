@@ -5,12 +5,7 @@
 * @package jbst
 * @since jbst 1.0
 */
-
-get_header();
 ?>
-        <div id="primary" class="image-attachment <?php do_action('jbstmaingridclass'); ?>">
-                <div id="content" role="main">
-
                         <?php while ( have_posts() ) : the_post(); ?>
 
                                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -84,7 +79,7 @@ get_header();
                                                         <?php endif; ?>
                                                 </div><!-- .entry-attachment -->
 
-                                                <?php the_content(); ?>
+                                                <?php //the_content(); ?>
                                                 <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'jamedo-bootstrap-start-theme' ), 'after' => '</div>' ) ); ?>
 
                                         </div><!-- .entry-content -->
@@ -107,7 +102,4 @@ get_header();
 
                         <?php endwhile; // end of the loop. ?>
 
-                </div><!-- #content -->
-        </div><!-- #primary .site-content -->
-<?php get_footer(); ?>
 

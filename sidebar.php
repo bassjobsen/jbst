@@ -2,8 +2,9 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package crblueprint
- * @since crblueprint 1.0
+ * @package WordPress
+ * @subpackage JBST
+ * @since jbst 1.0
  */
 ?>
 		<div id="secondary" class="widget-area <?php echo JBST_GRIDPREFIX;?>3" role="complementary">

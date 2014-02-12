@@ -1,4 +1,34 @@
 <?
+/*
+ * navbar postion
+*/
+
+	if(get_theme_mod( 'navbar_style', navbar_style) == 'default') { //default
+	echo '
+	body { padding-top: 30px; }
+        .navbar { margin-bottom: 30px; margin-left: -15px;
+    margin-right: -15px;}
+	';
+	}
+	elseif(get_theme_mod( 'navbar_style', navbar_style) == 'navbar-static-top') {
+	echo '
+	.navbar-static-top {  margin-bottom: 19px; }
+	';
+	}
+	elseif(get_theme_mod( 'navbar_style', navbar_style) == 'navbar-fixed-top') {
+	echo '
+	body {  padding-top: 70px; }
+	';
+	}
+	elseif(get_theme_mod( 'navbar_style', navbar_style) == 'navbar-fixed-bottom') {
+	echo '
+	body {  padding-padding-bottom: 70px; }
+	';
+	}
+/*
+ * navbar colors
+*/
+
 	$navbar_background_color = get_theme_mod( 'navbar_background_color');
 	if(!empty($navbar_background_color))
 	{

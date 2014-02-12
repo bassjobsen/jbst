@@ -73,8 +73,8 @@ function jbst_theme_setup() {
 	require( get_template_directory() . '/functions/template-tags.php' );
 	
 	/* Load custom jbst Theme Customizer options. */
-	if(jbst_customizer)require( get_template_directory() . '/functions/template-customizer.php' );
-
+	require( get_template_directory() . '/functions/template-customizer.php' );
+	
 	/* Load custom jbst Theme functions. */
 	require( get_template_directory() . '/functions/template-ecommerce.php' );
 	
@@ -145,7 +145,6 @@ add_action( 'wp_enqueue_scripts', 'jbst_styles_css',99 );
 /* Load Scripts */
 add_action( 'wp_enqueue_scripts', 'jbst_jquery_js' );
 add_action( 'wp_enqueue_scripts', 'jbst_bootstrap_js' );
-add_action( 'wp_enqueue_scripts', 'jbst_custom_js' );
 
 add_action( 'wp_enqueue_scripts', 'jbst_comments_js' );
 add_action( 'wp_enqueue_scripts', 'jbst_js' );
@@ -155,13 +154,15 @@ add_action( 'wp_enqueue_scripts', 'jbst_js' );
 TEMPLATES
 ==========================================================
 */
-function jbst_prepare_wrappers()
-{
+
 add_action( 'jbst_before_content_page','jbst_open_content_wrappers',10);
 add_action( 'jbst_after_content_page','jbst_close_content_wrappers',10);
-}
 
-add_action( 'wp_head', 'jbst_prepare_wrappers',10);
+/*
+==========================================================
+CUSTOMIZER PREVIEW
+==========================================================
+*/
 
 add_action( 'customize_preview_init', 'jbst_custom_style',99);
 

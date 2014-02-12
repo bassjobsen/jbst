@@ -212,8 +212,8 @@ function jbst_main_navbar() {
  *
  * @param string $content empty HTML5 string.
  */	 
-	echo apply_filters('jbst_after_headercontent','');
-	?></header><?php
+echo apply_filters('jbst_after_headercontent','');
+?></header><?php
 } // END jbst_main_navbar
 
 function jbst_nav_styles() { 
@@ -370,6 +370,6 @@ jbst BuddyPress Top Content Wrapper
 add_action( 'jbst_before_buddypress', 'jbst_buddypress_top_content_wrapper', 10 );
 function jbst_buddypress_top_content_wrapper() {
 ?>
-	<div id="content" role="main" class="site-content <?php do_action('jbstmaingridclass'); ?>">
+	<div id="content" role="main" class="site-content <?php echo apply_filters('jbstmaingridclass',jbst_content_span()) ?>">
 <?php
 }

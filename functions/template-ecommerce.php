@@ -172,7 +172,7 @@ $jbstecommerce = true;
 	
 // Define the Jigosohp content wrappers
 	function jbst_open_jigoshop_content_wrappers() {?>
-			<div id="primary" class="site-content <?php do_action('jbstmaingridclass'); ?>">
+			<div id="primary" class="site-content <?php echo apply_filters('jbstmaingridclass',jbst_content_span()) ?>">
 				<div id="content" role="main">
 	<?php
 	}

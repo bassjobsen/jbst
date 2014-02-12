@@ -79,8 +79,11 @@ Use JBST to create child themes for WordPress build on Twitter's Bootstrap 3.
 We provide you a [Boilerplate JBST Child Theme](https://github.com/bassjobsen/Boilerplate-JBST-Child-Theme) and an example of a Webshop based on [Twitter Bootstrap Webshop Template with vertical menu](https://github.com/bassjobsen/twitter-bootstrap-webshop-template). 
 Download this [Demo Webshop E-commerce Template](https://github.com/bassjobsen/jbst-e-commerce-child-theme) or try the [Demo](http://webshop.w3masters.nl/).
 
-Add and edit wpless2css/wpless2css.less to add or modify your LESS/CSS code. Or use the LESS editor. 
-You have to use the save function of the LESS editor after changing wpless2css/wpless2css.less too. The save function generate new CSS from your LESS files.
+Edit less/custom.less to add or modify your LESS/CSS code. Or use the LESS editor. 
+You have to use the save function of the LESS editor after changing less/custom.less too. The save function generate new CSS from your LESS files.
+
+[Complete list of action hooks, filters and predefined settings](https://github.com/bassjobsen/Boilerplate-JBST-Child-Theme)
+
 
 Twitter's Bootstrap Shortcodes
 ------------------------------
@@ -122,7 +125,7 @@ Recommended and Supported Plugins
 * [WP Code Prettify](http://wordpress.org/extend/plugins/wp-code-prettify/) This plugin enable syntax highlighting of code snippets in your post using Google Code Prettify.
 * [JBST FitVids for WordPress](https://github.com/bassjobsen/JBST-FitVids-for-WordPress) This plugin makes videos responsive using the [FitVids jQuery plugin](https://github.com/davatron5000/FitVids.js) on WordPress. 
 
-NB only install plugin you really need! And [remove](http://codex.wordpress.org/WordPress_Housekeeping) the ones you don't use.
+NB only install plugins you really need! And [remove](http://codex.wordpress.org/WordPress_Housekeeping) the ones you don't use.
 
 Buy and Sell JBST Child themes
 ------------------------------
