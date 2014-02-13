@@ -61,7 +61,7 @@ function jbst_content_span() {
 		$contentcolumnsm = get_theme_mod('content_span_sm',9);
 		$contentcolumnmd = get_theme_mod('content_span_md',9);
 		$contentcolumnlg = get_theme_mod('content_span_lg',9);
-		$default_grid = get_theme_mod( 'default_grid', 'md');
+		$default_grid = get_theme_mod( 'default_grid',  default_grid);
 		if($default_grid=='xs') $grids = array('xs','sm','md','lg');
 		elseif($default_grid=='sm') $grids = array('sm','md','lg');
 		elseif($default_grid=='md') $grids = array('md','lg');
@@ -100,7 +100,7 @@ function jbst_left_sidebar() {
 		$sidebarcolumnsm = get_theme_mod('left_sidebar_sm',3);
 		$sidebarcolumnmd = get_theme_mod('left_sidebar_md',3);
 		$sidebarcolumnlg = get_theme_mod('left_sidebar_lg',3);
-		$default_grid = get_theme_mod( 'default_grid', 'md');
+		$default_grid = get_theme_mod( 'default_grid',  default_grid);
 		if($default_grid=='xs') $grids = array('xs','sm','md','lg');
 		elseif($default_grid=='sm') $grids = array('sm','md','lg');
 		elseif($default_grid=='md') $grids = array('md','lg');
@@ -143,7 +143,7 @@ function jbst_right_sidebar() {
 		$sidebarcolumnsm = get_theme_mod('right_sidebar_sm',3);
 		$sidebarcolumnmd = get_theme_mod('right_sidebar_md',3);
 		$sidebarcolumnlg = get_theme_mod('right_sidebar_lg',3);
-		$default_grid = get_theme_mod( 'default_grid', 'md');
+		$default_grid = get_theme_mod( 'default_grid',  default_grid);
 		if($default_grid=='xs') $grids = array('xs','sm','md','lg');
 		elseif($default_grid=='sm') $grids = array('sm','md','lg');
 		elseif($default_grid=='md') $grids = array('md','lg');

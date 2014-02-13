@@ -73,7 +73,7 @@ function jbst_theme_setup() {
 	require( get_template_directory() . '/functions/template-tags.php' );
 	
 	/* Load custom jbst Theme Customizer options. */
-	require( get_template_directory() . '/functions/template-customizer.php' );
+	if(jbst_customizer)require( get_template_directory() . '/functions/template-customizer.php' );
 	
 	/* Load custom jbst Theme functions. */
 	require( get_template_directory() . '/functions/template-ecommerce.php' );

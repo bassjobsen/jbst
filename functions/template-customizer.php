@@ -87,7 +87,7 @@ function jbst_grid_customizer_options($wp_customize) {
 
 	/* Navbar Width */
 	$wp_customize->add_setting( 'default_grid', array(
-	'default'        => 'sm',
+	'default'        => default_grid,
 	'transport'   => 'refresh'
 	) );
 		
@@ -193,7 +193,7 @@ function jbst_gridfloatbreakpoint_customizer_options($wp_customize) {
 
 	/* Navbar Width */
 	$wp_customize->add_setting( 'gridfloatbreakpoint', array(
-	'default'        => '768',
+	'default'        => gridfloatbreakpoint,
 	) );
 		
 	$wp_customize->add_control( 'gridfloatbreakpoint', array(

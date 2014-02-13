@@ -46,18 +46,18 @@ function get_theme_mods_live()
   
    ob_clean();
 
-   if(get_theme_mod('container_width')=='980') $return .= '@media (min-width: 1200px) {
+   if(get_theme_mod('container_width',container_width)=='980') $return .= '@media (min-width: 1200px) {
   .container {
     max-width: 970px;
   }
   
 }';
 
-   if(get_theme_mod('gridfloatbreakpoint','768')=='0')
+   if(get_theme_mod('gridfloatbreakpoint',gridfloatbreakpoint)=='0')
    {
 	   $return .= '@grid-float-breakpoint:0; @grid-float-breakpoint-max:0;';
    }
-   elseif(get_theme_mod('gridfloatbreakpoint','768')=='992')
+   elseif(get_theme_mod('gridfloatbreakpoint',gridfloatbreakpoint)=='992')
    {
 	   $return .= '@grid-float-breakpoint:992px; @grid-float-breakpoint-max:991px;';
    }    
@@ -70,7 +70,6 @@ function get_theme_mods_live()
 
 function lesscustomize($setting)
 {
-//add_filter( 'get_theme_mods','get_theme_mods_live');
 $updatecss = WP_LESS_to_CSS::$instance;
 $updatecss->wpless2csssavecss(unserialize(get_theme_mod('customizercredits')));
 }

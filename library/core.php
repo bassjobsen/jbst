@@ -59,20 +59,25 @@ function jbst_default_settings()
 	/* site color */
 	if(!defined('link_color'))define('link_color',false);
 	
-	/* */
+	/* grid */
 	if(!defined('container_width'))define('container_width','1200');
+	if(!defined('gridfloatbreakpoint'))define('gridfloatbreakpoint','768');
+	if(!defined('default_grid'))define('default_grid','md');
 	
+	/* fonts */
 	if(!defined('heading_font_family'))define('heading_font_family','Helvetica Neue'); 
+	
+	/*
+	==========================================================
+	SET THE DEFAULT GRID
+	==========================================================
+	*/
+
+	define('JBST_GRIDPREFIX','col-'.get_theme_mod( 'default_grid', default_grid).'-');
 }	
 
 
-/*
-==========================================================
-SET THE DEFAULT GRID
-==========================================================
-*/
 
-define('JBST_GRIDPREFIX','col-'.get_theme_mod( 'default_grid', 'md').'-');
 																							
 /*
 ==========================================================
