@@ -11,6 +11,7 @@ function jbst_layout(){
 	global $jbstecommerce;
 	global $post;
 	if($jbst_layout)return;
+
 	/* get the page layout */
 	$jbst_layout = 'right-sidebar';
 	if (

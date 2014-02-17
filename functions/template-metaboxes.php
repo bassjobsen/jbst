@@ -29,7 +29,7 @@ function jbst_default_metaboxes( array $meta_boxes ) {
 				'id'      => $prefix . 'page_layout',
 				'type'    => 'select',
 				'options' => array(
-					array( 'name' => 'Default', 'value' => 'default', ),
+					array( 'name' => 'Default', 'value' => false, ),
 					array( 'name' => 'Left Sidebar', 'value' => 'left-sidebar', ),
 					array( 'name' => 'Right Sidebar', 'value' => 'right-sidebar', ),
 					array( 'name' => 'Full Width', 'value' => 'full-width', ),

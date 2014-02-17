@@ -1,3 +1,52 @@
+/* mixins */
+
+.sr-only
+{   
+        clip: rect(1px, 1px, 1px, 1px);
+        position: absolute;
+        /* reset */
+        width: auto;
+        height: auto;
+        margin: 0;
+		padding: 0;
+		overflow: hidden;
+        border:0;
+}
+
+.sr-only:focus {
+        background-color: @navbar-default-link-hover-bg;//watch out, transparent by default!
+        border-radius: @navbar-border-radius;
+        clip: auto;
+        color: @navbar-default-link-hover-color;
+        display: block;
+        font-size: @font-size-base;
+        height: @navbar-height;
+        line-height: @line-height-computed;
+        padding: @navbar-padding-vertical @navbar-padding-horizontal;
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        text-decoration: none;
+        text-transform: none;
+        width: auto;
+        z-index: 100000; /* Above WP toolbar */
+}
+
+/* this mixins give output generate duplicate CSS code 
+ * alternatively you will to have to rewrite the original mixin in buttons.less	
+ */
+.button-variant(@color; @background; @border) {
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    color: @background;
+    background-color: @color;
+        border-color: darken(@border, 12%);
+  }
+}
+
 // Navbar
 // -------------------------
 
@@ -27,8 +76,8 @@
 @navbar-default-toggle-icon-bar-bg:        #888;
 @navbar-default-toggle-border-color:       #ddd;
 
-/* buttons */
 
+/* buttons */
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 #265680;
 @btn-primary-border:             #fff;
@@ -42,5 +91,4 @@
 @btn-warning-border:             #fff;
 
 /* link on white background */
-
 @link-color:            #12538B;

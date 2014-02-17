@@ -181,4 +181,4 @@ function my_styles_method() {
 
 function jbst_custom_style() {
 add_action( 'wp_enqueue_scripts', 'my_styles_method' );
-}
+} 
