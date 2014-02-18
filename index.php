@@ -14,9 +14,10 @@
  * @since 2.0.6
  */
 get_header(); 
-do_action( 'jbst_before_content_page' );
+do_action( 'jbst_before_content_'.get_post_format());
 ?>
-		<?php if ( have_posts() ) : ?>
+
+	<?php if ( have_posts() ) : ?>
 				<?php 
 					if ( is_page() || (function_exists('is_bbpress') && is_bbpress() )) { get_template_part( 'content', 'page' );}
 					elseif ( wp_attachment_is_image() ) { get_template_part( 'content', 'image' );}
@@ -32,5 +33,5 @@ do_action( 'jbst_before_content_page' );
 		<?php endif; ?>
 
 <?php 
-do_action( 'jbst_after_content_page' );
+do_action( 'jbst_after_content_'.get_post_format() );
 get_footer();

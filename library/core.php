@@ -406,7 +406,7 @@ register_nav_menus(                      // wp3+ menus
 	)
 );
 
-function jbst_main_nav($menu_class='') {
+function jbst_main_nav() {
 	// display the wp3 menu if available
  //   wp_nav_menu( 
  //   	array( 

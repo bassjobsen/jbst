@@ -155,8 +155,8 @@ TEMPLATES
 ==========================================================
 */
 
-add_action( 'jbst_before_content_page','jbst_open_content_wrappers',10);
-add_action( 'jbst_after_content_page','jbst_close_content_wrappers',10);
+add_action( 'jbst_header','jbst_open_content_wrappers',100);
+add_action( 'jbst_footer','jbst_close_content_wrappers',1);
 
 /*
 ==========================================================

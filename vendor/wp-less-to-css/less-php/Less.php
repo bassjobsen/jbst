@@ -283,6 +283,7 @@ class Less_Parser{
 		}*/
 		WP_Filesystem(Less_Environment::$credits);
         global $wp_filesystem;
+
         if( !$wp_filesystem->exists($filename) ) {
 			throw new Less_Exception_Parser(sprintf('File `%s` not found.', $filename));
 		}
@@ -364,30 +365,7 @@ class Less_Parser{
 	}
 
 
-	/**
-	 * @deprecated 1.5.1.2
-	 *
-	 */
-	public function SetCacheDir( $dir ){
 
-		if( !file_exists($dir) ){
-			if( mkdir($dir) ){
-				return true;
-			}
-			throw new Less_Exception_Parser('Less.php cache directory couldn\'t be created: '.$dir);
-
-		}elseif( !is_dir($dir) ){
-			throw new Less_Exception_Parser('Less.php cache directory doesn\'t exist: '.$dir);
-
-		}elseif( !is_writable($dir) ){
-			throw new Less_Exception_Parser('Less.php cache directory isn\'t writable: '.$dir);
-
-		}else{
-			$dir = str_replace('\\','/',$dir);
-			Less_Cache::$cache_dir = rtrim($dir,'/').'/';
-			return true;
-		}
-	}
 
 
 	/**
@@ -5313,8 +5291,11 @@ class Less_Tree_Import extends Less_Tree{
 					}
 				}else{
 					$path = rtrim($rootpath,'/').'/'.ltrim($evald_path,'/');
+					
+					WP_Filesystem(Less_Environment::$credits);
+					global $wp_filesystem;
 
-					if( file_exists($path) ){
+					if( $wp_filesystem->exists($path) ){
 						$full_path = Less_Environment::normalizePath($path);
 						$uri = Less_Environment::normalizePath(dirname($rooturi.$evald_path));
 						return array( $full_path, $uri );
