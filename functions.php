@@ -168,8 +168,8 @@ add_action( 'customize_preview_init', 'jbst_custom_style',99);
 
 function my_styles_method() {
    ob_start();
-   require_once( get_template_directory() . '/functions/custom-style.php' );
-   do_action('jbst_add_to_custom_style');
+   //require_once( get_template_directory() . '/functions/custom-style.php' );
+   //do_action('jbst_add_to_custom_style');
    require_once( get_template_directory() . '/functions/custom-style-css.php' );
    
    $return = ob_get_contents ();

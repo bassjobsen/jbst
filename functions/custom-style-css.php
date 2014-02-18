@@ -1,4 +1,4 @@
-<?
+<?php
 /*
  * navbar postion
 */
@@ -80,12 +80,21 @@ if($link_color=get_theme_mod( 'link-color')) {
 	echo '.nav-tabs > .active > a, .nav-tabs > .active > a:hover,.nav-pills > .active > a, .nav-pills > .active > a:hover {background:'.$link_color.'}';
     echo 'a.thumbnail:hover {border-color:'.$link_color.';}';
     }
+
+/* Footer Background */
 if($footer_bg_color=get_theme_mod( 'footer_bg_color')) {
-	echo 'footer#colophon {background-color:'.$footer_bg_color.';}';
-	}    
+if(get_theme_mod( 'footer_width', footer_width ) == 'cont-width'){echo 'footer#colophon {background:transparent;}';}	
+echo 'footer#colophon '.((get_theme_mod( 'footer_width', footer_width ) == 'cont-width')?' .container':',footer#colophon .container').' {';
+
+if($ftr_top_border_color=get_theme_mod( 'ftr_top_border_color')){echo 'border-top:1px solid ' .$ftr_top_border_color.';';}
+echo 'background-color:'.$footer_bg_color.';';
+if($ftr_bg_image=get_theme_mod( 'ftr_bg_image')){echo 'background-image:url("' .$ftr_bg_image.'");';}
+echo'}';    
+}     
+   
 if($footer_text_color=get_theme_mod( 'footer_text_color')) {
 	echo 'footer#colophon {color:'.$footer_text_color.';}';
 	}    
 if($footer_link_color=get_theme_mod( 'footer_link_color')) {
-	echo 'footer#colophon {color:'.$footer_link_color.';}';
+	echo 'footer#colophon a {color:'.$footer_link_color.';}';
 	} 
