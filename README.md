@@ -31,7 +31,8 @@ Note: Edit and add LESS code with the editor, unless you understand what you're 
 Cause CSS is valid LESS you could also add CSS code to the LESS editor.
 
 Use the built-in compiler to: 
-- set any [Bootstrap](http://getbootstrap.com/customize/) variable or use Bootstrap's mixins:
+
+  - set any [Bootstrap](http://getbootstrap.com/customize/) variable or use Bootstrap's mixins:
 	-`@navbar-default-color: blue;`
   - create a custom button: `.btn-custom {
   .button-variant(white; red; blue);
