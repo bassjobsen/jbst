@@ -24,7 +24,7 @@
  * @subpackage JBST
  * @since 2.0.6
  */
-remove_theme_mods();
+
 /* Load custom jbst functions. */
 require( get_template_directory() . '/functions/options-functions.php' );
 require_once( trailingslashit( get_template_directory() ) . 'library/core.php' );
