@@ -30,7 +30,17 @@ Don't edit wpless2css/bootstrap/variables.less but overwrite the variables in th
 Note: Edit and add LESS code with the editor, unless you understand what you're doing. Modifications with the editor are saved in the database and not over written or lost when you update your theme. Changing less/custom.less in your child theme will also be save.
 Cause CSS is valid LESS you could also add CSS code to the LESS editor.
 
-[Notes and examples Customization and LESS](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/issues/86#issuecomment-33525619)
+Use the built-in compiler to: 
+
+  - set any [Bootstrap](http://getbootstrap.com/customize/) variable or use Bootstrap's mixins:
+	-`@navbar-default-color: blue;`
+  - create a custom button: `.btn-custom {
+  .button-variant(white; red; blue);
+}`
+  - set any built-in LESS variable: for example `@footer_bg_color: black;` sets the background color of the footer to black
+  - use built-in mixins: - add a custom font: `.include-custom-font(@family: arial,@font-path, @path: @custom-font-dir, @weight: normal, @style: normal);`
+
+[Other notes and examples Customization and LESS](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/issues/86#issuecomment-33525619)
 
 Security issues
 ---------------
