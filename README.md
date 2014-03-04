@@ -76,7 +76,7 @@ Accessibility / a11y
 --------------------
 
 JBST is a11y ready by default. When building your site by changing the settings or creating a child theme a11y checks can be broken. Color settings should check for contrast. Also other installed plugins or settings can influence the accessibility of your site. JBST helps you to meet the a11y standard but you also have to check your site after changing it.
-Condsider to install [WP Accessibility](http://wordpress.org/plugins/wp-accessibility/) and check your color settings on [GrayBit](http://gray-bit.com/).
+Condsider to install [WP Accessibility](http://wordpress.org/plugins/wp-accessibility/) and check your color settings on [GrayBit](http://gray-bit.com/). Also see [Bootstrap a11y theme](https://github.com/bassjobsen/bootstrap-a11y-theme).
 
 Menu levels
 -----------
@@ -147,7 +147,7 @@ Designers, we could convert psd to JBST for you, so you can sell your designs to
 Knowledge base
 --------------
 Find answers to faq and other tips and tricks in our [Knowledge base](http://jbst.eu/knowledge-base/).
-You will find answers and tips for s.a. LightBox2 integration, using JBST with a Jumbotron.
+You will find answers and tips for s.a. LightBox2 integration and using JBST with a Jumbotron.
 
 JBST Expo
 ---------
@@ -174,6 +174,7 @@ Credits
 * [Less.js](http://www.lesscss.org/)
 * [less.php](http://lessphp.gpeasy.com/)
 * [Options Framework](http://wptheming.com/)
+* [Bootstrap a11y theme](https://github.com/bassjobsen/bootstrap-a11y-theme), Make web accessibility (a11y) easier for Bootstrap Developers
 
 Example
 -------
