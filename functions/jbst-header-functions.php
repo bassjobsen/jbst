@@ -160,7 +160,8 @@ function jbst_main_navbar() {
 	if(get_theme_mod( 'navbar_style',navbar_style ) == 'default') {?><div class="container"><?php } ?>
 	
 	<nav role="navigation" class="navbar navbar-default <?php echo get_theme_mod(  'navbar_style',navbar_style );?> <?php //echo get_theme_mod( 'navbar_color', 'navbar-default' );?>" id="jbst-top-nav">
-      <?php if(get_theme_mod(  'navbar_style',navbar_style ) != 'default') {?><div class="container"><?php } ?>
+
+       <div class="container-fluid">
        <a class="sr-only" href="#content"><?php _e( 'Skip to content', 'jamedo-bootstrap-start-theme' ); ?></a>
 
        <div class="navbar-header">
@@ -177,11 +178,13 @@ function jbst_main_navbar() {
 		  
          <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse navbar-ex1-collapse">
+		  <?php do_action('jbst_navbar_left'); ?>
 		  <?php jbst_main_nav(); // Adjust using Menus in Wordpress Admin ?>
 		  <?php if(get_theme_mod( 'navbar_search', navbar_search ) == 1) {jbst_nav_search();} ?> 
 		  <!--ul class="nav navbar-nav navbar-right"-->
 		  <?php if(get_theme_mod( 'navbar_cart', navbar_cart ) == 1) {jbst_cart_dropdown();} ?>
 		  <?php if(get_theme_mod( 'navbar_account', navbar_account ) == 1) {jbst_account_dropdown();} ?>
+		  <?php do_action('jbst_navbar_right'); ?>
           <!--/ul-->
           </div>
         

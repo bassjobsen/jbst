@@ -67,6 +67,9 @@ function jbst_default_settings()
 	/* fonts */
 	if(!defined('heading_font_family'))define('heading_font_family','Helvetica Neue'); 
 	
+	/* page layout */
+	if(!defined('jbst_default_page_layout'))define('jbst_default_page_layout','right-sidebar');
+	
 	/*
 	==========================================================
 	SET THE DEFAULT GRID

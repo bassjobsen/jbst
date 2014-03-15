@@ -16,6 +16,7 @@
  * Displays footer for every page, wrapped inside <footer>
  * Includes a copy right at bottom
  * 
+ * @hooked jbst_close_content_wrappers - 1
  * @hooked jbst_right_sidebar - 9
  * @hooked jbst_bottom_content_wrapper - 20
  * @hooked jbst_footer_area - 30
