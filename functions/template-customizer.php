@@ -346,7 +346,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_border_color', array(
-		'label'   => __( 'Navbar', 'jamedo-bootstrap-start-theme' ) . __('Background Border Color', 'jamedo-bootstrap-start-theme').':',
+		'label'   => __( 'Navbar', 'jamedo-bootstrap-start-theme' ) . __('Border Color', 'jamedo-bootstrap-start-theme').':',
 		'section' => 'navbar_settings',
 		'settings'   => 'navbar_border_color',
 		'priority'        => 21
@@ -370,11 +370,24 @@ function jbst_navbar_customizer_options($wp_customize) {
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_linkhover_color', array(
-		'label'   => 'Navbar Item Hover Color (hyperlink text)',
+		'label'   => 'Navbar Item Hover Color',
 		'section' => 'navbar_settings',
 		'settings'   => 'navbar_linkhover_color',
 		'priority'        => 23
 	) ) );
+	
+	/* Navbar Link hover Color */
+	$wp_customize->add_setting( 'navbar_linkhoverbackground_color', array(
+		'default'        => navbar_linkhoverbackground_color,
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_linkhoverbackground_color', array(
+		'label'   => 'Navbar Item Hover BackgroundColor',
+		'section' => 'navbar_settings',
+		'settings'   => 'navbar_linkhoverbackground_color',
+		'priority'        => 25
+	) ) );
+	
 	
 	/* Navbar Active item Color */
 	$wp_customize->add_setting( 'navbar_activelink_color', array(
@@ -385,7 +398,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 		'label'   => 'Navbar Active Item',
 		'section' => 'navbar_settings',
 		'settings'   => 'navbar_activelink_color',
-		'priority'        => 24
+		'priority'        => 30
 	) ) );
 	
 		/* Navbar Active item Background Color */
@@ -397,7 +410,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 		'label'   => 'Navbar Active Background Color',
 		'section' => 'navbar_settings',
 		'settings'   => 'navbar_activebackground_color',
-		'priority'        => 25
+		'priority'        => 35
 	) ) );
 	
 	

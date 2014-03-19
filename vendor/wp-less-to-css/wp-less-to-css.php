@@ -90,17 +90,20 @@ public function wpless2csssavecss($creds)
 			    }
 
 			    $parser->parseFile($rootless);
-                if($extrafiles = apply_filters('add_extra_less_files',''))
+
+		     	
+				$parser->parse( apply_filters('get_theme_mods','') );
+				
+				if($extrafiles = apply_filters('add_extra_less_files',''))
 				{
-										
+			
 					foreach($extrafiles as $extrafile)
 					{
 						$parser->parseFile(trailingslashit( str_replace('wp-content/','',$wp_filesystem->wp_content_dir())).$extrafile);
 				    }	
 		     	}
-		     	
-				$parser->parse( apply_filters('get_theme_mods','') );
 				$parser->parse( apply_filters('add_extra_less_code','') );
+				
 				$parser->parse( get_option('customlesscode'));
 				$css = $parser->getCss();
 				if(is_rtl())

@@ -176,8 +176,9 @@ function my_styles_method() {
    ob_clean();
    
    wp_add_inline_style( 'wpless2css', $return );
+   
 }
 
 function jbst_custom_style() {
 add_action( 'wp_enqueue_scripts', 'my_styles_method' );
-} 
+}

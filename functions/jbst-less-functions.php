@@ -9,6 +9,8 @@ if ( ! class_exists( 'WP_LESS_to_CSS' ) ) {
 require get_template_directory() . '/vendor/wp-less-to-css/wp-less-to-css.php';
 }
 
+
+
 /* add path for custom fonts  */
 
 add_filter( 'add_extra_less_code', 'add_custom_fonts_path');
@@ -20,8 +22,21 @@ function add_custom_fonts_path($less)
 }
 endif;
 
+/* add path for custom fonts  */
+
+add_filter( 'add_extra_less_code', 'add_stylesheet_directory_uri');
+
+if ( ! function_exists( 'add_stylesheet_directory_uri' ) ) :
+function add_stylesheet_directory_uri($less)
+{
+	return $less."\n".'@stylesheet_directory_uri: "'.get_stylesheet_directory_uri().'";';
+}
+endif;
+add_filter( 'get_theme_mods','get_theme_mods_live');
 add_filter( 'add_extra_less_files', 'add_extra_less_files_live');
-function add_extra_less_files_live()
+
+
+function add_extra_less_files_live($files=array())
 {
 	if(!file_exists($customless=get_stylesheet_directory().'/less/custom.less'))
 	{
@@ -31,13 +46,14 @@ function add_extra_less_files_live()
 		  wp_die('<strong>/library/assets/less/custom.less</strong> is missing');
 				
 		}
-    }  
+    }
+    if(is_array($files)) array_merge($files,array(str_replace(ABSPATH,'',$customless)));     
     return array(str_replace(ABSPATH,'',$customless));    
 }
 
-add_filter( 'get_theme_mods','get_theme_mods_live');
 
-function get_theme_mods_live()
+
+function get_theme_mods_live($less)
 {
    ob_start();
    require_once( get_template_directory() . '/functions/custom-style.php' );
@@ -65,7 +81,7 @@ function get_theme_mods_live()
    {
 	   $return .= '@grid-float-breakpoint:768px; @grid-float-breakpoint-max:767px;';
    }
-   return $return; 
+   return $less."\n".$return; 
 }
 
 function lesscustomize($setting)

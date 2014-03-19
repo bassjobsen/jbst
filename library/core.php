@@ -38,7 +38,7 @@ function jbst_default_settings()
 	
 	/* logo */
 	if(!defined('logo_image_position'))define('logo_image_position','in-nav');
-	if(!defined('logo_image'))define('logo_image','');
+	if(!defined('logo_image'))define('logo_image',false);
 	if(!defined('logo_outside_nav_text_align'))define('logo_outside_nav_text_align','left');
 	
 	
