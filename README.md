@@ -94,6 +94,9 @@ You have to use the save function of the LESS editor after changing less/custom.
 
 [Complete list of action hooks, filters and predefined settings](https://github.com/bassjobsen/Boilerplate-JBST-Child-Theme)
 
+==== JBST 1pxdeep Theme
+Relative color design is designing by relative visual weight, or designing with color schemes. [1pxdeep](http://rriepe.github.io/1pxdeep/) brings that concept to Bootstrap and the [JBST 1pxdeep Theme](https://github.com/bassjobsen/jbst-1pxdeep-theme) brings it to WordPress. Also JBST 1pxdeep Theme is a child theme of JBST.
+
 
 Twitter's Bootstrap Shortcodes
 ------------------------------
