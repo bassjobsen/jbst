@@ -1,5 +1,5 @@
-JBST (Jamedo's Bootstrap Start Theme)
-=====================================
+JBST 
+====
 
 JBST is a powerful theme framework that can be used as a standalone website builder or as a framework to create child themes for WordPress. JBST build on the top of Twitter's Bootstrap 3 and is full customizable with LESS. Integrated customizer for easy responsive website building. Right-To-Left (RTL) support. It also has built in support for BuddyPress, BBpress and eCommerce (WooCommerce, JigoShop and WPeCommerce).
 
@@ -8,12 +8,12 @@ JBST is a powerful theme framework that can be used as a standalone website buil
 * Buddy Press
 * BBPress
 
-Demo of default install: http://demo.jbst.eu/ (some quick install notes: https://github.com/bassjobsen/jamedo-bootstrap-start-theme/issues/34)
+Demo of default install: http://demo.jbst.eu/ (some quick install notes: https://github.com/bassjobsen/jbst/issues/34)
 
 Installation
 ------------
 
-[Download the latest version as .zip file](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/archive/master.zip). Upload the .zip file to your WordPress theme directory (wp-content/themes) or use Install theme function in your dashboard. Activate the theme in your dashboard ( Appearence > themes ). 
+[Download the latest version as .zip file](https://github.com/bassjobsen/jbst/archive/master.zip). Upload the .zip file to your WordPress theme directory (wp-content/themes) or use Install theme function in your dashboard. Activate the theme in your dashboard ( Appearence > themes ). 
 
 Customization and LESS
 ----------------------
@@ -40,7 +40,7 @@ Use the built-in compiler to:
   - set any built-in LESS variable: for example `@footer_bg_color: black;` sets the background color of the footer to black
   - use built-in mixins: - add a custom font: `.include-custom-font(@family: arial,@font-path, @path: @custom-font-dir, @weight: normal, @style: normal);`
 
-[Other notes and examples Customization and LESS](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/issues/86#issuecomment-33525619)
+[Other notes and examples Customization and LESS](https://github.com/bassjobsen/jbst/issues/86#issuecomment-33525619)
 
 Security issues
 ---------------
@@ -81,7 +81,7 @@ Condsider to install [WP Accessibility](http://wordpress.org/plugins/wp-accessib
 Menu levels
 -----------
 
-After installing the number of possible submenu levels is set to 1. Bootstrap 3 support only 1 sub level for navigation. See also: [issue #20](https://github.com/bassjobsen/jamedo-bootstrap-start-theme/issues/20). JBST implements infinite submenu levels, set in the customizer.
+After installing the number of possible submenu levels is set to 1. Bootstrap 3 support only 1 sub level for navigation. See also: [issue #20](https://github.com/bassjobsen/jbst/issues/20). JBST implements infinite submenu levels, set in the customizer.
 
 Child themes
 ------------
@@ -147,7 +147,7 @@ NB only install plugins you really need! And [remove](http://codex.wordpress.org
 Buy and Sell JBST Child themes
 ------------------------------
 In 2014 we opened a [marketplace for JBST](http://themes.jbst.eu/) child themes. Take a look if you don't want to build a child theme you self and still want to profit from all the JBST features.
-Are you theme developer? We will happy to sell your theme too! [Send us a message](http://www.jamedowebsites.nl/contact/)
+Are you theme developer? We will happy to sell your theme too! [Send us a message](http://themes.jbst.eu/contact-us/)
 
 Designers, we could convert psd to JBST for you, so you can sell your designs too.
 
@@ -166,8 +166,8 @@ Support
 -------
 
 We are always happy to help you. If you have any question regarding 
-this code. [Send us a message](http://www.jamedowebsites.nl/contact/)
-or contact us on twitter [@JamedoWebsites](http://twitter.com/JamedoWebsites)
+this code. [Send us a message](http://themes.jbst.eu/contact-us/)
+or contact us on twitter [@jbstthemes](http://twitter.com/jbstthemes)
 
 [Migration Skematik to JBST](http://bassjobsen.weblogs.fm/migrate_jbst_to_twitter_bootstrap3/)
 
@@ -185,4 +185,4 @@ Credits
 
 Example
 -------
-![ScreenShot](https://raw.github.com/bassjobsen/jamedo-bootstrap-start-theme/master/screenshot.png)
+![ScreenShot](https://raw.github.com/bassjobsen/jbst/master/screenshot.png)
