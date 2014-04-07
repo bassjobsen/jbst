@@ -92,7 +92,7 @@ Download this [Demo Webshop E-commerce Template](https://github.com/bassjobsen/j
 Edit less/custom.less to add or modify your LESS/CSS code. Or use the LESS editor. 
 You have to use the save function of the LESS editor after changing less/custom.less too. The save function generate new CSS from your LESS files.
 
-[Complete list of action hooks, filters and predefined settings](https://github.com/bassjobsen/Boilerplate-JBST-Child-Theme)
+[Complete list of action hooks, filters, built-in Less variables and mixins, and predefined settings](https://github.com/bassjobsen/Boilerplate-JBST-Child-Theme), and [Download the Instruction Guide for building Child Themes with JBST](https://raw.github.com/bassjobsen/Boilerplate-JBST-Child-Theme/master/jbstchildtheming.pdf).
 
 JBST 1pxdeep Theme
 ------------------
