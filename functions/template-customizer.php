@@ -255,7 +255,7 @@ function jbst_logo_customizer_options($wp_customize) {
 
 	/* Logo font */
 	$wp_customize->add_setting( 'logo_font_family', array(
-	'default'        => 'Helvetica Neue',
+	'default'        => logo_font_family,
 	) );
 
 	$wp_customize->add_control( 'logo_font_family', array(
@@ -441,8 +441,8 @@ function jbst_navbar_customizer_options($wp_customize) {
 	) );*/
 
 	/* Navbar Font Family */
-/*	$wp_customize->add_setting( 'navbar_font_family', array(
-		'default'        => 'Helvetica Neue',
+    $wp_customize->add_setting( 'navbar_font_family', array(
+		'default'        => navbar_font_family,
 	) );
 	
 	$wp_customize->add_control( 'navbar_font_family', array(
@@ -451,7 +451,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 		'type'    => 'select',
 		'choices'    => $fontchoices,
 		'priority'       => 30,
-	) );*/
+	) );
 
 	/* Navbar Search */
 	$wp_customize->add_setting( 'navbar_search', array(
@@ -653,7 +653,7 @@ function jbst_typography_customizer_options($wp_customize) {
 	
 	/* Body Font Family */
 	$wp_customize->add_setting( 'body_font_family', array(
-		'default'        => 'Helvetica Neue',
+		'default'        => body_font_family,
 	) );
 	
 	$wp_customize->add_control( 'body_font_family', array(

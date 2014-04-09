@@ -1,4 +1,27 @@
 <?php
+/* fonts */
+$navbar_font = get_theme_mod('navbar_font_family',navbar_font_family);
+if($navbar_font) {
+	
+	echo '.navbar-default {font-family: '.((preg_match('/ +/',$navbar_font))?'"'.$navbar_font.'"':$navbar_font).';}';
+}
+$logo_font = get_theme_mod('logo_font_family',logo_font_family);
+if($logo_font) {
+	
+	echo 'a.navbar-brand {font-family: '.((preg_match('/ +/',$logo_font))?'"'.$logo_font.'"':$logo_font).';}';
+}
+$body_font = get_theme_mod('body_font_family',body_font_family);
+if($body_font) {
+	
+	echo 'body {font-family: '.((preg_match('/ +/',$body_font))?'"'.$body_font.'"':$body_font).';}';
+}
+$heading_font = get_theme_mod('heading_font_family',heading_font_family);
+if($heading_font) {
+	
+	echo 'h1,h2,h3 {font-family: '.((preg_match('/ +/',$heading_font))?'"'.$heading_font.'"':$heading_font).';}';
+}
+
+
 /*
  * navbar postion
 */

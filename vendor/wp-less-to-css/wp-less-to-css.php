@@ -51,9 +51,9 @@ public function __construct()
 	add_action('admin_menu', array(&$this, 'add_menu')); 
 	
 
-        $this->folder = get_template_directory().'/library/assets/css/';
-        $this->folderurl = get_template_directory_uri().'/library/assets/css/';
-		$this->filename = 'wpless2css.css';
+        $this->folder = get_stylesheet_directory().'/';
+        $this->folderurl = get_stylesheet_directory_uri().'/';
+	$this->filename = 'wpless2css.css';
 		
 	
 	add_filter( 'init', array( $this, 'init' ) );
@@ -104,7 +104,7 @@ public function wpless2csssavecss($creds)
 		     	}
 				$parser->parse( apply_filters('add_extra_less_code','') );
 				
-				$parser->parse( get_option('customlesscode'));
+				$parser->parse( get_theme_mod('customlesscode'));
 				$css = $parser->getCss();
 				if(is_rtl())
 				{
@@ -124,7 +124,7 @@ public function wpless2csssavecss($creds)
 			    }	
     
                 
-                $folder = trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_template() ).'library/assets/css/';
+                $folder = trailingslashit( $wp_filesystem->wp_themes_dir() ) .trailingslashit(  get_stylesheet() ).'/';
 
                 if ( ! $wp_filesystem->put_contents(  $folder.$this->filename, $css, FS_CHMOD_FILE) ) 
 				{
@@ -180,19 +180,19 @@ public function init_settings()
 
 
 function load_options() {
-		$this->customlesscode = get_option('customlesscode');
+		$this->customlesscode =  get_theme_mod('customlesscode');
 
 	}
 	function reset_options() {
-		delete_option($this->customlesscode);
+		remove_theme_mod($this->customlesscode);
 		unset($this->customlesscode);
 		$this->load_options();
 	}
 	
 	function save_options() {
 	
-		update_option('customlesscode',$this->customlesscode);
-		update_option('wpless2cssversion',time());
+		set_theme_mod('customlesscode',$this->customlesscode);
+		set_theme_mod('wpless2cssversion',time());
 		
 	}
 
@@ -238,7 +238,7 @@ function init()
 		
 function wp_less_to_css_styles()
 {
-		wp_enqueue_style( 'wpless2css', $this->folderurl.'wpless2css.css', array(),get_option('wpless2cssversion',1)  ); 
+		wp_enqueue_style( 'wpless2css', $this->folderurl.'wpless2css.css', array(),get_theme_mod('wpless2cssversion',1)  ); 
 }
 
 

@@ -13,12 +13,14 @@ require get_template_directory() . '/vendor/wp-less-to-css/wp-less-to-css.php';
 
 /* add path for custom fonts  */
 
-add_filter( 'add_extra_less_code', 'add_custom_fonts_path');
+add_filter( 'add_extra_less_code', 'add_custom_fonts_paths');
 
-if ( ! function_exists( 'add_custom_fonts_path' ) ) :
-function add_custom_fonts_path($less)
+if ( ! function_exists( 'add_custom_fonts_paths' ) ) :
+function add_custom_fonts_paths($less)
 {
-	return $less."\n".'@custom-font-dir: "'.get_stylesheet_directory_uri().'/assets/fonts/";';
+	$less .= "\n".'@custom-font-dir: "'.get_stylesheet_directory_uri().'/assets/fonts/";';
+	$less .= "\n".'@icon-font-path: "'.get_template_directory_uri().'/library/assets/fonts/";';
+	return $less;
 }
 endif;
 
