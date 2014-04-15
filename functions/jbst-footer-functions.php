@@ -110,8 +110,7 @@ if($ftr_widgets > 0)
 	echo '</div>';
 }
 }
-add_action('jbst_credits', 'jbst_custom_credits',10);
-
+add_action('jbst_footer_widgets', 'jbst_footer_show_widgets',10);
 
 /*
 ==========================================================
@@ -119,15 +118,17 @@ FOOTER CREDITS
 ==========================================================
 */
 function jbst_custom_credits() {
+	apply_filters('jbst_render_footer_credits',jbst_footer_credits());
+}
+
+function jbst_footer_credits() {
+	
 	if(get_theme_mod('footer_credits') <> "") {echo get_theme_mod('footer_credits');}
 	else {?>
 		<?php printf( __( '&copy;', 'jamedo-bootstrap-start-theme' )); ?> <?php echo date('Y');?> <?php echo bloginfo('name');?><span class="sep"> | </span><a target="_blank" href="<?php esc_attr_e( 'http://www.jbst.eu/', 'jamedo-bootstrap-start-theme' ); ?>" title="<?php esc_attr_e( 'Powered by JBST', 'jamedo-bootstrap-start-theme' ); ?>" rel="generator"><?php printf( __( 'Powered by JBST', 'jamedo-bootstrap-start-theme' ), 'jamedo-bootstrap-start-theme' ); ?></a>
-	<?php } 
-}
-
-add_action('jbst_footer_widgets', 'jbst_footer_show_widgets',10);
-
-
+	<?php }
+}	
+add_action('jbst_credits', 'jbst_custom_credits',10);
 
 /*
 ==========================================================

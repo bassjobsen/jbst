@@ -72,6 +72,9 @@ function jbst_theme_setup() {
 	/* Load custom jbst Tag functions. */
 	require( get_template_directory() . '/functions/template-tags.php' );
 	
+	/* Load custom jbst Comment form functions. */
+	require( get_template_directory() . '/functions/comments-functions.php' );
+	
 	/* Load custom jbst Theme Customizer options. */
 	if(jbst_customizer)require( get_template_directory() . '/functions/template-customizer.php' );
 	

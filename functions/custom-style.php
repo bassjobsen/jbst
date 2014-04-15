@@ -46,19 +46,37 @@ if($bg_attachment) {echo 'background-attachment:' .$bg_attachment.';';}
 echo '}';
 
 if($page_backgroundcolor) echo '#page { background-color:' .$page_backgroundcolor.'; }';
-
 /* Main Text Typography */
+
+if($body_font){
+	$body_font = str_replace('+',' ',$body_font);
+	echo '@font-family-base-font: e(\''.((preg_match('/ +/',$body_font))?'"'.$body_font.'"':$body_font).'\');';
+	echo '@font-family-base: ~"@{font-family-base-font}, @{font-family-sans-serif}";';
+}
+//exit;	
 echo 'body {';
-if($body_font){echo '@font-family-base: "'.((preg_match('/ +/',$body_font))?'"'.$body_font.'"':$body_font).', @{font-family-sans-serif}";';}
 if($body_color){echo 'color:' .$body_color.';';}
 if($body_size){echo 'font-size:'.$body_size.'px;';}
 if($body_line){echo 'line-height:' .$body_line.';';}
 echo '}';
 if($body_line){echo 'h4, h5, h6 {line-height:' .$body_line.';}';}
 
+if($heading_font){
+	$heading_font = str_replace('+',' ',$heading_font);
+	echo '@headings-font-family-font: e(\''.((preg_match('/ +/',$heading_font))?'"'.$heading_font.'"':$heading_font).'\');';
+	echo '@headings-font-family: ~"@{headings-font-family-font}, @{font-family-base}";';
+}
+echo 'h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	
+  > a {font-family: @headings-font-family;}
+}';
+
+if($heading_color){echo '@headings-color:' .$heading_color.';';}  
+
+
 /* Headings Typography */
 echo 'h1,h2,h3 {';
-if($heading_font){echo '@headings-font-family: "'.((preg_match('/ +/',$heading_font))?'"'.$heading_font.'"':$heading_font).', @{font-family-base}";';}
 if($heading_color){echo 'color:' .$heading_color.';';}
 echo'}';
 
@@ -123,13 +141,17 @@ if($ftr_linkhover_color){echo '@footer-link-hover-color:' .$ftr_linkhover_color.
 /* navbar */
 if($navbar_font) {
 	
-	echo '@navbar-default-font-family:' .((preg_match('/ +/',$navbar_font))?'"'.$navbar_font.'"':$navbar_font).';';
+	$navbar_font = str_replace('+',' ',$navbar_font);
+	echo '@navbar-default-font-family-font: e(\''.((preg_match('/ +/',$navbar_font))?'"'.$navbar_font.'"':$navbar_font).'\');';
+	echo '@navbar-default-font-family: ~"@{navbar-default-font-family-font}, @{font-family-base}";';
 	echo '.navbar-default {font-family: @navbar-default-font-family;}';
 }
 
 if($logo_font) {
 	
-	echo '@logo-font-family:' .((preg_match('/ +/',$logo_font))?'"'.$logo_font.'"':$logo_font).';';
+	$logo_font = str_replace('+',' ',$logo_font);
+	echo '@logo-font-family-font: e(\''.((preg_match('/ +/',$logo_font))?'"'.$logo_font.'"':$logo_font).'\');';
+	echo '@logo-font-family: ~"@{logo-font-family-font}, @{font-family-base}";';
 	echo 'a.navbar-brand {font-family: @logo-font-family;}';
 }
 

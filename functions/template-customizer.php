@@ -549,7 +549,8 @@ function jbst_background_customizer_options($wp_customize) {
 
 	/* Background Color */
 	$wp_customize->add_setting( 'site_background_color', array(
-		'default'        => '',
+		//'default'        => '',
+		'default'        => false
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_background_color', array(
@@ -848,8 +849,42 @@ function jbst_blog_customizer_options($wp_customize) {
 	$wp_customize->add_section( 'blog_settings', array(
 		'title'          => 'Blog Settings',
 		'priority'       => 145,
-		'description'    => __( 'Customize the look of your buttons.' , 'jamedo-bootstrap-start-theme'),
+		'description'    => __( 'Customize your blog setting' , 'jamedo-bootstrap-start-theme'),
 
+	) );
+	
+	/* Display post as on home */
+	$wp_customize->add_setting( 'jbst_post_display_main', array(
+		'default'        => 'excerpt',
+	) );	
+	
+	$wp_customize->add_control( 'jbst_post_display_main', array(
+		'label'   => __('Display posts main page:', 'jamedo-bootstrap-start-theme'),
+		'section' => 'blog_settings',
+		'type'    => 'radio',
+		'priority' => 1,
+		'choices'    => array(
+		    'excerpt' => 'Excerpt',
+			'content' => 'Content'
+			
+			),
+	) );
+	
+		/* Display post as on home */
+	$wp_customize->add_setting( 'jbst_post_display_search', array(
+		'default'        => 'excerpt',
+	) );	
+	
+	$wp_customize->add_control( 'jbst_post_display_search', array(
+		'label'   => __('Display posts search results:', 'jamedo-bootstrap-start-theme'),
+		'section' => 'blog_settings',
+		'type'    => 'radio',
+		'priority' => 2,
+		'choices'    => array(
+		    'excerpt' => 'Excerpt',
+			'content' => 'Content'
+			
+			),
 	) );
 
 	/* Blog Navigation Buttons */
@@ -958,7 +993,7 @@ function jbst_discussion_customizer_options($wp_customize) {
 	$wp_customize->add_section( 'discussion_settings', array(
 		'title'          => 'Discussion Settings',
 		'priority'       => 155,
-		'description'    => __( 'Customize the look of your buttons.' , 'jamedo-bootstrap-start-theme'),
+		'description'    => __( 'Customize page comments.' , 'jamedo-bootstrap-start-theme'),
 
 	) );
 	

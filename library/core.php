@@ -65,9 +65,9 @@ function jbst_default_settings()
 	if(!defined('default_grid'))define('default_grid','md');
 	
 	/* fonts */
+	if(!defined('body_font_family')) define('body_font_family',false);
 	if(!defined('heading_font_family'))define('heading_font_family',false); 
 	if(!defined('logo_font_family')) define('logo_font_family',false); 
-	if(!defined('body_font_family')) define('body_font_family',false);
 	if(!defined('navbar_font_family')) define('navbar_font_family',false);
 	
 	if(!defined('additional_google_fonts'))define('additional_google_fonts',''); 
@@ -242,10 +242,10 @@ function jbst_add_google_fonts() {
 	$googlefonts = false;
 	global $webfonts;
 	
-	$logofont = get_theme_mod('logo_font_family', 'Helvetica Neue');
-	$bodyfont = get_theme_mod('body_font_family', 'Helvetica Neue');
+	$logofont = get_theme_mod('logo_font_family', logo_font_family);
+	$bodyfont = get_theme_mod('body_font_family', body_font_family);
 	$headingfont = get_theme_mod('heading_font_family', heading_font_family);
-	$navbarfont = get_theme_mod('navbar_font_family', 'Helvetica Neue');
+	$navbarfont = get_theme_mod('navbar_font_family', navbar_font_family);
 	
 	if ($logofont && !in_array($logofont, $webfonts)) {$googlefonts .= $logofont.'|';}
 	if ($bodyfont && !in_array($bodyfont, $webfonts)) {$googlefonts .= $bodyfont.'|';}
@@ -265,10 +265,10 @@ CUSTOM TYPOGRAPHY
 */
 add_action( 'jbst_add_to_custom_style', 'jbst_typography', 5);
 function jbst_typography() {
-	echo 'a.navbar-brand {font-family:"'.str_replace("+", " ", get_theme_mod('logo_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
-	echo 'body {font-family:"'.str_replace("+", " ", get_theme_mod('body_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
-	echo 'h1,h2,h3 {font-family:"'.str_replace("+", " ", get_theme_mod('heading_font_family', heading_font_family)).'","Helvetica Neue",sans-serif;}';
-	echo '.navbar-inner {font-family:"'.str_replace("+", " ", get_theme_mod('navbar_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
+	//echo 'a.navbar-brand {font-family:"'.str_replace("+", " ", get_theme_mod('logo_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
+	//echo 'body {font-family:"'.str_replace("+", " ", get_theme_mod('body_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
+	//echo 'h1,h2,h3 {font-family:"'.str_replace("+", " ", get_theme_mod('heading_font_family', heading_font_family)).'","Helvetica Neue",sans-serif;}';
+	//echo '.navbar-inner {font-family:"'.str_replace("+", " ", get_theme_mod('navbar_font_family', 'Helvetica Neue')).'","Helvetica Neue",sans-serif;}';
 
 }
 

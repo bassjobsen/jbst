@@ -45,7 +45,7 @@ if (!is_search())
 
 	<?php if ( is_search() ) : ?>
 	<div class="entry-summary">
-		<?php the_excerpt(); 
+		<?php (get_theme_mod('jbst_post_display_search','excerpt')==='excerpt')?the_excerpt():the_content(); 
 		?>
 		<?php
 		echo '<a class="read-more" href="'. get_permalink( get_the_ID() ) . '">'. get_permalink( get_the_ID() ) . '</a>';
@@ -58,7 +58,7 @@ if (!is_search())
 				} 
 		?>
 		<?php
-			if(is_home() || is_category() || is_tag() || is_search())
+			if((is_home() && get_theme_mod('jbst_post_display_main','excerpt')==='excerpt') || is_category() || is_tag())// || is_search())
 			{
 				the_excerpt();
 			}
