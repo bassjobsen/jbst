@@ -1,10 +1,12 @@
 *** JBST Changelog ***
 
-2014.04.02 - version 2.1.0
+2014.15.04 - version 2.1.0
 
 	*update to Bootstrap 3.1.0
 	*fix footer width
-	*
+	*update php compiler
+	*compiled CSS in child theme's folder
+	*implements comment_form (see: http://bassjobsen.weblogs.fm/wordpress-theming-comment_form-call-power-less/)
 
 2014.23.01 - version 2.0.6
 

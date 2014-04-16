@@ -159,8 +159,8 @@ function jbst_options_add_before() {
 				$welcometext .= sprintf('<div class="of-col-third"><h4>%1$s</h4><p>%2$s</p></div>',
 				__('Support','jamedo-bootstrap-start-theme'),
 				__('We are always happy to help you. If you have any question regarding 
-this code. <a href="http://www.jamedowebsites.nl/contact/">Send us a message</a>
-or contact us on twitter <a href="http://twitter.com/JamedoWebsites">@JamedoWebsites</a>.<h4>Contribute!</h4>If you have suggestions for a new feature or improvement, feel free to contact us. Alternatively, you can fork the theme from <a href="https://github.com/bassjobsen/jamedo-bootstrap-start-theme">Github</a>.
+this code. <a href="http://themes.jbst.eu/contact-us/">Send us a message</a>
+or contact us on twitter <a href="http://twitter.com/@jbstthemes">@jbstthemes</a>.<h4>Contribute!</h4>If you have suggestions for a new feature or improvement, feel free to contact us. Alternatively, you can fork the theme from <a href="https://github.com/bassjobsen/jamedo-bootstrap-start-theme">Github</a>.
 ','jamedo-bootstrap-start-theme')
 				);
 				$welcometext .= sprintf('<div class="of-col-third last"><h4>%1$s</h4><p>%2$s</p></div>',

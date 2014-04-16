@@ -13,6 +13,7 @@ JBST is a powerful theme framework that can be used as a standalone website buil
 == Description ==
 
 JBST is a powerful theme framework that can be used as a standalone website builder or as a framework to create child themes for WordPress. JBST build on the top of Twitter's Bootstrap 3 and is full customizable with LESS. Integrated customizer for easy responsive website building. Right-To-Left (RTL) support. It also has built in support for BuddyPress, BBpress and eCommerce (WooCommerce, JigoShop and WPeCommerce).
+Download the <a href="https://raw.github.com/bassjobsen/Boilerplate-JBST-Child-Theme/master/jbstchildtheming.pdf">Child Theme Guide</a>.
 
 == Assets ==
  
