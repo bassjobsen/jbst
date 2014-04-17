@@ -1,6 +1,5 @@
 <?php
 /* Set Variables */
-$bg_color = get_theme_mod( 'site_background_color','');
 $bg_image = get_theme_mod( 'site_background_image');
 $bg_repeat = get_theme_mod( 'site_background_repeat');
 $bg_position = get_theme_mod( 'site_background_position');
@@ -36,9 +35,11 @@ $logo_font = get_theme_mod('logo_font_family',logo_font_family);
 
 $container = get_theme_mod( 'container_width', 1200);
 
+
+if (!empty($body_bg = get_theme_mod( 'body_bg',less_body_bg) )) {echo '@body-bg:' .$body_bg.';';}
+
 /* Site Background */
 echo 'body,html {';
-if($bg_color) {echo 'background-color:' .$bg_color.';';}
 if($bg_image) {echo 'background-image:url("' .$bg_image.'");';}
 if($bg_repeat) {echo 'background-repeat:' .$bg_repeat.';';}
 if($bg_position) {echo 'background-position:' .$bg_position.';';}
@@ -108,7 +109,7 @@ if($border_accent_color){echo '#payment ul.payment_methods {border-color:' .$bor
 
 echo 'hr {';
 if($border_color){echo 'border-top-color:' .$border_color.';';}
-if($bg_color){echo 'border-bottom-color:' .$bg_color.';';}
+if($body_bg){echo 'border-bottom-color:' .$body_bg.';';}
 echo '}';
 
 if($form_border_color){echo 'textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input,select {border-color:' .$form_border_color.';}';}

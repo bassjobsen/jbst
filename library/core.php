@@ -17,10 +17,14 @@ function jbst_default_settings()
 {
 	do_action('jbst_child_settings');
 	
+	/* html, body */
+	if(!defined('less_body_bg'))define('less_body_bg','');
+	
 	/* navbar */
 	if(!defined('navbar_style'))define('navbar_style','default');
 	
-	if(!defined('navbar_background_color'))define('navbar_background_color',false);
+
+	if(!defined('less_navbar_default_bg'))define('less_navbar_default_bg','');
 	if(!defined('navbar_border_color'))define('navbar_border_color',false);
 	if(!defined('navbar_link_color'))define('navbar_link_color',false);
 	if(!defined('navbar_linkhover_color'))define('navbar_linkhover_color',false);
@@ -33,8 +37,8 @@ function jbst_default_settings()
 	if(!defined('navbar_cart'))define('navbar_cart',1);
 	
 	/* logo text */
-	if(!defined('logo_link_color'))define('logo_link_color',false);
-	if(!defined('logo_linkhover_color'))define('logo_linkhover_color',false);
+	if(!defined('less_navbar_default_brand_color'))define('less_navbar_default_brand_color','');
+	if(!defined('less_navbar_default_brand_hover_color'))define('less_navbar_default_brand_hover_color','');
 	
 	/* logo */
 	if(!defined('logo_image_position'))define('logo_image_position','in-nav');

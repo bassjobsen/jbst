@@ -1,4 +1,7 @@
 <?php
+/* body, html */
+if (!empty($body_bg = get_theme_mod( 'body_bg',less_body_bg) )) {echo 'body { background-color:' .$body_bg.';}';}
+
 /* fonts */
 $navbar_font = get_theme_mod('navbar_font_family',navbar_font_family);
 if($navbar_font) {
@@ -8,8 +11,19 @@ if($navbar_font) {
 $logo_font = get_theme_mod('logo_font_family',logo_font_family);
 if($logo_font) {
 	
-	echo 'a.navbar-brand {font-family: '.((preg_match('/ +/',$logo_font))?'"'.$logo_font.'"':$logo_font).';}';
+	echo '.navbar-default a.navbar-brand {font-family: '.((preg_match('/ +/',$logo_font))?'"'.$logo_font.'"':$logo_font).';}';
 }
+$logo_font_color = get_theme_mod('navbar-default-brand-color',less_navbar_default_brand_color);
+if(!empty($logo_font_color)) {
+	
+	echo '.navbar-default a.navbar-brand {color: '.$logo_font_color.';}';
+}
+$logo_font_hover_color = get_theme_mod('navbar-default-brand-hover-color',less_navbar_default_brand_hover_color);
+if(!empty($logo_font_hover_color)) {
+	
+	echo 'a.navbar-brand:hover {color: '.$logo_font_hover_color.';}';
+}
+
 $body_font = get_theme_mod('body_font_family',body_font_family);
 if($body_font) {
 	
@@ -52,7 +66,7 @@ if($heading_font) {
  * navbar colors
 */
 
-	$navbar_background_color = get_theme_mod( 'navbar_background_color');
+	$navbar_background_color = get_theme_mod( 'navbar_default_bg');
 	if(!empty($navbar_background_color))
 	{
 		echo '.navbar {background-color: '.$navbar_background_color.';}';

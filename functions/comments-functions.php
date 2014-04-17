@@ -1,5 +1,5 @@
 <?php
-add_filter( 'add_extra_less_code', function($lesscode){
+function lessify_comment_button($lesscode){
 $customless = '#commentform {
 code{ white-space: pre-wrap; 
 }
@@ -9,7 +9,9 @@ input[type="submit"] {
 .form-group,.form-submit,.form-allowed-tags {padding: 0 30px;}
 }';
 	
-return $lesscode.$customless;});
+return $lesscode.$customless;}
+
+add_filter( 'add_extra_less_code','lessify_comment_button');
 add_filter( 'comment_form_default_fields', function(){ 
 	
 	$commenter = wp_get_current_commenter();

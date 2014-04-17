@@ -243,12 +243,12 @@ function jbst_nav_styles() {
 	';
 	}
 
-	$navbar_background_color = get_theme_mod( 'navbar_background_color',navbar_background_color);
+	$navbar_background_color = get_theme_mod( 'navbar_default_bg',less_navbar_default_bg);
 	if(!empty($navbar_background_color))
 	{
 		echo '@navbar-default-bg:               '.$navbar_background_color.';';
 	}	
-  
+	
     
     $navbar_border_color = get_theme_mod( 'navbar_border_color',navbar_border_color);
 	if(!empty($navbar_border_color))
@@ -261,7 +261,7 @@ function jbst_nav_styles() {
 	{
 		echo '@navbar-default-link-color: '.$navbar_link_color.';';
     }
-    
+   
     $navbar_linkhover_color = get_theme_mod( 'navbar_linkhover_color',navbar_linkhover_color);
 	if(!empty($navbar_linkhover_color))
 	{
@@ -288,23 +288,15 @@ function jbst_nav_styles() {
     
      echo '@logo-outside-nav-text-align: '.logo_outside_nav_text_align.';';
     
-    
-    /* LOGO */
-	if(!$logo_link_color=get_theme_mod( 'logo_link_color',logo_link_color)) {
-		$logo_link_color=get_theme_mod( 'navbar_link_color',navbar_link_color);
-    }	
-	if($logo_link_color) {
-		echo '@navbar-default-brand-color: '. $logo_link_color.';';
-    }
-
-	if(!$logo_linkhover_color=get_theme_mod( 'logo_linkhover_color',logo_linkhover_color)) {
-		$logo_linkhover_color=get_theme_mod( 'navbar_linkhover_color',navbar_linkhover_color);
-    }	
-	if($logo_linkhover_color) {
-		echo '@navbar-default-brand-hover-color: '. $logo_linkhover_color.';';
-    }
-    
-    
+   /* LOGO */
+	if (!empty($navbardefaultbrandcolor = get_theme_mod('navbar-default-brand-color',less_navbar_default_brand_color)))
+	{
+		echo '@navbar-default-brand-color: '.$navbardefaultbrandcolor.';';
+	}
+	if (!empty($navbardefaultbrandhovercolor = get_theme_mod('navbar-default-brand-hover-color',less_navbar_default_brand_hover_color)))
+	{
+		echo '@navbar-default-brand-hover-color: '.$navbardefaultbrandhovercolor.';';
+	}    
 }
 add_action('jbst_add_to_custom_style','jbst_nav_styles');
 
