@@ -288,15 +288,18 @@ function jbst_nav_styles() {
     
      echo '@logo-outside-nav-text-align: '.logo_outside_nav_text_align.';';
     
-   /* LOGO */
-	if (!empty($navbardefaultbrandcolor = get_theme_mod('navbar-default-brand-color',less_navbar_default_brand_color)))
+    /* LOGO */
+    $navbardefaultbrandcolor = get_theme_mod('navbar-default-brand-color',less_navbar_default_brand_color);
+	if (!empty($navbardefaultbrandcolor))
 	{
 		echo '@navbar-default-brand-color: '.$navbardefaultbrandcolor.';';
 	}
-	if (!empty($navbardefaultbrandhovercolor = get_theme_mod('navbar-default-brand-hover-color',less_navbar_default_brand_hover_color)))
+
+	$navbardefaultbrandhovercolor = get_theme_mod('navbar-default-brand-hover-color',less_navbar_default_brand_hover_color);
+	if (!empty($navbardefaultbrandhovercolor))
 	{
 		echo '@navbar-default-brand-hover-color: '.$navbardefaultbrandhovercolor.';';
-	}    
+	}   
 }
 add_action('jbst_add_to_custom_style','jbst_nav_styles');
 
