@@ -13,7 +13,7 @@ function jbst_customizer($wp_customize) {
 global $wp_customize;
 
 /* Add a custom class for textarea */
-class Example_Customize_Textarea_Control extends WP_Customize_Control {
+class Jbst_Customize_Textarea_Control extends WP_Customize_Control {
 	public $type = 'textarea';
 
 	public function render_content() {
@@ -1262,7 +1262,7 @@ function jbst_footer_customizer_options($wp_customize) {
 		'default'        => '',
 		'sanitize_callback' => 'jbst_sanitize_footer_credits'
 	) );
-	$wp_customize->add_control( new Example_Customize_Textarea_Control( $wp_customize, 'footer_credits', array(
+	$wp_customize->add_control( new Jbst_Customize_Textarea_Control( $wp_customize, 'footer_credits', array(
 		'label'   => 'Footer Credits',
 		'section' => 'footer_settings',
 		'settings'   => 'footer_credits',
