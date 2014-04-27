@@ -58,7 +58,13 @@ if (!is_search())
 				} 
 		?>
 		<?php
-			if((is_home() && get_theme_mod('jbst_post_display_main','excerpt')==='excerpt') || is_category() || is_tag())// || is_search())
+			if((is_home() && get_theme_mod('jbst_post_display_main','excerpt')==='excerpt') 
+			|| (is_category() && get_theme_mod('jbst_post_display_category','excerpt')==='excerpt')
+			|| (is_tag() && get_theme_mod('jbst_post_display_tag','excerpt')==='excerpt')
+			|| (is_tax() && get_theme_mod('jbst_post_display_taxonomy','excerpt')==='excerpt')
+			
+			// || is_search())
+			)
 			{
 				the_excerpt();
 			}

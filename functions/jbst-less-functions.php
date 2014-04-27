@@ -18,8 +18,8 @@ add_filter( 'add_extra_less_code', 'add_custom_fonts_paths');
 if ( ! function_exists( 'add_custom_fonts_paths' ) ) :
 function add_custom_fonts_paths($less)
 {
-	$less .= "\n".'@custom-font-dir: "'.get_stylesheet_directory_uri().'/assets/fonts/";';
-	$less .= "\n".'@icon-font-path: "'.get_template_directory_uri().'/library/assets/fonts/";';
+	$less .= "\n".'@custom-font-dir: "../'.get_stylesheet().'/assets/fonts/";';
+	$less .= "\n".'@icon-font-path: "../'. get_template().'/library/assets/fonts/";';
 	return $less;
 }
 endif;
@@ -70,7 +70,24 @@ function get_theme_mods_live($less)
   }
   
 }';
-
+	
+   /* print settings */
+   $return .= '@media print {';
+	   $return .= '.post-navigation, .site-navigation, .paging-navigation { display: none; }';
+	   if(get_theme_mod('print_footer',false)===false)
+	   {
+		   $return .= 'footer { display: none; }';
+	   }
+	   if(get_theme_mod('print_sidebars',false)===false)
+	   {
+		   $return .= '.sidebar { display: none; }';
+	   }
+	   if(get_theme_mod('donotprint_urls',false)===true)
+	   {
+		   $return .= ' a[href]:after { content: ""; content: none; }';
+	   }
+   $return .= '}'; 	
+	
    if(get_theme_mod('gridfloatbreakpoint',gridfloatbreakpoint)=='0')
    {
 	   $return .= '@grid-float-breakpoint:0; @grid-float-breakpoint-max:0;';

@@ -61,7 +61,7 @@ TO REGISTER YOUR OWN, SIMPLY COPY ANY OF THE SECTIONS BELOW INTO
 YOUR OWN THEME OR PLUGIN AND EDIT FOR YOUR NEEDS. 
 ==================================================================
 */
-$options=array('grid','mainnavigation','container','gridfloatbreakpoint','logo','navbar','background','typography','buttons','blog','discussion','footer');
+$options=array('grid','mainnavigation','container','gridfloatbreakpoint','logo','navbar','background','typography','buttons','blog','discussion','footer','printsettings');
 if(is_array($options=apply_filters('jbst_customizer_options',$options)))
 {
 	foreach ($options as $option)
@@ -963,7 +963,7 @@ function jbst_blog_customizer_options($wp_customize) {
 			),
 	) );
 	
-		/* Display post as on home */
+	/* Display search results */
 	$wp_customize->add_setting( 'jbst_post_display_search', array(
 		'default'        => 'excerpt',
 		'sanitize_callback' => 'jbst_sanitize_post_display'
@@ -981,6 +981,65 @@ function jbst_blog_customizer_options($wp_customize) {
 			
 			),
 	) );
+	
+	
+	/* Display posts category list */
+	$wp_customize->add_setting( 'jbst_post_display_category', array(
+		'default'        => 'excerpt',
+		'sanitize_callback' => 'jbst_sanitize_post_display'
+	
+	) );	
+	
+	$wp_customize->add_control( 'jbst_post_display_category', array(
+		'label'   => __('Display posts category list:', 'jamedo-bootstrap-start-theme'),
+		'section' => 'blog_settings',
+		'type'    => 'radio',
+		'priority' => 3,
+		'choices'    => array(
+		    'excerpt' => 'Excerpt',
+			'content' => 'Content'
+			
+			),
+	) );
+	
+	/* Display posts tag list */
+	$wp_customize->add_setting( 'jbst_post_display_tag', array(
+		'default'        => 'excerpt',
+		'sanitize_callback' => 'jbst_sanitize_post_display'
+	
+	) );	
+	
+	$wp_customize->add_control( 'jbst_post_display_tag', array(
+		'label'   => __('Display posts tag list:', 'jamedo-bootstrap-start-theme'),
+		'section' => 'blog_settings',
+		'type'    => 'radio',
+		'priority' => 4,
+		'choices'    => array(
+		    'excerpt' => 'Excerpt',
+			'content' => 'Content'
+			
+			),
+	) );
+	
+	/* Display posts taxonomie list */
+	$wp_customize->add_setting( 'jbst_post_display_taxonomy', array(
+		'default'        => 'excerpt',
+		'sanitize_callback' => 'jbst_sanitize_post_display'
+	
+	) );	
+	
+	$wp_customize->add_control( 'jbst_post_display_taxonomy', array(
+		'label'   => __('Display posts taxonomy list:', 'jamedo-bootstrap-start-theme'),
+		'section' => 'blog_settings',
+		'type'    => 'radio',
+		'priority' => 5,
+		'choices'    => array(
+		    'excerpt' => 'Excerpt',
+			'content' => 'Content'
+			
+			),
+	) );
+	
 
 	/* Blog Navigation Buttons */
 	$wp_customize->add_setting( 'blog_navigation_buttons', array(
@@ -1269,6 +1328,64 @@ function jbst_footer_customizer_options($wp_customize) {
 		'priority'       => 45,
 	) ) );
 }// END FOOTER SETTINGS
+
+
+/*
+==================================================================
+Print Settings
+==================================================================
+*/
+function jbst_printsettings_customizer_options($wp_customize) {
+	
+	global $wp_customize;	
+	
+	/* Add footer section and color styles to customizer */
+	$wp_customize->add_section( 'print_settings', array(
+		'title'          =>  __('Print Settings','jamedo-bootstrap-start-theme'),
+		'priority'       => 200,
+	) );
+		
+	/* print side bars ? */
+	$wp_customize->add_setting( 'print_sidebars', array(
+	'default'        => 0,
+	'sanitize_callback' => 'jbst_sanitize_is_boolean'
+	) );
+		
+	$wp_customize->add_control( 'print_sidebars', array(
+		'label'   => __('Print Side bars','jamedo-bootstrap-start-theme'),
+		'section' => 'print_settings',
+		'type'    => 'checkbox',
+		'priority'        => 50,
+	) );
+	
+	/* print footer ? */
+	$wp_customize->add_setting( 'print_footer', array(
+	'default'        => 0,
+	'sanitize_callback' => 'jbst_sanitize_is_boolean'
+	) );
+		
+	$wp_customize->add_control( 'print_footer', array(
+		'label'   => __('Print Footer','jamedo-bootstrap-start-theme'),
+		'section' => 'print_settings',
+		'type'    => 'checkbox',
+		'priority'        => 100,
+	) );
+	
+	/* print footer ? */
+	$wp_customize->add_setting( 'donotprint_urls', array(
+	'default'        => 0,
+	'sanitize_callback' => 'jbst_sanitize_is_boolean'
+	) );
+		
+	$wp_customize->add_control( 'donotprint_urls', array(
+		'label'   => __('Do not print URLs after Hyperlink texts','jamedo-bootstrap-start-theme'),
+		'section' => 'print_settings',
+		'type'    => 'checkbox',
+		'priority'        => 150,
+	) );
+
+}
+
 
 /*
 ==================================================================
