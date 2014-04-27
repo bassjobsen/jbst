@@ -9,6 +9,7 @@ $body_size = get_theme_mod( 'body_size');
 $body_font = get_theme_mod( 'body_font_family',body_font_family);
 
 $body_color = get_theme_mod( 'body_color');
+
 $body_line = get_theme_mod( 'body_line_height');
 
 $heading_font = get_theme_mod( 'heading_font_family',heading_font_family);
@@ -37,6 +38,7 @@ $container = get_theme_mod( 'container_width', 1200);
 
 
 if (!empty($body_bg = get_theme_mod( 'body_bg',less_body_bg) )) {echo '@body-bg:' .$body_bg.';';}
+if (!empty($body_bg = get_theme_mod( 'content_bg',less_content_bg) )) {echo '@content-bg:' .$content_bg.';';}
 
 /* Site Background */
 echo 'body,html {';

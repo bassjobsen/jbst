@@ -615,6 +615,19 @@ function jbst_background_customizer_options($wp_customize) {
 		'title'          => 'Background',
 		'priority'       => 130,
 	) );
+	
+	/* Background Color */
+	$wp_customize->add_setting( 'content_bg', array(
+		'default'        => less_content_bg,
+		'sanitize_callback' => 'sanitize_hex_color'
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'content_bg', array(
+		'label'   => 'Background Color (Content, includes sitebars)',
+		'section' => 'site_background_settings',
+		'settings'   => 'content_bg',
+		'priority'       => 1
+	) ) );
 
 	/* Background Color */
 	$wp_customize->add_setting( 'body_bg', array(
@@ -623,10 +636,10 @@ function jbst_background_customizer_options($wp_customize) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'body_bg', array(
-		'label'   => 'Background Color',
+		'label'   => 'Background Color (Body)',
 		'section' => 'site_background_settings',
 		'settings'   => 'body_bg',
-		'priority'       => 1
+		'priority'       => 2
 	) ) );
 
 	/* Background Image Upload */

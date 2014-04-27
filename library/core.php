@@ -20,6 +20,9 @@ function jbst_default_settings()
 	/* html, body */
 	if(!defined('less_body_bg'))define('less_body_bg','');
 	
+	/* #page, content including side bars */
+	if(!defined('less_content_bg'))define('less_content_bg','');
+	
 	/* navbar */
 	if(!defined('navbar_style'))define('navbar_style','default');
 	

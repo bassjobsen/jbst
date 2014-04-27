@@ -2,6 +2,9 @@
 /* body, html */
 if (!empty($body_bg = get_theme_mod( 'body_bg',less_body_bg) )) {echo 'body { background-color:' .$body_bg.';}';}
 
+/* #page, content including side bars */
+if (!empty($content_bg = get_theme_mod( 'content_bg',less_content_bg) )) {echo '#page { background-color:' .$content_bg.';}';}
+
 /* fonts */
 $navbar_font = get_theme_mod('navbar_font_family',navbar_font_family);
 if($navbar_font) {
