@@ -20,7 +20,7 @@ add_action( 'jbst_add_to_custom_style', 'jbst_buddypress_custom_style', 99 );
 /* Use jQuery to add bootstrap classes to stuff
 ----------------------------------------------- */
 function jbst_buddypress_add_classes() {
-	wp_register_script( 'buddypress_js', get_template_directory_uri() . '/library/assets/js/buddypress.js', array( 'jquery' ), '20120921', true );
+	wp_register_script( 'buddypress_js', get_stylesheet_directory_uri() . '/library/assets/js/buddypress.js', array( 'jquery' ), '20120921', true );
 	wp_enqueue_script( 'buddypress_js' );
 }
 

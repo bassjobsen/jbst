@@ -161,7 +161,7 @@ function jbst_main_navbar() {
 	
 	<nav role="navigation" class="navbar navbar-default <?php echo get_theme_mod(  'navbar_style',navbar_style );?> <?php //echo get_theme_mod( 'navbar_color', 'navbar-default' );?>" id="jbst-top-nav">
 
-       <div class="container-fluid">
+    <div class="container-fluid">
        <a class="sr-only" href="#content"><?php _e( 'Skip to content', 'jamedo-bootstrap-start-theme' ); ?></a>
 
        <div class="navbar-header">
@@ -188,11 +188,10 @@ function jbst_main_navbar() {
           <!--/ul-->
           </div>
         
-       <?php if(get_theme_mod(  'navbar_style',navbar_style ) != 'default') {?></div><?php } ?>
+    </div>
     </nav>
     <?php if(get_theme_mod(  'navbar_style',navbar_style ) == 'default') {?></div><?php } ?>
 	<?php
-	
 	if(	get_theme_mod('logo_image_position', 'in-nav') == 'outside-nav' && 	$fixed)
 	{
 		echo apply_filters('jbst_logooustside',jbst_logooustside());
@@ -300,6 +299,7 @@ function jbst_nav_styles() {
 	{
 		echo '@navbar-default-brand-hover-color: '.$navbardefaultbrandhovercolor.';';
 	}   
+		
 }
 add_action('jbst_add_to_custom_style','jbst_nav_styles');
 

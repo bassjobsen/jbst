@@ -95,7 +95,7 @@ if($ftr_widgets > 0)
 		
 	for ( $i=0; $i < $ftr_widgets; $i++ ) 
 	{
-		echo '<div class="'. JBST_GRIDPREFIX . $span.'">';
+		echo '<div class="widget '. JBST_GRIDPREFIX . $span.'">';
 			if ( ! dynamic_sidebar( 'footer-widget-'.($i+1) ) ) :
 				echo '<h4>';
 				echo __( 'Footer Widget', 'jamedo-bootstrap-start-theme' ).' '.$footer_widgets_array[$i];
@@ -128,6 +128,7 @@ function jbst_footer_credits() {
 		<?php printf( __( '&copy;', 'jamedo-bootstrap-start-theme' )); ?> <?php echo date('Y');?> <?php echo bloginfo('name');?><span class="sep"> | </span><a target="_blank" href="<?php esc_attr_e( 'http://www.jbst.eu/', 'jamedo-bootstrap-start-theme' ); ?>" title="<?php esc_attr_e( 'Powered by JBST', 'jamedo-bootstrap-start-theme' ); ?>" rel="generator"><?php printf( __( 'Powered by JBST', 'jamedo-bootstrap-start-theme' ), 'jamedo-bootstrap-start-theme' ); ?></a>
 	<?php }
 }	
+
 add_action('jbst_credits', 'jbst_custom_credits',10);
 
 /*

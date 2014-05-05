@@ -54,7 +54,7 @@ function jbst_default_settings()
 	if(!defined('footer_bg_color'))define('footer_bg_color',false);
 	if(!defined('footer_text_color'))define('footer_text_color',false);
 	if(!defined('footer_link_color'))define('footer_link_color',false);
-	if(!defined('footer_linkhover_color'))define('footer_linkhover_color',false);
+	if(!defined('footer_link_hover_color'))define('footer_link_hover_color',false);
 	if(!defined('footer_widgets_number'))define('footer_widgets_number',4);
 	
 	
@@ -75,7 +75,7 @@ function jbst_default_settings()
 	if(!defined('body_font_family')) define('body_font_family',false);
 	if(!defined('heading_font_family'))define('heading_font_family',false); 
 	if(!defined('logo_font_family')) define('logo_font_family',false); 
-	if(!defined('navbar_font_family')) define('navbar_font_family',false);
+	if(!defined('less_navbar_default_font_family')) define('less_navbar_default_font_family','');
 	
 	if(!defined('additional_google_fonts'))define('additional_google_fonts',''); 
 	
@@ -252,7 +252,7 @@ function jbst_add_google_fonts() {
 	$logofont = get_theme_mod('logo_font_family', logo_font_family);
 	$bodyfont = get_theme_mod('body_font_family', body_font_family);
 	$headingfont = get_theme_mod('heading_font_family', heading_font_family);
-	$navbarfont = get_theme_mod('navbar_font_family', navbar_font_family);
+	$navbarfont = get_theme_mod('navbar_font_family', less_navbar_default_font_family);
 	
 	if ($logofont && !in_array($logofont, $webfonts)) {$googlefonts .= $logofont.'|';}
 	if ($bodyfont && !in_array($bodyfont, $webfonts)) {$googlefonts .= $bodyfont.'|';}

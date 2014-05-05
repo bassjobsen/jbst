@@ -1,3 +1,7 @@
+@footer-top-border-color: darken(@footer-bg-color,15%);
+@footer-bottom-border-color: @footer-top-border-color;
+@footer-widget-border-color:transparent;
+
 footer#colophon {
 	color: @footer-text-color;
 	a {
@@ -5,5 +9,11 @@ footer#colophon {
 		&:hover,&:focus {
 		color: @footer-link-hover-color;
 		}
+	}
+	div.widget {
+	border: ~"1px solid @{footer-widget-border-color}";
+	}
+	.site-info {
+	border-color: @footer-bottom-border-color;
 	}
 }

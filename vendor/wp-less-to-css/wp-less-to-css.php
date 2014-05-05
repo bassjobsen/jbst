@@ -96,12 +96,12 @@ public function wpless2csssavecss($creds)
 				
 				if($extrafiles = apply_filters('add_extra_less_files',''))
 				{
-			
 					foreach($extrafiles as $extrafile)
 					{
 						$parser->parseFile(trailingslashit( str_replace('wp-content/','',$wp_filesystem->wp_content_dir())).$extrafile);
 				    }	
 		     	}
+		     	
 				$parser->parse( apply_filters('add_extra_less_code','') );
 				
 				$parser->parse( get_theme_mod('customlesscode'));

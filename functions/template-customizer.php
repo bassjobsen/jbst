@@ -113,7 +113,7 @@ function jbst_sanitize_footer_credits($setting){ return wp_kses($setting,array(
         ));}
 function jbst_sanitize_wpec_layout($setting){   if (in_array($setting,array('list-view','grid-view'))) return $setting; return 'list-view';}
 function jbst_sanitize_wpec_columns($setting){ if (is_numeric($setting) && $setting>=2 && $setting<=5) return $setting; return '4';}
-
+function jbst_sanitize_hex_color($setting) { if (empty($setting)) return ''; return sanitize_hex_color($setting);}
 /*
 ==================================================================
 Grid
@@ -321,7 +321,7 @@ function jbst_logo_customizer_options($wp_customize) {
 	/* Logo Link  Color */
 	$wp_customize->add_setting( 'navbar-default-brand-color', array(
 		'default'        => less_navbar_default_brand_color,
-		'sanitize_callback' => 'sanitize_hex_color'	
+		'sanitize_callback' => 'jbst_sanitize_hex_color'	
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar-default-brand-color', array(
@@ -334,7 +334,7 @@ function jbst_logo_customizer_options($wp_customize) {
 	/* Logo Link hover Color */
 	$wp_customize->add_setting( 'navbar-default-brand-hover-color', array(
 		'default'        => less_navbar_default_brand_hover_color,
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar-default-brand-hover-color', array(
@@ -386,7 +386,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	/* Navbar Background Color */
 	$wp_customize->add_setting( 'navbar_default_bg', array(
 		'default'        => less_navbar_default_bg,
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_default_bg', array(
@@ -399,7 +399,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	/* Navbar Border Color */
 	$wp_customize->add_setting( 'navbar_border_color', array(
 		'default'        => navbar_border_color,
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_border_color', array(
@@ -412,7 +412,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	/* Navbar Link Color */
 	$wp_customize->add_setting( 'navbar_link_color', array(
 		'default'        => navbar_link_color,
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_link_color', array(
@@ -425,7 +425,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	/* Navbar Link hover Color */
 	$wp_customize->add_setting( 'navbar_linkhover_color', array(
 		'default'        => navbar_linkhover_color,
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_linkhover_color', array(
@@ -438,7 +438,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	/* Navbar Link hover Color */
 	$wp_customize->add_setting( 'navbar_linkhoverbackground_color', array(
 		'default'        => navbar_linkhoverbackground_color,
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_linkhoverbackground_color', array(
@@ -452,7 +452,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 	/* Navbar Active item Color */
 	$wp_customize->add_setting( 'navbar_activelink_color', array(
 		'default'        => navbar_activelink_color,
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_activelink_color', array(
@@ -465,7 +465,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 		/* Navbar Active item Background Color */
 	$wp_customize->add_setting( 'navbar_activebackground_color', array(
 		'default'        => navbar_activebackground_color,
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navbar_activebackground_color', array(
@@ -504,7 +504,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 
 	/* Navbar Font Family */
     $wp_customize->add_setting( 'navbar_font_family', array(
-		'default'        => navbar_font_family,
+		'default'        => less_navbar_default_font_family,
 		'sanitize_callback' => 'jbst_sanitize_fontchoice'
 	) );
 	
@@ -512,6 +512,7 @@ function jbst_navbar_customizer_options($wp_customize) {
 		'label'   => 'Navbar Font Family:',
 		'section' => 'navbar_settings',
 		'type'    => 'select',
+		'settings'   => 'navbar_font_family',
 		'choices'    => $fontchoices,
 		'priority'       => 30,
 	) );
@@ -619,7 +620,7 @@ function jbst_background_customizer_options($wp_customize) {
 	/* Background Color */
 	$wp_customize->add_setting( 'content_bg', array(
 		'default'        => less_content_bg,
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'content_bg', array(
@@ -632,7 +633,7 @@ function jbst_background_customizer_options($wp_customize) {
 	/* Background Color */
 	$wp_customize->add_setting( 'body_bg', array(
 		'default'        => less_body_bg,
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'body_bg', array(
@@ -803,7 +804,7 @@ function jbst_colors_customizer_options($wp_customize) {
 	/* Headings Color */
 	$wp_customize->add_setting( 'heading_color', array(
 		'default'        => '',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'heading_color', array(
@@ -814,22 +815,22 @@ function jbst_colors_customizer_options($wp_customize) {
 	) ) );
 	
 		/* Main Content Background Color */
-	$wp_customize->add_setting( 'page_backgroundcolor', array(
-		'default'        => '',
-		'sanitize_callback' => 'sanitize_hex_color'
+	$wp_customize->add_setting( 'content_bg', array(
+		'default'        => less_content_bg,
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'page_backgroundcolor', array(
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'content_bg', array(
 		'label'   => 'Main Content Background Color',
 		'section' => 'color_settings',
-		'settings'   => 'page_backgroundcolor',
+		'settings'   => 'content_bg',
 		'priority'       => 10,
 	) ) );
 	
 	/* Main Text Color */
 	$wp_customize->add_setting( 'body_color', array(
-		'default'        => '',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'default'        => less_body_bg,
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'body_color', array(
@@ -842,7 +843,7 @@ function jbst_colors_customizer_options($wp_customize) {
 	/* Small/Meta Text Color */
 	$wp_customize->add_setting( 'small_color', array(
 		'default'        => '',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'small_color', array(
@@ -855,7 +856,7 @@ function jbst_colors_customizer_options($wp_customize) {
 	/* Link Color */
 	$wp_customize->add_setting( 'link_color', array(
 		'default'        => link_color,
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
@@ -868,7 +869,7 @@ function jbst_colors_customizer_options($wp_customize) {
 	/* Border Color */
 	$wp_customize->add_setting( 'border_color', array(
 		'default'        => '',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'border_color', array(
@@ -881,7 +882,7 @@ function jbst_colors_customizer_options($wp_customize) {
 	/* Border Accent Color */
 	$wp_customize->add_setting( 'border_accent_color', array(
 		'default'        => '',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'border_accent_color', array(
@@ -894,7 +895,7 @@ function jbst_colors_customizer_options($wp_customize) {
 	/* Well Color */
 	$wp_customize->add_setting( 'well_color', array(
 		'default'        => '',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'well_color', array(
@@ -1246,7 +1247,7 @@ function jbst_footer_customizer_options($wp_customize) {
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'footer_background_image', array(
-		'label'    => __( 'Footer Background Image (full width only)' , 'jamedo-bootstrap-start-theme'),
+		'label'    => __( 'Footer Background Image' , 'jamedo-bootstrap-start-theme'),
 		'section'  => 'footer_settings',
 		'settings' => 'footer_background_image',
 		'priority'       => 10,
@@ -1255,7 +1256,7 @@ function jbst_footer_customizer_options($wp_customize) {
 	/* Footer Background Color */
 	$wp_customize->add_setting( 'footer_bg_color', array(
 		'default'        => footer_bg_color,
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_bg_color', array(
@@ -1268,7 +1269,7 @@ function jbst_footer_customizer_options($wp_customize) {
 	/* Footer Text Color */
 	$wp_customize->add_setting( 'footer_text_color', array(
 		'default'        => footer_text_color,
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_text_color', array(
@@ -1281,7 +1282,7 @@ function jbst_footer_customizer_options($wp_customize) {
 	/* Footer Link Color */
 	$wp_customize->add_setting( 'footer_link_color', array(
 		'default'        => footer_link_color,
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_link_color', array(
@@ -1290,15 +1291,28 @@ function jbst_footer_customizer_options($wp_customize) {
 		'settings'   => 'footer_link_color',
 		'priority'       => 25,
 	) ) );
+	
+	/* Footer Link Hover Color */
+	$wp_customize->add_setting( 'footer_link_hover_color', array(
+		'default'        => footer_link_hover_color,
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_link_hover_color', array(
+		'label'   => 'Footer Link Hover Color',
+		'section' => 'footer_settings',
+		'settings'   => 'footer_link_hover_color',
+		'priority'       => 25,
+	) ) );
 
 	/* Footer Top Border Color */
 	$wp_customize->add_setting( 'footer_top_border_color', array(
 		'default'        => '',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_top_border_color', array(
-		'label'   => 'Footer Top Border Color (full width only)',
+		'label'   => 'Footer Top Border Color',
 		'section' => 'footer_settings',
 		'settings'   => 'footer_top_border_color',
 		'priority'       => 30,
@@ -1307,7 +1321,7 @@ function jbst_footer_customizer_options($wp_customize) {
 	/* Footer Widget Border Color */
 	$wp_customize->add_setting( 'footer_widget_border_color', array(
 		'default'        => '',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_widget_border_color', array(
@@ -1320,7 +1334,7 @@ function jbst_footer_customizer_options($wp_customize) {
 	/* Footer Bottom Border Color */
 	$wp_customize->add_setting( 'footer_bottom_border_color', array(
 		'default'        => '',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'jbst_sanitize_hex_color'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_bottom_border_color', array(
@@ -1455,4 +1469,3 @@ function jbst_wpec_customizer_options($wp_customize) {
 	) );
 }// END WP e-Commerce SETTINGS	
 }
-
