@@ -36,9 +36,10 @@ $logo_font = get_theme_mod('logo_font_family',logo_font_family);
 
 $container = get_theme_mod( 'container_width', 1200);
 
-
-if (!empty($body_bg = get_theme_mod( 'body_bg',less_body_bg) )) {echo '@body-bg:' .$body_bg.';';}
-if (!empty($content_bg = get_theme_mod( 'content_bg',less_content_bg) )) {echo '@content-bg:' .$content_bg.';';}
+$body_bg = get_theme_mod( 'body_bg',less_body_bg);
+if (!empty( $body_bg )) {echo '@body-bg:' .$body_bg.';';}
+$content_bg = get_theme_mod( 'content_bg',less_content_bg);
+if (!empty( $content_bg )) {echo '@content-bg:' .$content_bg.';';}
 
 /* Site Background */
 echo 'body,html {';

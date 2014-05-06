@@ -25,9 +25,7 @@
  * @since 2.0.6
  */
 
-/* Load custom jbst functions. */
-require( get_template_directory() . '/functions/options-functions.php' );
-require_once( trailingslashit( get_template_directory() ) . 'library/core.php' );
+
 /*
 ==========================================================
 THEME DEFAULTS
@@ -41,6 +39,7 @@ THEME DEFAULTS
  *
  * @since JBST 1.0
  */
+
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
 
@@ -52,6 +51,11 @@ if ( ! function_exists( 'jbst_theme_setup' ) ):
 /*
 Sets up theme defaults and registers support for various WordPress features. Note that this function is hooked into the after_setup_theme hook, which runs before the init hook. The init hook is too late for some features, such as indicating support post thumbnails.@since jbst 1.0
 */
+
+	/* Load custom jbst functions. */
+	require( get_template_directory() . '/functions/options-functions.php' );
+	require_once( trailingslashit( get_template_directory() ) . 'library/core.php' );
+
 	function jbst_theme_setup() {
 
 	/* Load custom jbst functions. */
