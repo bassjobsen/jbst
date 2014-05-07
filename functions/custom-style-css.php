@@ -141,7 +141,8 @@ $footer_link_color=get_theme_mod( 'footer_link_color');
 $footer_link_hover_color=get_theme_mod( 'footer_link_hover_color');
 $footer_background_image=get_theme_mod( 'footer_background_image','');
 
-if(get_theme_mod( 'footer_width', footer_width ) == 'cont-width'){echo 'footer#colophon {background:transparent;}';}	
+if(get_theme_mod( 'footer_width', footer_width ) == 'cont-width'){echo 'footer#colophon {background:transparent;}';}
+else {echo 'footer#colophon .container {background:transparent;}';}	
 echo 'footer#colophon '.((get_theme_mod( 'footer_width', footer_width ) == 'cont-width')?' .container':'').' {';
 	
 	if(!empty($footer_top_border_color))	{echo 'border-top:1px solid ' .$footer_top_border_color.';';}
