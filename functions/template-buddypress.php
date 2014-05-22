@@ -2,7 +2,7 @@
 /* Add custom BuddyPress styling
 ----------------------------------------------- */
 function jbst_buddypress_css() {    
-	wp_register_style( 'jbst-buddypress-css', get_stylesheet_directory_uri() . '/assets/css/buddypress.css', array(), '20121008', 'all' );
+    wp_register_style( 'jbst-buddypress-css', get_template_directory_uri() . '/assets/css/buddypress.css', array(), '20121008', 'all' );
     wp_enqueue_style( 'jbst-buddypress-css' );
 }
 add_action( 'wp_enqueue_scripts', 'jbst_buddypress_css', 99 );
@@ -20,7 +20,7 @@ add_action( 'jbst_add_to_custom_style', 'jbst_buddypress_custom_style', 99 );
 /* Use jQuery to add bootstrap classes to stuff
 ----------------------------------------------- */
 function jbst_buddypress_add_classes() {
-	wp_register_script( 'buddypress_js', get_stylesheet_directory_uri() . '/library/assets/js/buddypress.js', array( 'jquery' ), '20120921', true );
+	wp_register_script( 'buddypress_js', get_template_directory_uri() . '/library/assets/js/buddypress.js', array( 'jquery' ), '20120921', true );
 	wp_enqueue_script( 'buddypress_js' );
 }
 

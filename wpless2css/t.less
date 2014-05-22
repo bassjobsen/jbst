@@ -1,0 +1,11 @@
+.color(@color) when (isunit(@color,'deg')){
+color:red;
+}
+.color(@color) when (default) {
+color:green;
+}
+
+
+p {
+.color(45deg);
+}

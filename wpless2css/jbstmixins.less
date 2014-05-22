@@ -10,3 +10,42 @@
         font-style: @style;
     }
 }
+
+
+.sprite(@sprite-image) {
+	.sprite-image(@sprite-image);
+	display: inline-block;
+	text-indent: -9999px;
+}
+
+
+.sprite-image(@sprite-image:@sprite-image) {
+	background-image: url("@{sprite-image}");
+	background-repeat: no-repeat;
+	  @media
+	  only screen and (-webkit-min-device-pixel-ratio: 2),
+	  only screen and (   min--moz-device-pixel-ratio: 2),
+	  only screen and (     -o-min-device-pixel-ratio: 2/1),
+	  only screen and (        min-device-pixel-ratio: 2),
+	  only screen and (                min-resolution: 192dpi),
+	  only screen and (                min-resolution: 2dppx) {
+    background-image: url("@{sprite-image}-2x");
+   
+  }
+	
+}
+
+.sprite-pos(@x, @y,@width,@height) {
+	background-position: -(@x*@width*1px)  -(@y*@height*1px);
+	@media
+	  only screen and (-webkit-min-device-pixel-ratio: 2),
+	  only screen and (   min--moz-device-pixel-ratio: 2),
+	  only screen and (     -o-min-device-pixel-ratio: 2/1),
+	  only screen and (        min-device-pixel-ratio: 2),
+	  only screen and (                min-resolution: 192dpi),
+	  only screen and (                min-resolution: 2dppx) {
+    background-position: -(@x*@width*2px)  -(@y*@height*2px);
+    background-size: @width @height;
+  }
+	
+}
