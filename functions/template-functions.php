@@ -26,6 +26,7 @@ function jbst_layout(){
 		if (is_page() || is_home()) {$jbst_layout = of_get_option('default_page_layout', jbst_default_page_layout);}
 		elseif (is_search()) {$jbst_layout = of_get_option('default_search_layout', jbst_default_page_layout);}
 		elseif (is_archive()) {$jbst_layout = of_get_option('default_archive_layout', jbst_default_page_layout);}
+		elseif ( is_404() ){$jbst_layout = of_get_option('default_404_layout', jbst_default_page_layout);}
 		else {$jbst_layout = of_get_option('default_blog_layout', jbst_default_page_layout);}
 		if ($jbstecommerce == true) {
 			if (is_shop()) {$jbst_layout = of_get_option('default_shop_layout', jbst_default_page_layout);}

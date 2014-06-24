@@ -118,15 +118,16 @@ FOOTER CREDITS
 ==========================================================
 */
 function jbst_custom_credits() {
-	apply_filters('jbst_render_footer_credits',jbst_footer_credits());
+	echo apply_filters('jbst_render_footer_credits',jbst_footer_credits());
 }
 
 function jbst_footer_credits() {
 	
-	if(get_theme_mod('footer_credits') <> "") {echo get_theme_mod('footer_credits');}
-	else {?>
-		<?php printf( __( '&copy;', 'jamedo-bootstrap-start-theme' )); ?> <?php echo date('Y');?> <?php echo bloginfo('name');?><span class="sep"> | </span><a target="_blank" href="<?php esc_attr_e( 'http://www.jbst.eu/', 'jamedo-bootstrap-start-theme' ); ?>" title="<?php esc_attr_e( 'Powered by JBST', 'jamedo-bootstrap-start-theme' ); ?>" rel="generator"><?php printf( __( 'Powered by JBST', 'jamedo-bootstrap-start-theme' ), 'jamedo-bootstrap-start-theme' ); ?></a>
-	<?php }
+	if(get_theme_mod('footer_credits') <> "") {return get_theme_mod('footer_credits');}
+	else {
+		 $blog_title = get_bloginfo('name');
+		 return sprintf( __( '&copy; ', 'jamedo-bootstrap-start-theme' )) . date('Y') .' '. $blog_title.'<span class="sep"> | </span><a target="_blank" href="' . esc_attr(__( 'http://www.jbst.eu/', 'jamedo-bootstrap-start-theme' )). '" title="' . esc_attr(__( 'Powered by JBST', 'jamedo-bootstrap-start-theme' )) .' rel="generator">'.sprintf( __( 'Powered by JBST', 'jamedo-bootstrap-start-theme' ), 'jamedo-bootstrap-start-theme' ) . '</a>';
+	 }
 }	
 
 add_action('jbst_credits', 'jbst_custom_credits',10);

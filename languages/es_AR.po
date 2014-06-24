@@ -1,68 +1,68 @@
+# Copyright (C) 2014 Bass Jobsen
+# This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
 "Project-Id-Version: JBST 1.21\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/jamedo-bootstrap-start-"
 "theme\n"
 "POT-Creation-Date: 2014-01-05 13:02:35+00:00\n"
-"PO-Revision-Date: 2014-05-28 21:58+0100\n"
-"Last-Translator: Bass Jobsen <bass@w3masters.nl>\n"
-"Language-Team: Jamedo Websites <info@jamedowebsites.nl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-05-24 01:51+0100\n"
+"Last-Translator: Bass Jobsen <bass@w3masters.nl>\n"
+"Language-Team: \n"
 "X-Generator: Poedit 1.5.4\n"
+"Language: Spanish argentina\n"
 
 #: comments.php:22 comments.php:25 comments.php:28
 #: functions/jbst-footer-functions.php:76 functions/template-sidebars.php:34
 #: options.php:32
 msgid "One"
-msgstr "E&eacute;n"
+msgstr ""
 
 #: functions/jbst-footer-functions.php:77 functions/template-sidebars.php:35
 #: options.php:33
 msgid "Two"
-msgstr "Twee"
+msgstr ""
 
 #: functions/jbst-footer-functions.php:78 functions/template-sidebars.php:36
 #: options.php:34
 msgid "Three"
-msgstr "Drie"
+msgstr ""
 
 #: functions/jbst-footer-functions.php:79 functions/template-sidebars.php:37
 #: options.php:35
 msgid "Four"
-msgstr "Vier"
+msgstr ""
 
 #: functions/jbst-footer-functions.php:89 functions/template-sidebars.php:42
-#, fuzzy
 msgid "Footer Widget"
-msgstr "Widget footer 1e kolom"
+msgstr ""
 
 #: functions/jbst-footer-functions.php:92
 msgid ""
 "You have activated a Footer Widget! You can deactivate this in the Theme "
 "Customizer or put content in it under \"Appearance > Widgets\"."
 msgstr ""
-"U heeft een  Footer Widget geactiveerd!  U kunt deze deactiveren in de Theme "
-"Customizer of er content in plaatsen via \"Weergave > Widgets\"."
 
 #: functions/jbst-footer-functions.php:112
 msgid "&copy;"
-msgstr "&copy;"
+msgstr ""
 
 #. #-#-#-#-#  jamedo-bootstrap-start-theme.pot (JBST 1.21)  #-#-#-#-#
 #. Theme URI of the plugin/theme
 #: functions/jbst-footer-functions.php:112
 msgid "https://github.com/bassjobsen/jamedo-bootstrap-start-theme"
-msgstr "https://github.com/bassjobsen/jamedo-bootstrap-start-theme"
+msgstr ""
 
 #: functions/jbst-footer-functions.php:112
 msgid "Powered by Jamedo's Bootstrap Start Theme"
-msgstr "Powered by Jamedo's Bootstrap Start Theme"
+msgstr ""
 
 #: functions/jbst-header-functions.php:58
 msgid "Page %s"
-msgstr "Pagina %s"
+msgstr ""
 
 #: functions/jbst-header-functions.php:150
 msgid "Toggle navigation"
@@ -70,7 +70,7 @@ msgstr ""
 
 #: functions/template-buddypress.php:36 library/core.php:342
 msgid "My Profile"
-msgstr "Mijn profiel"
+msgstr ""
 
 #: functions/template-customizer.php:35 functions/template-customizer.php:44
 msgid "default"
@@ -85,9 +85,8 @@ msgid "Default Grid"
 msgstr ""
 
 #: functions/template-customizer.php:87
-#, fuzzy
 msgid "Large"
-msgstr "Link target"
+msgstr ""
 
 #: functions/template-customizer.php:88
 msgid "Medium"
@@ -131,9 +130,8 @@ msgid "Open submenus on click (for mobile usage)"
 msgstr ""
 
 #: functions/template-customizer.php:152
-#, fuzzy
 msgid "Container"
-msgstr "Content"
+msgstr ""
 
 #: functions/template-customizer.php:162
 msgid "Max Container Width"
@@ -190,24 +188,20 @@ msgid "Default"
 msgstr ""
 
 #: functions/template-customizer.php:308
-#, fuzzy
 msgid "Navbar Style"
-msgstr "Waarschuwings stijl"
+msgstr ""
 
 #: functions/template-customizer.php:329 functions/template-customizer.php:341
-#, fuzzy
 msgid "Background Color"
-msgstr "Achtergrondkleur"
+msgstr ""
 
 #: functions/template-customizer.php:353
-#, fuzzy
 msgid "Item Color"
-msgstr "Kleur icon"
+msgstr ""
 
 #: functions/template-customizer.php:545
-#, fuzzy
 msgid "Background Image"
-msgstr "Achtergrondkleur"
+msgstr ""
 
 #: functions/template-customizer.php:616
 msgid "Some basic font choices for your theme."
@@ -241,47 +235,47 @@ msgstr[1] ""
 #: functions/template-ecommerce.php:98 functions/template-ecommerce.php:214
 #: functions/template-ecommerce.php:440
 msgid "My Account"
-msgstr "Mijn account"
+msgstr ""
 
 #: functions/template-ecommerce.php:105 functions/template-ecommerce.php:221
 msgid "Change Password"
-msgstr "Wijzig wachtwoord"
+msgstr ""
 
 #: functions/template-ecommerce.php:112 functions/template-ecommerce.php:228
 msgid "Edit Address"
-msgstr "Bewerk adres"
+msgstr ""
 
 #: functions/template-ecommerce.php:372
 msgid "Additional Images"
-msgstr "Extra afbeeldingen"
+msgstr ""
 
 #: functions/template-ecommerce.php:375
 msgid "Additional Description"
-msgstr "Aanvullende beschrijving"
+msgstr ""
 
 #: content-archive.php:45 functions/template-functions.php:175 sidebar.php:18
 msgid "Archives"
-msgstr "Archieven"
+msgstr ""
 
 #: functions/template-functions.php:182 sidebar.php:25
 msgid "Meta"
-msgstr "Meta"
+msgstr ""
 
 #: functions/template-sidebars.php:10
 msgid "Left Content Sidebar"
-msgstr "Zijbalk links van content"
+msgstr ""
 
 #: functions/template-sidebars.php:18
 msgid "Right Content Sidebar"
-msgstr "Zijbalk rechts van content"
+msgstr ""
 
 #: functions/template-widgets.php:60
 msgid "No menus have been created yet. <a href=\"%s\">Create some</a>."
-msgstr "Er zijn nog geen menu's aangemaakt. <a href=\"%s\">Aanmaken</a>."
+msgstr ""
 
 #: functions/template-widgets.php:65
 msgid "Title:"
-msgstr "Titel:"
+msgstr ""
 
 #: functions/template-widgets.php:69
 msgid "Select Menu:"
@@ -293,17 +287,17 @@ msgstr ""
 
 #: library/core.php:58
 msgid "Welcome to"
-msgstr "Welkom bij"
+msgstr ""
 
 #: library/core.php:58 library/core.php:65 library/core.php:81
 #: library/core.php:86 library/core.php:97 library/core.php:101
 #: library/core.php:108
 msgid "Jamedo's Bootstrap Start Theme"
-msgstr "Jamedo's Bootstrap Start Theme"
+msgstr ""
 
 #: library/core.php:58
 msgid "Congratulations"
-msgstr "Gefeliciteerd"
+msgstr ""
 
 #: library/core.php:58
 msgid ""
@@ -315,15 +309,6 @@ msgid ""
 "theme options, metaboxes, and compatibility with BuddyPress and the leading "
 "eCommerce platforms (WP e-Commerce, WooCommerce and JigoShop)."
 msgstr ""
-"<h1>Welkom bij JBST.</h1><p class=\"about-description\">Gefeliciteerd! U "
-"heeft zojuist een van 's werelds meest geavancheerde theme frameworks "
-"geactiveerd! Met het JBST Framework creëert u solide websites zonder code te "
-"hoeven schrijven, u maakt enkel gebruik van onze layout engine en shortcodes "
-"om uw theme te bouwen. Voor ontwikkelaars heeft JBST Framework alle "
-"benodigdheden om fantastische websites voor klanten te bouwen. JBST "
-"Framework heeft ingebouwde ondersteuning voor theme opties, metaboxes en is "
-"compatibel met Buddypress en de meeste gebruikte e-commersoplossingen (WP e-"
-"Commerce, WooCommerce en JigoShop).</p>"
 
 #: library/core.php:62
 msgid "Getting Started"
@@ -365,9 +350,8 @@ msgid "click here to see it in action"
 msgstr ""
 
 #: library/core.php:78
-#, fuzzy
 msgid "Shortcodes"
-msgstr "Kies shortcode"
+msgstr ""
 
 #: library/core.php:84
 msgid ""
@@ -403,7 +387,7 @@ msgstr ""
 
 #: library/core.php:96
 msgid "eCommerce Options"
-msgstr "eCommerce opties"
+msgstr ""
 
 #: library/core.php:97
 msgid ""
@@ -438,7 +422,7 @@ msgstr ""
 
 #: library/core.php:116
 msgid "Support"
-msgstr "Ondersteuning"
+msgstr ""
 
 #: library/core.php:117
 msgid ""
@@ -472,19 +456,19 @@ msgstr ""
 
 #: library/core.php:367
 msgid "Username"
-msgstr "Gebruikersnaam"
+msgstr "Nombre de usuario"
 
 #: library/core.php:370
 msgid "Password"
-msgstr "Wachtwoord"
+msgstr "Contraseña"
 
 #: library/core.php:372
 msgid "Remember Me"
-msgstr ""
+msgstr "Recuérdame"
 
 #: library/core.php:377
 msgid "Lost Password?"
-msgstr "Wachtwoord vergeten?"
+msgstr "¿Has perdido tu contraseña?"
 
 #: library/core.php:429 searchform.php:11 searchform.php:14
 msgid "Search"
@@ -496,7 +480,7 @@ msgstr ""
 
 #: library/core.php:738 library/core.php:914
 msgid "Your comment is awaiting moderation."
-msgstr "Uw reactie is in afwachting van goedkeuring"
+msgstr ""
 
 #: content-page.php:18 content-search.php:72 content-single.php:60
 #: content.php:62 image.php:34 image.php:103 library/core.php:745
@@ -513,10 +497,9 @@ msgid "&larr;"
 msgstr ""
 
 #: library/core.php:808
-#, fuzzy
 msgctxt "Next post link"
 msgid "&rarr;"
-msgstr "Volgende &rarr;"
+msgstr ""
 
 #: library/core.php:813
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
@@ -524,24 +507,24 @@ msgstr ""
 
 #: library/core.php:817
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Nieuwere berichten <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
 
 #: library/core.php:901
 msgid "Pingback:"
-msgstr "Pingback:"
+msgstr ""
 
 #: library/core.php:901 library/core.php:924
 msgid "(Edit)"
-msgstr "(Bewerken)"
+msgstr ""
 
 #: library/core.php:911
 msgid "%s <span class=\"says\">says:</span>"
-msgstr "%s <span class=\"says\">zegt:</span>"
+msgstr ""
 
 #. translators: 1: date, 2: time
 #: library/core.php:922
 msgid "%1$s at %2$s"
-msgstr "%1$s om %2$s"
+msgstr ""
 
 #: library/core.php:954
 msgid ""
@@ -553,7 +536,7 @@ msgstr ""
 
 #: library/core.php:960
 msgid "View all posts by %s"
-msgstr "Bekijk alle berichten geschreven door %s"
+msgstr ""
 
 #: library/metaboxes/example-functions.php:25
 msgid "Test Metabox"
@@ -561,9 +544,8 @@ msgstr ""
 
 #: library/metaboxes/example-functions.php:33
 #: library/metaboxes/example-functions.php:254
-#, fuzzy
 msgid "Test Text"
-msgstr "Label tekst"
+msgstr ""
 
 #: library/metaboxes/example-functions.php:34
 #: library/metaboxes/example-functions.php:42
@@ -609,9 +591,8 @@ msgid "Test Text Medium"
 msgstr ""
 
 #: library/metaboxes/example-functions.php:55
-#, fuzzy
 msgid "Website URL"
-msgstr "Website"
+msgstr ""
 
 #: library/metaboxes/example-functions.php:63
 msgid "Test Text Email"
@@ -647,9 +628,8 @@ msgid "Test Money"
 msgstr ""
 
 #: library/metaboxes/example-functions.php:115
-#, fuzzy
 msgid "Test Color Picker"
-msgstr "Tekstkleur"
+msgstr ""
 
 #: library/metaboxes/example-functions.php:122
 msgid "Test Text Area"
@@ -668,9 +648,8 @@ msgid "Test Title Weeeee"
 msgstr ""
 
 #: library/metaboxes/example-functions.php:141
-#, fuzzy
 msgid "This is a title description"
-msgstr "Tooltip (hulpballon) beschrijving"
+msgstr ""
 
 #: library/metaboxes/example-functions.php:146
 msgid "Test Select"
@@ -679,9 +658,8 @@ msgstr ""
 #: library/metaboxes/example-functions.php:151
 #: library/metaboxes/example-functions.php:162
 #: library/metaboxes/example-functions.php:173
-#, fuzzy
 msgid "Option One"
-msgstr "Theme media opties"
+msgstr ""
 
 #: library/metaboxes/example-functions.php:152
 #: library/metaboxes/example-functions.php:163
@@ -692,9 +670,8 @@ msgstr ""
 #: library/metaboxes/example-functions.php:153
 #: library/metaboxes/example-functions.php:164
 #: library/metaboxes/example-functions.php:175
-#, fuzzy
 msgid "Option Three"
-msgstr "Theme media opties"
+msgstr ""
 
 #: library/metaboxes/example-functions.php:157
 msgid "Test Radio inline"
@@ -733,9 +710,8 @@ msgid "Check Two"
 msgstr ""
 
 #: library/metaboxes/example-functions.php:213
-#, fuzzy
 msgid "Check Three"
-msgstr "Drie"
+msgstr ""
 
 #: library/metaboxes/example-functions.php:217
 msgid "Test wysiwyg"
@@ -750,9 +726,8 @@ msgid "Upload an image or enter a URL."
 msgstr ""
 
 #: library/metaboxes/example-functions.php:230
-#, fuzzy
 msgid "Multiple Files"
-msgstr "Bekijk het bestand"
+msgstr ""
 
 #: library/metaboxes/example-functions.php:231
 msgid "Upload or add multiple images/attachments."
@@ -798,9 +773,8 @@ msgid "Google+ URL"
 msgstr ""
 
 #: library/metaboxes/example-functions.php:305
-#, fuzzy
 msgid "Linkedin URL"
-msgstr "Link url"
+msgstr ""
 
 #: library/metaboxes/example-functions.php:311
 msgid "User Field"
@@ -855,14 +829,12 @@ msgid "Clear"
 msgstr ""
 
 #: library/metaboxes/init.php:209
-#, fuzzy
 msgid "Select Color"
-msgstr "Tekstkleur"
+msgstr ""
 
 #: library/metaboxes/init.php:210
-#, fuzzy
 msgid "Current Color"
-msgstr "Tekstkleur"
+msgstr ""
 
 #: library/metaboxes/init.php:936
 msgid "Save"
@@ -872,32 +844,27 @@ msgstr ""
 #: library/options/includes/class-options-framework-admin.php:98
 #: library/options/includes/class-options-framework-admin.php:343
 msgid "Theme Options"
-msgstr "Theme opties"
+msgstr ""
 
 #: library/options/includes/class-options-framework-admin.php:206
 msgid "Save Options"
-msgstr "Opties opslaan"
+msgstr ""
 
 #: library/options/includes/class-options-framework-admin.php:207
-#, fuzzy
 msgid "Restore Defaults"
-msgstr "Herstel de standaard opties"
+msgstr ""
 
 #: library/options/includes/class-options-framework-admin.php:207
-#, fuzzy
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr ""
-"Druk op Ok om te resetten. Alle theme instellingen die u heeft gemaakt in "
-"dit panell zullen verloren gaan!"
 
 #: library/options/includes/class-options-framework-admin.php:238
 msgid "Default options restored."
 msgstr ""
 
 #: library/options/includes/class-options-framework-admin.php:294
-#, fuzzy
 msgid "Options saved."
-msgstr "Theme media opties"
+msgstr ""
 
 #: library/options/includes/class-options-media-uploader.php:63
 msgid "No file chosen"
@@ -906,7 +873,7 @@ msgstr ""
 #: library/options/includes/class-options-media-uploader.php:66
 #: library/options/includes/class-options-media-uploader.php:119
 msgid "Upload"
-msgstr "Upload"
+msgstr ""
 
 #: library/options/includes/class-options-media-uploader.php:71
 msgid "Upgrade your version of WordPress for full media support."
@@ -914,7 +881,7 @@ msgstr ""
 
 #: library/options/includes/class-options-media-uploader.php:95
 msgid "View File"
-msgstr "Bekijk het bestand"
+msgstr ""
 
 #: library/options/includes/class-options-sanitization.php:241
 msgid "No Repeat"
@@ -925,9 +892,8 @@ msgid "Repeat Horizontally"
 msgstr ""
 
 #: library/options/includes/class-options-sanitization.php:243
-#, fuzzy
 msgid "Repeat Vertically"
-msgstr "Verticaal gestapeld"
+msgstr ""
 
 #: library/options/includes/class-options-sanitization.php:244
 msgid "Repeat All"
@@ -1013,12 +979,10 @@ msgstr ""
 #: comments.php:7
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
-"Dit bericht is afgeschermd met een wachtwoord. Voer het wachtwoord in om de "
-"reacties te bekijken."
 
 #: comments.php:22 comments.php:25 comments.php:28
 msgid "No"
-msgstr "Nee"
+msgstr ""
 
 #: comments.php:22
 msgid "Reviews"
@@ -1030,7 +994,7 @@ msgstr ""
 
 #: comments.php:22
 msgid "for"
-msgstr "voor"
+msgstr ""
 
 #: comments.php:25 comments.php:28
 msgid "Responses"
@@ -1042,15 +1006,15 @@ msgstr ""
 
 #: comments.php:25 comments.php:28
 msgid "to"
-msgstr "om"
+msgstr ""
 
 #: comments.php:35 comments.php:46
 msgid "Older comments"
-msgstr "Oudere reacties"
+msgstr ""
 
 #: comments.php:36 comments.php:47
 msgid "Newer comments"
-msgstr "Nieuwere reacties"
+msgstr ""
 
 #: comments.php:68
 msgid "Comments are closed"
@@ -1074,19 +1038,19 @@ msgstr ""
 
 #: comments.php:97
 msgid "You must be"
-msgstr "U moet"
+msgstr ""
 
 #: comments.php:97
 msgid "logged in"
-msgstr "ingelogd"
+msgstr ""
 
 #: comments.php:97
 msgid "to post a comment"
-msgstr "om een reactie te plaatsen"
+msgstr ""
 
 #: comments.php:105
 msgid "Logged in as"
-msgstr "Ingelogd als"
+msgstr ""
 
 #: comments.php:105
 msgid "Log out of this account"
@@ -1098,7 +1062,7 @@ msgstr ""
 
 #: comments.php:112
 msgid "Name"
-msgstr "Naam"
+msgstr ""
 
 #: comments.php:112 comments.php:122
 msgid "required"
@@ -1106,39 +1070,39 @@ msgstr ""
 
 #: comments.php:115
 msgid "Your Name"
-msgstr "Uw naam"
+msgstr ""
 
 #: comments.php:122
 msgid "Mail"
-msgstr "E-mail"
+msgstr ""
 
 #: comments.php:125
 msgid "Your Email"
-msgstr "Uw e-mailadres"
+msgstr ""
 
 #: comments.php:128
 msgid "will not be published"
-msgstr "wordt niet gepubliceerd"
+msgstr ""
 
 #: comments.php:133
 msgid "Website"
-msgstr "Website"
+msgstr ""
 
 #: comments.php:136
 msgid "Your Website"
-msgstr "Uw website"
+msgstr ""
 
 #: comments.php:146
 msgid "Your Comment Here..."
-msgstr "Uw reactie hier..."
+msgstr ""
 
 #: comments.php:150
 msgid "Submit Comment"
-msgstr "Reactie versturen"
+msgstr ""
 
 #: content-404.php:14
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oeps! Deze pagina kan niet gevonden worden."
+msgstr ""
 
 #: content-404.php:18
 msgid ""
@@ -1148,12 +1112,12 @@ msgstr ""
 
 #: content-404.php:25
 msgid "Most Used Categories"
-msgstr "Meestgebruikte categorie&eumlt;n"
+msgstr ""
 
 #. translators: %1$s: smilie
 #: content-404.php:33
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "Probeer te zoeken  in de maandelijkse archieven. %1$s"
+msgstr ""
 
 #: content-archive.php:15
 msgid "Category Archives: %s"
@@ -1185,7 +1149,7 @@ msgstr ""
 
 #: content-no-results.php:20 no-results.php:14
 msgid "Nothing Found"
-msgstr "Niets gevonden"
+msgstr ""
 
 #: content-no-results.php:26 no-results.php:20
 msgid ""
@@ -1208,7 +1172,7 @@ msgstr ""
 #: content-wpec.php:16 content.php:30 image.php:89 pagewpec.php:28
 #: single-wpsc-product.php:32
 msgid "Pages:"
-msgstr "Pagina's:"
+msgstr ""
 
 #: content-search.php:8
 msgid "Search Results for: %s"
@@ -1216,7 +1180,7 @@ msgstr ""
 
 #: content-search.php:19 content.php:14
 msgid "Permalink to %s"
-msgstr "Permalink naar %s"
+msgstr ""
 
 #: content-search.php:33
 msgid "Continue reading &rarr;"
@@ -1230,7 +1194,7 @@ msgstr ""
 #: content-search.php:47 content-search.php:57 content-single.php:28
 #: content.php:37 content.php:47
 msgid ", "
-msgstr ","
+msgstr ""
 
 #: content-search.php:51 content.php:41
 msgid "Posted in %1$s"
@@ -1238,7 +1202,7 @@ msgstr ""
 
 #: content-search.php:62 content.php:52
 msgid "Tagged %1$s"
-msgstr "Getagged als %1$s"
+msgstr ""
 
 #: content-search.php:69 content.php:59
 msgid "Leave a comment"
@@ -1246,11 +1210,11 @@ msgstr ""
 
 #: content-search.php:69 content.php:59
 msgid "1 Comment"
-msgstr "1 Reactie"
+msgstr ""
 
 #: content-search.php:69 content.php:59
 msgid "% Comments"
-msgstr "% Reacties"
+msgstr ""
 
 #. translators: used between list items, there is a space after the comma
 #: content-single.php:36
@@ -1258,8 +1222,6 @@ msgid ""
 "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink "
 "to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Dit bericht is  getagged als %2$s. Bookmark de <a href=\"%3$s\" title="
-"\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 
 #: content-single.php:38
 msgid ""
@@ -1272,16 +1234,12 @@ msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Dit bericht is geplaatst in %1$s en getagged als %2$s. Bookmark de <a href="
-"\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 
 #: content-single.php:46
 msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
 "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Dit bericht is geplaatst in %1$s. Bookmark de <a href=\"%3$s\" title="
-"\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 
 #: functions.php:254
 msgid "Customizer credentials"
@@ -1297,11 +1255,11 @@ msgstr ""
 
 #: image.php:40
 msgid "&larr; Previous"
-msgstr "&larr; Vorige"
+msgstr ""
 
 #: image.php:41
 msgid "Next &rarr;"
-msgstr "Volgende &rarr;"
+msgstr ""
 
 #: image.php:95
 msgid ""
@@ -1322,8 +1280,6 @@ msgid ""
 "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
 "\" title=\"Post a comment\">post a comment</a>."
 msgstr ""
-"Trackbacks zijn uitgeschhakeld, maar u kunt wel een  <a class=\"comment-link"
-"\" href=\"#respond\" title=\"opmerking plaatsen \">opmerking plaatsen</a>."
 
 #: image.php:101
 msgid "Both comments and trackbacks are currently closed."
@@ -1359,13 +1315,10 @@ msgid ""
 "optional for you. By default, most are turned on, but you can deactivate any "
 "that you choose."
 msgstr ""
-"Het theme is uitgerust met specifieke kern functionaliteiten, deze zijn "
-"optioneel gemaakt. Standaard zijn de meest functies ingeschakeld, u kunt "
-"zelf kiezen welke functies u desgewenste wilt uitschakelen."
 
 #: options.php:124
 msgid "Automatic Page Titles"
-msgstr "Automaische paginatitels"
+msgstr ""
 
 #: options.php:125
 msgid ""
@@ -1373,13 +1326,10 @@ msgid ""
 "div with an <h1> tag wrapper. You can elect to turn this off and manually "
 "enter your titles in the page content."
 msgstr ""
-"Standaard wordt de titel van een pagina in de header div getoond. De "
-"paginatitel staat tussen <h1> tags. U kunt dit uitschakelen en de titels "
-"opnemen in de content van de pagina."
 
 #: options.php:132
 msgid "Automatic Thumbnails"
-msgstr "Automatische thumbnails"
+msgstr ""
 
 #: options.php:133
 msgid ""
@@ -1387,12 +1337,10 @@ msgid ""
 "first image from that post (if one exists) to use as a thumbnail on blog "
 "pages."
 msgstr ""
-"Wanneer geen thumbnail gespecificeerd is wordt standaard de eerste afbeeling "
-"van een blogpost (als deze aanwezig is) gebruikt als thumbnail ."
 
 #: options.php:140
 msgid "Lightbox Images & Galleries"
-msgstr "Lightbox Afbeeldingen & Galerijen"
+msgstr ""
 
 #: options.php:141
 msgid ""
@@ -1401,15 +1349,10 @@ msgid ""
 "includes navigation of image galleries. You may want to turn this off if you "
 "are using a different plugin for this feature."
 msgstr ""
-"Standaard worden alle afbeeldingen in een hyperlink geplaatst. Na het "
-"aanklikken van de afbeelding wordt een groter formaat van de afbeelding in "
-"een Lightbox2 popup getoond. Dit geldt ook voor de navigatie door de "
-"afbeeldingengalerijen. Indien een  ander plugin voor deze functionaliteit "
-"wordt gebruikt kan deze functie hier worden uitgeschakeld."
 
 #: options.php:148
 msgid "Login Redirect to Homepage"
-msgstr "Login en redirect naar de homepage"
+msgstr ""
 
 #: options.php:149
 msgid ""
@@ -1419,19 +1362,12 @@ msgid ""
 "be turned off if you do not have an account button in your navbar. This is "
 "to avoid locking you out of your site.</strong></em>"
 msgstr ""
-"Na het inloggen worden gebruikers automastisch doorgestuurd naar de "
-"homepage. Deze optie kan worden uitgeschakeld, zodat ingelogde bezoekers "
-"worden doorgestuurd naar het WordPress dashboard. <em><strong>NB: Deze "
-"functie wordt uitgeschakeld als er geen account knop is opgenomen in de "
-"navigatiebalk. Dit voorkot dat u wordt uitgesloten van uw eigen website.</"
-"strong></em>"
 
 #: options.php:156
 msgid "Retina Display Support (BETA)"
-msgstr "Retina Display Support (BETA)"
+msgstr ""
 
 #: options.php:157
-#, fuzzy
 msgid ""
 "By activating this feature, images will be displayed at 2X resolution for "
 "devices with a pixel ratio equal to 2 or greater (iPhones & the new Retina "
@@ -1439,13 +1375,6 @@ msgid ""
 "currently it works only for thumbnails and featured images on the blog. It "
 "is stable however and you shouldn't have to worry about activating it."
 msgstr ""
-"Na het activeren van deze functie worden afbeeldingen weergegeven met een "
-"resolutie die 2 x zo groot is als de resolutie van het apparaat. De pixel "
-"ratio zal groter of gelijk aan 2 zijn ( (iPhones en Retina Macbook Pro). "
-"Deze functie moet als BETA (experimenteel) beschouwd worden. Deze functie "
-"werkt alleen voor thumbnails en \" featured\" (kenmerkende) afbeeldingen in "
-"de blog. Desondanks is het functie stabiel en kan zonder zorgen geactiveerd "
-"worden."
 
 #: options.php:173
 msgid ""
@@ -1484,22 +1413,12 @@ msgid ""
 "applicable code for you. This will affect CSS styles, the cart and account "
 "dropdown functions, etc."
 msgstr ""
-"De ecommerce (webwinkel) opties verschijnen alleen als een van de "
-"ondersteunde ecommerce platformen is geactiveerd. Het theme ondersteunt: "
-"WooCommerce, JigoShop en WP eCommerce. Er kan maar &eacute;&eacute;n "
-"platform tegelijkertijd actief zijn. Het theme detecteert automatisch welk "
-"platform ge&iumlt;nstalleerd is en past de code aan. Aanpassingen hebben "
-"effect op CSS stijlen, het winkelmandje, dropdown menu's, etc."
 
 #: options.php:316
-#, fuzzy
 msgid ""
 "Use the LESS editor below to add custom styles to your site. Any styles "
 "added here won't be affected by upgrading your theme."
 msgstr ""
-"Gebruik de CSS bewerker om aangepaste styles aan uw website toe te voegen. "
-"CSS code die u hier toevoegt wordt niet aangepast als het theme geupgrade "
-"wordt."
 
 #: searchform.php:12
 msgid "Search &hellip;"
@@ -1521,257 +1440,8 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Bass Jobsen"
-msgstr "Bass Jobsen"
+msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "http://bassjobsen.weblogs.fm/"
-msgstr "http://bassjobsen.weblogs.fm/"
-
-#~ msgid "Reset Theme Mods"
-#~ msgstr "Herstel de wijzigingen aan het theme"
-
-#~ msgid ""
-#~ "Click OK to reset. Any theme mods you have set in the Theme Customizer "
-#~ "will be lost!"
-#~ msgstr ""
-#~ "Druk op OK om te resetten. Alle theme aanpassingen die u heeft gemaakt in "
-#~ "de Theme Customizer zullen verloren gaan!"
-
-#~ msgid "Theme Options Media"
-#~ msgstr "Theme media opties"
-
-#~ msgctxt "Uploader: Drop files here - or - Select Files"
-#~ msgid "or"
-#~ msgstr "of"
-
-#~ msgid "Button Group"
-#~ msgstr "Groep met knopen"
-
-#~ msgid "Button Text"
-#~ msgstr "Knop tekst"
-
-#~ msgid "Button Link"
-#~ msgstr "Knop link"
-
-#~ msgid "Button Size"
-#~ msgstr "Knop afmetingen"
-
-#~ msgid "Button Style (color)"
-#~ msgstr "Knop stijl (kleur)"
-
-#~ msgid "Button Icon"
-#~ msgstr "Knop icon"
-
-#~ msgid "Icon Color"
-#~ msgstr "Kleur icon"
-
-#~ msgid "Button Link Target"
-#~ msgstr "Knop link target"
-
-#~ msgid "3 sizes, 7 colors and 140 icons"
-#~ msgstr "3 afmetingen, 7 kleuren en 140 icons"
-
-#~ msgid "Label Style (color)"
-#~ msgstr "Label stijl (kleur)"
-
-#~ msgid "Text surrounded by a solid color for importance."
-#~ msgstr "Tekst benadrukt met een kader van een effen kleur"
-
-#~ msgid "Badge Style (color)"
-#~ msgstr "Badge stijl (kleur)"
-
-#~ msgid "Badge Text"
-#~ msgstr "Badge tekst"
-
-#~ msgid "Scroll"
-#~ msgstr "Scroll"
-
-#~ msgid "Code goes here"
-#~ msgstr "Code komt hier"
-
-#~ msgid "Code box for showing code."
-#~ msgstr "Weergave van code"
-
-#~ msgid "Row"
-#~ msgstr "Rij"
-
-#~ msgid "Column Span."
-#~ msgstr "Reikwijdte kolom (span)"
-
-#~ msgid "Content goes here"
-#~ msgstr "Content komt hier"
-
-#~ msgid "Empty space with adjustable height"
-#~ msgstr "Witruimte met instelbare hoogte"
-
-#~ msgid "text alignment"
-#~ msgstr "Tekstuitlijning"
-
-#~ msgid "Lead Paragraph"
-#~ msgstr "Hoofdalinea"
-
-#~ msgid "Heading Text"
-#~ msgstr "Koptekst"
-
-#~ msgid "Sub Text"
-#~ msgstr "Sub tekst"
-
-#~ msgid "Page Header."
-#~ msgstr "Pagina koptkest"
-
-#~ msgid "Divider"
-#~ msgstr "Scheidingslijn"
-
-#~ msgid "Background color"
-#~ msgstr "Achtergrondkleur"
-
-#~ msgid "A big header area for the top of your page."
-#~ msgstr "Een grote koptekstgebied aan de bovenkan van de pagina."
-
-#~ msgid "Alert Heading"
-#~ msgstr "Waarschuwings koptekst"
-
-#~ msgid "Alert Style"
-#~ msgstr "Waarschuwings stijl"
-
-#~ msgid "Block Padding"
-#~ msgstr "Block kader (padding)"
-
-#~ msgid "Close Button"
-#~ msgstr "Sluitknop"
-
-#~ msgid "Alert box with optional padding and close button"
-#~ msgstr "waarschuwingsvenster met een optioneel kader en sluitknop"
-
-#~ msgid "Blockquote Cite"
-#~ msgstr "Blockquote Citaat"
-
-#~ msgid "Float (causes text wrap)"
-#~ msgstr "Float (tekst wordt afgebroken)"
-
-#~ msgid "Text Align"
-#~ msgstr "Tekstuitlijning (align)"
-
-#~ msgid "Blockquote quotation with citation"
-#~ msgstr "Blockquote tussen aanhalingstekens plaatsen bij citeren"
-
-#~ msgid "Text"
-#~ msgstr "Tekst"
-
-#~ msgid "Popover Title"
-#~ msgstr "Popover titel"
-
-#~ msgid "Popover description"
-#~ msgstr "Popover beschrijving"
-
-#~ msgid "Link Target"
-#~ msgstr "Link target"
-
-#~ msgid "Button"
-#~ msgstr "Knop"
-
-#~ msgid "Percentage of Progress"
-#~ msgstr "Percentage voltooid"
-
-#~ msgid "Striped"
-#~ msgstr "Gestreept"
-
-#~ msgid "Animate (requires striped)"
-#~ msgstr "Animeer (vereist gestreept)"
-
-#~ msgid "Style (color)"
-#~ msgstr "Stijl (kleur)"
-
-#~ msgid "A Progress bar"
-#~ msgstr "Een voortgangsindicator"
-
-#~ msgid "Include specific image IDs"
-#~ msgstr "Inclusief afbeeldingen met gespecificeerde ID\\'s"
-
-#~ msgid "Exclude specific image IDs"
-#~ msgstr "Sluit afbeeldingen met specifieke ID\\'s uit"
-
-#, fuzzy
-#~ msgid "A Carousel of your gallery's images"
-#~ msgstr "Een carousel van uw afbeelingengalerijen."
-
-#~ msgid "Style"
-#~ msgstr "Stijl"
-
-#~ msgid "Stacked Vertically"
-#~ msgstr "Verticaal gestapeld"
-
-#~ msgid "Display any of your menus."
-#~ msgstr "Toon een van uw menu\\'s"
-
-#~ msgid "Title"
-#~ msgstr "Title"
-
-#~ msgid "ID: (no spaces)"
-#~ msgstr "ID: (geen spaties)"
-
-#~ msgid "Collapsible content areas."
-#~ msgstr "Inklapbare contentgebieden"
-
-#~ msgid "Icon"
-#~ msgstr "Icon"
-
-#~ msgid "Size"
-#~ msgstr "Grootte "
-
-#~ msgid "Float"
-#~ msgstr "Float (zwevend)"
-
-#~ msgid "Color"
-#~ msgstr "Kleur"
-
-#~ msgid "210 icons"
-#~ msgstr "210 icons"
-
-#~ msgid "Content"
-#~ msgstr "Content"
-
-#~ msgid "Insert"
-#~ msgstr "Invoegen"
-
-#~ msgid "Demo"
-#~ msgstr "Demo"
-
-#~ msgid "Insert shortcode"
-#~ msgstr "Shortcode invoegen"
-
-#~ msgid "Select shortcode"
-#~ msgstr "Kies shortcode"
-
-#~ msgid "Shortcode not found"
-#~ msgstr "Shortcode niet gevonden"
-
-#~ msgid "Tutorial"
-#~ msgstr "Tutorial (basiscursus)"
-
-#~ msgid "JBST Options"
-#~ msgstr "JBST opties"
-
-#~ msgid ""
-#~ "You have activated a second Footer Widget! You can deactivate this in the "
-#~ "Theme Customizer or put content in it under \"Appearance > Widgets\"."
-#~ msgstr ""
-#~ "U heeft de tweede Footer Widget geactiveerd!  U kunt deze deactiveren in "
-#~ "de Theme Customizer of er content in plaatsen via \"Weergave > Widgets\"."
-
-#~ msgid ""
-#~ "You have activated a third Footer Widget! You can deactivate this in the "
-#~ "Theme Customizer or put content in it under \"Appearance > Widgets\"."
-#~ msgstr ""
-#~ "U heeft de derde Footer Widget geactiveerd!  U kunt deze deactiveren in "
-#~ "de Theme Customizer of er content in plaatsen via \"Weergave > Widgets\"."
-
-#~ msgid ""
-#~ "You have activated a fourth Footer Widget! You can deactivate this in the "
-#~ "Theme Customizer or put content in it under \"Appearance > Widgets\"."
-#~ msgstr ""
-#~ "U heeft de vierde Footer Widget geactiveerd!  U kunt deze deactiveren in "
-#~ "de Theme Customizer of er content in plaatsen via \"Weergave > Widgets\"."
-
-#~ msgid "Accordion Group"
-#~ msgstr "Accordion Groep"
+msgstr ""

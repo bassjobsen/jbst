@@ -39,7 +39,6 @@ THEME DEFAULTS
  *
  * @since JBST 1.0
  */
-
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
 

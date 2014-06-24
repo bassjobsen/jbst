@@ -293,9 +293,9 @@ function jbst_account_dropdown() {
 	?>
 				<div class="btn-group navbar-right" id="nav-profile-dropdown">
 				  <button type="button" class="btn <?php jbst_nav_account_button_class();?> navbar-btn  dropdown-toggle" data-toggle="dropdown">
-					<i class="glyphicon glyphicon-user"></i> <?php echo $current_user->display_name; ?>
+					<i class="glyphicon glyphicon-user"></i> <span class="sr-only"><?php echo __('Your account', 'jamedo-bootstrap-start-theme' )?>: </span><?php echo $current_user->display_name; ?>
 		     		<span class="caret"></span>
-				  </button>
+		     		</button>
 				  <ul class="dropdown-menu">
 						<?php do_action( 'jbst_nav_profile_dropdown');?>
 				  </ul>
@@ -307,6 +307,7 @@ function jbst_account_dropdown() {
 				  <button type="button" class="btn <?php jbst_nav_account_button_class();?> navbar-btn dropdown-toggle" data-toggle="dropdown">
 					<i class="glyphicon glyphicon-user"></i> 
 					<span class="caret"></span>
+					<span class="sr-only"><?php echo __('Login', 'jamedo-bootstrap-start-theme' )?></span>
 				  </button>
 				  <ul class="dropdown-menu">
 						<?php do_action( 'jbst_nav_login_dropdown');?>

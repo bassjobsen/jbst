@@ -20,7 +20,9 @@ $jbstecommerce = true;
 			
 				<div class="btn-group navbar-right" id="nav-cart-dropdown">
 				  <button type="button" class="btn <?php jbst_nav_shop_button_class();?> navbar-btn  dropdown-toggle" data-toggle="dropdown">
-					<i class="glyphicon glyphicon-shopping-cart"></i> <span class="cart-contents"><?php echo sprintf(_n('%d item &ndash; ', '%d items &ndash; ', $woocommerce->cart->get_cart_contents_count(), 'woothemes'), $woocommerce->cart->get_cart_contents_count()) . $woocommerce->cart->get_cart_total();?></span>
+					<i class="glyphicon glyphicon-shopping-cart"></i> 
+					<span class="sr-only"><?php echo __('Shopping Cart', 'jamedo-bootstrap-start-theme' )?>: </span>
+					<span class="cart-contents"><?php echo sprintf(_n('%d item &ndash; ', '%d items &ndash; ', $woocommerce->cart->get_cart_contents_count(), 'woothemes'), $woocommerce->cart->get_cart_contents_count()) . $woocommerce->cart->get_cart_total();?></span>
 		     		<span class="caret"></span>
 				  </button>
 				  <ul class="dropdown-menu">

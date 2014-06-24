@@ -168,3 +168,4 @@ if(!is_search())
 
 
 <?php is_single()?jbst_content_nav_bottom_single():((is_home() || is_category() || is_tag() || is_search())?jbst_content_nav_bottom():''); ?>
+<?php do_action( 'jbst_after_content' );?>

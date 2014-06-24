@@ -238,7 +238,7 @@ function jbst_nav_styles() {
 	}
 	elseif(get_theme_mod( 'navbar_style', navbar_style) == 'navbar-fixed-bottom') {
 	echo '
-	body {  padding-padding-bottom: 70px; }
+	body {  padding-bottom: 70px; }
 	';
 	}
 
