@@ -9,8 +9,6 @@
  * @since jbst 2.0
  */
 ?>
-<?php jbst_content_nav_top(); ?>
-<?php do_action( 'jbst_before_content' );?>
 <?php while ( have_posts() ) : the_post(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
 	<header class="entry-header">
@@ -167,5 +165,4 @@ if(!is_search())
 			?>
 
 
-<?php is_single()?jbst_content_nav_bottom_single():((is_home() || is_category() || is_tag() || is_search())?jbst_content_nav_bottom():''); ?>
-<?php do_action( 'jbst_after_content' );?>
+

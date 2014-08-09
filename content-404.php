@@ -5,9 +5,7 @@
  */
 ?>
 
-			<?php jbst_content_nav( 'nav-above' ); ?>
-			<?php do_action( 'jbst_before_content_404' );?>
-			
+
 				<article id="post-0" class="post error404 not-found">
 					<header class="entry-header">
 						<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'jamedo-bootstrap-start-theme' ); ?></h1>
@@ -37,6 +35,3 @@
 	
 					</div><!-- .entry-content -->
 				</article><!-- #post-0 -->
-
-
-			<?php jbst_content_nav( 'nav-below' ); ?>

@@ -5,7 +5,6 @@
  */
 ?>
 
-			<?php do_action( 'jbst_before_content_archive' );?>
 				    
 				<header class="page-header">
 					<h1 class="page-title">
@@ -63,5 +62,3 @@
 					?>
 				</header><!-- .page-header -->
 
-				<?php /* Leave the rest up to the content loop */ ?>
-					<?php get_template_part( 'content', get_post_format() );?>

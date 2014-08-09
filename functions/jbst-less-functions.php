@@ -9,8 +9,6 @@ if ( ! class_exists( 'WP_LESS_to_CSS' ) ) {
 require get_template_directory() . '/vendor/wp-less-to-css/wp-less-to-css.php';
 }
 
-
-
 /* add path for custom fonts  */
 
 add_filter( 'add_extra_less_code', 'add_custom_fonts_paths');

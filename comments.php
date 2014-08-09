@@ -87,7 +87,7 @@
 			. '</label>'
 			. ' <textarea class="form-control" role="textbox" aria-multiline="true" name="comment" id="comment" rows="8" placeholder="'
 			. __("Your Comment Here...",'jamedo-bootstrap-start-theme')
-			. '"></textarea></textarea>
+			. '"></textarea>
 
 	</div>'; 
 	comment_form(

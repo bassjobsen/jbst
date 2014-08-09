@@ -763,26 +763,26 @@ function jbst_content_nav( $nav_id ) {
 	?>
 	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
 		<h3 class="sr-only"><?php _e( 'Post navigation', 'jamedo-bootstrap-start-theme' ); ?></h3>
-<ul class="pager">
+			<ul class="pager">
 
-	<?php if ( is_single() ) : // navigation links for single posts ?>
+				<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'jamedo-bootstrap-start-theme' ) . '</span> Previous' ); ?>
-		<?php next_post_link( '<li class="next">%link</li>', 'Next <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'jamedo-bootstrap-start-theme' ) . '</span>' ); ?>
+					<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'jamedo-bootstrap-start-theme' ) . '</span> Previous' ); ?>
+					<?php next_post_link( '<li class="next">%link</li>', 'Next <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'jamedo-bootstrap-start-theme' ) . '</span>' ); ?>
 
-	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
+				<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
-		<?php if ( get_next_posts_link() ) : ?>
-		<li class="previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'jamedo-bootstrap-start-theme' ) ); ?></li>
-		<?php endif; ?>
+					<?php if ( get_next_posts_link() ) : ?>
+					<li class="previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'jamedo-bootstrap-start-theme' ) ); ?></li>
+					<?php endif; ?>
 
-		<?php if ( get_previous_posts_link() ) : ?>
-		<li class="next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'jamedo-bootstrap-start-theme' ) ); ?></li>
-		<?php endif; ?>
+					<?php if ( get_previous_posts_link() ) : ?>
+					<li class="next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'jamedo-bootstrap-start-theme' ) ); ?></li>
+					<?php endif; ?>
 
-	<?php endif; ?>
+				<?php endif; ?>
 
-</ul>
+			</ul>
 </nav><!-- #<?php echo $nav_id; ?> -->
 	<?php
 }

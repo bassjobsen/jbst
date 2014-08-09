@@ -12,7 +12,10 @@ input[type="submit"] {
 return $lesscode.$customless;}
 
 add_filter( 'add_extra_less_code','lessify_comment_button');
-add_filter( 'comment_form_default_fields', function(){ 
+add_filter( 'comment_form_default_fields', 'cf_default_fields');
+
+
+function cf_default_fields(){ 
 	
 	$commenter = wp_get_current_commenter();
 	$req = get_option( 'require_name_email' );
@@ -62,4 +65,3 @@ add_filter( 'comment_form_default_fields', function(){
 			  . '</div>'
 		  	. '</div>'
     );}
-  );

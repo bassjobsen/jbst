@@ -1,9 +1,8 @@
 // Vendor Prefixes
 //
-// All vendor mixins are deprecated as of v3.2 due to the introduction of
+// All vendor mixins are deprecated as of v3.2.0 due to the introduction of
 // Autoprefixer in our Gruntfile. They will be removed in v4.
 
-// - Keyframes
 // - Animations
 // - Backface visibility
 // - Box shadow
@@ -14,65 +13,6 @@
 // - Transformations
 // - Transitions
 // - User Select
-
-//horizontal
-
-.lineargradient(@direction, @start-color: #555; @start-percent: 0%; @end-color: #333; @end-percent: 100%) when (@direction = ~"to right") 
-{
-	background-image: -webkit-gradient(linear, left top, right top, from(@start-percent, @start-color), to(@end-percent,@end-color));
-    background-image: -webkit-linear-gradient(left, @start-color @start-percent, @end-color @end-percent);  // Safari 5.1-6, Chrome 10+
-    background-image: -o-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); // Opera 12
-    background-image: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-}
-
-//vertical
-
-.lineargradient(@direction, @start-color: #555; @start-percent: 0%; @end-color: #333; @end-percent: 100%) when (@direction = ~"to bottom") 
-{
-	background-image: -webkit-gradient(linear, left top, left bottom, from(@start-percent, @start-color), to(@end-percent,@end-color));
-    background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);  // Safari 5.1-6, Chrome 10+
-    background-image: -o-linear-gradient(top, @start-color @start-percent, @end-color @end-percent); // Opera 12
-    background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-}
-
-.lineargradient(@direction, @start-color: #555; @start-percent: 0%; @end-color: #333; @end-percent: 100%) when (default()) { //(is_degrees(@direction))
-  background-image: -webkit-linear-gradient(@deg, @start-color, @end-color);
-  background-image:      -o-linear-gradient(@deg, @start-color, @end-color);
-  background-image:         linear-gradient(@deg, @start-color, @end-color);
-}
-
-//horizontal
-
-.threecolorlineargradient(@start-color: #00b3ee; @start-percent: 0%; @between-color: #7a43b6; @between-percent: 50%; @end-color: #c3325f; @end-percent: 100%) when (@direction = ~"to right") 
-{
-	background-image: -webkit-gradient(linear, left top, right top, from(@start-percent, @start-color), color-stop(@between-percent, @between-color), to(@end-percent,@end-color));
-    background-image: -webkit-linear-gradient(left, @start-color @start-percent, @end-color @end-percent);  // Safari 5.1-6, Chrome 10+
-    background-image: -o-linear-gradient(left, @start-color @start-percent, @between-percent @between-color, @end-color @end-percent); // Opera 12
-    background-image: linear-gradient(to right, @start-color @start-percent, @between-percent @between-color, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-}
-
-//vertical
-
-.threecolorlineargradient(@start-color: #00b3ee; @start-percent: 0%; @between-color: #7a43b6; @between-percent: 50%; @end-color: #c3325f; @end-percent: 100%) when (@direction = ~"to bottom") 
-{
-	background-image: -webkit-gradient(linear, left top, left bottom, from(@start-percent, @start-color), color-stop(@between-percent, @between-color), to(@end-percent,@end-color));
-    background-image: -webkit-linear-gradient(top, @start-color @start-percent, @between-percent @between-color, @end-color @end-percent);  // Safari 5.1-6, Chrome 10+
-    background-image: -o-linear-gradient(top, @start-color @start-percent, @between-percent @between-color, @end-color @end-percent); // Opera 12
-    background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-}
-
-
-.radialgradient(@inner-color: #555; @outer-color: #333) {
-  background-image: -webkit-linear-gradient(circle, @inner-color, @outer-color);
-  background-image:      -o-linear-gradient(circle, @inner-color, @outer-color);
-  background-image:         linear-gradient(circle, @inner-color, @outer-color);
-}
-
-.stripedgradient( @angle: 45deg, @color: rgba(255,255,255,.15)) {
-    background-image: -webkit-linear-gradien(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
-    background-image: -o-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
-    background-image: linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
-  }
 
 
 // Keyframes
@@ -91,7 +31,7 @@
 // Background-clip
 .background-clip(@clip)
 {
-  -webkit-background: @clip;
+  -webkit-background-clip: @clip;
   background-clip: @clip;
 }
 
@@ -101,6 +41,7 @@
   -webkit-background-size: @size;
   background-size: @size;
 }
+
 
 // Animations
 .animation(@animation) {
@@ -218,10 +159,10 @@
           transform: scaleY(@ratio);
 }
 .skew(@x; @y) {
-  -webkit-transform: skew(@x, @y);
+  -webkit-transform: skewX(@x) skewY(@y);
       -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
-       -o-transform: skew(@x, @y);
-          transform: skew(@x, @y);
+       -o-transform: skewX(@x) skewY(@y);
+          transform: skewX(@x) skewY(@y);
 }
 .translate(@x; @y) {
   -webkit-transform: translate(@x, @y);
@@ -231,6 +172,7 @@
 }
 .translate3d(@x; @y; @z) {
   -webkit-transform: translate3d(@x, @y, @z);
+       -o-transform: translate3d(@x, @y, @z);
           transform: translate3d(@x, @y, @z);
 }
 .rotate(@degrees) {

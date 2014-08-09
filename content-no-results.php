@@ -8,9 +8,6 @@
  * @since jbst 1.0
  */
 ?>
-			<?php jbst_content_nav( 'nav-above' ); ?>
-
-			<?php do_action( 'jbst_before_content_no_results' );?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -39,5 +36,3 @@
 					</div><!-- .entry-content -->
 				</article><!-- #post-0 -->
 			<?php endwhile; ?>
-
-			<?php jbst_content_nav( 'nav-below' ); ?>

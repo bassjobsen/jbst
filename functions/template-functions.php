@@ -14,16 +14,24 @@ function jbst_layout(){
 
 	/* get the page layout */
 	$jbst_layout = jbst_default_page_layout;
+	
 	if (
-			is_singular(array( 'page', 'post' )) 
+			is_singular(array( 'page', 'post' )) or is_home() 
 	   ) {
 		   if(!$jbst_layout = get_post_meta( $post->ID, '_cmb_page_layout', true ))
 		   {
-			   $jbst_layout = of_get_option('default_page_layout', jbst_default_page_layout);
-	       }	   
+			   if(is_home())
+			   {
+			   if(!$jbst_layout=get_post_meta(get_option('page_for_posts'), '_cmb_page_layout', true )) {
+				    $jbst_layout = of_get_option('default_blog_layout', jbst_default_page_layout);
+			   }
+			   // is_frontpage should use get_option('page_on_front')
+		       }
+			   else $jbst_layout = of_get_option('default_page_layout', jbst_default_page_layout);
+	       }	
 		 }
 	else {
-		if (is_page() || is_home()) {$jbst_layout = of_get_option('default_page_layout', jbst_default_page_layout);}
+		if (is_page()) {$jbst_layout = of_get_option('default_page_layout', jbst_default_page_layout);}
 		elseif (is_search()) {$jbst_layout = of_get_option('default_search_layout', jbst_default_page_layout);}
 		elseif (is_archive()) {$jbst_layout = of_get_option('default_archive_layout', jbst_default_page_layout);}
 		elseif ( is_404() ){$jbst_layout = of_get_option('default_404_layout', jbst_default_page_layout);}
@@ -33,6 +41,7 @@ function jbst_layout(){
 			if (is_product()) {$jbst_layout = of_get_option('default_product_layout', jbst_default_page_layout);}
 		}
 	}
+	
 }
 function jbst_posttype_set_classes() {
 	if(wp_attachment_is_image()) return 'image-attachment';

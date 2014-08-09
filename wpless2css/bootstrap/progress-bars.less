@@ -6,6 +6,9 @@
 // Bar animations
 // -------------------------
 
+// WebKit
+
+// Spec and IE10+
 .keyframe(progress-bar-stripes, {
   from  { background-position: 40px 0; }
   to    { background-position: 0 0; }
@@ -40,13 +43,22 @@
 }
 
 // Striped bars
-.progress-striped .progress-bar {
+//
+// `.progress-striped .progress-bar` is deprecated as of v3.2.0 in favor of the
+// `.progress-bar-striped` class, which you just add to an existing
+// `.progress-bar`.
+.progress-striped .progress-bar,
+.progress-bar-striped {
   #gradient > .striped();
   .background-size(~"40px 40px");
 }
 
 // Call animation for the active one
-.progress.active .progress-bar {
+//
+// `.progress.active .progress-bar` is deprecated as of v3.2.0 in favor of the
+// `.progress-bar.active` approach.
+.progress.active .progress-bar,
+.progress-bar.active {
   .animation(progress-bar-stripes 2s linear infinite);
 }
 

@@ -1,5 +1,5 @@
 <?php
-function new_excerpt_more( $more ) {
+function jbst_new_excerpt_more( $more ) {
 	
 	if(is_search())return;
 	$ontitle = the_title_attribute( array('echo' => 0 ) );
@@ -7,7 +7,7 @@ function new_excerpt_more( $more ) {
 	
 	return '<br><a class="read-more" href="'. get_permalink( get_the_ID() ) . '">'.__( 'Continue reading', 'jamedo-bootstrap-start-theme' ) .  $ontitlestr .'<span class="meta-nav">&rarr;</span></a>';
 }
-add_filter( 'excerpt_more', 'new_excerpt_more' );
+add_filter( 'excerpt_more', 'jbst_new_excerpt_more' );
 
 if ( ! function_exists( 'jbst_posted_on' ) ) :
 /**

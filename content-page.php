@@ -29,6 +29,7 @@
 			<hr class="clear" />
 			
 			<?php
+			do_action('jbst_before_pagecomments','');
 			if(!get_theme_mod('page_comments', 0)) {
 				// If comments are open or we have at least one comment, load up the comment template
 				if ( comments_open() || '0' != get_comments_number() )

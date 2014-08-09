@@ -89,7 +89,7 @@ public function wpless2csssavecss($creds)
 					}
 			    }
 
-			    $parser->parseFile($rootless);
+			    $parser->parseFile($rootless,'../');
 
 		     	
 				$parser->parse( apply_filters('get_theme_mods','') );
