@@ -67,7 +67,7 @@ class jbst_Menu_Widget extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('nav_menu'); ?>"><?php _e('Select Menu:', 'jamedo-bootstrap-start-theme'); ?></label>
-			<select id="<?php echo $this->get_field_id('nav_menu'); ?>" name="<?php echo $this->get_field_name('nav_menu'); ?>">
+			<select id="<?php echo $this->get_field_id('nav_menu'); ?>" style="width:100%;" name="<?php echo $this->get_field_name('nav_menu'); ?>">
 		<?php
 			foreach ( $menus as $menu ) {
 				$selected = $nav_menu == $menu->term_id ? ' selected="selected"' : '';
@@ -79,8 +79,8 @@ class jbst_Menu_Widget extends WP_Widget {
 		
 		<p>
 		<label for="<?php echo $this->get_field_id('show_info'); ?>"><?php _e('Select Style:', 'jamedo-bootstrap-start-theme'); ?></label>
-		<select id="<?php echo $this->get_field_id( 'show_info' ); ?>" name="<?php echo $this->get_field_name( 'show_info' ); ?>">
-		<option <?php if ($instance['show_info'] == 'nav-tabs') {echo 'selected="selected" ';}?>value="nav-tabs">Tabs</option>
+		<select id="<?php echo $this->get_field_id( 'show_info' ); ?>" name="<?php echo $this->get_field_name( 'show_info' ); ?>"  style="width:100%;">
+		<option <?php if (!isset ( $instance['show_info'] ) || $instance['show_info'] == 'nav-tabs') {echo 'selected="selected" ';}?>value="nav-tabs">Tabs</option>
 		<option <?php if ($instance['show_info'] == 'nav-pills') {echo 'selected="selected" ';}?>value="nav-pills">Pills</option>
 		</select>
 		</p>
